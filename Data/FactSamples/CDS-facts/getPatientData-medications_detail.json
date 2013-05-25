@@ -1,0 +1,48 @@
+{
+	"patientDataFact": {
+		"factType": "Medications",
+		"trxnType": "codedetail",
+		"visibleGridHeaders": true,
+		"maxcolumns": 7,
+		"itemId": 11,
+		"status": "Active",
+                "sectionId": "triplesSPL"
+		
+		,"gridHeaders": []
+
+		,"facts": [
+               {
+                  "title": "Indications",
+                  "items":  ["Otitis Media",
+                                 "Pneumonia"]
+                }, 
+                {
+                  "title": "Monitoring",
+                  "items":  ["Otitis Media",
+                                 "Pneumonia"]
+                 }, 
+                 {
+                   "title": "Box Warning",
+                   "items":  ["Otitis Media",
+                                 "Pneumonia"]
+                 }, 
+                 {
+                   "title": "Side Effects",
+                   "items":  ["Otitis Media",
+                                 "Pneumonia"]
+                 }, 
+                  {
+                   "title": "Contradictions",
+                   "items":  ["Really bad headache",
+                                 "Unknown disease"]
+                 }, 
+                 {
+                   "title": "Nursing Mothers",
+                   "items":  ["Hazardous to the baby",
+                                 "Consult doctor"]
+                 }
+      	]
+		,"successStatus": true
+	}
+}
+

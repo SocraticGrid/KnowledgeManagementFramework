@@ -1,0 +1,25 @@
+{
+    "medicationFact": [
+        {
+            "codedProductName": {
+                 "code": "0093-4160-78",
+                 "codeSystem": "2.16.840.1.113883.12.549",
+                 "codeSystemName": "NDC Codes",
+                 "label": "AMOXICILLIN (500MG)"
+             },
+             "allergyName": "Sulfa-Drugs",
+            "allergyType": "drug allergy",
+            "dispenseDrug": "E-mycin",
+            "manufacturer": "Abott",
+            "pharmacist": "John Terry",
+            "location": "*NO FIELD*",
+            "dispenseDate": "1997-03-04T00:00:00-08:00",
+            "fillDate": "1997-03-03T00:00:00-08:00",
+            "drugExpirationDate": "1997-03-05T00:00:00-08:00",
+            "dispenseAmount": "5"
+        }
+    ],
+    "successStatus": true,
+    "statusMessage": "Successful retrieval of Allergies Fact List Info",
+    "factCount": 1
+}

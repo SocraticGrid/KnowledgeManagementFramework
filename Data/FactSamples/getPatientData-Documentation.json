@@ -1,0 +1,16 @@
+{
+"patientDataFact": {
+  "facts": [
+    {
+      "date": "1997-03-03T00:00:00-08:00",
+      "title": "Clinic Note",
+      "provider": "Dr. Smith",
+      "specialty": "Family Practice",
+      "status": "Final",
+       "source": "EMR"
+    }
+  ],
+  "successStatus": true,
+  "statusMessage": "Successful retrieval of Allergies Fact List Info",
+  "factCount": 1
+}}

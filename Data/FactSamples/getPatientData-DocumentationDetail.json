@@ -1,0 +1,11 @@
+{
+"patientDataFact": {
+  "facts": [
+    {
+      "body": "<body>Patient Name: Jane Doe <br/><br/>DOB: 12/31/1961   <br/><br/>Extra line to test scroll<br/><br/>Extra line to test scroll<br/><br/>Record No. K-6112r809   <br/><br/>Date 09/09/1999     <br/><br/>S&#x2014;Pt. states that she has always been overweight. She is very frustrated with trying to diet. Her 20 year class reunion is next year and she would like to begin working toward<br/>a weight loss goal that is realistic. NKDA, NKA.    <br/><br/>O&#x2014;WT = 210 lbs HT = 60 * BW = 115 lbs Chol = 255 BP = 120/75    <br/><br/>A&#x2014;Obese at 183%  IBW, hypercholesterolemia     <br/><br/>P&#x2014;Long Term Goal Change lifestyle habits to lose at least 70 pounds over a 12 month period. Short Term Goal Client to begin a 1500 Calorie diet with walking 20 minutes per<br/>day. Instructed Pt on lower fat food choices and smaller food portions. Client will keep a daily food and mood record to review next session. Follow-up in one week.    <br/><br/>Dr. Katherine Smith</body>"
+    }
+  ],
+  "successStatus": true,
+  "statusMessage": "Successful retrieval of Allergies Fact List Info",
+  "factCount": 1
+}}

@@ -1,0 +1,99 @@
+{
+    "patientDataFact": {
+        "factType": "Problems",
+        "trxnType": "codelist",
+        "visibleGridHeaders":  true,
+        "maxcolumns":15,
+
+
+        "detailTabs":   [
+            {"label":        "Summary Information",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "summary",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Diagnoses",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "diagnoses",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Treatment",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "dispensations",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Pubmed",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "dispensations",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Podcasts",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "dispensations",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Videos",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "dispensations",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "VA Drug Utilization",
+             "type":         "grid",
+             "responseType": "detail",
+             "sectionId":    "drugUtil",
+             "filters":      ["code","codeSystemCode"]
+            }
+        ],
+        "gridHeaders": [
+            { "columnId":       "diagnosis",
+              "value":          "Diagnosis",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "newCode",
+              "value":          "ICD9 Code",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "description",
+              "value":          "Description",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+            {
+                "diagnosis": "Asthma NOS",
+                "newCode": "56789",
+                "code": "56789",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "description": "lorem ipsum"
+            },
+            {
+                "diagnosis": "Status Asthmaticus",
+                "newCode": "12345",
+                "code": "12345",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "description": "lorem ipsum"
+            },
+            {
+                "diagnosis": "Exercised Induced Asthma",
+                "newCode": "09876",
+                "code": "09876",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "description": "lorem ipsum"
+            }
+        ],
+        "successStatus": true
+    }
+}

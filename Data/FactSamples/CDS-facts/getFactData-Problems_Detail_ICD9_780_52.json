@@ -1,0 +1,77 @@
+{
+	"patientDataFact": {
+		"factType": "Problems",
+		"trxnType": "codeDetail",
+		"visibleGridHeaders": true,
+		"maxcolumns": 7,
+		"itemId": 11,
+		"status": "Active",
+               "sectionId": "drugUtil",
+
+		"gridHeaders": [
+			{
+				"columnId": "drugClass",
+				"value": "Drug Class",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "example",
+				"value": "Example",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "utilization",
+				"value": "Utilization @ Dx",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "90Days",
+				"value": "@ 90 Days Post-Dx",
+				"description": "A column header.",
+				"width": 20
+			}, {
+				"columnId": "180Days",
+				"value": "@ 180 Days Post-Dx",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "270Days",
+				"value": "@ 270 Days Post-Dx",
+				"description": "A column header.",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+                            "drugClass": "BENZODIAZEPINE DERIVATIVE SEDATIVES/HYPNOTICS",
+                            "example": "LORAZEPAM",
+                            "code": "780_52",
+                            "codeSystemName": "ICD9",
+                            "codeSystemCode": "ICD9",
+                            "utilization":  "0.0998",
+                            "90Days":  "0.1299",
+                            "180Days": "0.1274",
+                            "270Days": "0.2007",
+                            "hoverTexts": [
+                                    "", "ICD9/780_52"
+                            ]
+			},
+			{
+                            "drugClass": "ANTIDEPRESSANTS,OTHER",
+                            "example": "VENLAFAXINE",
+                            "code": "780_52",
+                            "codeSystemName": "ICD9",
+                            "codeSystemCode": "ICD9",
+                            "utilization":  "0.231",
+                            "90Days":  "0.2966",
+                            "180Days": "0.2744",
+                            "270Days": "0.3882",
+                            "hoverTexts": [
+                                    "", "ICD9/780_52"
+                            ]
+			}
+		],
+		"successStatus": true
+	}
+}
+

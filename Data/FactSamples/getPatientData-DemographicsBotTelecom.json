@@ -1,0 +1,26 @@
+{
+    "patientDataFact": {
+        "facts": [
+            {
+                "areaCode": "858",
+                "number": "123-4567",
+                "type": "Home",
+                "preferred": false
+            },
+            {
+                "areaCode": "619",
+                "number": "789-0123",
+                "type": "Work",
+                "preferred": false
+            },
+            {
+                "areaCode": "858",
+                "number": "987-6543",
+                "type": "Cell",
+                "preferred": true
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

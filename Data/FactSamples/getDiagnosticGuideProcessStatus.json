@@ -1,0 +1,96 @@
+{
+    "id": "0531bee1-75ab-4004-a02f-f639c63c50fc",
+    "status": "Started",
+    "decModel": "MockDecision",
+    "diagModel": "MockDiag",
+    "disease": "Post Traumatic Stress Disorder",
+    "diagnosticProcessHistory": [
+        {
+            "nodeId": "aa144d57-7d9d-4dca-aa8c-7634dc93c428",
+            "stage": "0",
+            "current": true,
+            "descr": "Stage 0",
+            "diseaseProbability": "0",
+            "severity": "Low",
+            "response": "The estimated disease probability is Low (0)",
+            "actions": {
+                "org.kmr2.decision.impl.AskLow1": {
+                    "descr": "Low option 1",
+                    "question": "ul",
+                    "questionnaireId": "b8a05883-1201-42a1-b796-0e3976766e18",
+                    "actionId": "84e60eda-1eef-41ce-b389-2afa854b5032",
+                    "numQuestions": "1",
+                    "utility": "0.05",
+                    "utilityLevel": "Low",
+                    "status": "Not Started"
+                },
+                "org.kmr2.decision.impl.AskLow2": {
+                    "descr": "Low option 2",
+                    "question": "ul",
+                    "questionnaireId": "b8a05883-1201-42a1-b796-0e3976766e18",
+                    "actionId": "84e60eda-1eef-41ce-b389-2afa854b501234",
+                    "numQuestions": "1",
+                    "utility": "0.05",
+                    "utilityLevel": "Low",
+                    "status": "Not Started"
+                },
+                "org.kmr2.decision.impl.AskLow3": {
+                    "descr": "Low option 3",
+                    "question": "ul",
+                    "questionnaireId": "b8a05883-1201-42a1-b796-0e3976766e18",
+                    "actionId": "84e60eda-1eef-41ce-b389-2afa854b50245636",
+                    "numQuestions": "1",
+                    "utility": "0.05",
+                    "utilityLevel": "Low",
+                    "status": "Not Started"
+                },
+                "org.kmr2.decision.impl.AskDeployment": {
+                                    "descr": "Ask for number of deployments ",
+                                    "questionnaireId": "96214705-6eaf-4fab-8a5c-a63366055260",
+                                    "actionId": "f8a8c27d-9190-4c85-b12e-eba5f779d498",
+                                    "numQuestions": "1",
+                                    "utility": "0.55",
+                                    "utilityLevel": "Suggested",
+                                    "status": "Not Started"
+                },
+                "org.kmr2.decision.impl.AskAlcohol": {
+                    "descr": "Ask for alcohol abuse",
+                    "question": "ul",
+                    "content":"<h3>This is the survey heading</h3>This is free form <b>HTML</b> with an <i>optionally embedded survey</i>: <p class='agentEmbed' type='survey' id='uniquesurvey_82345364gjh'/>",
+                    "controlQuestionnaireId": "b8a05883-1201-42a1-b796-0e3976766e18",
+                    "actionId": "84e60eda-1eef-41ce-b389-2afa854b5765ASDF",
+                    "numQuestions": "1",
+                    "utility": "0.51",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started"
+                },
+                "org.kmr2.decision.impl.Other1": {
+                    "descr": "Other option 1",
+                    "question": "ul",
+                    "questionnaireId": "b8a05883-1201-42a1-b796-0e3976766e18",
+                    "actionId": "84e60eda-1eef-41ce-b389-2afa854b50ASDKFH",
+                    "numQuestions": "1",
+                    "utility": "0",
+                    "utilityLevel": "Low",
+                    "status": "Not Started"
+                },
+                "org.kmr2.decision.impl.Other2": {
+                    "descr": "Other option 2",
+                    "question": "ul",
+                    "questionnaireId": "b8a05883-1201-42a1-b796-0e3976766e18",
+                    "actionId": "84e60eda-1eef-41ce-b389-2afa854b5087ASDFH",
+                    "numQuestions": "1",
+                    "utility": "0",
+                    "utilityLevel": "Low",
+                    "status": "Not Started"
+                }
+            }
+        }
+    ],
+    "canAdvance": false,
+    "actions": [
+        "org.kmr2.decision.impl.AskAlcohol",
+        "org.kmr2.decision.impl.AskDeployment"
+    ],
+    "successStatus": true
+}

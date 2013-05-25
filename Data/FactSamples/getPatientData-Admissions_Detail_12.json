@@ -1,0 +1,16 @@
+{
+    "patientDataFact": {
+        "factType": "Admissions",
+        "trxnType": "detail",
+        "visibleGridHeaders":  false,
+        "maxcolumns":8,
+        "itemId":12,
+        "status":"Final",
+
+        "facts": [
+                {"report": "<p><b>DATE OF ADMISSION:</b>  2006-Oct-23 <br/><b>DATE OF DISCHARGE:</b>  2006-Oct-2</p> <p><b>ADMITTING DIAGNOSIS:</b> Stroke <br/><b>CHIEF COMPLAINT:</b> Blurriness, Loss of motor control </p><p><b>HISTORY OF PRESENT ILLNESS:</b> Praesent eget purus sit amet nunc dictum cursus. Nullam fermentum aliquam pharetra. Aenean et lorem elit, vel fringilla dui. Sed posuere volutpat risus, sit amet dapibus est vestibulum id. Morbi imperdiet pharetra augue eu rutrum. Proin at volutpat eros. Donec commodo sollicitudin enim in egestas. Ut at pellentesque eros. Suspendisse a elit magna, vitae imperdiet leo. Vivamus ipsum augue, consectetur in vehicula sed, ultrices eu lectus. </p><b>PROCEDURES PERFORMED:</b> Morbi commodo nisi nec elit feugiat ullamcorper. In nec tempus lorem. Aliquam nec lectus et elit bibendum facilisis. Suspendisse venenatis dui sed mi vestibulum dignissim. In interdum dapibus odio, id bibendum tortor bibendum pharetra. Aenean lobortis, urna sit amet aliquet commodo, ipsum arcu volutpat nisi, aliquet vestibulum nulla eros id tortor. "
+                }
+        ],
+        "successStatus": true
+    }
+}

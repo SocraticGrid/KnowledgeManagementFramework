@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TaggedTextArray xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://mdws.medora.va.gov/EmrSvc"><count>1</count><results><TaggedText><tag>102</tag><text><results version='1.1' timeZone='-0500' >
+<problems total='5' >
+<problem>
+<acuity code='C' name='CHRONIC' />
+<entered value='3070410' />
+<facility code='500' name='CAMP MASTER' />
+<icd value='401.9' />
+<id value='745' />
+<name value='Hypertension' />
+<onset value='3050407' />
+<provider code='10000000031' name='VEHU,ONEHUNDRED' />
+<sc value='0' />
+<service value='MEDICAL' />
+<status code='A' name='ACTIVE' />
+<updated value='3070410' />
+</problem>
+<problem>
+<acuity code='C' name='CHRONIC' />
+<entered value='3070410' />
+<facility code='500' name='CAMP MASTER' />
+<icd value='272.4' />
+<id value='866' />
+<name value='Hyperlipidemia' />
+<onset value='3050407' />
+<provider code='10000000031' name='VEHU,ONEHUNDRED' />
+<sc value='0' />
+<service value='MEDICAL' />
+<status code='A' name='ACTIVE' />
+<updated value='3070410' />
+</problem>
+<problem>
+<entered value='3050320' />
+<facility code='500' name='CAMP MASTER' />
+<icd value='410.90' />
+<id value='594' />
+<location value='GENERAL MEDICINE' />
+<name value='Acute myocardial infarction, unspecified site, episode of care unspecified' />
+<onset value='3050317' />
+<provider code='10000000031' name='VEHU,ONEHUNDRED' />
+<removed value='0' />
+<sc value='0' />
+<status code='A' name='ACTIVE' />
+<unverified value='0' />
+<updated value='3050320' />
+</problem>
+<problem>
+<acuity code='C' name='CHRONIC' />
+<entered value='3040309' />
+<facility code='500' name='CAMP MASTER' />
+<icd value='428.22' />
+<id value='415' />
+<location value='GENERAL MEDICINE' />
+<name value='Chronic Systolic Heart failure' />
+<onset value='3040309' />
+<provider code='11745' name='LABTECH,SPECIAL' />
+<removed value='0' />
+<sc value='0' />
+<status code='A' name='ACTIVE' />
+<unverified value='0' />
+<updated value='3040309' />
+</problem>
+<problem>
+<acuity code='C' name='CHRONIC' />
+<entered value='3010308' />
+<facility code='500' name='CAMP MASTER' />
+<icd value='250.00' />
+<id value='299' />
+<location value='20 MINUTE' />
+<name value='Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)' />
+<provider code='10000000031' name='VEHU,ONEHUNDRED' />
+<removed value='0' />
+<sc value='0' />
+<status code='A' name='ACTIVE' />
+<unverified value='0' />
+<updated value='3040401' />
+</problem>
+</problems>
+</results>
+</text></TaggedText></results></TaggedTextArray>

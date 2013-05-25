@@ -1,0 +1,53 @@
+{
+    "simulationId":"1",
+    "status":"Running",
+    "createdDate":"",
+    "averageIterationTime":"",
+    "elapsedTime":"10",
+    "timeUnit":"seconds",
+    "currentRelativeOverallScore":20,
+    "currentIteration":1000,
+    "currentImprovement":30,
+    "currentAbsoluteScore":"1557.4",
+    "pollInterval":30,
+    "configuration": {
+        "stopTime":3,
+        "stopScore":40,
+        "stopIteration":10100,
+        "stopImprovement":5
+    },
+    "scoreDetails": [
+        {
+             "type":"General Resource",
+             "description":"An MD MUST NOT visit more than 5 patients per day",
+             "violations":2,
+             "violationLimit":10,
+             "penalties":"0.0",
+             "relevance":"-",
+             "aggregateScore":"500",
+             "maxScore":"1000"
+         },
+        {
+             "type":"General Resource",
+             "description":"A Psychiatrist MUST NOT visit more than 2 patients a day",
+             "violations":3,
+             "violationLimit":20,
+             "penalties":"2.6",
+             "relevance":"Low (x1)",
+             "aggregateScore":"200",
+             "maxScore":"500"
+         },
+         {
+            "type":"PTSD Package #81 -",
+            "description":"Patients must have a Psychiatrist",
+            "violations":0,
+            "violationLimit":3,
+            "penalties":"5.0",
+            "relevance":"High",
+            "aggregateScore":"7.4",
+            "maxScore":"10"
+        }
+    ],
+    "successStatus": true,
+    "statusMessage": ""
+}

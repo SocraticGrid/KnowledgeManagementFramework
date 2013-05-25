@@ -1,0 +1,26 @@
+{
+    "patientDataFact": {
+        "facts": [
+            {
+                "handle": "john.doe",
+                "type": "facebook",
+                "status": "active",
+                "preferred": false
+            },
+            {
+                "handle": "johnedoe",
+                "type": "skype",
+                "status": "active",
+                "preferred": false
+            },
+            {
+                "handle": "johndoe@gmail.com",
+                "type": "email",
+                "status": "active",
+                "preferred": true
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

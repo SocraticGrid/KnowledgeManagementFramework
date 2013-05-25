@@ -1,0 +1,16 @@
+{
+    "patientDataFact": {
+        "factType": "Procedures",
+        "trxnType": "detail",
+        "visibleGridHeaders":  false,
+        "maxcolumns":8,
+        "itemId":10,
+        "status":"Final",
+
+        "facts": [
+                {"report": "<p><b>CT SCAN OF THE PELVIS</b> </p><p>CLINICAL HISTORY:   Reported fullness, status post hysterectomy and right side oophrorectomy</p><p>TECHNIQUE AND FINDINGS:    Ut non nibh justo, non lobortis velit. Vivamus luctus euismod lacinia. Fusce in porta felis. Vestibulum vestibulum ligula risus. Sed at nisi dui, nec luctus turpis. Vestibulum scelerisque sem ut odio ullamcorper porttitor. Maecenas interdum rutrum enim, sit amet scelerisque enim semper ac. Phasellus feugiat magna vitae orci vehicula nec bibendum lacus posuere. </p><p>PROCEDURES PERFORMED: Morbi commodo nisi nec elit feugiat ullamcorper. In nec tempus lorem. Aliquam nec lectus et elit bibendum facilisis. Suspendisse venenatis dui sed mi vestibulum dignissim. In interdum dapibus odio, id bibendum tortor bibendum pharetra. Aenean lobortis, urna sit amet aliquet commodo, ipsum arcu volutpat nisi, aliquet vestibulum nulla eros id tortor.</p>"
+                }
+        ],
+        "successStatus": true
+    }
+}

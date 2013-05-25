@@ -1,0 +1,14 @@
+{
+    "patientDataFact": {
+        "factType": "Medications",
+        "trxnType": "ecs",
+        "itemId":10,
+        "status":"Active",
+        
+        "facts": [
+              {"report":          "<h3>Cholera</h3><br/><img src=\"http://www.freebase.com/api/trans/raw/m/02bd1f1\" alt=\"\" style='width:40%'><br/><p><i>Cholera</i> \"bile\". is a severe infection caused by the bacterium <i>Vibrio cholerae</i>, which primarily affects the small intestine.<br/> The main symptoms include profuse watery diarrhea and vomiting.<br/> Transmission electron microscopy is primarily by the acquisition of the pathogen through contaminated drinking water or infected food.<br/> The severity of the diarrhea and associated vomiting can lead to rapid dehydration and electrolyte loss, which can lead to death.<br/> Cholera is a major cause of death in the world.<br/></p><p>The study of cholera has been used as an example of early epidemiology.<br/> Study of the <i>V. cholerae</i> bacterium has also shed light on many of the mechanisms used by bacteria to infect and survive in their hosts.</p>"
+              }
+        ],        
+        "successStatus": true
+    }
+}

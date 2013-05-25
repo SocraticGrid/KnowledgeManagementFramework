@@ -1,0 +1,26 @@
+{
+    "patientDataFact": {
+        "facts": [
+            {
+                "problem": "Asthma",
+                "codeSystem": "SMOMED",
+                "code": "123",
+                "onsetDate": "1997-03-03T00:00:00-08:00",
+                "status": "Active",
+                "source": "EMR",
+                "lastRecordedDate": "1997-03-04T00:00:00-08:00"
+            },
+            {
+                "problem": "Eczema",
+                "codeSystem": "SMOMED",
+                "code": "789",
+                "onsetDate": "1997-04-03T00:00:00-08:00",
+                "status": "Remission",
+                "source": "VA",
+                "lastRecordedDate": "1997-04-04T00:00:00-08:00"
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

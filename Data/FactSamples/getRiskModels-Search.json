@@ -1,0 +1,38 @@
+{
+    "riskModelsFact" : {
+        "successStatus":true,
+        "statusMessage":"This is a message to the user on error status",
+        "searchModels": [
+            {
+                "modelId":"modelId1",
+                "title":"PTSD",
+                "disease":"PTSD description"
+            },
+            {
+                "modelId":"modelId2",
+                "title":"Aesthma",
+                "disease":"Aesthma description"
+            },
+            {
+                "modelId":"modelId3",
+                "title":"Diabetes",
+                "disease":"Diabetes description"
+            },
+            {
+                "modelId":"modelId4",
+                "title":"Hypertension",
+                "disease":"Hypertension description"
+            },
+            {
+                "modelId":"modelId5",
+                "title":"Psoriasis",
+                "disease":"Psoriasis description"
+            },
+            {
+                "modelId":"modelId6",
+                "title":"Schizophrenia",
+                "disease":"Schizophrenia description"
+            }
+        ]
+    }
+}

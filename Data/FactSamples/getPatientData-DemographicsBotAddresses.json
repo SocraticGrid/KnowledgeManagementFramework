@@ -1,0 +1,35 @@
+{
+    "patientDataFact": {
+        "facts": [
+            {
+                "street": "Mt Ebrus Drive",
+                "city": "San Diego",
+                "state": "CA",
+                "zip": "92124",
+                "type": "Home",
+                "active": false,
+                "preferred": false
+            },
+            {
+                "street": "45 Coronado Ave",
+                "city": "San Diego",
+                "state": "CA",
+                "zip": "92106",
+                "type": "Work",
+                "active": true,
+                "preferred": true
+            },
+            {
+                "street": "2345 Whatever Street",
+                "city": "Las Vegas",
+                "state": "NV",
+                "zip": "89117",
+                "type": "Home",
+                "active": true,
+                "preferred": false
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

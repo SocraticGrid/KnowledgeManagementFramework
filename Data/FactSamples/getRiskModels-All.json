@@ -1,0 +1,49 @@
+{
+    "riskModelsFact": {
+        "successStatus": true,
+        "statusMessage": "This is a message to the user on error status",
+        "models": [
+            {
+                "modelId": "modelId1",
+                "title": "PTSD",
+                "disease": "PTSD description",
+                "modelType": "E",
+                "favorite": true,
+                "displayThreshold": 80
+            },
+            {
+                "modelId": "modelId2",
+                "title": "Aesthma",
+                "disease": "Aesthma description",
+                "displayThreshold": 20
+            },
+            {
+                "modelId": "modelId3",
+                "title": "Diabetes",
+                "disease": "Diabetes description",
+                "favorite": true,
+                "modelType": "E",
+                "displayThreshold": 40
+            },
+            {
+                "modelId": "modelId4",
+                "title": "Hypertension",
+                "disease": "Hypertension description",
+                "displayThreshold": 20
+            },
+            {
+                "modelId": "modelId5",
+                "title": "Psoriasis",
+                "disease": "Psoriasis description",
+                "displayThreshold": 20
+            },
+            {
+                "modelId": "modelId6",
+                "title": "Schizophrenia",
+                "favorite": true,
+                "disease": "Schizophrenia description",
+                "displayThreshold": 20
+            }
+        ]
+    }
+}

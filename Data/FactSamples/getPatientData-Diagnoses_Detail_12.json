@@ -1,0 +1,75 @@
+{
+    "patientDataFact": {
+        "factType": "Diagnoses",
+        "trxnType": "detail",
+        "visibleGridHeaders":  true,
+        "maxcolumns":8,
+        "itemId":10,
+        "status":"Remission",
+        
+        "gridHeaders": [
+            { "columnId":       "date",
+              "value":          "Date",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "problem",
+              "value":          "Problem",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "provider",
+              "value":          "Provider",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "status",
+              "value":          "Status",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "source",
+              "value":          "Source",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"date":            "2007-01-01",
+                 "problem":         "Breast Cancer",
+                 "code":            "9990",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Smith",
+                 "status":          "Remission",
+                 "source":          "EMR",
+                 "hoverTexts":      ["",
+                                     "9990 (icd9)"]
+                },
+                {"date":            "2008-01-01",
+                 "problem":         "Breast Cancer",
+                 "code":            "9990",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Smith",
+                 "status":          "Remission",
+                 "source":          "EMR",
+                 "hoverTexts":      ["",
+                                     "9990 (icd9)"]
+                },
+                {"date":            "2009-11-25",
+                 "problem":         "Breast Cancer",
+                 "code":            "9990",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Smith",
+                 "status":          "Remission",
+                 "source":          "EMR",
+                 "hoverTexts":      ["",
+                                     "9990 (icd9)"]
+                }
+        ],
+        "successStatus": true
+    }
+}

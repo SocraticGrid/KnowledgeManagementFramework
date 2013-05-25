@@ -1,0 +1,14 @@
+{
+"patientDataFact" : 
+{
+  "factType": "Medications",
+  "trxnType": "list",
+  "itemId": 10,
+  "status": "Complete",
+  "facts": [
+    {
+      "report": "<p>Adverse drug reactions are as those for other Beta-lactam antibiotic#Adverse effectss.Adverse drug reaction include nausea, vomiting, rashes, and antibiotic-associated colitis.<br/> Loose bowel movements (diarrhea) also may occur.<br/> Rarer but patient reported side effects include mental changes, lightheadedness, confusion, suicidal thoughts, depression, anxiety, sensitivity to lights and sounds, unclear thinking.<br/> Immediate medical care is required upon the first signs of these side effects.<br/> </p><p>The onset of an allergic reaction to amoxicillin can be very sudden and intense - emergency medical attention must be sought as quickly as possible.<br/> The initial onset of such a reaction often starts with a change in mental state; skin rash with intense itching (often beginning in fingertips and around groin area and rapidly spreading) and sensations of fever, nausea, and vomiting.<br/> Any other symptoms that seem even remotely suspicious must be taken very seriously.<br/></p><p>Use of the amoxicillin/clavulanic acid combination for more than one week has caused moderate to severe hepatitis in a number of patients.<br/> Young children who ingested acute overdoses of amoxicillin manifested lethargy, vomiting and renal dysfunction.<br/>Cundiff J, Joe S. Amoxicillin-clavulanic acid-induced hepatitis. Amer. J. Otolaryngol. 28: 28-30, 2007.R. Baselt, <i>Disposition of Toxic Drugs and Chemicals in Man</i>, 8th edition, Biomedical Publications, Foster City, CA, 2008, pp. 81-83.</p>"
+    }
+  ],
+  "successStatus": true
+}}

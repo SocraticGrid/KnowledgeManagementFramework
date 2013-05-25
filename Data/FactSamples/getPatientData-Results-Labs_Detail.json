@@ -1,0 +1,86 @@
+{
+    "patientDataFact": {
+        "factType": "Labs",
+        "trxnType": "detail",
+        "visibleGridHeaders":  false,
+        "maxColumns":4,
+        "itemId":10,
+        "status": "Complete",
+        
+        "detailTabs":   [
+            {"label": "Results",             "type":"grid", "source":"fact",  "index":"labTests"},
+            {"label": "Description",         "type":"text", "source":"ecs",   "index":"4"},
+            {"label": "Images",              "type":"text", "source":"ecs",   "index":"20"},
+            {"label": "Summary Information", "type":"text", "source":"ecs",   "index":"2"},
+            {"label": "Indications",         "type":"text", "source":"ecs",   "index":"104"},
+            {"label": "Risk-Benefits",       "type":"text", "source":"ecs",   "index":"109"},
+            {"label": "Literature",          "type":"text", "source":"ecs",   "index":"23"},
+            {"label": "Podcasts",            "type":"text", "source":"ecs",   "index":"22"},
+            {"label": "Videos",              "type":"text", "source":"ecs",   "index":"21"}
+        ],
+        "gridHeaders": [
+            { "columnId":       "header",
+              "width":          "10",
+              "formatter":      "boldFormatter"
+            },
+            { "columnId":       "c1",
+              "width":          "10"
+            },
+            { "columnId":       "c2",
+              "width":          "10"
+            },
+            { "columnId":       "c3",
+              "width":          "10"
+            },
+            { "columnId":       "c4",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"header":      "Test Name",
+                 "c1":           "Hematocrit",
+                 "c2":           "Hemoglobin",
+                 "c3":           "MCH",
+                 "c4":           "New Test",
+                 "hoverTexts":   ["",
+                                  "Hematocrit's code/system",
+                                  "Hemoglobin's code/system",
+                                  "MCH's code/system",
+                                  "New Test's code/system"
+                                  ]
+                 },
+                {"header":      "Result",
+                 "c1":           "43",
+                 "c2":           "64",
+                 "c3":           "90",
+                 "c4":           "4"
+                 },
+                {"header":      "Interpretation Code",
+                 "c1":           "Low",
+                 "c2":           "Low",
+                 "c3":           "Normal",
+                 "c4":           "Low"
+                 },
+                {"header":      "Unit",
+                 "c1":           "%",
+                 "c2":           "%",
+                 "c3":           "pg",
+                 "c4":           "pg"
+                 },
+                {"header":      "High",
+                 "c1":           "6.5",
+                 "c2":           "16.0",
+                 "c3":           "34",
+                 "c4":           "56"
+                 },
+                {"header":      "Low",
+                 "c1":           "4.1",
+                 "c2":           "12.0",
+                 "c3":           "26",
+                 "c4":           "3"
+                 }
+        ],
+        "successStatus": true
+    }
+}

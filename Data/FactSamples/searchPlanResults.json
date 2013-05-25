@@ -1,0 +1,56 @@
+{
+    "searchPlanResultsFact": {
+        "resultInfo": [
+            {
+                "resultId":"1",
+                "modelId":"modelId1",
+                "runDate": "2011-11-06 10:00",
+                "resultDate": "2011-12-06 10:00",
+                "cases":10,
+                "simulationDuration":"1.25",
+                "timeUnit":"hours",
+                "score": "25/50" ,
+                "stopCondition":"Time Limit",
+                "author": "simulation author 1",
+                "name": "simulation name 1",
+                "description": "plan result desc 1:  Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim",
+                "planStartDate":"2011-11-07 10:00" ,
+                "planScope":"732/1058"
+            },
+            {
+                "resultId":"2",
+                "modelId":"modelId2",
+                "runDate": "2011-11-07 10:00",
+                "resultDate": "2011-11-07 10:00",
+                "cases":20,
+                "simulationDuration":"2.25",
+                "timeUnit":"min",
+                "score": "25/50" ,
+                "stopCondition":"Time Limit",
+                "author": "sim author 2",
+                "name": "simulation name 2",
+                "description": "plan result desc 2:  Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim",
+                "planStartDate":"2011-11-08 10:00" ,
+                "planScope":"50/75"
+            },
+            {
+                "resultId":"3",
+                "modelId":"modelId3",
+                "runDate": "2011-11-08 10:00",
+                "resultDate": "2011-11-08 10:00",
+                "cases":30,
+                "simulationDuration":"4",
+                "timeUnit":"hours",
+                "score": "25/50" ,
+                "stopCondition":"Time Limit",
+                "author": "sim author 3",
+                "name": "simulation name 3",
+                "description": "plan result desc 3:  Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim",
+                "planStartDate":"2011-11-09 10:00" ,
+                "planScope":"1/5"
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

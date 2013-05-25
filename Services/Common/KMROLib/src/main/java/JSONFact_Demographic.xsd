@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="patientDataFact">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="factType" type="xs:string"/>
+				<xs:element name="facts" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element name="age" type="xs:byte"/>
+							<xs:element name="dob" type="xs:string"/>
+							<xs:element name="sex" type="xs:string"/>
+							<xs:element name="uid" type="xs:int"/>
+							<xs:element name="relationship" type="xs:string"/>
+							<xs:element name="nextOfKin" type="xs:boolean"/>
+							<xs:element name="hipaaRelease" type="xs:boolean"/>
+							<xs:element name="emergencyContact" type="xs:boolean"/>
+							<xs:element name="powerOfAttorney" type="xs:boolean"/>
+							<xs:element name="healthcarePOA" type="xs:boolean"/>
+							<xs:element name="itemId" type="xs:byte"/>
+							<xs:element name="code" type="xs:string"/>
+							<xs:element name="codeSystemName" type="xs:string"/>
+							<xs:element name="codeSystemCode" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

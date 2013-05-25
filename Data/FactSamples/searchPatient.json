@@ -1,0 +1,38 @@
+{
+    "searchPatientFact": {
+        "patients": [
+            {
+                "patientId":"99990070",
+                "contactId":"doe.jane",
+                "lastName": "Doe",
+                "firstName": "Jane",
+                "middleName": "Karen",
+                "address": "123 Beach Road",
+                "city": "San Diego",
+                "dateOfBirth": "1945-11-04",
+                "gender": "F",
+                "ssn": "123-45-6789" ,
+                "medicalRecordNo":"med01" ,
+                "primaryDoctor":"Dr. Smith",
+                "patientStatus":"Inpatient"
+            },
+            {
+                "patientId":"99990061",
+                "contactId":"wunderlich.anna",
+                "lastName": "Wunderlich",
+                "firstName": "Anna",
+                "middleName": "M",
+                "address": "456 Beach Road",
+                "city": "San Diego",
+                "dateOfBirth": "1950-11-04",
+                "gender": "M",
+                "ssn": "987-65-5432" ,
+                "medicalRecordNo":"med012" ,
+                "primaryDoctor":"Dr. James",
+                "patientStatus":"Outpatient"
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

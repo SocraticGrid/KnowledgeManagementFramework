@@ -1,0 +1,111 @@
+{
+	"patientDataFact": {
+		"factType": "Labs",
+		"trxnType": "detail",
+		"visibleGridHeaders": false,
+		"maxColumns": 4,
+		"itemId": 12,
+		"status": "Preliminary",
+		"detailTabs": [
+			{
+				"label": "Results",
+				"type": "grid",
+				"responseType": "detail",
+				"sectionId": "labTests",
+				"filters": [
+					"code", "codeSystemCode"
+				]
+			}, {
+				"label": "Description",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 4,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Images",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 20,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Summary Information",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 2,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Indications",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 104,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Risk-Benefits",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 109,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Literature",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 23,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Podcasts",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 22,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Videos",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 21,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}
+		],
+		"gridHeaders": [
+			{
+				"columnId": "header",
+				"width": 20,
+				"formatter": "boldFormatter"
+			}, {
+				"columnId": "c1",
+				"width": 80
+			}
+		],
+		"facts": [
+			{
+				"header": "Test Name",
+				"c1": "Pathology",
+				"hoverTexts": [
+					"", "Pathology-code (c1-codesystem)"
+				]
+			}, {
+				"header": "Test Report",
+				"c1": "Vitae posuere tellus. Etiam bibendum diam in odio sollicitudin fringilla. Maecenas condimentum lectus ac erat sodales convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Vivamus vel ipsum quam, vitae posuere tellus. Etiam bibendum diam in odio sollicitudin fringilla. Maecenas condimentum lectus ac erat sodales convallis. Pellentesque habitant senectus et netus et condimentum lectus ac erat sodales convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+			}, {
+				"header": "Interpretation Code",
+				"c1": 458348
+			}
+		],
+		"successStatus": true
+	}
+}

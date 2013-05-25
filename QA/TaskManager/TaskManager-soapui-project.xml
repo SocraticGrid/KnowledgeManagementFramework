@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /*****************************************************************************************************************
+  ~  *
+  ~  * Copyright (C) 2012 by Cognitive Medical Systems, Inc (http://www.cognitivemedciine.com)
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+  ~  * with the License. You may obtain a copy of the License at
+  ~  *
+  ~  *     http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software distributed under the License is
+  ~  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and limitations under the License.
+  ~  *
+  ~  *****************************************************************************************************************/
+  ~
+  ~ /*****************************************************************************************************************
+  ~  * Socratic Grid contains components to which third party terms apply. To comply with these terms, the following
+  ~  * notice is provided:
+  ~  *
+  ~  * TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+  ~  * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+  ~  * the following conditions are met:
+  ~  *
+  ~  * - Redistributions of source code must retain the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer.
+  ~  * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~  * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or
+  ~  *     promote products derived from this software without specific prior written permission.
+  ~  *
+  ~  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+  ~  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  ~  * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ~  * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  ~  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER
+  ~  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  ~  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~  *
+  ~  * END OF TERMS AND CONDITIONS
+  ~  *
+  ~  *****************************************************************************************************************/
+  -->
+
+<con:soapui-project name="TaskManager" soapui-version="3.5" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="TaskManagerBindingSoap11" type="wsdl" bindingName="{urn:gov:hhs:fha:nhinc:taskmanager}TaskManagerBindingSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/TaskManager/TaskManagerService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/TaskManager/TaskManagerService?wsdl"><con:part><con:url>http://localhost:8080/TaskManager/TaskManagerService?wsdl</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.4.1-hudson-236-.-->
+<!--Adapter Policy Engine WSDL-->
+<definitions name="TaskManager" targetNamespace="urn:gov:hhs:fha:nhinc:taskmanager" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:task="urn:gov:hhs:fha:nhinc:common:task" xmlns:tns="urn:gov:hhs:fha:nhinc:taskmanager">
+  <documentation>Task Manager</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:task" schemaLocation="http://localhost:8080/TaskManager/TaskManagerService?xsd=1"/>
+    </xsd:schema>
+  </types>
+  <message name="StartTaskFromRuleRequestMessage">
+    <part name="StartTaskFromRuleRequest" element="task:StartTaskFromRuleRequest"/>
+  </message>
+  <message name="StartTaskFromRuleResponseMessage">
+    <part name="StartTaskFromRuleResponse" element="task:StartTaskFromRuleResponse"/>
+  </message>
+  <portType name="TaskManagerPortType">
+    <operation name="StartTaskFromRule">
+      <input name="StartTaskFromRuleRequest" message="tns:StartTaskFromRuleRequestMessage"/>
+      <output name="StartTaskFromRuleResponse" message="tns:StartTaskFromRuleResponseMessage"/>
+    </operation>
+  </portType>
+  <binding name="TaskManagerBindingSoap11" type="tns:TaskManagerPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="StartTaskFromRule">
+      <soap:operation soapAction="urn:StartTaskFromRule"/>
+      <input name="StartTaskFromRuleRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="StartTaskFromRuleResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TaskManager">
+    <port name="TaskManagerPortSoap11" binding="tns:TaskManagerBindingSoap11">
+      <soap:address location="http://localhost:8080/TaskManager/TaskManagerService"/>
+    </port>
+  </service>
+  <plnk:partnerLinkType name="TaskManager">
+    <!--A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="TaskManagerPortTypeRole" portType="tns:TaskManagerPortType"/>
+  </plnk:partnerLinkType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/TaskManager/TaskManagerService?xsd=1</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.4.1-hudson-236-.-->
+<xsd:schema targetNamespace="urn:gov:hhs:fha:nhinc:common:task" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:gov:hhs:fha:nhinc:common:task">
+  <xsd:complexType name="nameValuePair">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="alertAction">
+    <xsd:sequence>
+      <xsd:element name="action" type="xsd:string"/>
+      <xsd:element name="providerID" type="xsd:string"/>
+      <xsd:element name="message" type="xsd:string"/>
+      <xsd:element name="dateTime" type="xsd:dateTime"/>
+      <xsd:element name="actionParamaters" type="tns:nameValuePair" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="alertContext">
+    <xsd:sequence>
+      <xsd:element name="ticket" type="xsd:string"/>
+      <xsd:element name="alertName" type="xsd:string"/>
+      <xsd:element name="alertDescription" type="xsd:string"/>
+      <xsd:element name="alertDateTime" type="xsd:dateTime"/>
+      <xsd:element name="actionHistory" type="tns:alertAction" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="taskContext">
+    <xsd:sequence>
+      <xsd:element name="taskID" type="xsd:string"/>
+      <xsd:element name="taskName" type="xsd:string"/>
+      <xsd:element name="taskDescription" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="patientContext">
+    <xsd:sequence>
+      <xsd:element name="patientUnitNumber" type="xsd:string"/>
+      <xsd:element name="patientName" type="xsd:string"/>
+      <xsd:element name="patientSex" type="xsd:string"/>
+      <xsd:element name="patientFMPSSN" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ruleContext">
+    <xsd:sequence>
+      <xsd:element name="factNCID" type="xsd:string"/>
+      <xsd:element name="factName" type="xsd:string"/>
+      <xsd:element name="factValue" type="xsd:string"/>
+      <xsd:element name="factType" type="xsd:string"/>
+      <xsd:element name="actionID" type="xsd:string"/>
+      <xsd:element name="actionType" type="xsd:string"/>
+      <xsd:element name="ruleID" type="xsd:string"/>
+      <xsd:element name="ruleDesc" type="xsd:string"/>
+      <xsd:element name="ruleName" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StartTaskFromRuleRequestType">
+    <xsd:sequence>
+      <xsd:element name="message" type="xsd:string"/>
+      <xsd:element name="priority" type="xsd:string"/>
+      <xsd:element name="task" type="tns:taskContext"/>
+      <xsd:element name="patient" type="tns:patientContext"/>
+      <xsd:element name="rule" type="tns:ruleContext"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="StartTaskFromRuleRequest" type="tns:StartTaskFromRuleRequestType"/>
+  <xsd:complexType name="StartTaskFromRuleResponseType">
+    <xsd:sequence>
+      <xsd:element name="ticket" type="xsd:string"/>
+      <xsd:element name="startDetail" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="StartTaskFromRuleResponse" type="tns:StartTaskFromRuleResponseType"/>
+  <xsd:complexType name="AlertProviderRequestType">
+    <xsd:sequence>
+      <xsd:element name="providerID" type="xsd:string"/>
+      <xsd:element name="organizationID" type="xsd:string"/>
+      <xsd:element name="clinicID" type="xsd:string"/>
+      <xsd:element name="message" type="xsd:string"/>
+      <xsd:element name="priority" type="xsd:string"/>
+      <xsd:element name="escalation" type="xsd:boolean"/>
+      <xsd:element name="alert" type="tns:alertContext"/>
+      <xsd:element name="patient" type="tns:patientContext"/>
+      <xsd:element name="rule" type="tns:ruleContext"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AlertProviderRequest" type="tns:AlertProviderRequestType"/>
+  <xsd:complexType name="AlertProviderResponseType">
+    <xsd:sequence>
+      <xsd:element name="statusCode" type="xsd:int"/>
+      <xsd:element name="statusDetail" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AlertProviderResponse" type="tns:AlertProviderResponseType"/>
+  <xsd:complexType name="UpdateAlertRequestType">
+    <xsd:sequence>
+      <xsd:element name="ticket" type="xsd:string"/>
+      <xsd:element name="action" type="xsd:string"/>
+      <xsd:element name="providerID" type="xsd:string"/>
+      <xsd:element name="message" type="xsd:string"/>
+      <xsd:element name="actionParamaters" type="tns:nameValuePair" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="UpdateAlertRequest" type="tns:UpdateAlertRequestType"/>
+  <xsd:complexType name="UpdateAlertResponseType">
+    <xsd:sequence>
+      <xsd:element name="statusCode" type="xsd:int"/>
+      <xsd:element name="statusDetail" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="UpdateAlertResponse" type="tns:UpdateAlertResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://208.75.163.61:8080/TaskManager/TaskManagerService</con:endpoint><con:endpoint>http://localhost:8080/TaskManager/TaskManagerService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:StartTaskFromRule" name="StartTaskFromRule" bindingOperationName="StartTaskFromRule" type="Request-Response" outputName="StartTaskFromRuleResponse" inputName="StartTaskFromRuleRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/TaskManager/TaskManagerService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:task">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:StartTaskFromRuleRequest>
+         <urn:message>Message from rule evaluation.</urn:message>
+         <urn:priority>2</urn:priority>
+         <urn:task>
+            <urn:taskID>3</urn:taskID>
+            <urn:taskName>no task name</urn:taskName>
+            <urn:taskDescription>no task desc</urn:taskDescription>
+         </urn:task>
+         <urn:patient>
+            <urn:patientUnitNumber>pt unit number</urn:patientUnitNumber>
+            <urn:patientName>pt name</urn:patientName>
+            <urn:patientSex>pt sex</urn:patientSex>
+            <urn:patientFMPSSN>pt ssn</urn:patientFMPSSN>
+         </urn:patient>
+         <urn:rule>
+            <urn:factNCID>fact ncid</urn:factNCID>
+            <urn:factName>fact name</urn:factName>
+            <urn:factValue>fact value</urn:factValue>
+            <urn:factType>fact type</urn:factType>
+            <urn:actionID>action id</urn:actionID>
+            <urn:actionType>action type</urn:actionType>
+            <urn:ruleID>rule id</urn:ruleID>
+            <urn:ruleDesc>rule desc</urn:ruleDesc>
+            <urn:ruleName>rule name</urn:ruleName>
+         </urn:rule>
+      </urn:StartTaskFromRuleRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:StartTaskFromRule"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AlertManagerBindingSoap11" type="wsdl" bindingName="{urn:gov:hhs:fha:nhinc:alertmanager}AlertManagerBindingSoap11" soapVersion="1_1" anonymous="optional" definition="http://208.75.163.61:8080/AlertManager/AlertManagerService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://208.75.163.61:8080/AlertManager/AlertManagerService?wsdl"><con:part><con:url>http://208.75.163.61:8080/AlertManager/AlertManagerService?wsdl</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-.-->
+<!--Adapter Policy Engine WSDL-->
+<definitions name="AlertManager" targetNamespace="urn:gov:hhs:fha:nhinc:alertmanager" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:task="urn:gov:hhs:fha:nhinc:common:task" xmlns:tns="urn:gov:hhs:fha:nhinc:alertmanager">
+  <documentation>Alert Manager</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:task" schemaLocation="http://208.75.163.61:8080/AlertManager/AlertManagerService?xsd=1"/>
+    </xsd:schema>
+  </types>
+  <message name="UpdateAlertRequestMessage">
+    <part name="UpdateAlertRequest" element="task:UpdateAlertRequest"/>
+  </message>
+  <message name="UpdateAlertResponseMessage">
+    <part name="UpdateAlertResponse" element="task:UpdateAlertResponse"/>
+  </message>
+  <portType name="AlertManagerPortType">
+    <operation name="UpdateAlert">
+      <input name="UpdateAlertRequest" message="tns:UpdateAlertRequestMessage"/>
+      <output name="UpdateAlertResponse" message="tns:UpdateAlertResponseMessage"/>
+    </operation>
+  </portType>
+  <binding name="AlertManagerBindingSoap11" type="tns:AlertManagerPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="UpdateAlert">
+      <soap:operation soapAction="urn:UpdateAlert"/>
+      <input name="UpdateAlertRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="UpdateAlertResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="AlertManager">
+    <port name="AlertManagerPortSoap11" binding="tns:AlertManagerBindingSoap11">
+      <soap:address location="http://208.75.163.61:8080/AlertManager/AlertManagerService"/>
+    </port>
+  </service>
+  <plnk:partnerLinkType name="AlertManager">
+    <!--A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="AlertManagerPortTypeRole" portType="tns:AlertManagerPortType"/>
+  </plnk:partnerLinkType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://208.75.163.61:8080/AlertManager/AlertManagerService?xsd=1</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-.-->
+<xsd:schema targetNamespace="urn:gov:hhs:fha:nhinc:common:task" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:gov:hhs:fha:nhinc:common:task">
+  <xsd:complexType name="nameValuePair">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="alertAction">
+    <xsd:sequence>
+      <xsd:element name="action" type="xsd:string"/>
+      <xsd:element name="providerID" type="xsd:string"/>
+      <xsd:element name="message" type="xsd:string"/>
+      <xsd:element name="dateTime" type="xsd:dateTime"/>
+      <xsd:element name="actionParamaters" type="tns:nameValuePair" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="alertContext">
+    <xsd:sequence>
+      <xsd:element name="ticket" type="xsd:string"/>
+      <xsd:element name="alertName" type="xsd:string"/>
+      <xsd:element name="alertDescription" type="xsd:string"/>
+      <xsd:element name="alertDateTime" type="xsd:dateTime"/>
+      <xsd:element name="actionHistory" type="tns:alertAction" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="taskContext">
+    <xsd:sequence>
+      <xsd:element name="taskID" type="xsd:string"/>
+      <xsd:element name="taskName" type="xsd:string"/>
+      <xsd:element name="taskDescription" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="patientContext">
+    <xsd:sequence>
+      <xsd:element name="patientUnitNumber" type="xsd:string"/>
+      <xsd:element name="patientName" type="xsd:string"/>
+      <xsd:element name="patientSex" type="xsd:string"/>
+      <xsd:element name="patientFMPSSN" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ruleContext">
+    <xsd:sequence>
+      <xsd:element name="factNCID" type="xsd:string"/>
+      <xsd:element name="factName" type="xsd:string"/>
+      <xsd:element name="factValue" type="xsd:string"/>
+      <xsd:element name="factType" type="xsd:string"/>
+      <xsd:element name="actionID" type="xsd:string"/>
+      <xsd:element name="actionType" type="xsd:string"/>
+      <xsd:element name="ruleID" type="xsd:string"/>
+      <xsd:element name="ruleDesc" type="xsd:string"/>
+      <xsd:element name="ruleName" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="StartTaskFromRuleRequestType">
+    <xsd:sequence>
+      <xsd:element name="message" type="xsd:string"/>
+      <xsd:element name="priority" type="xsd:string"/>
+      <xsd:element name="task" type="tns:taskContext"/>
+      <xsd:element name="patient" type="tns:patientContext"/>
+      <xsd:element name="rule" type="tns:ruleContext"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="StartTaskFromRuleRequest" type="tns:StartTaskFromRuleRequestType"/>
+  <xsd:complexType name="StartTaskFromRuleResponseType">
+    <xsd:sequence>
+      <xsd:element name="ticket" type="xsd:string"/>
+      <xsd:element name="startDetail" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="StartTaskFromRuleResponse" type="tns:StartTaskFromRuleResponseType"/>
+  <xsd:complexType name="AlertProviderRequestType">
+    <xsd:sequence>
+      <xsd:element name="providerID" type="xsd:string"/>
+      <xsd:element name="organizationID" type="xsd:string"/>
+      <xsd:element name="clinicID" type="xsd:string"/>
+      <xsd:element name="message" type="xsd:string"/>
+      <xsd:element name="priority" type="xsd:string"/>
+      <xsd:element name="escalation" type="xsd:boolean"/>
+      <xsd:element name="alert" type="tns:alertContext"/>
+      <xsd:element name="patient" type="tns:patientContext"/>
+      <xsd:element name="rule" type="tns:ruleContext"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AlertProviderRequest" type="tns:AlertProviderRequestType"/>
+  <xsd:complexType name="AlertProviderResponseType">
+    <xsd:sequence>
+      <xsd:element name="statusCode" type="xsd:int"/>
+      <xsd:element name="statusDetail" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AlertProviderResponse" type="tns:AlertProviderResponseType"/>
+  <xsd:complexType name="UpdateAlertRequestType">
+    <xsd:sequence>
+      <xsd:element name="ticket" type="xsd:string"/>
+      <xsd:element name="action" type="xsd:string"/>
+      <xsd:element name="providerID" type="xsd:string"/>
+      <xsd:element name="message" type="xsd:string"/>
+      <xsd:element name="actionParamaters" type="tns:nameValuePair" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="UpdateAlertRequest" type="tns:UpdateAlertRequestType"/>
+  <xsd:complexType name="UpdateAlertResponseType">
+    <xsd:sequence>
+      <xsd:element name="statusCode" type="xsd:int"/>
+      <xsd:element name="statusDetail" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="UpdateAlertResponse" type="tns:UpdateAlertResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://208.75.163.61:8080/AlertManager/AlertManagerService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:UpdateAlert" name="UpdateAlert" bindingOperationName="UpdateAlert" type="Request-Response" outputName="UpdateAlertResponse" inputName="UpdateAlertRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/AlertManager/AlertManagerService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:task">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:UpdateAlertRequest>
+         <urn:ticket>ID:11-127.0.0.1(94:8d:85:5a:68:2d)-1-1260914056950</urn:ticket>
+         <urn:action>Acknowledge</urn:action>
+         <urn:providerID>999</urn:providerID>
+         <urn:message>I'm acknowledging the alert.</urn:message>
+      </urn:UpdateAlertRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:AcknowledgeAlert"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="AlertManager"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true" id="6ef3d5b8-fcd6-41d7-b4c4-7f9bca798ee1"><con:settings/><con:testStep type="groovy" name="UpdateAlertSet"><con:settings/><con:config><script>def list = []
+new File( "C:/KMR/SoapUI/TM/AM-properties.txt" ).eachLine { line -> list.add( line ) }
+
+log.info( "Read " + list.size() + " test values.." )
+
+context.setProperty( "values", list )
+context.setProperty( "index", 0 )
+///////////////////////////////////////////
+
+testRunner.testCase.getTestStepByName("UpdateAlertRun").run(testRunner, context);</script></con:config></con:testStep><con:testStep type="groovy" name="UpdateAlertRun"><con:settings/><con:config><script> ///////////////////////////////////////////
+
+def values = context.getProperty( "values" )
+def index = context.getProperty( "index" );
+
+def str = values[index]
+
+log.info("Index : " + index)
+
+//log.info("str="+str)
+
+
+def delim = "[|]";
+def pr = str.split(delim)
+
+def ticket = pr[0]
+def action = pr[1]
+def providerID = pr[2]
+def message = pr[3]
+def statusCode = pr[4]
+
+
+
+def props = testRunner.testCase.getTestStepByName( "AlertProperties" )
+props.setPropertyValue( "ticket", ticket )
+props.setPropertyValue( "action", action )
+props.setPropertyValue("providerID", providerID)
+props.setPropertyValue("message", message)
+
+log.info( "set ticket to [" + ticket + "]" )
+
+testRunner.testCase.getTestStepByName("SetRequestProperties").run(testRunner, context);
+
+testRunner.testCase.getTestStepByName("UpdateAlert").run(testRunner, context);
+// get response property
+def response = testRunner.testCase.getTestStepByName( "UpdateAlert" );
+def propertyResponse= response.getProperty( "response" );
+
+// parse out textnodes to get
+def nodeResponse = new groovy.util.XmlParser(false,false).parseText(propertyResponse.value);
+
+def statusCodeResponse = nodeResponse["S:Body"]["UpdateAlertResponse"]["statusCode"][0].text()
+
+              
+///   End of the function that
+/////  Get the data 
+
+log.info("Need to verify that:")
+log.info(statusCode+"=="+statusCodeResponse)
+
+
+if( statusCode != statusCodeResponse )
+{
+   throw new Exception( "Status Code doesn't match ( should be " + statusCode+ ", response has" +statusCodeResponse) 
+                       
+}
+
+
+//log.info("Index" + index)
+//log.info("Values size" + values.size())
+
+if( ++index &lt; values.size() )
+   {
+      context.setProperty( "index", index )
+      testRunner.testCase.getTestStepByName("UpdateAlertRun").run(testRunner, context);
+   
+   }
+   else
+   {
+      log.info "Finished Successfully, tested " + values.size() + " values"
+   }
+
+ 
+   
+
+</script></con:config></con:testStep><con:testStep type="properties" name="AlertProperties"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>ticket</con:name><con:value>ID:11-127.0.0.1(94:8d:85:5a:68:2d)-1-1260914056950</con:value></con:property><con:property><con:name>action</con:name><con:value>Acknowledge</con:value></con:property><con:property><con:name>providerID</con:name><con:value>999</con:value></con:property><con:property><con:name>message</con:name><con:value>I'm acknowledging the alert.</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="SetRequestProperties"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>ticket</con:name><con:sourceType>ticket</con:sourceType><con:sourceStep>AlertProperties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>UpdateAlert</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:task';
+//urn:UpdateAlertRequest/urn:ticket</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false"><con:name>action</con:name><con:sourceType>action</con:sourceType><con:sourceStep>AlertProperties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>UpdateAlert</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:task';
+//urn:UpdateAlertRequest/urn:action</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" useXQuery="false" ignoreEmpty="false"><con:name>providerID</con:name><con:sourceType>providerID</con:sourceType><con:sourceStep>AlertProperties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>UpdateAlert</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:task';
+//urn:UpdateAlertRequest/urn:providerID</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" useXQuery="false" ignoreEmpty="false"><con:name>message</con:name><con:sourceType>message</con:sourceType><con:sourceStep>AlertProperties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>UpdateAlert</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:task';
+//urn:UpdateAlertRequest/urn:message</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="UpdateAlert"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AlertManagerBindingSoap11</con:interface><con:operation>UpdateAlert</con:operation><con:request name="UpdateAlert" outgoingWss="" incomingWss="" timeout="" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/AlertManager/AlertManagerService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:task">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:UpdateAlertRequest>
+         <urn:ticket>ID:11-127.0.0.1(94:8d:85:5a:68:2d)-1-1260914056950</urn:ticket>
+         <urn:action>Acknowledge</urn:action>
+         <urn:providerID>999</urn:providerID>
+         <urn:message>I'm acknowledging the alert.</urn:message>
+      </urn:UpdateAlertRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:assertion type="Simple Contains" disabled="true"><con:configuration><token>Success</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" disabled="true"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns='urn:gov:hhs:fha:nhinc:common:task';
+//ns:UpdateAlertResponse/ns:statusCode/text()[1]</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences></con:configuration></con:assertion><con:assertion type="XPath Match" disabled="true"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns='urn:gov:hhs:fha:nhinc:common:task';
+//ns:UpdateAlertResponse/ns:statusDetail/text()[1]</path><content>Success</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences></con:configuration></con:assertion><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:AcknowledgeAlert"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="TaskManager"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="StartTaskFromRule TestCase" searchProperties="true" id="33c35592-e8ef-47ac-9c6a-0b522bea7b98"><con:settings/><con:testStep type="groovy" name="StartTaskFromRuleSet"><con:settings/><con:config><script>def list = []
+new File( "C:/KMR/SoapUI/TM/TM-properties.txt" ).eachLine { line -> list.add( line ) }
+
+log.info( "Read " + list.size() + " test values.." )
+
+context.setProperty( "values", list )
+context.setProperty( "index", 0 )
+///////////////////////////////////////////
+
+testRunner.testCase.getTestStepByName("StartTaskFromRuleRun").run(testRunner, context);</script></con:config></con:testStep><con:testStep type="properties" name="TaskPropeties"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>message</con:name><con:value/></con:property><con:property><con:name>priority</con:name><con:value/></con:property><con:property><con:name>taskID</con:name><con:value/></con:property><con:property><con:name>taskName</con:name><con:value/></con:property><con:property><con:name>taskDescription</con:name><con:value/></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="StartTaskFromRuleRun"><con:settings/><con:config><script> ///////////////////////////////////////////
+
+def values = context.getProperty( "values" )
+def index = context.getProperty( "index" );
+
+def str = values[index]
+
+log.info("Index : " + index)
+
+//log.info("str="+str)
+
+
+def delim = "[|]";
+def pr = str.split(delim)
+
+def message = pr[0]
+def priority = pr[1]
+def taskID = pr[2]
+def taskName = pr[3]
+def taskDecription = pr[4]
+
+
+
+def props = testRunner.testCase.getTestStepByName( "TaskProperties" )
+props.setPropertyValue( "message", message )
+props.setPropertyValue( "priority", priority )
+props.setPropertyValue("taskID", taskID)
+props.setPropertyValue("taskName", taskName)
+props.setPropertyValue("taskDescription", taskDescription)
+
+log.info( "set message to [" + message + "]" )
+
+testRunner.testCase.getTestStepByName("SetRequestProperties").run(testRunner, context);
+
+testRunner.testCase.getTestStepByName("UpdateAlert").run(testRunner, context);
+// get response property
+def response = testRunner.testCase.getTestStepByName( "UpdateAlert" );
+def propertyResponse= response.getProperty( "response" );
+
+// parse out textnodes to get
+def nodeResponse = new groovy.util.XmlParser(false,false).parseText(propertyResponse.value);
+
+def statusCodeResponse = nodeResponse["S:Body"]["UpdateAlertResponse"]["statusCode"][0].text()
+
+              
+///   End of the function that
+/////  Get the data 
+
+log.info("Need to verify that:")
+log.info(statusCode+"=="+statusCodeResponse)
+
+
+if( statusCode != statusCodeResponse )
+{
+   throw new Exception( "Status Code doesn't match ( should be " + statusCode+ ", response has" +statusCodeResponse) 
+                       
+}
+
+
+//log.info("Index" + index)
+//log.info("Values size" + values.size())
+
+if( ++index &lt; values.size() )
+   {
+      context.setProperty( "index", index )
+      testRunner.testCase.getTestStepByName("StartTaskFromRuleRun").run(testRunner, context);
+   
+   }
+   else
+   {
+      log.info "Finished Successfully, tested " + values.size() + " values"
+   }
+
+ 
+   
+
+</script></con:config></con:testStep><con:testStep type="transfer" name="SetRequestProperties"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>message</con:name><con:sourceType>message</con:sourceType><con:sourceStep>TaskPropeties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>StartTaskFromRule</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:task';
+//urn:StartTaskFromRuleRequest/urn:message</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>priority</con:name><con:targetStep>StartTaskFromRule</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="request" name="StartTaskFromRule"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>TaskManagerBindingSoap11</con:interface><con:operation>StartTaskFromRule</con:operation><con:request name="StartTaskFromRule"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/TaskManager/TaskManagerService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:task">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:StartTaskFromRuleRequest>
+         <urn:message>?</urn:message>
+         <urn:priority>?</urn:priority>
+         <urn:task>
+            <urn:taskID>?</urn:taskID>
+            <urn:taskName>?</urn:taskName>
+            <urn:taskDescription>?</urn:taskDescription>
+         </urn:task>
+         <urn:patient>
+            <urn:patientUnitNumber>?</urn:patientUnitNumber>
+            <urn:patientName>?</urn:patientName>
+            <urn:patientSex>?</urn:patientSex>
+            <urn:patientFMPSSN>?</urn:patientFMPSSN>
+         </urn:patient>
+         <urn:rule>
+            <urn:factNCID>?</urn:factNCID>
+            <urn:factName>?</urn:factName>
+            <urn:factValue>?</urn:factValue>
+            <urn:factType>?</urn:factType>
+            <urn:actionID>?</urn:actionID>
+            <urn:actionType>?</urn:actionType>
+            <urn:ruleID>?</urn:ruleID>
+            <urn:ruleDesc>?</urn:ruleDesc>
+            <urn:ruleName>?</urn:ruleName>
+         </urn:rule>
+      </urn:StartTaskFromRuleRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="urn:StartTaskFromRule" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>

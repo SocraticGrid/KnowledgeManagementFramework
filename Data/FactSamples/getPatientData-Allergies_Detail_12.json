@@ -1,0 +1,62 @@
+{
+	"patientDataFact": {
+		"factType": "Allergies",
+		"trxnType": "detail",
+		"visibleGridHeaders": true,
+		"maxcolumns": 7,
+		"itemId": 12,
+		"status": "Active",
+		"gridHeaders": [
+			{
+				"columnId": "reportDate",
+				"value": "Report Date",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "onsetDate",
+				"value": "Onset Date",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "resolutionDate",
+				"value": "Resolution Date",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "reaction",
+				"value": "Reaction",
+				"description": "A column header.",
+				"width": 20
+			}, {
+				"columnId": "severity",
+				"value": "Severity",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "recorder",
+				"value": "Recorder",
+				"description": "A column header.",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+				"reportDate": "2001-12-02",
+				"onsetDate": "2001-12-01",
+				"resolutionDate": "2002-12-02",
+				"allergen": "Peanuts",
+				"code": "ZZZZ",
+				"codeSystemName": "ndc",
+				"codeSystemCode": "ndc",
+				"reaction": "Shortness of Breath",
+				"severity": "Mild",
+				"recorder": "Dr. Fry",
+				"hoverTexts": [
+					"", "", "", "ZZZZ (ndc)"
+				]
+			}
+		],
+		"successStatus": true
+	}
+}
+

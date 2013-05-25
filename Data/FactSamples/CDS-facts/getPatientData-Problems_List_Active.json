@@ -1,0 +1,149 @@
+{
+    "patientDataFact": {
+        "factType": "Problems",
+        "trxnType": "list",
+        "visibleGridHeaders":  true,
+        "maxcolumns":15,
+	"sectionId":"active",
+
+        "listTabs":   [
+            {"domain": "problems",  "label": "Active",   "disable": false, "sectionId":"active" },
+            {"domain": "problems",  "label": "Expired",  "disable": false, "sectionId":"expired" }
+        ],
+
+        
+        "detailTabs":   [
+            {"label":        "Summary Information",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "summary",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Diagnoses",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "diagnoses",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Treatment",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "treatment",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Pubmed",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "pubmed",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Podcasts",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "podcasts",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "Videos",
+             "type":         "text",
+             "responseType": "ecs",
+             "sectionId":    "videos",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "VA Drug Utilization",
+             "type":         "grid",
+             "responseType": "detail",
+             "sectionId":    "drugUtil",
+             "filters":      ["code","codeSystemCode"]
+            }
+        ],
+        "gridHeaders": [
+            { "columnId":       "problem",
+              "value":          "Problem",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "code",
+              "value":          "Snowmed Code",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "onset",
+              "value":          "Onset",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "lastRecordedDate",
+              "value":          "Updated",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "prescriber",
+              "value":          "Provider",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "acuity",
+              "value":          "Acuity",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "facility",
+              "value":          "Facility",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {
+                "lastRecordedDate": "2000-01-01",
+                "problem": "Hypertension",
+                "code": "401.9",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "onset": "2007-04-10",
+                "itemId": "745",
+                "status": "ACTIVE",
+                "acuity": "TBD",
+                "facilicy": "CAMP MASTER"
+            },
+            {
+                "lastRecordedDate": "2000-01-01",
+                "problem": "Hyperlipidemia",
+                "code": "272.4",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "onset": "2007-04-10",
+                "itemId": "866",
+                "status": "ACTIVE",
+                "acuity": "TBD",
+                "facilicy": "CAMP MASTER"
+            },
+            {
+                "lastRecordedDate": "2000-01-01",
+                "problem": "Acute myocardial infarction, unspecified site, episode of care unspecified",
+                "code": "410.9",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "onset": "2005-03-20",
+                "itemId": "594",
+                "status": "ACTIVE",
+                "acuity": "TBD",
+                "facilicy": "CAMP MASTER"
+            },
+            {
+                "lastRecordedDate": "2000-01-01",
+                "problem": "Chronic Systolic Heart failure",
+                "code": "428.22",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "onset": "2004-03-09",
+                "itemId": "415",
+                "status": "ACTIVE",
+                "acuity": "TBD",
+                "facilicy": "CAMP MASTER"
+            }
+        ],
+        "successStatus": true
+    }
+}

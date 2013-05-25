@@ -1,0 +1,94 @@
+{
+    "patientDataFact": {
+        "factType": "Allergies",
+        "trxnType": "list",
+        "visibleGridHeaders":  true,
+        "maxcolumns":5,
+        
+        "detailTabs":   [
+            {"label": "Detail",            "type":"grid", "responseType":"detail",  "sectionId":"detail",
+             "filters": ["code","codeSystemCode"] 
+            },
+            {"label": "Summary Information",      "type":"text", "responseType":"ecs",   "sectionId":"2",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Diagnoses",               "type":"text", "responseType":"ecs",   "sectionId":"107",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Treatment",              "type":"text", "responseType":"ecs",   "sectionId":"108",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Literature",             "type":"text", "responseType":"ecs",   "sectionId":"23",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            }
+        ],
+        "gridHeaders": [
+            { "columnId":       "allergen",
+              "value":          "Allergen",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "type",
+              "value":          "Type",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "severity",
+              "value":          "Severity",
+              "description":    "A column header.",
+              "width":          "4"
+            },
+            { "columnId":      "ageAtOnset",
+              "value":          "Age at Onset",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "status",
+              "value":          "Status",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"allergen":        "Sulfa Drugs",
+                 "code":            "91939003",
+                 "codeSystemName":  "snomed",
+                 "codeSystemCode":  "snomed",
+                 "type":            "Drug Allergy",
+                 "severity":        "Severe",
+                 "ageAtOnset":      "23y",
+                 "hoverTexts":      ["91939003 (snomed)"],
+                 "source":          "VA",
+                 "itemId":          10,
+                 "status":          "Active"
+                },
+                {"allergen":        "Penicillin",
+                 "code":            "91936005",
+                 "codeSystemName":  "snomed",
+                 "codeSystemCode":  "snomed",
+                 "type":            "Drug Allergy",
+                 "severity":        "Mild",
+                 "ageAtOnset":      "12y",
+                 "hoverTexts":      ["91936005 (snomed)"],
+                 "source":          "VA",
+                 "itemId":          11,
+                 "status":          "Active"
+                },
+                {"allergen":        "Peanuts",
+                 "code":            "91935009",
+                 "codeSystemName":  "snomed",
+                 "codeSystemCode":  "snomed",
+                 "type":            "Food Allergy",
+                 "severity":        "Mild",
+                 "ageAtOnset":      "10y",
+                 "hoverTexts":      ["91935009 (snomed)"],
+                 "source":          "VA",
+                 "itemId":          12,
+                 "status":          "Active"
+                }
+        ],
+        "successStatus": true
+    }
+}
+

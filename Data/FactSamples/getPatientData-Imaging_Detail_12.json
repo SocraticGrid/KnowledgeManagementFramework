@@ -1,0 +1,16 @@
+{
+    "patientDataFact": {
+        "factType": "Procedures",
+        "trxnType": "detail",
+        "visibleGridHeaders":  false,
+        "maxcolumns":8,
+        "itemId":12,
+        "status":"Final",
+
+        "facts": [
+                {"report": "<p><b>MRI OF THE LEFT SHOULDER:</b></p>Left shoulder MRI is performed in the usual fashion.  There is no evidence of a full-thickness rotator cuff tear. No high signal within the distal supraspinatus tendon of marked significance to indicate a significant tendinitis. There is only a very small amount of high signal directly at the insertion site of the distal supraspinatus tendon, which may indicate a very small amount of tendinosis directly at that insertion site area.There is some moderate hypertrophy of the AC joint. There is inflammatory increase of fluid in the joint space itself. There is spurring both caudally and superiorly. The caudal spurring impresses upon the underlying supraspinatus structures somewhat. This may be producing some type of mild entrapment symptoms. One may want to correlate clinically to that entity.Also, the most distal component of the acromion suggests what may be a small loose joint body or spur, which minimally depresses the underlying structures as well. In neither of these two areas do I see significant edema or irritation of the underlying supraspinatus structures radiographically.The remaining rotator cuff tendons are intact. The glenoid and humeral bony structures do not show lytic or blastic disease or microfractures.There is a focal area of high signal involving the inferior and anterior glenoid labral area. One may want to perform a CT arthrogram to rule out labral injury.<p><b>IMPRESSION:</b></p><p>1. No full-thickness rotator cuff tendon tear or muscle or tendon retraction. Minimal high signal at the distal supraspinatus tendon insertion site to indicate possible mild tendinosis.</p><p>2. Acromioclavicular degenerative joint disease with cephalad and caudal spurring. The caudal spurring does impress upon the underlying supraspinatus structures minimally. Also, there is possible loose joint body near the inferior and lateral acromion, which may be depressing the underlying structures somewhat.</p><p>3. Questionable injury to the inferior, anterior glenoid labrum. Focal area of high signal is noted in that area. One may need to do an arthroscopic examination or perhaps a CT arthrogram to rule out labral injury.</p>"
+                }
+        ],
+        "successStatus": true
+    }
+}

@@ -1,0 +1,117 @@
+{
+    "patientDataFact": {
+        "factType": "Medications",
+        "trxnType": "codeDetail",
+        "visibleGridHeaders": true,
+        "maxcolumns": 8,
+        "itemId": 15416,
+        "status": "Active",
+        "sectionId": "triplesSPL",
+
+        "detailTabs": [
+            {"label":        "Original SPL",
+             "type":         "grid",
+             "responseType": "codedetail",
+             "sectionId":    "origSPL",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "SPL Triples",
+             "type":         "grid",
+             "responseType": "codedetail",
+             "sectionId":    "triplesSPL",
+             "filters":      ["code","codeSystemCode"]
+            }
+        ],
+        "gridHeaders": [],
+
+        "facts": [
+            {
+                "title": "Indications",
+                "items": [
+                    "Candidiasis",
+                    "Chronic mucocutaneous candidiasis",
+                    "Candiduria",
+                    "Paracoccidioidomycosis",
+                    "Coccidioidomycosis",
+                    "Systemic mycosis"],
+                "hoverTexts": [
+                        "78048006 SNOWMED",
+                        "234568006 SNOWMED",
+                        "236721000 SNOWMED",
+                        "236721000 SNOWMED",
+                        "60826002 SNOWMED",
+                        "399314004 SNOWMED"]
+            },
+            {
+                "title": "Monitoring",
+                "items": [
+                    "Bilirubin level - finding",
+                    "Aspartate transaminase level",
+                    "Semen analysis, count only",
+                    "Sperm count",
+                    "Alkaline phosphatase level - finding",
+                    "Hepatic function panel"],
+                "hoverTexts": [
+                        "365786009 SNOWMED",
+                        "373679006 SNOWMED",
+                        "236721000 SNOWMED",
+                        "89857002 SNOWMED",
+                        "302792004 SNOWMED",
+                        "365771003 SNOWMED"]
+            },
+            {
+                "title": "Monitoring",
+                "items": [
+                    "Ventricular tachycardia",
+                    "Toxic liver disease",
+                    "Death",
+                    "Inflammatory disease of liver",
+                    "Ventricular fibrillation",
+                    "Torsades de pointes",
+                    "Prolonged QT interval"],
+                "hoverTexts": [
+                        "25569003 SNOWMED",
+                        "197354009 SNOWMED",
+                        "419620001 SNOWMED",
+                        "128241005 SNOWMED",
+                        "71908006 SNOWMED",
+                        "31722008 SNOWMED",
+                        "111975006 SNOWMED"]
+            },
+            {
+                "title": "Side Effects",
+                "items": [
+                    "Ventricular tachycardia",
+                    "Toxic liver disease",
+                    "Death",
+                    "Inflammatory disease of liver",
+                    "Ventricular fibrillation",
+                    "Torsades de pointes",
+                    "Prolonged QT interval"],
+                "hoverTexts": [
+                        "25569003 SNOWMED",
+                        "197354009 SNOWMED",
+                        "419620001 SNOWMED",
+                        "128241005 SNOWMED",
+                        "71908006 SNOWMED",
+                        "31722008 SNOWMED",
+                        "111975006 SNOWMED"]
+            },
+            {
+                "title": "not_HAS_INDICATION A",
+                "items": [
+                    "Fungal meningitis",
+                    "Pnuemonia"]
+            },
+            {
+                "title": "not_HAS_INDICATION B",
+                "items": [
+                    "Fungal meningitis B",
+                    "Pnuemonia B",
+                    "Lorem Ipsum"]
+            },
+        ],
+        "successStatus": true
+    }
+}
+

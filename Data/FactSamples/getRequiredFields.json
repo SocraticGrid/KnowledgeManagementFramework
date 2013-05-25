@@ -1,0 +1,7 @@
+{
+    "requiredsFact": {
+        "successStatus": true,
+        "statusMessage": "success",
+        "requiredFields": ["action", "userName", "password", "firstName", "lastName", "ssn", "address1", "city", "state", "postalCode", "emailAddress"]
+    }
+}

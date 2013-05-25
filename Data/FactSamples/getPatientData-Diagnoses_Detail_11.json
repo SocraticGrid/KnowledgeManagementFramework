@@ -1,0 +1,53 @@
+{
+    "patientDataFact": {
+        "factType": "Diagnoses",
+        "trxnType": "detail",
+        "visibleGridHeaders":  true,
+        "maxcolumns":8,
+        "itemId":11,
+        "status":"Resolved",
+        
+        "gridHeaders": [
+            { "columnId":       "date",
+              "value":          "Date",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "problem",
+              "value":          "Problem",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "provider",
+              "value":          "Provider",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "status",
+              "value":          "Status",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "source",
+              "value":          "Source",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"date":            "2001-01-01",
+                 "problem":         "Eczema",
+                 "code":            "678",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Smith",
+                 "status":          "Active",
+                 "source":          "EMR",
+                 "hoverTexts":      ["",
+                                     "678 (icd9)"]
+                }
+        ],
+        "successStatus": true
+    }
+}

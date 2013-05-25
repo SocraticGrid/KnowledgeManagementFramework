@@ -1,0 +1,191 @@
+{
+	"patientDataFact": {
+		"factType": "Labs",
+		"trxnType": "list",
+		"visibleGridHeaders": true,
+		"maxColumns": 8,
+		"listTabs":   [
+			{"domain": "",            "label": "All"         ,"disable": true  },
+			{"domain": "labs",        "label": "Lab"         ,"disable": false },
+			{"domain": "",            "label": "Micro"       ,"disable": true  },
+			{"domain": "",            "label": "Cytology"    ,"disable": true  },
+			{"domain": "",            "label": "Pathology"   ,"disable": true  },
+			{"domain": "imaging",     "label": "Imaging"     ,"disable": false },
+			{"domain": "",            "label": "Surgical"    ,"disable": true  },
+			{"domain": "procedures",  "label": "Procedures"  ,"disable": false }
+		],
+		"detailTabs": [
+			{
+				"label": "Results",
+				"type": "grid",
+				"responseType": "detail",
+				"sectionId": "labTests",
+				"filters": [
+					"code", "codeSystemCode"
+				]
+			}, {
+				"label": "Description",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 4,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Images",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 20,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Summary Information",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 2,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Indications",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 104,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Risk-Benefits",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 109,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Literature",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 23,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Podcasts",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 22,
+				"disable": true,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Videos",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 21,
+				"disable":  true,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}
+		],
+		"gridHeaders": [
+			{
+				"columnId": "effectiveDate",
+				"value": "Effective Date",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "orderingProvider",
+				"value": "Ordering Provider",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "accessionId",
+				"value": "Accession Id",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "type",
+				"value": "Type",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "specimenType",
+				"value": "Specimen Type",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "source",
+				"value": "Source",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "status",
+				"value": "Status",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "resultDtm",
+				"value": "Result Dtm",
+				"description": "A column header.",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+				"effectiveDate": "2011-01-19 03:00 PM",
+				"orderingProvider": "Emory A. Fry",
+				"accessionId": "ABC123",
+				"type": "CBC w/o Diff",
+				"code": 85027,
+				"codeSystemName": "cpt",
+				"codeSystemCode": "cpt",
+				"specimenType": "Whole Blood, NOS",
+				"source": "VA",
+				"resultDtm": "2011-01-19 03:00 PM",
+				"hoverTexts": [
+					 "", "", "85027 (cpt)"
+				],
+				"itemId": 10,
+				"status": "Complete"
+			}, {
+				"effectiveDate": "2009-12-12 08:00 AM",
+				"orderingProvider": "Emory A. Fry",
+				"accessionId": "DEF123",
+				"type": "Urinalysis",
+				"code": 81007,
+				"codeSystemName": "cpt",
+				"codeSystemCode": "cpt",
+				"specimenType": "Urine",
+				"source": "IHS",
+				"resultDtm": "2009-12-12 08:00 AM",
+				"hoverTexts": [
+					"", "", "", "81007 (cpt)"
+				],
+				"itemId": 11,
+				"status": "Complete"
+			}, {
+				"effectiveDate": "2011-01-09 08:00 AM",
+				"orderingProvider": "Emory A. Fry",
+				"accessionId": "GHI123",
+				"type": "Pathology",
+				"code": 88104,
+				"codeSystemName": "cpt",
+				"codeSystemCode": "cpt",
+				"specimenType": "Cecum Colon, Biopsy",
+				"source": "DoD",
+				"resultDtm": "2011-01-09 08:00 AM",
+				"hoverTexts": [
+					"", "", "", "88104 (cpt)"
+				],
+				"itemId": 12,
+				"status": "Preliminary"
+			}
+		],
+		"successStatus": true
+	}
+}
+

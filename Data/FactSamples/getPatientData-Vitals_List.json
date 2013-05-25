@@ -1,0 +1,242 @@
+{
+    "patientDataFact": {
+        "factType": "Vitals",
+        "trxnType": "list",
+        "visibleGridHeaders": true,
+        "maxColumns": 12,
+        "detailTabs": [
+            {
+                "label": "Detail",
+                "visible":false,
+                "type": "graph",
+                "responseType": "detail"
+            }
+        ],
+        "gridHeaders": [
+            {
+                "columnId": "description",
+                "value": "Description",
+                "description": "A column header.",
+                "width": 20
+            }, {
+                "columnId": "column1",
+                "value": "12-14-09 08:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column2",
+                "value": "12-15-09 08:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column3",
+                "value": "12-16-09 08:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column4",
+                "value": "03-27-10 07:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column5",
+                "value": "05-08-10 07:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column6",
+                "value": "06-19-10 07:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column7",
+                "value": "07-17-10 07:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column8",
+                "value": "08-14-10 07:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column9",
+                "value": "08-21-10 07:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column10",
+                "value": "08-28-10 07:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column11",
+                "value": "10-10-10 07:00",
+                "description": "A column header.",
+                "width": 8
+            }, {
+                "columnId": "column12",
+                "value": "10-15-10 07:00",
+                "description": "A column header.",
+                "width": 8
+            }
+        ],
+        "facts": [
+            {
+                "description": "SBP (MMofMercury)",
+                "code": "xxx-xx",
+                "codeSystemName": "LOINC",
+                "codeSystemCode": "LOINC",
+                "column1": "120",
+                "column2": "118",
+                "column3": "120",
+                "column4": "120",
+                "column5": "132",
+                "column6": "124",
+                "column7": "120",
+                "column8": "135",
+                "column9": "140",
+                "column10": "128",
+                "column11": "122",
+                "column12": "114",
+                "hoverTexts": [
+                    "xxx-xx (LOINC)"
+                ],
+                "itemId": 10,
+                "status": "Complete"
+            } , {
+                "description": "DBP (MMofMercury)",
+                "code": "xxx-xx",
+                "codeSystemName": "LOINC",
+                "codeSystemCode": "LOINC",
+                "column1":  "77",
+                "column2":  "77",
+                "column3":  "80",
+                "column4":  "80",
+                "column5":  "70",
+                "column6":  "76",
+                "column7":  "80",
+                "column8":  "90",
+                "column9":  "85",
+                "column10": "86",
+                "column11": "80",
+                "column12": "63",
+                "hoverTexts": [
+                    "xxx-xx (LOINC)"
+                ],
+                "itemId": 11,
+                "status": "Complete"
+            }, {
+                "description": "HR (PerMinute)",
+                "code": "xxx-xx",
+                "codeSystemName": "LOINC",
+                "codeSystemCode": "LOINC",
+                "column1":  "73",
+                "column2":  "73",
+                "column3":  "72",
+                "column4":  "80",
+                "column5":  "68",
+                "column6":  "66",
+                "column7":  "90",
+                "column8":  "88",
+                "column9":  "78",
+                "column10": "72",
+                "column11": "70",
+                "column12": "91",
+                "hoverTexts": [
+                    "xxx-xx (LOINC)"
+                ],
+                "itemId": 12,
+                "status": "Complete"
+            }, {
+                "description": "RR (PerMinute)",
+                "code": "xxx-xx",
+                "codeSystemName": "LOINC",
+                "codeSystemCode": "LOINC",
+                "column1":  "14",
+                "column2":  "16",
+                "column3":  "14",
+                "column4":  "12",
+                "column5":  "18",
+                "column6":  "18",
+                "column7":  "18",
+                "column8":  "20",
+                "column9":  "18",
+                "column10": "16",
+                "column11": "16",
+                "column12": "18",
+                "hoverTexts": [
+                    "xxx-xx (LOINC)"
+                ],
+                "itemId": 13,
+                "status": "Complete"
+            }, {
+                "description": "T (Farenheit)",
+                "code": "xxx-xx",
+                "codeSystemName": "LOINC",
+                "codeSystemCode": "LOINC",
+                "column1":  "98.8",
+                "column2":  "99.2",
+                "column3":  "99.2",
+                "column4":  "99.0",
+                "column5":  "99.3",
+                "column6":  "98.8",
+                "column7":  "99.4",
+                "column8":  "98.9",
+                "column9":  "98.8",
+                "column10": "98.8",
+                "column11": "99.1",
+                "column12": "98.9",
+                "hoverTexts": [
+                    "xxx-xx (LOINC)"
+                ],
+                "itemId": 14,
+                "status": "Complete"
+            }, {
+                "description": "WT (Pounds)",
+                "code": "xxx-xx",
+                "codeSystemName": "LOINC",
+                "codeSystemCode": "LOINC",
+                "column1":  "128",
+                "column2":  "128",
+                "column3":  "126",
+                "column4":  "130",
+                "column5":  "134",
+                "column6":  "138",
+                "column7":  "141",
+                "column8":  "142",
+                "column9":  "134",
+                "column10": "131",
+                "column11": "130",
+                "column12": "126",
+                "hoverTexts": [
+                    "xxx-xx (LOINC)"
+                ],
+                "itemId": 15,
+                "status": "Complete"
+            }, {
+                "description": "HT (Inches)",
+                "code": "xxx-xx",
+                "codeSystemName": "LOINC",
+                "codeSystemCode": "LOINC",
+                "column1":  "",
+                "column2":  "",
+                "column3":  "",
+                "column4":  "67",
+                "column5":  "67",
+                "column6":  "",
+                "column7":  "",
+                "column8":  "",
+                "column9":  "",
+                "column10": "",
+                "column11": "",
+                "column12": "",
+                "hoverTexts": [
+                    "xxx-xx (LOINC)"
+                ],
+                "itemId": 16,
+                "status": "Complete"
+            }
+        ],
+        "successStatus": true
+    }
+}

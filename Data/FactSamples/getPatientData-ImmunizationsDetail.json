@@ -1,0 +1,117 @@
+{
+    "patientDataFact": {
+        "factType": "Immunizations",
+        "trxnType": "detail",
+        "visibleGridHeaders":  true,
+        "fixedColumns":1,
+        "maxColumns":4,
+        "itemId":10,
+        "status":"Complete",
+
+        "detailTabs":   [
+            {"label": "Detail",     "type":"grid", "responseType":"detail",  "sectionId":"immuneDetails",
+                "filters": ["code","codeSystemCode"]
+            },
+            {"label": "Background", "type":"text", "responseType":"ecs",   "sectionId":"101",
+                "filters": ["code","codeSystemCode", "sectionId"]
+            },
+            {"label": "Disease",    "type":"text", "responseType":"ecs",   "sectionId":"103",
+                "filters": ["code","codeSystemCode", "sectionId"]
+            },
+            {"label": "Podcasts",   "type":"text", "responseType":"ecs",   "sectionId":"22",
+                "filters": ["code","codeSystemCode", "sectionId"]
+            },
+            {"label": "Videos",     "type":"text", "responseType":"ecs",   "sectionId":"21",
+                "filters": ["code","codeSystemCode", "sectionId"]
+            }
+        ],
+
+
+        "gridHeaders": [
+            { "columnId":       "header",
+                "value":          "",
+                "description":    "A column header.",
+                "width":          "10",
+                "formatter":      "boldFormatter"
+            },
+            { "columnId":       "c1",
+                "value":          "15-Aug-1990",
+                "description":    "A column header.",
+                "width":          "10"
+            },
+            { "columnId":       "c2",
+                "value":          "15-Oct-1990",
+                "description":    "A column header.",
+                "width":          "10"
+            },
+            { "columnId":       "c3",
+                "value":          "15-Dec-1990",
+                "description":    "A column header.",
+                "width":          "10"
+            },
+            { "columnId":       "c4",
+                "value":          "15-Jun-1991",
+                "description":    "A column header.",
+                "width":          "10"
+            }
+        ],
+
+        "facts": [
+            {"header":       "Vaccine",
+                "c1":           "Hep A Combo",
+                "c2":           "Hep A",
+                "c3":           "Hep A Combo",
+                "c4":           "Hep A Conjugate",
+                "hoverTexts":     ["",
+                    "Hep A Combo code (c1-codesystem)",
+                    "Hep A code (c2-codesystem)",
+                    "Hep A Combo code (c3-codesystem)",
+                    "Hep A Conjugate code (c4-codesystem)"
+                ]
+            },
+            {"header":       "Dose Quantity",
+                "c1":           "0.5 cc",
+                "c2":           "1cc",
+                "c3":           "1cc",
+                "c4":           "1cc"
+            },
+            {"header":       "Dose #",
+                "c1":           "1",
+                "c2":           "2",
+                "c3":           "3",
+                "c4":           "4"
+            },
+            {"header":       "Reaction",
+                "c1":           "None",
+                "c2":           "None",
+                "c3":           "None",
+                "c4":           "Erythma"
+            },
+            {"header":       "Due Date",
+                "c1":           "1990-10-15",
+                "c2":           "1990-12-15",
+                "c3":           "1991-06-15",
+                "c4":           "1991-08-15"
+            },
+            {"header":       "Lot #",
+                "c1":           "123",
+                "c2":           "345",
+                "c3":           "678",
+                "c4":           "900"
+            },
+            {"header":       "Route",
+                "c1":           "IM",
+                "c2":           "IM",
+                "c3":           "IM",
+                "c4":           "IM"
+            },
+            {"header":       "Site",
+                "c1":           "LT",
+                "c2":           "LT",
+                "c3":           "RA",
+                "c4":           "LA"
+            }
+        ],
+        "successStatus": true
+    }
+}

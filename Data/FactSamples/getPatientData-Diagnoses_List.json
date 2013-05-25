@@ -1,0 +1,106 @@
+{
+    "patientDataFact": {
+        "factType": "Diagnoses",
+        "trxnType": "list",
+        "visibleGridHeaders":  true,
+        "maxcolumns":5,
+        
+        "listTabs":   [
+            {"domain": "",            "label": "All"        ,"disable": true  },
+            {"domain": "",            "label": "Concerns"   ,"disable": true  },
+            {"domain": "",            "label": "Complaints" ,"disable": true  },
+            {"domain": "",            "label": "Problems"   ,"disable": true  },
+            {"domain": "diagnoses",   "label": "Diagnoses"  ,"disable": false }
+        ],
+        "detailTabs":   [
+            {"label": "Detail",                   "type":"grid", "responseType":"detail",  "sectionId":"Info",
+             "filters": ["code","codeSystemCode"] 
+            },
+            {"label": "Summary Information",      "type":"text", "responseType":"ecs",   "sectionId":"2",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Diagnosis",                "type":"text", "responseType":"ecs",   "sectionId":"107",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Treatment",                "type":"text", "responseType":"ecs",   "sectionId":"108",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Literature",               "type":"text", "responseType":"ecs",   "sectionId":"23",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Podcasts",                 "type":"text", "responseType":"ecs",   "sectionId":"22",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Videos",                   "type":"text", "responseType":"ecs",   "sectionId":"21",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            }          
+        ],
+        "gridHeaders": [
+            { "columnId":       "lastRecordedDate",
+              "value":          "Last Recorded Date",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "problem",
+              "value":          "Problem",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "onset",
+              "value":          "Onset",
+              "description":    "A column header.",
+              "width":          "4"
+            },
+            { "columnId":       "status",
+              "value":          "Status",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "source",
+              "value":          "Source",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"lastRecordedDate":"2009-06-05",
+                 "problem":         "Asthma",
+                 "code":            "123",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "onset":           "1967-12-12",
+                 "source":          "EMR",
+                 "hoverTexts":      ["",
+                                    "123 (icd9)"],
+                 "itemId":          10,
+                 "status":          "Active"
+                },
+                {"lastRecordedDate":"2009-06-05",
+                 "problem":         "Eczema",
+                 "code":            "678",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "onset":           "2000-12-12",
+                 "source":          "IHS",
+                 "hoverTexts":      ["",
+                                    "678 (icd9)"],
+                 "itemId":          11,
+                 "status":          "Resolved"
+                },
+                {"lastRecordedDate":"2009-11-25",
+                 "problem":         "Breast Cancer",
+                 "code":            "9990",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "onset":           "2008-01-02",
+                 "source":          "VA",
+                 "hoverTexts":      ["",
+                                    "9990 (icd9)"],
+                 "itemId":          12,
+                 "status":          "Remission"
+                }
+        ],
+        "successStatus": true
+    }
+}

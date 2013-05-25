@@ -1,0 +1,45 @@
+{
+    "patientDataFact": {
+        "facts": [
+            {
+                "name": "Jane Karen Doe",
+                "age": "34",
+                "sex": "F",
+                "relationship": "Patient"
+            },
+            {
+                "name": "John Edward Doe",
+                "age": "40",
+                "sex": "M",
+                "relationship": "Husband",
+                "nextOfKin": true,
+                "HIPAARelease": true,
+                "emergencyContact": true,
+                "POA":true
+            },
+            {
+                "name": "Mary Jane Doe",
+                "age": "1",
+                "sex": "F",
+                "relationship": "Daughter",
+                "nextOfKin": false,
+                "HIPAARelease": false,
+                "emergencyContact": false,
+                "POA":false,
+                "healthcarePOA":false
+            },
+            {
+                 "name": "Eddie Samual Doe",
+                 "age": "18",
+                 "sex": "M",
+                 "relationship": "Son",
+                 "nextOfKin": false,
+                 "HIPAARelease": false,
+                 "emergencyContact": true,
+                 "healthcarePOA":true
+             }
+        ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

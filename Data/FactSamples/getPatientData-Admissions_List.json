@@ -1,0 +1,122 @@
+{
+    "patientDataFact": {
+        "factType": "Admissions",
+        "trxnType": "list",
+        "visibleGridHeaders":  true,
+        "maxcolumns":9,
+        
+        "detailTabs":   [
+            {"label": "Detail",              "type":"text", "responseType":"detail",  "sectionId":"report",
+             "filters": ["code","codeSystemCode"]
+            },
+            {"label": "Summary Description", "type":"text", "responseType":"ecs",     "sectionId":"2",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            }
+        ],
+        "gridHeaders": [
+            { "columnId":       "admission",
+              "value":          "Admission",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "discharge",
+              "value":          "Discharge",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "admittingMd",
+              "value":          "Admitting MD",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "dischargeMd",
+              "value":          "Discharge MD",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":      "followUpMd",
+              "value":          "Follow-Up MD",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "dx1",
+              "value":          "DX #1",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "dx2",
+              "value":          "DX #2",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "status",
+              "value":          "Status",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "source",
+              "value":          "Source",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"admission":       "2010-10-23",
+                 "discharge":       "2010-10-27",
+                 "admittingMd":     "Dr. K Smith",
+                 "dischargeMd":     "Dr. B Swift",
+                 "followUpMd":      "Dr. P Adams",
+                 "dx1":             "Diabetes",
+                 "code":            "250.0",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "dx2":             "Pneumonia",
+                 "hoverTexts":      ["", "", "", "", "",
+                                     "Diabetes-code (XXX)",
+                                     "Pneumonia-code (XXX)"
+                                    ],
+                 "source":          "VA",
+                 "itemId":          10,
+                 "status":          "Final"
+                },
+                {"admission":       "2007-11-03",
+                 "discharge":       "2007-11-07",
+                 "admittingMd":     "Dr. K Smith",
+                 "dischargeMd":     "Dr. B Swift",
+                 "followUpMd":      "Dr. P Adams",
+                 "dx1":             "Diabetes",
+                 "code":            "250.0",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "dx2":             "Pneumonia",
+                 "hoverTexts":      ["", "", "", "", "",
+                                     "Diabetes-code (XXX)",
+                                     "Pneumonia-code (XXX)"
+                                    ],
+                 "source":          "VA",
+                 "itemId":          11,
+                 "status":          "Final"
+                },
+                {"admission":       "2006-10-23",
+                 "discharge":       "2006-10-27",
+                 "admittingMd":     "Dr. K Smith",
+                 "dischargeMd":     "Dr. B Swift",
+                 "followUpMd":      "Dr. P Adams",
+                 "code":            "410.0",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "dx1":             "Hypertension",
+                 "dx2":             "Stroke",
+                 "hoverTexts":      ["", "", "", "", "",
+                                     "Hypertension-code (XXX)",
+                                     "Stroke-code (XXX)"
+                                    ],
+                 "source":          "IHS",
+                 "itemId":          12,
+                 "status":          "Final"
+                }
+        ],
+        "successStatus": true
+    }
+}

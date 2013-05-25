@@ -1,0 +1,16 @@
+{
+    "patientDataFact": {
+        "factType": "ClinicNotes",
+        "trxnType": "detail",
+        "visibleGridHeaders":  false,
+        "maxcolumns":1,
+        "itemId":11,
+        "status":"Final",
+
+        "facts": [
+                {"report": "<p><b>Patient Name: </b>Jane Doe</p><p><b>DOB: </b> 12/31/1961</p><p><b>Record No.: </b>K-5685r778</p><p><b>Date: </b>2011-12-11</p> <br/><p>S-Pt.  Proin consectetur dui et lectus rhoncus blandit in sit amet eros. Pellentesque a ligula vel diam scelerisque tincidunt. Ut non nibh justo, non lobortis velit.</p><p>O-WT=125 lbs HT = 60 * BW = 115 lbs Chol = 240 BP = 120/75</p><p>P-Vivamus luctus euismod lacinia. Fusce in porta felis. Vestibulum vestibulum ligula risus. Sed at nisi dui, nec luctus turpis. Vestibulum scelerisque sem ut odio ullamcorper porttitor.</p><p>Dr. Katherine Smith</p>"
+                }
+        ],
+        "successStatus": true
+    }
+}

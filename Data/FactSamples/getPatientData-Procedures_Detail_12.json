@@ -1,0 +1,16 @@
+{
+    "patientDataFact": {
+        "factType": "Procedures",
+        "trxnType": "detail",
+        "visibleGridHeaders":  false,
+        "maxcolumns":8,
+        "itemId":12,
+        "status":"Final",
+
+        "facts": [
+                {"report": "<p>Jane Doe 99990070 11-Nov-1944 F 12-DEC-1967 Dr. Black <br/>INDICATION:<br/> Proin consectetur dui et lectus rhoncus. </p><p>Suspendisse venenatis </p><p><br/>CONSENT: Obtained before procedure. Indications and alternatives were discussed with patient.<br/></p><p>MONITORING: Vestibulum scelerisque. "
+                }
+        ],
+        "successStatus": true
+    }
+}

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /*****************************************************************************************************************
+  ~  *
+  ~  * Copyright (C) 2012 by Cognitive Medical Systems, Inc (http://www.cognitivemedciine.com)
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+  ~  * with the License. You may obtain a copy of the License at
+  ~  *
+  ~  *     http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software distributed under the License is
+  ~  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and limitations under the License.
+  ~  *
+  ~  *****************************************************************************************************************/
+  ~
+  ~ /*****************************************************************************************************************
+  ~  * Socratic Grid contains components to which third party terms apply. To comply with these terms, the following
+  ~  * notice is provided:
+  ~  *
+  ~  * TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+  ~  * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+  ~  * the following conditions are met:
+  ~  *
+  ~  * - Redistributions of source code must retain the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer.
+  ~  * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~  * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or
+  ~  *     promote products derived from this software without specific prior written permission.
+  ~  *
+  ~  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+  ~  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  ~  * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ~  * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  ~  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER
+  ~  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  ~  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~  *
+  ~  * END OF TERMS AND CONDITIONS
+  ~  *
+  ~  *****************************************************************************************************************/
+  -->
+
+<!--
+  Document Manager Requester WSDL
+  -->
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+   xmlns:docmgr="urn:gov:hhs:fha:nhinc:common:docmgr"
+   name="DocMgrRequester"
+   targetNamespace="urn:gov:hhs:fha:nhinc:docmgrrequester"
+   xmlns:tns="urn:gov:hhs:fha:nhinc:docmgrrequester">
+  <documentation>Document Manager Requester</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:docmgr"
+                  schemaLocation="../schemas/nhinc/common/DocManager.xsd"/>
+    </xsd:schema>
+  </types>
+ 
+  <message name="QueryDoneRequestMessage">
+    <part name="QueryDoneRequest"
+          element="docmgr:QueryDoneRequest"/>
+  </message>
+  <message name="QueryDoneResponseMessage">
+    <part name="QueryDoneResponse"
+          element="docmgr:QueryDoneResponse"/>
+  </message>
+  <message name="DocAvailableRequestMessage">
+    <part name="DocAvailableRequest"
+          element="docmgr:DocAvailableRequest"/>
+  </message>
+  <message name="DocAvailableResponseMessage">
+    <part name="DocAvailableResponse"
+          element="docmgr:DocAvailableResponse"/>
+  </message>
+
+  <portType name="DocMgrRequesterPortType">
+    <operation name="QueryDone">
+      <input name="QueryDoneRequest"
+             message="tns:QueryDoneRequestMessage" />
+      <output name="QueryDoneResponse"
+              message="tns:QueryDoneResponseMessage" />
+    </operation>
+    <operation name="DocAvailable">
+      <input name="DocAvailableRequest"
+             message="tns:DocAvailableRequestMessage" />
+      <output name="DocAvailableResponse"
+              message="tns:DocAvailableResponseMessage" />
+    </operation>
+  </portType>
+
+  <binding name="DocMgrRequesterBindingSoap11" type="tns:DocMgrRequesterPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="QueryDone">
+      <soap:operation soapAction="urn:QueryDone"/>
+      <input name="QueryDoneRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="QueryDoneResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="DocAvailable">
+      <soap:operation soapAction="urn:DocAvailable"/>
+      <input name="DocAvailableRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="DocAvailableResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name="DocMgrRequester">
+    <port name="DocMgrRequesterPortSoap11"
+          binding="tns:DocMgrRequesterBindingSoap11">
+      <soap:address
+         location="http://localhost:${HttpDefaultPort}/DocMgrRequester/DocMgrRequester_Service" />
+    </port>
+  </service>
+  <plnk:partnerLinkType name="DocMgrRequester">
+    <!-- A partner link type is automatically generated when a new port type is added.
+         Partner link types are used by BPEL processes. In a BPEL process, a partner
+         link represents the interaction between the BPEL process and a partner service.
+         Each partner link is associated with a partner link type. A partner link type
+         characterizes the conversational relationship between two services. The
+         partner link type can have one or two roles.-->
+    <plnk:role name="DocMgrRequesterPortTypeRole"
+               portType="tns:DocMgrRequesterPortType"/>
+  </plnk:partnerLinkType>
+
+</definitions>

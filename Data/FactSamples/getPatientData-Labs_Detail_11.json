@@ -1,0 +1,120 @@
+{
+	"patientDataFact": {
+		"factType": "Labs",
+		"trxnType": "detail",
+		"visibleGridHeaders": false,
+		"maxColumns": 4,
+		"itemId": 11,
+		"status": "Complete",
+		"detailTabs": [
+			{
+				"label": "Results",
+				"type": "grid",
+				"responseType": "detail",
+				"sectionId": "labTests",
+				"filters": [
+					"code", "codeSystemCode"
+				]
+			}, {
+				"label": "Description",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 4,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Images",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 20,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Summary Information",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 2,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Indications",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 104,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Risk-Benefits",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 109,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Literature",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 23,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Podcasts",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 22,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Videos",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 21,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}
+		],
+		"gridHeaders": [
+			{
+				"columnId": "header",
+				"width": 20,
+				"formatter": "boldFormatter"
+			}, {
+				"columnId": "c1",
+				"width": 80
+			}
+		],
+		"facts": [
+			{
+				"header": "Test Name",
+				"c1": "Urine Test",
+				"hoverTexts": [
+					"", "UrineTest-code (c1-codesystem)"
+				]
+			}, {
+				"header": "Result",
+				"c1": "some result"
+			}, {
+				"header": "Interpretation Code",
+				"c1": "Low"
+			}, {
+				"header": "Unit",
+				"c1": "%"
+			}, {
+				"header": "High",
+				"c1": 5.0
+			}, {
+				"header": "Low",
+				"c1": 2.0
+			}
+		],
+		"successStatus": true
+	}
+}

@@ -1,0 +1,124 @@
+{
+	"patientDataFact": {
+		"factType": "Medications",
+		"trxnType": "detail",
+		"visibleGridHeaders": true,
+		"maxcolumns": 8,
+		"itemId": 10,
+		"status": "Active",
+		"detailTabs": [
+			{
+				"label": "Dispensations",
+				"type": "grid",
+				"responseType": "detail",
+				"sectionId": "dispensations",
+				"filters": [
+					"code", "codeSystemCode"
+				]
+			}, {
+				"label": "Description",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 4,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Instructions",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 102,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Indications",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 104,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Side-Effects",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 105,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Potential Interactions",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 106,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}
+		],
+		"gridHeaders": [
+			{
+				"columnId": "fillDt",
+				"value": "Fill D/T",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "dispenseDt",
+				"value": "Dispense D/T",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "drugDispensed",
+				"value": "Drug Dispensed",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "manufacturer",
+				"value": "Manufacturer",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "dispAmount",
+				"value": "Disp Amount",
+				"description": "A column header.",
+				"width": 4
+			}, {
+				"columnId": "expirationDt",
+				"value": "Expiration Date",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "location",
+				"value": "Location",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "pharmacist",
+				"value": "Pharmacist",
+				"description": "A column header.",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+				"fillDt": "1989-01-15",
+				"dispenseDt": "2011-12-11",
+				"drugDispensed": "Amoxicillin",
+				"code": "0093-4160-78",
+				"codeSystemName": "NDC",
+				"codeSystemCode": "NDC",
+				"manufacturer": "Abott",
+				"dispAmount": 5,
+				"expirationDt": "2011-12-12",
+				"location": "NMXSD",
+				"pharmacist": "John Terry",
+				"hoverTexts": [
+					"", "", "0093-4160-78 (PH_FDA_DRLS)"
+				]
+			}
+		],
+		"successStatus": true
+	}
+}
+

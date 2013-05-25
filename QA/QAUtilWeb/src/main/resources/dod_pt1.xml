@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="CCD_DoD.xsl"?>
+<!--
+  ~ /*****************************************************************************************************************
+  ~  *
+  ~  * Copyright (C) 2012 by Cognitive Medical Systems, Inc (http://www.cognitivemedciine.com)
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+  ~  * with the License. You may obtain a copy of the License at
+  ~  *
+  ~  *     http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software distributed under the License is
+  ~  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and limitations under the License.
+  ~  *
+  ~  *****************************************************************************************************************/
+  ~
+  ~ /*****************************************************************************************************************
+  ~  * Socratic Grid contains components to which third party terms apply. To comply with these terms, the following
+  ~  * notice is provided:
+  ~  *
+  ~  * TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+  ~  * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+  ~  * the following conditions are met:
+  ~  *
+  ~  * - Redistributions of source code must retain the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer.
+  ~  * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~  * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or
+  ~  *     promote products derived from this software without specific prior written permission.
+  ~  *
+  ~  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+  ~  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  ~  * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ~  * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  ~  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER
+  ~  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  ~  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~  *
+  ~  * END OF TERMS AND CONDITIONS
+  ~  *
+  ~  *****************************************************************************************************************/
+  -->
+
+<ClinicalDocument classCode="DOCCLIN" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" xmlns="urn:hl7-org:v3">
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+    <templateId root="2.16.840.1.113883.10.20.1"/>
+    <templateId root="2.16.840.1.113883.3.88.11.32.1"/>
+    <id extension="df7ae2a5-2d9c-427e-8520-1af83b6630dd"/>
+    <code displayName="SUMMARIZATION OF EPISODE NOTE" codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1" code="34133-9"/>
+    <effectiveTime value="{2,date,yyyyMMddHHmmss}-0800"/>
+    <confidentialityCode displayName="Normal" codeSystem="2.16.840.1.113883.5.25" code="N"/>
+    <languageCode code="EN-US"/>
+    <recordTarget>
+       <patientRole>
+            <id extension="677569" root="2.16.840.1.113883.3.42"/>
+            <addr use="H">
+                <streetAddressLine>988 MAIN ST</streetAddressLine>
+                <city>ANYWHERE</city>
+                <state>VA</state>
+                <postalCode>12345</postalCode>
+            </addr>
+            <telecom use="HP" value="804 2222222"/>
+            <patient>
+                <name use="L">
+                    <family>{1}</family>
+                    <given>{0}</given>
+                </name>
+                <administrativeGenderCode codeSystem="2.16.840.1.113883.5.1" code="M"/>
+                <birthTime value="20050805"/>
+				<maritalStatusCode displayName="Single" codeSystemName="MaritalStatusCode" codeSystem="2.16.840.1.113883.5.2" code="S"/>
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <time value="{2,date,yyyyMMddHHmmss}-0800"/>
+        <assignedAuthor>
+            <id root="2.16.840.1.113883.3.198"/>
+            <assignedAuthoringDevice>
+                <softwareName>AHLTA</softwareName>
+            </assignedAuthoringDevice>
+            <representedOrganization>
+                <id root="2.16.840.1.113883.3.198"/>
+                <name>Department of Defense</name>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <informant>
+        <assignedEntity>
+            <id root="2.16.840.1.113883.3.198"/>
+            <representedOrganization>
+                <id root="2.16.840.1.113883.3.198"/>
+                <name>Department of Defense</name>
+            </representedOrganization>
+        </assignedEntity>
+    </informant>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="2.16.840.1.113883.3.198"/>
+                <name>Department of Defense</name>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <component>
+        <structuredBody>
+            <component>
+                <section>
+                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.2"/>
+                    <code codeSystem="2.16.840.1.113883.6.1" code="48765-2"/>
+                    <title  xmlns:ns3="urn:hl7-org:v3">Allergies</title>
+                    <text  xmlns:ns3="urn:hl7-org:v3"><content xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="reaction-5">Nausea</content><content xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="reaction-4">Vomiting</content><content xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="reaction-7">Unknown</content><content xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="reaction-6">Unknown</content><content xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="reaction-1">Urticaria</content><content xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="reaction-2">Rash</content><content xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="reaction-3">Anaphylaxis</content></text>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.6"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId assigningAuthorityName="IHE" root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <code xsi:type="CE" displayName="Drug Allergy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                    <effectiveTime>
+                                        <low value="20080205"/>
+                                    </effectiveTime>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <name>Iodine Containing Agents</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship inversionInd="true" typeCode="MFST">
+                                        <observation moodCode="EVN" classCode="OBS">
+                                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.54"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference value="#reaction-1"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.6"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId assigningAuthorityName="IHE" root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <code xsi:type="CE" displayName="Drug Allergy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                    <effectiveTime>
+                                        <low value="20080205"/>
+                                    </effectiveTime>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <name>Cephalosporins</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship inversionInd="true" typeCode="MFST">
+                                        <observation moodCode="EVN" classCode="OBS">
+                                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.54"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference value="#reaction-2"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.6"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId assigningAuthorityName="IHE" root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <code xsi:type="CE" displayName="Drug Allergy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                    <effectiveTime>
+                                        <low value="20080205"/>
+                                    </effectiveTime>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <name>Aspirin</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship inversionInd="true" typeCode="MFST">
+                                        <observation moodCode="EVN" classCode="OBS">
+                                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.54"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference value="#reaction-3"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.6"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId assigningAuthorityName="IHE" root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <code xsi:type="CE" displayName="Drug Allergy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                    <effectiveTime>
+                                        <low value="20080205"/>
+                                    </effectiveTime>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <name>Sulfa-Drugs</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship inversionInd="true" typeCode="MFST">
+                                        <observation moodCode="EVN" classCode="OBS">
+                                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.54"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference value="#reaction-4"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.6"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId assigningAuthorityName="IHE" root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <code xsi:type="CE" displayName="Drug Allergy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                    <effectiveTime>
+                                        <low value="20080205"/>
+                                    </effectiveTime>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <name>Penicillins</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship inversionInd="true" typeCode="MFST">
+                                        <observation moodCode="EVN" classCode="OBS">
+                                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.54"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference value="#reaction-5"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.6"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId assigningAuthorityName="IHE" root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <code xsi:type="CE" displayName="Drug Allergy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                    <effectiveTime>
+                                        <low value="20070911"/>
+                                    </effectiveTime>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <name>LISINOPRIL (LISINOPRIL)</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship inversionInd="true" typeCode="MFST">
+                                        <observation moodCode="EVN" classCode="OBS">
+                                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.54"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference value="#reaction-6"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.6"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId assigningAuthorityName="IHE" root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <code xsi:type="CE" displayName="Drug Allergy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                    <effectiveTime>
+                                        <low value="20080205"/>
+                                    </effectiveTime>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <name>Tetracyclines</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship inversionInd="true" typeCode="MFST">
+                                        <observation moodCode="EVN" classCode="OBS">
+                                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.54"/>
+                                            <code nullFlavor="UNK"/>
+                                            <text>
+                                                <reference value="#reaction-7"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.11"/>
+                    <code codeSystem="2.16.840.1.113883.6.1" code="11450-4"/>
+                    <title  xmlns:ns3="urn:hl7-org:v3">Problems</title>
+                    <text  xmlns:ns3="urn:hl7-org:v3"><paragraph xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="problem-4">Alcohol-induced hypersomnia</paragraph><paragraph xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="problem-2">Dermatitis due to contact with poison ivy</paragraph><paragraph xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="problem-3">Alcohol withdrawal delirium ('d. tremens')</paragraph><paragraph xmlns="urn:hl7-org:v3" xmlns:ns2="urn:gov:hhs:fha:nhinc:common:nhinccommon" ID="problem-1">Alcohol intoxication delirium</paragraph></text>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.7"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <effectiveTime>
+                                <low value="20080205"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.28"/>
+                                    <text>
+                                        <reference value="#problem-1"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CD" displayName="Alcohol intoxication delirium" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="291.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.7"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <effectiveTime>
+                                <low value="20080205"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.28"/>
+                                    <text>
+                                        <reference value="#problem-2"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CD" displayName="Dermatitis due to contact with poison ivy" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="692.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.7"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <effectiveTime>
+                                <low value="20080205"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.28"/>
+                                    <text>
+                                        <reference value="#problem-3"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CD" displayName="Alcohol withdrawal delirium ('d. tremens')" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="291.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry typeCode="DRIV">
+                        <act moodCode="EVN" classCode="ACT">
+                            <templateId assigningAuthorityName="HITSP/C32" root="2.16.840.1.113883.3.88.11.32.7"/>
+                            <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+                            <code nullFlavor="NA"/>
+                            <effectiveTime>
+                                <low value="20080205"/>
+                            </effectiveTime>
+                            <entryRelationship typeCode="SUBJ">
+                                <observation moodCode="EVN" classCode="OBS">
+                                    <templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.28"/>
+                                    <text>
+                                        <reference value="#problem-4"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CD" displayName="Alcohol-induced hypersomnia" codeSystemName="ICD9" codeSystem="2.16.840.1.113883.11.15931" code="291.82" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

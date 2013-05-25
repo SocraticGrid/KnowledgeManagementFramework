@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /*****************************************************************************************************************
+  ~  *
+  ~  * Copyright (C) 2012 by Cognitive Medical Systems, Inc (http://www.cognitivemedciine.com)
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+  ~  * with the License. You may obtain a copy of the License at
+  ~  *
+  ~  *     http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software distributed under the License is
+  ~  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and limitations under the License.
+  ~  *
+  ~  *****************************************************************************************************************/
+  ~
+  ~ /*****************************************************************************************************************
+  ~  * Socratic Grid contains components to which third party terms apply. To comply with these terms, the following
+  ~  * notice is provided:
+  ~  *
+  ~  * TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+  ~  * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+  ~  * the following conditions are met:
+  ~  *
+  ~  * - Redistributions of source code must retain the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer.
+  ~  * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~  * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or
+  ~  *     promote products derived from this software without specific prior written permission.
+  ~  *
+  ~  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+  ~  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  ~  * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ~  * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  ~  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER
+  ~  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  ~  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~  *
+  ~  * END OF TERMS AND CONDITIONS
+  ~  *
+  ~  *****************************************************************************************************************/
+  -->
+
+<con:soapui-project name="DDA" resourceRoot="${projectDir}" soapui-version="3.5" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="DisplayDataAggregatorBindingSoap11" type="wsdl" bindingName="{urn:gov:hhs:fha:nhinc:aggregator}DisplayDataAggregatorBindingSoap11" soapVersion="1_1" anonymous="optional" definition="http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService?wsdl"><con:part><con:url>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService?wsdl</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-.-->
+<!--Display Data Aggregator WSDL-->
+<definitions name="DisplayDataAggregator" targetNamespace="urn:gov:hhs:fha:nhinc:aggregator" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:dda="urn:gov:hhs:fha:nhinc:common:dda" xmlns:tns="urn:gov:hhs:fha:nhinc:aggregator">
+  <documentation>Display Data Aggregator</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:dda" schemaLocation="http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService?xsd=1"/>
+    </xsd:schema>
+  </types>
+  <message name="GetAvailableSourcesRequestMessage">
+    <part name="GetAvailableSourcesRequest" element="dda:GetAvailableSourcesRequest"/>
+  </message>
+  <message name="GetAvailableSourcesResponseMessage">
+    <part name="GetAvailableSourcesResponse" element="dda:GetAvailableSourcesResponse"/>
+  </message>
+  <message name="GetDetailDataRequestMessage">
+    <part name="GetDetailDataRequest" element="dda:GetDetailDataRequest"/>
+  </message>
+  <message name="GetDetailDataResponseMessage">
+    <part name="GetDetailDataResponse" element="dda:GetDetailDataResponse"/>
+  </message>
+  <message name="GetSummaryDataRequestMessage">
+    <part name="GetSummaryDataRequest" element="dda:GetSummaryDataRequest"/>
+  </message>
+  <message name="GetSummaryDataResponseMessage">
+    <part name="GetSummaryDataResponse" element="dda:GetSummaryDataResponse"/>
+  </message>
+  <portType name="DisplayDataAggregatorPortType">
+    <operation name="GetAvailableSources">
+      <input name="GetAvailableSourcesRequest" message="tns:GetAvailableSourcesRequestMessage"/>
+      <output name="GetAvailableSourcesResponse" message="tns:GetAvailableSourcesResponseMessage"/>
+    </operation>
+    <operation name="GetDetailData">
+      <input name="GetDetailDataRequest" message="tns:GetDetailDataRequestMessage"/>
+      <output name="GetDetailDataResponse" message="tns:GetDetailDataResponseMessage"/>
+    </operation>
+    <operation name="GetSummaryData">
+      <input name="GetSummaryDataRequest" message="tns:GetSummaryDataRequestMessage"/>
+      <output name="GetSummaryDataResponse" message="tns:GetSummaryDataResponseMessage"/>
+    </operation>
+  </portType>
+  <binding name="DisplayDataAggregatorBindingSoap11" type="tns:DisplayDataAggregatorPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetAvailableSources">
+      <soap:operation soapAction="urn:GetAvailableSources"/>
+      <input name="GetAvailableSourcesRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetAvailableSourcesResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetDetailData">
+      <soap:operation soapAction="urn:GetDetailData"/>
+      <input name="GetDetailDataRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetDetailDataResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetSummaryData">
+      <soap:operation soapAction="urn:GetSummaryData"/>
+      <input name="GetSummaryDataRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="GetSummaryDataResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DisplayDataAggregator">
+    <port name="DisplayDataAggregatorPortSoap11" binding="tns:DisplayDataAggregatorBindingSoap11">
+      <soap:address location="http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService"/>
+    </port>
+  </service>
+  <plnk:partnerLinkType name="DisplayDataAggregator">
+    <!--A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="DisplayDataAggregatorPortTypeRole" portType="tns:DisplayDataAggregatorPortType"/>
+  </plnk:partnerLinkType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService?xsd=1</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.6-hudson-317-.-->
+<xsd:schema targetNamespace="urn:gov:hhs:fha:nhinc:common:dda" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:gov:hhs:fha:nhinc:common:dda">
+  <xsd:complexType name="serviceError">
+    <xsd:sequence>
+      <xsd:element name="code" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="text" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="nameValuesPair">
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="values" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="summaryData">
+    <xsd:sequence>
+      <xsd:element name="itemId" type="xsd:string"/>
+      <xsd:element name="dataSource" type="xsd:string"/>
+      <xsd:element name="author" type="xsd:string"/>
+      <xsd:element name="patient" type="xsd:string"/>
+      <xsd:element name="description" type="xsd:string"/>
+      <xsd:element name="dateCreated" type="xsd:dateTime"/>
+      <xsd:element name="itemValues" type="tns:nameValuesPair" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="detailData">
+    <xsd:sequence>
+      <xsd:element name="itemId" type="xsd:string"/>
+      <xsd:element name="dataSource" type="xsd:string"/>
+      <xsd:element name="author" type="xsd:string"/>
+      <xsd:element name="patient" type="xsd:string"/>
+      <xsd:element name="description" type="xsd:string"/>
+      <xsd:element name="dateCreated" type="xsd:dateTime"/>
+      <xsd:element name="data" type="xsd:string"/>
+      <xsd:element name="itemValues" type="tns:nameValuesPair" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="GetSummaryDataRequestType">
+    <xsd:sequence>
+      <xsd:element name="dataSources" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="providerId" type="xsd:string"/>
+      <xsd:element name="patientId" type="xsd:string"/>
+      <xsd:element name="groupId" type="xsd:string"/>
+      <xsd:element name="locationId" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetSummaryDataRequest" type="tns:GetSummaryDataRequestType"/>
+  <xsd:complexType name="GetSummaryDataResponseType">
+    <xsd:sequence>
+      <xsd:element name="summaryObjects" type="tns:summaryData" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetSummaryDataResponse" type="tns:GetSummaryDataResponseType"/>
+  <xsd:complexType name="GetAvailableSourcesRequestType">
+    <xsd:sequence></xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetAvailableSourcesRequest" type="tns:GetAvailableSourcesRequestType"/>
+  <xsd:complexType name="GetAvailableSourcesResponseType">
+    <xsd:sequence>
+      <xsd:element name="return" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetAvailableSourcesResponse" type="tns:GetAvailableSourcesResponseType"/>
+  <xsd:complexType name="GetDetailDataRequestType">
+    <xsd:sequence>
+      <xsd:element name="dataSource" type="xsd:string"/>
+      <xsd:element name="itemId" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetDetailDataRequest" type="tns:GetDetailDataRequestType"/>
+  <xsd:complexType name="GetDetailDataResponseType">
+    <xsd:sequence>
+      <xsd:element name="detailObject" type="tns:detailData"/>
+      <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetDetailDataResponse" type="tns:GetDetailDataResponseType"/>
+  <xsd:complexType name="GetDataSourceNameRequestType">
+    <xsd:sequence></xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetDataSourceNameRequest" type="tns:GetDataSourceNameRequestType"/>
+  <xsd:complexType name="GetDataSourceNameResponseType">
+    <xsd:sequence>
+      <xsd:element name="return" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetDataSourceNameResponse" type="tns:GetDataSourceNameResponseType"/>
+  <xsd:complexType name="GetComponentSummaryDataRequestType">
+    <xsd:sequence>
+      <xsd:element name="providerId" type="xsd:string"/>
+      <xsd:element name="patientId" type="xsd:string"/>
+      <xsd:element name="groupId" type="xsd:string"/>
+      <xsd:element name="locationId" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetComponentSummaryDataRequest" type="tns:GetComponentSummaryDataRequestType"/>
+  <xsd:complexType name="GetComponentSummaryDataResponseType">
+    <xsd:sequence>
+      <xsd:element name="summaryObjects" type="tns:summaryData" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetComponentSummaryDataResponse" type="tns:GetComponentSummaryDataResponseType"/>
+  <xsd:complexType name="GetComponentDetailDataRequestType">
+    <xsd:sequence>
+      <xsd:element name="itemId" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetComponentDetailDataRequest" type="tns:GetComponentDetailDataRequestType"/>
+  <xsd:complexType name="GetComponentDetailDataResponseType">
+    <xsd:sequence>
+      <xsd:element name="detailObject" type="tns:detailData"/>
+      <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="GetComponentDetailDataResponse" type="tns:GetComponentDetailDataResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService</con:endpoint><con:endpoint>http://Vadim600:8088/mockDisplayDataAggregatorBindingSoap11</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:GetAvailableSources" name="GetAvailableSources" bindingOperationName="GetAvailableSources" type="Request-Response" outputName="GetAvailableSourcesResponse" inputName="GetAvailableSourcesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetAvailableSourcesRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:GetAvailableSources"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="urn:GetDetailData" name="GetDetailData" bindingOperationName="GetDetailData" type="Request-Response" outputName="GetDetailDataResponse" inputName="GetDetailDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetDetailDataRequest>
+         <urn:dataSource>?</urn:dataSource>
+         <urn:itemId>?</urn:itemId>
+      </urn:GetDetailDataRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:GetDetailData"/></con:call></con:operation><con:operation isOneWay="false" action="urn:GetSummaryData" name="GetSummaryData" bindingOperationName="GetSummaryData" type="Request-Response" outputName="GetSummaryDataResponse" inputName="GetSummaryDataRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetSummaryDataRequest>
+         <!--Zero or more repetitions:-->
+         <urn:dataSources>?</urn:dataSources>
+         <urn:providerId>?</urn:providerId>
+         <urn:patientId>?</urn:patientId>
+         <urn:groupId>?</urn:groupId>
+         <urn:locationId>?</urn:locationId>
+      </urn:GetSummaryDataRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:GetSummaryData"/></con:call></con:operation></con:interface><con:testSuite name="TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetAvailableSources TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="GetAvailableSources"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DisplayDataAggregatorBindingSoap11</con:interface><con:operation>GetAvailableSources</con:operation><con:request name="GetAvailableSources"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetAvailableSourcesRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="XPath Match"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns='urn:gov:hhs:fha:nhinc:common:dda';
+//ns:GetAvailableSourcesResponse/ns:return/text()[1]</path><content>MedAlerts</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences></con:configuration></con:assertion><con:assertion type="XPath Match"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns='urn:gov:hhs:fha:nhinc:common:dda';
+//ns:GetAvailableSourcesResponse/ns:return/text()</path><content>NHIN Documents</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences></con:configuration></con:assertion><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:assertion type="Simple Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:wsaConfig action="urn:GetAvailableSources" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="properties" name="dataSources"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>dataSource1</con:name><con:value>MedAlerts</con:value></con:property><con:property><con:name>dataSource2</con:name><con:value>NHIN Documents</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="trasferAvailableSources"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>1</con:name><con:sourceType>Transfer Properties</con:sourceType><con:sourceStep>GetAvailableSources</con:sourceStep><con:sourcePath>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns='urn:gov:hhs:fha:nhinc:common:dda';
+//ns:GetAvailableSourcesResponse/ns:return/text()</con:sourcePath><con:targetType>dataSource1</con:targetType><con:targetStep>dataSources</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>2</con:name><con:sourceType xsi:nil="true"/><con:sourceStep>GetAvailableSources</con:sourceStep><con:sourcePath>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns='urn:gov:hhs:fha:nhinc:common:dda';
+//ns:GetAvailableSourcesResponse/ns:return[2]/text()</con:sourcePath><con:targetType>dataSource2</con:targetType><con:targetStep>dataSources</con:targetStep></con:transfers></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Integrated TestCase" searchProperties="true" id="d4d52e18-6a30-481f-8a9e-15665fe4a766"><con:settings/><con:testStep type="groovy" name="Run first"><con:settings/><con:config><script>def list = []
+new File( "C:/KMR/SoapUI/DDA/DDA-properties.txt" ).eachLine { line -> list.add( line ) }
+
+log.info( "Read " + list.size() + " test values.." )
+
+context.setProperty( "values", list )
+context.setProperty( "index", 0 )
+
+
+///////////////////////////////////////////
+
+ testRunner.testCase.getTestStepByName("Run rest").run(testRunner, context);
+
+    </script></con:config></con:testStep><con:testStep type="properties" name="Properties"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>locationID</con:name><con:value>2.16.840.1.113883.3.279</con:value></con:property><con:property><con:name>dataSource</con:name><con:value>NHIN Documents</con:value></con:property><con:property><con:name>patientID</con:name><con:value>D123401</con:value></con:property><con:property><con:name>providerID</con:name><con:value>4</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="Property Transfer1"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>dataSource</con:name><con:sourceType>dataSource</con:sourceType><con:sourceStep>Properties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>GetSummaryData</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+//urn:GetSummaryDataRequest/urn:dataSources</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="false" ignoreEmpty="false" entitize="false" useXQuery="false" transferChildNodes="false" transferToAll="false"><con:name>providerID</con:name><con:sourceType>providerID</con:sourceType><con:sourceStep>Properties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>GetSummaryData</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+//urn:GetSummaryDataRequest/urn:providerId</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false"><con:name>patientID</con:name><con:sourceType>patientID</con:sourceType><con:sourceStep>Properties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>GetSummaryData</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+//urn:GetSummaryDataRequest/urn:patientId</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>locationID</con:name><con:sourceType>locationID</con:sourceType><con:sourceStep>Properties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>GetSummaryData</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+//urn:GetSummaryDataRequest/urn:locationId</con:targetPath></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>dataSourceForDetail</con:name><con:sourceType>dataSource</con:sourceType><con:sourceStep>Properties</con:sourceStep><con:targetType>Request</con:targetType><con:targetStep>GetDetailData</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+//urn:GetDetailDataRequest/urn:dataSource</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="request" name="GetAvailableSources"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DisplayDataAggregatorBindingSoap11</con:interface><con:operation>GetAvailableSources</con:operation><con:request name="GetAvailableSources"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetAvailableSourcesRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="XPath Match"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns='urn:gov:hhs:fha:nhinc:common:dda';
+//ns:GetAvailableSourcesResponse/ns:return/text()[1]</path><content>MedAlerts</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences></con:configuration></con:assertion><con:assertion type="XPath Match"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns='urn:gov:hhs:fha:nhinc:common:dda';
+//ns:GetAvailableSourcesResponse/ns:return/text()</path><content>NHIN Documents</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences></con:configuration></con:assertion><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion"/><con:assertion type="Simple Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="urn:GetAvailableSources" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GetDataSourceIntoSummaryRequestCase"><con:settings/><con:config><script>///   Beginning of the function that
+/////  Get the data source into summary request
+
+// get response property
+def response = testRunner.testCase.getTestStepByName( "GetAvailableSources" );
+def propertyResponse= response.getProperty( "response" );
+
+// parse out textnodes to get
+def nodeResponse = new groovy.util.XmlParser(false,false).parseText(propertyResponse.value);
+def textNodesResponse = nodeResponse["S:Body"]["GetAvailableSourcesResponse"]["return"][1].text()
+
+// get request property
+def request = testRunner.testCase.getTestStepByName( "GetSummaryData" );
+def propertyRequest = request.getProperty( "request" );
+
+// parse out textnodes to modify
+def nodeRequest = new groovy.util.XmlParser(false,false).parseText(propertyRequest.value);
+def textNodesRequest = nodeRequest["soapenv:Body"]["urn:GetSummaryDataRequest"]["urn:dataSources"][0].children()
+
+
+// modify
+textNodesRequest.clear()
+textNodesRequest.add(textNodesResponse);
+
+
+// write back to string
+def writer = new java.io.StringWriter();
+def printer = new groovy.util.XmlNodePrinter( new PrintWriter( writer ));
+printer.print( nodeRequest );
+
+// set property
+def xml = writer.toString();
+xml = com.eviware.soapui.support.xml.XmlUtils.prettyPrintXml(xml )
+propertyRequest.setValue( xml)
+
+
+///   End of the function that
+/////  Get the data source into summary request
+</script></con:config></con:testStep><con:testStep type="request" name="GetSummaryData"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DisplayDataAggregatorBindingSoap11</con:interface><con:operation>GetSummaryData</con:operation><con:request name="GetSummaryData"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetSummaryDataRequest>
+         <urn:dataSources>NHIN Documents</urn:dataSources>
+         <urn:providerId>4</urn:providerId>
+         <urn:patientId>D123401</urn:patientId>
+         <urn:groupId>?</urn:groupId>
+         <urn:locationId>2.16.840.1.113883.3.279</urn:locationId>
+      </urn:GetSummaryDataRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="XPath Match" disabled="true"><con:configuration><path>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+exists(//urn:GetSummaryDataResponse/urn:summaryObjects/urn:itemId)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences></con:configuration></con:assertion><con:assertion type="XPath Match" disabled="true"><con:configuration><path>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+//urn:GetSummaryDataResponse/urn:summaryObjects/urn:dataSource/text()</path><content>NHIN Documents</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences></con:configuration></con:assertion><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="urn:GetSummaryData" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="GetDetailData"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DisplayDataAggregatorBindingSoap11</con:interface><con:operation>GetDetailData</con:operation><con:request name="GetDetailData"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://208.75.163.61:8080/DisplayDataAggregator/DisplayDataAggregatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetDetailDataRequest>
+         <urn:dataSource>NHIN Documents</urn:dataSource>
+         <urn:itemId>103.8.9284320.020.3590.75^1270881088994</urn:itemId>
+      </urn:GetDetailDataRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="XPath Match" disabled="true"><con:configuration><path>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+exists(//urn:GetDetailDataResponse/urn:detailObject/urn:itemId)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences></con:configuration></con:assertion><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="urn:GetDetailData" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="properties" name="EmptyProperties" disabled="true"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>locationID</con:name><con:value>0</con:value></con:property><con:property><con:name>dataSource</con:name><con:value>0</con:value></con:property><con:property><con:name>patientID</con:name><con:value>0</con:value></con:property><con:property><con:name>providerID</con:name><con:value>0</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="transfer itemID"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>itemId</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>GetSummaryData</con:sourceStep><con:sourcePath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+//urn:GetSummaryDataResponse/urn:summaryObjects/urn:itemId/text()</con:sourcePath><con:targetType>Request</con:targetType><con:targetStep>GetDetailData</con:targetStep><con:targetPath>declare namespace urn='urn:gov:hhs:fha:nhinc:common:dda';
+//urn:GetDetailDataRequest/urn:itemId</con:targetPath></con:transfers></con:config></con:testStep><con:testStep type="groovy" name="Run rest" disabled="true"><con:settings/><con:config><script>
+///////////////////////////////////////////
+
+def values = context.getProperty( "values" )
+def index = context.getProperty( "index" );
+
+def str = values[index]
+
+
+log.info("str="+str)
+
+
+def delim = "[|]";
+def pr = str.split(delim)
+
+def location = pr[0]
+def dataSource = pr[1]
+def patientID = pr[2]
+def providerID = pr[3]
+
+
+def props = testRunner.testCase.getTestStepByName( "Properties" )
+props.setPropertyValue( "locationID", location )
+props.setPropertyValue( "dataSource", dataSource )
+props.setPropertyValue( "patientID", patientID )
+props.setPropertyValue( "providerID", providerID )
+
+log.info( "set patientID to [" + patientID + "]" )
+
+testRunner.testCase.getTestStepByName("GetAvailableSources").run(testRunner, context);
+
+/////
+
+
+///   Beginning of the function that
+/////  Get the data source into summary request
+
+// get response property
+def response = testRunner.testCase.getTestStepByName( "GetAvailableSources" );
+def propertyResponse= response.getProperty( "response" );
+
+// parse out textnodes to get
+def nodeResponse = new groovy.util.XmlParser(false,false).parseText(propertyResponse.value);
+def textNodesResponse = nodeResponse["S:Body"]["GetAvailableSourcesResponse"]["return"][1].text()
+
+// get request property
+def request = testRunner.testCase.getTestStepByName( "GetSummaryData" );
+def propertyRequest = request.getProperty( "request" );
+
+// parse out textnodes to modify
+def nodeRequest = new groovy.util.XmlParser(false,false).parseText(propertyRequest.value);
+def textNodesRequest = nodeRequest["soapenv:Body"]["urn:GetSummaryDataRequest"]["urn:dataSources"][0].children()
+
+
+// modify
+textNodesRequest.clear()
+textNodesRequest.add(textNodesResponse);
+
+
+// write back to string
+def writer = new java.io.StringWriter();
+def printer = new groovy.util.XmlNodePrinter( new PrintWriter( writer ));
+printer.print( nodeRequest );
+
+// set property
+def xml = writer.toString();
+xml = com.eviware.soapui.support.xml.XmlUtils.prettyPrintXml(xml )
+propertyRequest.setValue( xml)
+
+
+///   End of the function that
+/////  Get the data source into summary request
+
+/////
+
+
+
+testRunner.testCase.getTestStepByName("Property Transfer1").run(testRunner, context);
+testRunner.testCase.getTestStepByName("GetSummaryData").run(testRunner, context);
+testRunner.testCase.getTestStepByName("transfer itemID").run(testRunner, context);
+testRunner.testCase.getTestStepByName("GetDetailData").run(testRunner, context);
+
+//def values = context.getProperty( "values" )
+//def index = context.getProperty( "index" );
+
+//def str = values[index]
+//def ix = str.indexOf( "," )
+
+//def props = testRunner.testCase.getTestStepByName( "Properties" )
+//def resultCount = props.getPropertyValue( "ResultCount" )
+//def count = str.substring( ix+1 )
+//def author = props.getPropertyValue( "patientID" )
+log.info("Index" + index)
+log.info("Values size" + values.size())
+
+if( ++index &lt; values.size() )
+   {
+      context.setProperty( "index", index )
+      //testRunner.gotoStepByName( "Validate and loop" )
+      testRunner.testCase.getTestStepByName("Run rest").run(testRunner, context);
+    
+
+   }
+   else
+   {
+      log.info "Finished TestCase, tested " + values.size() + " values"
+   }
+
+   
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService port="8088" path="/mockDisplayDataAggregatorBindingSoap11" host="Vadim600" name="MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="GetAvailableSources" interface="DisplayDataAggregatorBindingSoap11" operation="GetAvailableSources"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetAvailableSourcesResponse>
+         <!--Zero or more repetitions:-->
+         <urn:return>?</urn:return>
+      </urn:GetAvailableSourcesResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:GetAvailableSources"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetDetailData" interface="DisplayDataAggregatorBindingSoap11" operation="GetDetailData"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetDetailDataResponse>
+         <urn:detailObject>
+            <urn:itemId>?</urn:itemId>
+            <urn:dataSource>?</urn:dataSource>
+            <urn:author>?</urn:author>
+            <urn:patient>?</urn:patient>
+            <urn:description>?</urn:description>
+            <urn:dateCreated>?</urn:dateCreated>
+            <urn:data>?</urn:data>
+            <!--Zero or more repetitions:-->
+            <urn:itemValues>
+               <!--Optional:-->
+               <urn:name>?</urn:name>
+               <!--Zero or more repetitions:-->
+               <urn:values>?</urn:values>
+            </urn:itemValues>
+         </urn:detailObject>
+         <!--Zero or more repetitions:-->
+         <urn:errorList>
+            <!--Optional:-->
+            <urn:code>?</urn:code>
+            <!--Optional:-->
+            <urn:text>?</urn:text>
+         </urn:errorList>
+      </urn:GetDetailDataResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:GetDetailData"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetSummaryData" interface="DisplayDataAggregatorBindingSoap11" operation="GetSummaryData"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:gov:hhs:fha:nhinc:common:dda">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetSummaryDataResponse>
+         <!--Zero or more repetitions:-->
+         <urn:summaryObjects>
+            <urn:itemId>?</urn:itemId>
+            <urn:dataSource>?</urn:dataSource>
+            <urn:author>?</urn:author>
+            <urn:patient>?</urn:patient>
+            <urn:description>?</urn:description>
+            <urn:dateCreated>?</urn:dateCreated>
+            <!--Zero or more repetitions:-->
+            <urn:itemValues>
+               <!--Optional:-->
+               <urn:name>?</urn:name>
+               <!--Zero or more repetitions:-->
+               <urn:values>?</urn:values>
+            </urn:itemValues>
+         </urn:summaryObjects>
+         <!--Zero or more repetitions:-->
+         <urn:errorList>
+            <!--Optional:-->
+            <urn:code>?</urn:code>
+            <!--Optional:-->
+            <urn:text>?</urn:text>
+         </urn:errorList>
+      </urn:GetSummaryDataResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:GetSummaryData"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:properties><con:property><con:name>GetDetailData1</con:name><con:value>GetDetailData1</con:value></con:property><con:property><con:name>Transfer Properties</con:name><con:value>default</con:value></con:property></con:properties><con:wssContainer/></con:soapui-project>

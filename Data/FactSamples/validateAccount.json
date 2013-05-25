@@ -1,0 +1,10 @@
+{
+    "validateAccountFact":{
+        "successStatus":true,
+        "statusMessage":"Incorrect username or password",
+        "token":"6C",
+        "userId":"1",
+        "role":"provider",
+        "providerId":"1"
+   }
+}

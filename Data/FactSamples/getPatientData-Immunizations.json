@@ -1,0 +1,162 @@
+{
+    "patientDataFact": {
+        "factType": "Immunizations",
+        "trxnType": "list",
+        "visibleGridHeaders": true,
+        "fixedColumns": 1,
+        "maxColumns": 3,
+        "detailTabs": [
+            {
+                "label": "Detail",
+                "type": "grid",
+                "responseType": "detail",
+                "sectionId": "immuneDetails",
+                "filters": [
+                    "code", "codeSystemCode"
+                ]
+            }, {
+                "label": "Background",
+                "type": "text",
+                "responseType": "ecs",
+                "sectionId": 101,
+                "filters": [
+                    "code", "codeSystemCode", "sectionId"
+                ]
+            }, {
+                "label": "Disease",
+                "type": "text",
+                "responseType": "ecs",
+                "sectionId": 103,
+                "filters": [
+                    "code", "codeSystemCode", "sectionId"
+                ]
+            }, {
+                "label": "Podcasts",
+                "type": "text",
+                "responseType": "ecs",
+                "sectionId": 22,
+                "filters": [
+                    "code", "codeSystemCode", "sectionId"
+                ]
+            }, {
+                "label": "Videos",
+                "type": "text",
+                "responseType": "ecs",
+                "sectionId": 21,
+                "filters": [
+                    "code", "codeSystemCode", "sectionId"
+                ]
+            }
+        ],
+        "gridHeaders": [
+            {
+                "columnId": "vaccine",
+                "value": "Vaccine",
+                "description": "A column header.",
+                "width": 10
+            }, {
+                "columnId": "column1",
+                "value": "#1",
+                "description": "A column header.",
+                "width": 10
+            }, {
+                "columnId": "column2",
+                "value": "#2",
+                "description": "A column header.",
+                "width": 10
+            }, {
+                "columnId": "column3",
+                "value": "#3",
+                "description": "A column header.",
+                "width": 10
+            }, {
+                "columnId": "column4",
+                "value": "#4",
+                "description": "A column header.",
+                "width": 10
+            }
+        ],
+        "facts": [
+            {
+                "vaccine": "Hepatitis A",
+                "code": "054868-4056-*0",
+                "codeSystemName": "NDC-FDA Drug Registration and Listing System",
+                "codeSystemCode": "PH_FDA_DRLS",
+                "column1": "15-Aug-1990",
+                "column2": "15-Oct-1990",
+                "column3": "15-Dec-1990",
+                "column4": "15-Jun-1991",
+                "hoverTexts": [
+                    "054868-4056-*0 (PH_FDA_DRLS)", "Age: 2 months", "Age: 4 months", "Age: 8 months", "Age: 16 months", "Age: 10 months", "Age: 12 months", "Age: 16 months"
+                ],
+                "itemId": 10,
+                "status": "Complete"
+            }, {
+                "vaccine": "Hepatitis B",
+                "code": "000006-4995-00",
+                "codeSystemName": "NDC-FDA Drug Registration and Listing System",
+                "codeSystemCode": "PH_FDA_DRLS",
+                "column1": "15-Aug-1990",
+                "column2": "15-Oct-1990",
+                "column3": "15-Dec-1990",
+                "column4": "15-Jun-1991",
+                "hoverTexts": [
+                    "000006-4995-00 (PH_FDA_DRLS)", "Age: 2 months", "Age: 4 months", "Age: 7 months", "Age: 12 months", "Age: 4 years"
+                ],
+                "itemId": 11,
+                "status": "Complete"
+            }, {
+                "vaccine": "Tetanus",
+                "code": "037",
+                "codeSystemName": "ICD-9-CM, Volume 1&2",
+                "codeSystemCode": "PH_DiseaseClassification_ICD-9CM",
+                "column1": "15-Aug-2000",
+                "column2": "11-Nov-2000",
+                "column3": "15-Nov-2002",
+                "hoverTexts": [
+                    "037 (ICD-9-CM, Volume 1&2)", "Age: 10 years", "Age: 10 years", "Age: 12 years"
+                ],
+                "itemId": 12,
+                "status": "Complete"
+            }, {
+                "vaccine": "MMR",
+                "code": "V064",
+                "codeSystemName": "ICD-9-CM, Volume 1&2",
+                "codeSystemCode": "PH_DiseaseClassification_ICD-9CM",
+                "column1": "05-Jun-2000",
+                "column2": "12-Dec-2007",
+                "hoverTexts": [
+                    "7890 (ICD-9-CM, Volume 1&2)", "Age: 10 years", "Age: 13 years"
+                ],
+                "itemId": 13,
+                "status": "Complete"
+            }, {
+                "vaccine": "Polio",
+                "code": "V063",
+                "codeSystemName": "ICD-9-CM, Volume 1&2",
+                "codeSystemCode": "PH_DiseaseClassification_ICD-9CM",
+                "column1": "12-Dec-2008",
+                "column2": "12-Dec-2007",
+                "hoverTexts": [
+                    "V063 (ICD-9-CM)", "Age: 12 years", "Age: 13 years"
+                ],
+                "itemId": 14,
+                "status": "Complete"
+            }, {
+                "vaccine": "Flu",
+                "code": 9012,
+                "codeSystemName": "SNOMED-CT",
+                "codeSystemCode": "PH_SNOMED-CT",
+                "column1": "15-Jun-1995",
+                "column2": "12-Dec-1996",
+                "column3": "12-Dec-1997",
+                "hoverTexts": [
+                    "9012 (PH_SNOMED-CT)", "Age: 5 years", "Age: 6 years", "Age: 7 years"
+                ],
+                "itemId": 15,
+                "status": "Complete"
+            }
+        ],
+        "successStatus": true
+    }
+}

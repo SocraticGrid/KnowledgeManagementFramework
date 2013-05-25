@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*****************************************************************************************************************
+  ~  *
+  ~  * Copyright (C) 2012 by Cognitive Medical Systems, Inc (http://www.cognitivemedciine.com)
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+  ~  * with the License. You may obtain a copy of the License at
+  ~  *
+  ~  *     http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software distributed under the License is
+  ~  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and limitations under the License.
+  ~  *
+  ~  *****************************************************************************************************************/
+  ~
+  ~ /*****************************************************************************************************************
+  ~  * Socratic Grid contains components to which third party terms apply. To comply with these terms, the following
+  ~  * notice is provided:
+  ~  *
+  ~  * TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+  ~  * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+  ~  * the following conditions are met:
+  ~  *
+  ~  * - Redistributions of source code must retain the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer.
+  ~  * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~  * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or
+  ~  *     promote products derived from this software without specific prior written permission.
+  ~  *
+  ~  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+  ~  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  ~  * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ~  * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  ~  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER
+  ~  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  ~  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~  *
+  ~  * END OF TERMS AND CONDITIONS
+  ~  *
+  ~  *****************************************************************************************************************/
+  -->
+
+<!-- This wsdl file is for a Document Manager -->
+<wsdl:definitions
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ihe="urn:ihe:iti:xds-b:2007"
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+	xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+    xmlns:hl7="urn:hl7-org:v3"
+	xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+    xmlns:docmgr="urn:org:socraticgrid:common:docmgr"
+    targetNamespace="urn:ihe:iti:xds-b:2007"
+    name="DocumentManager">
+	<wsdl:documentation>Document Manager</wsdl:documentation>
+	<wsdl:types>
+        <xsd:schema elementFormDefault="qualified"
+            targetNamespace="urn:ihe:iti:xds-b:2007"
+            xmlns:ihe="urn:ihe:iti:xds-b:2007">
+            <!-- Include the message schema -->
+            <xsd:include schemaLocation="schemas/ihe/XDS.b_DocumentRepository.xsd"/>
+        </xsd:schema>
+		<xsd:schema elementFormDefault="qualified"
+			targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+			xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0">
+			<!-- Include the message schema -->
+			<xsd:include schemaLocation="schemas/ebRS/query.xsd"/>
+		</xsd:schema>
+		<xsd:schema elementFormDefault="qualified"
+			targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+			xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0">
+			<!-- Include the message schema -->
+			<xsd:include schemaLocation="schemas/ebRS/rs.xsd"/>
+		</xsd:schema>
+		<xsd:schema elementFormDefault="qualified"
+			targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+			xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0">
+			<!-- Include the message schema -->
+			<xsd:include schemaLocation="schemas/ebRS/lcm.xsd"/>
+		</xsd:schema>
+		<!-- While no elements are directly used from this schema in the WSDL, it needs to be present here in order for
+		code generating toolkits to work properly -->
+		<xsd:schema elementFormDefault="qualified"
+			targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+			xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+			<!-- Include the message schema -->
+			<xsd:include schemaLocation="schemas/ebRS/rim.xsd"/>
+		</xsd:schema>
+        <xsd:schema>
+            <xsd:import namespace="urn:org:socraticgrid:common:docmgr"
+                  schemaLocation="../schemas/nhinc/common/DocManager.xsd"/>
+        </xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="queryForDocument_Message">
+		<wsdl:documentation>Registry Stored Query</wsdl:documentation>
+		<wsdl:part name="body" element="query:AdhocQueryRequest"/>
+	</wsdl:message>
+	<wsdl:message name="queryForDocumentResponse_Message">
+		<wsdl:documentation>Registry Stored Query Response</wsdl:documentation>
+		<wsdl:part name="body" element="query:AdhocQueryResponse"/>
+	</wsdl:message>
+    <wsdl:message name="retrieveDocument_Message">
+        <wsdl:documentation>Retrieve Document Set</wsdl:documentation>
+        <wsdl:part name="body" element="ihe:RetrieveDocumentSetRequest"/>
+    </wsdl:message>
+    <wsdl:message name="retrieveDocumentResponse_Message">
+        <wsdl:documentation>Retrieve Document Set Response</wsdl:documentation>
+        <wsdl:part name="body" element="ihe:RetrieveDocumentSetResponse"/>
+    </wsdl:message>
+    <wsdl:message name="storeDocument_Message">
+        <wsdl:documentation>Provide and Register Document Set</wsdl:documentation>
+        <wsdl:part name="body" element="ihe:ProvideAndRegisterDocumentSetRequest"/>
+    </wsdl:message>
+    <wsdl:message name="storeDocumentResponse_Message">
+        <wsdl:documentation>Provide And Register Document Set Response</wsdl:documentation>
+        <wsdl:part name="body" element="rs:RegistryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="archiveDocument_Message">
+        <wsdl:documentation>Archive Document</wsdl:documentation>
+        <wsdl:part name="body" element="docmgr:ArchiveDocumentRequest"/>
+    </wsdl:message>
+    <wsdl:message name="archiveDocumentResponse_Message">
+        <wsdl:documentation>Archive Document Response</wsdl:documentation>
+        <wsdl:part name="body" element="rs:RegistryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateDocumentSlot_Message">
+        <wsdl:documentation>Update Document Slot</wsdl:documentation>
+        <wsdl:part name="body" element="docmgr:UpdateDocumentSlotRequest"/>
+    </wsdl:message>
+    <wsdl:message name="updateDocumentSlotResponse_Message">
+        <wsdl:documentation>Update Document Slot Response</wsdl:documentation>
+        <wsdl:part name="body" element="rs:RegistryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="generateUniqueIdRequestMessage">
+        <wsdl:documentation>Generate unique id for documents</wsdl:documentation>
+        <wsdl:part name="request" element="docmgr:GenerateUniqueIdRequest"/>
+    </wsdl:message>
+    <wsdl:message name="generateUniqueIdResponseMessage">
+        <wsdl:documentation>Generate unique id for documents</wsdl:documentation>
+        <wsdl:part name="response" element="docmgr:GenerateUniqueIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="startNHINQueryAndDownloadRequestMessage">
+        <wsdl:documentation>Asynchronously retrieve new documents</wsdl:documentation>
+        <wsdl:part name="request" element="docmgr:StartNHINQueryAndDownloadRequest"/>
+    </wsdl:message>
+    <wsdl:message name="startNHINQueryAndDownloadResponseMessage">
+        <wsdl:documentation>Asynchronously retrieve new documents</wsdl:documentation>
+        <wsdl:part name="response" element="docmgr:StartNHINQueryAndDownloadResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getNHINDocumentsRequestMessage">
+        <wsdl:documentation>KMR request for NHIN documents</wsdl:documentation>
+        <wsdl:part name="request" element="docmgr:GetNHINDocumentsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getNHINDocumentsResponseMessage">
+        <wsdl:documentation>KMR request for NHIN documents</wsdl:documentation>
+		<wsdl:part name="response" element="docmgr:GetNHINDocumentsResponse"/>
+    </wsdl:message>
+	<wsdl:portType name="DocumentManager_PortType">
+        <wsdl:operation name="DocumentManager_queryForDocument">
+			<wsdl:input message="ihe:queryForDocument_Message"
+				name="QueryForDocument"/>
+			<wsdl:output message="ihe:queryForDocumentResponse_Message"
+				name="QueryForDocumentResponse"/>
+		</wsdl:operation>
+        <wsdl:operation name="DocumentManager_retrieveDocument">
+            <wsdl:input message="ihe:retrieveDocument_Message"
+                name="RetrieveDocument"/>
+            <wsdl:output message="ihe:retrieveDocumentResponse_Message"
+                name="RetrieveDocumentResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="DocumentManager_storeDocument">
+            <wsdl:input message="ihe:storeDocument_Message"
+                name="StoreDocument"/>
+            <wsdl:output message="ihe:storeDocumentResponse_Message"
+                name="StoreDocumentResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="DocumentManager_archiveDocument">
+            <wsdl:input message="ihe:archiveDocument_Message"
+                name="ArchiveDocument"/>
+            <wsdl:output message="ihe:archiveDocumentResponse_Message"
+                name="ArchiveDocumentResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="DocumentManager_updateDocumentSlot">
+            <wsdl:input message="ihe:updateDocumentSlot_Message"
+                name="UpdateDocumentSlot"/>
+            <wsdl:output message="ihe:updateDocumentSlotResponse_Message"
+                name="UpdateDocumentSlotResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GenerateUniqueId">
+            <wsdl:input message="ihe:generateUniqueIdRequestMessage"
+                name="GenerateUniqueIdRequest"/>
+            <wsdl:output message="ihe:generateUniqueIdResponseMessage"
+                name="GenerateUniqueIdResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="StartNHINQueryAndDownload">
+            <wsdl:input message="ihe:startNHINQueryAndDownloadRequestMessage"
+                name="StartNHINQueryAndDownloadRequest"/>
+            <wsdl:output message="ihe:startNHINQueryAndDownloadResponseMessage"
+                name="StartNHINQueryAndDownloadResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="GetNHINDocuments">
+            <wsdl:input message="ihe:getNHINDocumentsRequestMessage"
+                name="GetNHINDocumentsRequest"/>
+            <wsdl:output message="ihe:getNHINDocumentsResponseMessage"
+                name="GetNHINDocumentsResponse"/>
+        </wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DocumentManager_Binding_Soap"
+             type="ihe:DocumentManager_PortType">
+	 <soap:binding style="document"
+                   transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="DocumentManager_queryForDocument">
+			<soap:operation soapAction="urn:ihe:iti:2007:QueryForDocument"/>
+			<wsdl:input name="QueryForDocument">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="QueryForDocumentResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+        <wsdl:operation name="DocumentManager_retrieveDocument">
+            <soap:operation soapAction="urn:ihe:iti:2007:RetrieveDocument"/>
+            <wsdl:input name="RetrieveDocument">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="RetrieveDocumentResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DocumentManager_storeDocument">
+            <soap:operation soapAction="urn:ihe:iti:2007:StoreDocument"/>
+            <wsdl:input name="StoreDocument">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="StoreDocumentResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DocumentManager_archiveDocument">
+            <soap:operation soapAction="urn:ihe:iti:2007:ArchiveDocument"/>
+            <wsdl:input name="ArchiveDocument">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="ArchiveDocumentResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DocumentManager_updateDocumentSlot">
+            <soap:operation soapAction="urn:ihe:iti:2007:UpdateDocumentSlot"/>
+            <wsdl:input name="UpdateDocumentSlot">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="UpdateDocumentSlotResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GenerateUniqueId">
+            <soap:operation soapAction="urn:ihe:iti:2007:GenerateUniqueId"/>
+            <wsdl:input name="GenerateUniqueIdRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GenerateUniqueIdResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="StartNHINQueryAndDownload">
+            <soap:operation soapAction="urn:ihe:iti:2007:StartNHINQueryAndDownload"/>
+            <wsdl:input name="StartNHINQueryAndDownloadRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="StartNHINQueryAndDownloadResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetNHINDocuments">
+            <soap:operation soapAction="urn:ihe:iti:2007:GetNHINDocuments"/>
+            <wsdl:input name="GetNHINDocumentsRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetNHINDocumentsResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DocumentManager_Service">
+		<wsdl:port name="DocumentManager_Port_Soap"
+              binding="ihe:DocumentManager_Binding_Soap">
+			<soap:address
+               location="http://localhost:${HttpDefaultPort}/DocumentManager/DocumentManager_Service"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

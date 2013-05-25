@@ -1,0 +1,36 @@
+{
+  "patientId": "99990070",
+  "tags": ["Risk"],
+  "models":   [
+        {
+      "modelId": "MockPTSD",
+      "tags":       [
+        "E",
+        "Risk"
+      ],
+      "title": "Post Traumatic Stress Disorder",
+      "disease": "Post Traumatic Stress Disorder",
+      "displayThreshold": "30"
+    },
+        {
+      "modelId": "MockCold",
+      "tags":       [
+        "E",
+        "Risk"
+      ],
+      "title": "Uncommon Cold",
+      "disease": "Uncommon Cold",
+      "displayThreshold": "10"
+    },
+        {
+      "modelId": "MockDiabetes",
+      "favorite": true,
+      "tags": ["Risk"],
+      "title": "Sweet And Sour Diabetes",
+      "disease": "Sweet And Sour Diabetes",
+      "displayThreshold": "10"
+    }
+  ],
+  "successStatus": true,
+  "successMessage": "(ok)"
+}

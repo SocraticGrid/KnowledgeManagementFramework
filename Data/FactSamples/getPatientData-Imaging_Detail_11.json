@@ -1,0 +1,16 @@
+{
+    "patientDataFact": {
+        "factType": "Procedures",
+        "trxnType": "detail",
+        "visibleGridHeaders":  false,
+        "maxcolumns":8,
+        "itemId":11,
+        "status":"Final",
+
+        "facts": [
+                {"report": "<p><b>CHEST X-RAY</b> </p><p>CLINICAL HISTORY:   Reported shortness of breath.</p><p>TECHNIQUE AND FINDINGS:    Aliquam nec lectus et elit bibendum facilisis. Suspendisse venenatis dui sed mi vestibulum dignissim. In interdum dapibus odio, id bibendum tortor bibendum pharetra. Aenean lobortis, urna sit amet aliquet commodo, ipsum arcu volutpat nisi, aliquet vestibulum nulla eros id tortor. </p><p>PROCEDURES PERFORMED: Morbi commodo nisi nec elit feugiat ullamcorper. In nec tempus lorem.  Aenean lobortis, urna sit amet aliquet commodo, ipsum arcu volutpat nisi, aliquet vestibulum nulla eros id tortor.</p>"
+                }
+        ],
+        "successStatus": true
+    }
+}

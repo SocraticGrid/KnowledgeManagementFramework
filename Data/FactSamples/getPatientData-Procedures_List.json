@@ -1,0 +1,112 @@
+{
+    "patientDataFact": {
+        "factType": "Procedures",
+        "trxnType": "list",
+        "visibleGridHeaders":  true,
+        "maxcolumns":5,
+        
+        "listTabs":   [
+            {"domain": "",            "label": "All"         ,"disable": true  },
+            {"domain": "labs",        "label": "Lab"         ,"disable": false },
+            {"domain": "",            "label": "Micro"       ,"disable": true  },
+            {"domain": "",            "label": "Cytology"    ,"disable": true  },
+            {"domain": "",            "label": "Pathology"   ,"disable": true  },
+            {"domain": "imaging",     "label": "Imaging"     ,"disable": false },
+            {"domain": "",            "label": "Surgical"    ,"disable": true  },
+            {"domain": "procedures",  "label": "Procedures"  ,"disable": false }
+        ],
+        "detailTabs":   [
+            {"label": "Detail",                   "type":"text", "responseType":"detail",  "sectionId":"report",
+             "filters": ["code","codeSystemCode"] 
+            },
+            {"label": "Images",                   "type":"text", "responseType":"ecs",   "sectionId":"20",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Summary Information",      "type":"text", "responseType":"ecs",   "sectionId":"2",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Indications",              "type":"text", "responseType":"ecs",   "sectionId":"104",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Risk-Benefit",             "type":"text", "responseType":"ecs",   "sectionId":"109",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Literature",               "type":"text", "responseType":"ecs",   "sectionId":"23",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Podcasts",                 "type":"text", "responseType":"ecs",   "sectionId":"22",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            },
+            {"label": "Videos",                   "type":"text", "responseType":"ecs",   "sectionId":"21",
+             "filters": ["code","codeSystemCode", "sectionId"] 
+            }          
+        ],
+        "gridHeaders": [
+            { "columnId":       "procedureDate",
+              "value":          "Date",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "description",
+              "value":          "Description",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "provider",
+              "value":          "Provider",
+              "description":    "A column header.",
+              "width":          "4"
+            },
+            { "columnId":       "status",
+              "value":          "Status",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "source",
+              "value":          "Source",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"procedureDate":   "1967-12-12",
+                 "description":      "Bronchoscopy",
+                 "code":            "123",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Blue",
+                 "source":          "VA",
+                 "hoverTexts":      ["",
+                                     "123 (icd9)"],
+                 "itemId":          10,
+                 "status":          "Final"
+                },
+                {"procedureDate":   "1967-12-12",
+                 "description":      "EEG",
+                 "code":            "456",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Black",
+                 "source":          "VA",
+                 "hoverTexts":      ["",
+                                     "456 (icd9)"],
+                 "itemId":          11,
+                 "status":          "Final"
+                },
+                {"procedureDate":   "1967-12-12",
+                 "description":      "EKG",
+                 "code":            "789",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Red",
+                 "source":          "VA",
+                 "hoverTexts":      ["",
+                                     "789 (icd9)"],
+                 "itemId":          12,
+                 "status":          "Draft"
+                }
+        ],
+        "successStatus": true
+    }
+}

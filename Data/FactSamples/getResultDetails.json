@@ -1,0 +1,42 @@
+{
+    "resultDetailsFact": {
+        "resultId":"1",
+        "configId":"111",
+        "results": [
+            {
+                "type":"",
+                "description":"General Plan Results and Statistics",
+                "tableHeadings": [
+                    { "columnId":"description", "value":"Description", "width":"200", "hoverText":"Optional tooltip" },
+                    { "columnId":"runDate", "value":"Date Run", "width":"80" },
+                    { "columnId":"cases", "value":"Predicted Cases" },
+                    { "columnId":"maxDuration", "value":"Description" },
+                    { "columnId":"score", "value":"Description" },
+                    { "columnId":"stopCondition", "value":"Description" }
+                ],
+                "tableOutput": [
+                    { "description":"1st Marine Corp Division - Iraq", "runDate":"1/12/2011", "cases":"325", "maxDuration":"24", "score":"732/1058", "stopCondition":"Time Limit" }
+                ]
+            },
+            {
+                "type":"",
+                "description":"Producer Results",
+                "tableHeadings": [
+                    { "columnId":"producer", "value":"Producer", "width":"200", "hoverText":"Optional tooltip" },
+                    { "columnId":"resource", "value":"Resource", "width":"80" },
+                    { "columnId":"capacity", "value":"Individual Resource Capacity" },
+                    { "columnId":"amount", "value":"Amount" },
+                    { "columnId":"totalCapacity", "value":"Total Resource Capacity" }
+                ],
+                "tableOutput": [
+                    { "producer":"MD", "resource":"MD Visit", "capacity":"240 MD visit", "amount":"15", "totalCapacity":"2400 MD Visit" },
+                    { "producer":"MD", "resource":"Lecturer", "capacity":"72 Lecturer", "amount":"15", "totalCapacity":"720 Lecturer" },
+                    { "producer":"Psychologist", "resource":"Psi Visit", "capacity":"720 Psi visit", "amount":"1", "totalCapacity":"720 Psi Visit" },
+                    { "producer":"Room", "resource":"Lecture Seat", "capacity":"10800 Seat", "amount":"2", "totalCapacity":"21600 Seat" }
+                ]
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

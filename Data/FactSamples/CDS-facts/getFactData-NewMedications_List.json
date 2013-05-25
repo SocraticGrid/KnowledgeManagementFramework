@@ -1,0 +1,69 @@
+{
+    "patientDataFact": {
+        "factType": "Medications",
+        "trxnType": "codelist",
+        "visibleGridHeaders":  true,
+        "maxcolumns":15,
+
+
+        "detailTabs": [
+            {"label":        "Original SPL",
+             "type":         "grid",
+             "responseType": "codedetail",
+             "sectionId":    "origSPL",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "SPL Triples",
+             "type":         "grid",
+             "responseType": "codedetail",
+             "sectionId":    "triplesSPL",
+             "filters":      ["code","codeSystemCode"]
+            }
+        ],
+        "gridHeaders": [
+            { "columnId":       "medication",
+              "value":          "Medication",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "newCode",
+              "value":          "RxNORM Code",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "description",
+              "value":          "Description",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+            {
+                "medication": "Albuterol",
+                "newCode": "56789",
+                "code": "56789",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "description": "lorem ipsum"
+            },
+            {
+                "medication": "Status Asthmaticus",
+                "newCode": "12345",
+                "code": "12345",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "description": "lorem ipsum"
+            },
+            {
+                "diagnosis": "Exercised Induced Asthma",
+                "newCode": "09876",
+                "code": "09876",
+                "codeSystemName": "ICD9 not translated",
+                "codeSystemCode": "ICD9",
+                "description": "lorem ipsum"
+            }
+        ],
+        "successStatus": true
+    }
+}

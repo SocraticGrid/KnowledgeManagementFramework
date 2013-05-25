@@ -1,0 +1,143 @@
+{
+    "patientDataFact": {
+        "factType": "Medications",
+        "trxnType": "list",
+        "visibleGridHeaders":  true,
+        "maxcolumns":15,
+        
+        "detailTabs":   [
+            {"label": "Dispensations",            "type":"grid", "responseType":"detail",  "index":"dispensations", "filters": ["code","codeSystemCode"]},
+            {"label": "Description",              "type":"text", "responseType":"ecs",   "index":"4", "filters": ["code","codeSystemCode", "sectionId"]},
+            {"label": "Instructions",             "type":"text", "responseType":"ecs",   "index":"102", "filters": ["code","codeSystemCode", "sectionId"]},
+            {"label": "Indications",              "type":"text", "responseType":"ecs",   "index":"104", "filters": ["code","codeSystemCode", "sectionId"]},
+            {"label": "Side-Effects",             "type":"text", "responseType":"ecs",   "index":"105", "filters": ["code","codeSystemCode", "sectionId"]},
+            {"label": "Potential Interactions",   "type":"text", "responseType":"ecs",   "index":"106", "filters": ["code","codeSystemCode", "sectionId"]}
+        ],
+        "gridHeaders": [
+            { "columnId":       "orderDate",
+              "value":          "Order D/T",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "medication",
+              "value":          "Medication",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "sig",
+              "value":          "Sig",
+              "description":    "A column header.",
+              "formatter":      "pageIcon",
+              "width":          "4"
+            },
+            { "columnId":      "formulation",
+              "value":          "Formulation",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "unit",
+              "value":          "Unit",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "dose",
+              "value":          "Dose",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "route",
+              "value":          "Route",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "frequency",
+              "value":          "Frequency",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "duration",
+              "value":          "Duration",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "quantity",
+              "value":          "Quantity",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "refills",
+              "value":          "Refills",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "prescriber",
+              "value":          "Prescriber",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "orderExpireDate",
+              "value":          "Order Expir.",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "indication",
+              "value":          "Indication",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "source",
+              "value":          "Source",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"orderDate":       "1989-01-15",
+                 "medication":      "Amoxicillin",
+                 "code":            "0093-4160-78",
+                 "codeSystemName":  "NDC",
+                 "sig":             "This is a picture",
+                 "formulation":     "Tablet",
+                 "unit":            "500mg",
+                 "dose":            "500mg",
+                 "route":           "Oral",
+                 "frequency":       "Once a Day",
+                 "duration":        "Indefinite",
+                 "quantity":        "30",
+                 "refills":         "1/3",
+                 "prescriber":      "Emory A. Fry",
+                 "orderExpireDate": "1989-02-15",
+                 "indication":      "Cholesterol",
+                 "source":          "VA",
+                 "hoverTexts":      ["",
+                                     "0093-4160-78 (PH_FDA_DRLS)"],
+                 "itemId":          10,
+                 "status":          "Active"
+                },
+                {"orderDate":       "1989-01-17",
+                 "medication":      "Azithromycin",
+                 "code":            "61570-053-20",
+                 "codeSystemName":  "NDC",
+                 "sig":             "This is another picture",
+                 "formulation":     "Tablet",
+                 "unit":            "600mg",
+                 "dose":            "600mg",
+                 "route":           "Oral",
+                 "frequency":       "Twice a Day",
+                 "duration":        "10 days",
+                 "quantity":        "10",
+                 "refills":         "0/2",
+                 "prescriber":      "Dr. Wilson",
+                 "orderExpireDate": "1989-02-17",
+                 "indication":      "Otitis Media",
+                 "source":          "Kaiser",
+                  "hoverTexts":     ["",
+                                     "61570-053-20 (PH_FDA_DRLS)"],
+                 "itemId":          11,
+                 "status":          "Active"
+                }
+        ],
+        "successStatus": true
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "simulationDescriptors": [
+        {
+            "simulationId":"99990070",
+            "name": "Best-case scenario - Simulation name 1",
+            "author": "sim author 1",
+            "startDate":"2011-11-07 10:00"
+        },
+        {
+            "simulationId":"simId1",
+            "name": "Expected-case scenario - Simulation name 1",
+            "author": "sim author 2",
+            "startDate":"2011-11-07 11:00"
+        },
+        {
+            "simulationId":"99990072",
+            "name": "Worst-case scenario - Simulation name 1",
+            "author": "sim author 3",
+            "startDate":"2011-11-07 12:00"
+        }
+    ]    ,
+    "successStatus": true,
+    "statusMessage": ""
+}

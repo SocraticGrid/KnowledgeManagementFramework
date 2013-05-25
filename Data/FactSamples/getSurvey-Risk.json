@@ -1,0 +1,132 @@
+{
+    "surveyFact": {
+        "successStatus": true,
+        "statusMessage": "(ok)",
+        "name": "Name or title of the Survey",
+        "interactive": false,
+        "language": "EN",
+        "surveyClass": "org.kmr2.mock.SurveyBean",
+        "surveyQuestions": [
+            {
+                "questionName": "question4",
+                "preLabel": "Please enter a numeric value : ",
+                "required": false,
+                "answerType": "number",
+                "currentAnswer": "44",
+                "suggestedControl": "text",
+                "itemId": "39efb60c-616b-4276-a644-9421b22f0746",
+                "dirty": false
+            },
+            {
+                "questionName": "question6",
+                "preLabel": "Please enter any date value : ",
+                "required": true,
+                "answerType": "date",
+                "suggestedControl": "date",
+                "itemId": "a4691105-7e6a-4ae0-8af3-2fffe5264ba5",
+                "dirty": false
+            },
+            {
+                "questionName": "question6",
+                "preLabel": "Please enter any date value : ",
+                "required": true,
+                "answerType": "date",
+                "suggestedControl": "date",
+                "itemId": "a4691105-7e6a-4ae0-8af3-2fffe5264ba5",
+                "dirty": false
+            },
+            {
+                "questionName": "question6",
+                "preLabel": "Please enter any date value : ",
+                "required": true,
+                "answerType": "date",
+                "suggestedControl": "date",
+                "itemId": "a4691105-7e6a-4ae0-8af3-2fffe5264ba5",
+                "dirty": false
+            },
+            {
+                "questionName": "question6",
+                "preLabel": "Please enter any date value : ",
+                "required": true,
+                "answerType": "date",
+                "suggestedControl": "date",
+                "itemId": "a4691105-7e6a-4ae0-8af3-2fffe5264ba5",
+                "dirty": false
+            },
+            {
+                "questionName": "question6",
+                "preLabel": "Please enter any date value : ",
+                "required": true,
+                "answerType": "date",
+                "suggestedControl": "date",
+                "itemId": "a4691105-7e6a-4ae0-8af3-2fffe5264ba5",
+                "dirty": false
+            },
+            {
+                "questionName": "question6",
+                "preLabel": "Please enter any date value : ",
+                "required": true,
+                "answerType": "date",
+                "suggestedControl": "date",
+                "itemId": "a4691105-7e6a-4ae0-8af3-2fffe5264ba5",
+                "dirty": false
+            },
+            {
+                "questionName": "question6",
+                "preLabel": "Please enter any date value : ",
+                "required": true,
+                "answerType": "date",
+                "suggestedControl": "date",
+                "itemId": "a4691105-7e6a-4ae0-8af3-2fffe5264ba5",
+                "dirty": false
+            },
+            {
+                "questionName": "question6",
+                "preLabel": "Please enter any date value : ",
+                "required": true,
+                "answerType": "date",
+                "suggestedControl": "date",
+                "itemId": "a4691105-7e6a-4ae0-8af3-2fffe5264ba5",
+                "dirty": false
+            },
+            {
+                "questionName": "question1",
+                "preLabel": "Please choose one : ",
+                "required": true,
+                "answerType": "number",
+                "suggestedControl": "combobox",
+                "singleAnswer": false,
+                "possibleAnswers": [
+                    {
+                        "value": "6",
+                        "label": "Choice6"
+                    },
+                    {
+                        "value": "5",
+                        "label": "Choice5"
+                    },
+                    {
+                        "value": "4",
+                        "label": "Choice4"
+                    },
+                    {
+                        "value": "3",
+                        "label": "Choice3"
+                    },
+                    {
+                        "value": "2",
+                        "label": "Choice2"
+                    },
+                    {
+                        "value": "1",
+                        "label": "Choice1"
+                    }
+                ],
+                "itemId": "27e619fa-62f6-4224-be59-d890b258a33e",
+                "dirty": false
+            }
+        ],
+        "itemId": "123456UNIQUESURVEYID",
+        "dirty": false
+    }
+}

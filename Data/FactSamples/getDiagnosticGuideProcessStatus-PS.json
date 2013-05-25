@@ -1,0 +1,384 @@
+{
+    "id": "f879223d-d69d-45e6-a9e9-02e3bcd8f49d",
+    "status": "Started",
+    "decModel": "MockDecision",
+    "diagModel": "MockDiag",
+    "disease": "Post Traumatic Stress Disorder",
+    "diagnosticProcessHistory": [
+        {
+            "nodeId": "3c635aca-bac9-4cb4-aabe-e528039934af",
+            "stage": "0",
+            "descr": "Stage 0",
+            "diseaseProbability": "0",
+            "severity": "Low",
+            "response": "The estimated disease probability is Low (0)",
+            "actions": [
+                {
+                    "descr": "Ask for alcohol abuse",
+                    "question": "ul",
+                    "questionnaireId": "54209e03-5c96-47bc-a6d3-b2bef4b298df",
+                    "actionId": "b8a8ab59-9e12-4fc5-b778-6ac1596b8e99",
+                    "numQuestions": "1",
+                    "utility": "0.51",
+                    "utilityLevel": "Normal",
+                    "status": "Completed",
+                    "statusUpdated": "02/29/2012 1:39 PM"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "a72b1567-28a4-4dfa-b0af-277eb57b2bd0",
+                    "actionId": "fb0f7193-6d41-44c6-a9a1-afdb0b50a7b1",
+                    "numQuestions": "1",
+                    "utility": "0.51",
+                    "utilityLevel": "Normal",
+                    "statusUpdated": "02/17/2012 1:39 PM",
+                    "status": "Not Started"
+                },
+                {
+                    "descr": "Ask for number of deployments ",
+                    "questionnaireId": "0d6ea4bb-cb8f-478a-99fd-106c2b62ef30",
+                    "actionId": "94fdba27-b7c2-42c1-ad62-4dfdea0e09af",
+                    "numQuestions": "1",
+                    "utility": "0.54",
+                    "utilityLevel": "Normal",
+                    "status": "Completed",
+                    "statusUpdated": "02/29/2012 2:00 PM"
+                },
+                {
+                    "descr": "You had better not know",
+                    "confirm": false,
+                    "questionnaireId": "87e20f5b-fa92-4957-b703-71b277ad9841",
+                    "actionId": "da58f128-06f2-4867-874d-ddfd1bba57cc",
+                    "numQuestions": "1",
+                    "utility": "0.56",
+                    "utilityLevel": "Normal",
+                    "status": "Completed",
+                    "statusUpdated": "02/17/2012 3:00 PM"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "52cb6cb8-0705-4a90-b53b-9d16ac10b144",
+                    "actionId": "7dd7799b-ffbd-42bb-b0dc-9b689b6c7fad",
+                    "numQuestions": "1",
+                    "utility": "0.8200000000000001",
+                    "utilityLevel": "Normal",
+                    "status": "Completed",
+                    "statusUpdated": "02/17/2012 1:40 PM"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "37155154-17bc-4c27-9608-401ae7e38be4",
+                    "actionId": "3f4b2580-529e-4e64-aa07-c270174ee656",
+                    "numQuestions": "1",
+                    "utility": "0.88",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "9d21b63e-d73e-4d9d-a4b1-2706aae657bb",
+                    "actionId": "07b67d07-1c55-4aff-baef-f2d9eab99c9d",
+                    "numQuestions": "1",
+                    "utility": "0.93",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "b12a401f-0b30-4dd1-b81e-dd76a33d4556",
+                    "actionId": "524d531b-4e9b-44fc-9212-9d034fd30a62",
+                    "numQuestions": "1",
+                    "utility": "0.88",
+                    "utilityLevel": "Suggested",
+                    "status": "Completed",
+                    "statusUpdated": "02/19/2012 4:15 PM"
+                }
+            ]
+        },
+        {
+            "nodeId": "3c635aca-bacasdf9-4cb4-aabe-e528039934af",
+            "stage": "1",
+            "descr": "Stage 1",
+            "diseaseProbability": "20",
+            "severity": "Average",
+            "response": "The estimated disease probability is Average(20)",
+            "actions": [
+                {
+                    "descr": "This is an other option, just complete",
+                    "question": false,
+                    "questionnaireId": "801fa8casdf1-4285-42c5-acfd-3adcd3ea644b",
+                    "actionId": "99f9e1a5-ef8c-432d-sdfg8260-abdc87b39469",
+                    "numQuestions": "1",
+                    "utility": "0.0",
+                    "utilityLevel": "Low",
+                    "status": "Not Started"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "cfbcdd52-1faf-4931-b7sdfg05-e014a957c0f2",
+                    "actionId": "c13139a6-0706-4b94-be81-38c7e2354699bd47c",
+                    "numQuestions": "1",
+                    "utility": "0.05",
+                    "utilityLevel": "Low",
+                    "status": "Not Started"
+                },
+                {
+                    "descr": "Ask for alcohol abuse",
+                    "question": "ul",
+                    "questionnaireId": "54209e03-sdfg5c96-47bc-a6d3-b2bef4b298df",
+                    "actionId": "b8a8ab59-9sdfge12-4fc5-b778-h",
+                    "numQuestions": "1",
+                    "utility": "0.51",
+                    "utilityLevel": "Normal",
+                    "status": "Started",
+                    "statusUpdated": "10/14/11 1:39 PM"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "a72bfdg1567-28a4-4dfa-b0af-277eb57b2bd0",
+                    "actionId": "fb0f7193-6d41-44c6assdf-a9a1-afdb0b50a7b1",
+                    "numQuestions": "1",
+                    "utility": "0.52",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "02/18/2012 2:00 PM"
+                },
+                {
+                    "descr": "Ask for number of deployments ",
+                    "questionnaireId": "0d6esdfga4bb-cb8f-478a-99fd-106c2b62ef30",
+                    "actionId": "94fdba27-bsdf7c2-42c1-ad62-4dfdea0e09af",
+                    "numQuestions": "1",
+                    "utility": "0.54",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "02/18/2012 2:00 PM"
+              },
+                {
+                    "descr": "You had better not know",
+                    "confirm": false,
+                    "questionnaireId": "87e20f5b-fa92-4jfhg957-b703-71b277ad9841",
+                    "actionId": "da58f128-06f2-4adfg54867-874d-ddfd1bba57cc",
+                    "numQuestions": "1",
+                    "utility": "0.56",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "02/27/2012 3:00 PM"
+                }
+            ]
+        },
+        {
+            "nodeId": "3c635aca-bacasdf9-4cb4-aaassadfbe-e528039934af",
+            "stage": "1.5",
+            "descr": "Stage 1.5",
+            "diseaseProbability": "20",
+            "severity": "Average",
+            "response": "Testing single far right, even number of actions",
+            "actions": [
+                {
+                    "descr": "Ask for alcohol abuse",
+                    "question": "ul",
+                    "questionnaireId": "54209e03-sdfg5c96-47bc-a6d3-b2bef4b298df",
+                    "actionId": "b8a8ab59-9sdfge12-4fc5-b778-h",
+                    "numQuestions": "1",
+                    "utility": "0.51",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "10/14/11 1:39 PM"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "a72bfdg1567-28a4-4dfa-b0af-277eb57b2bd0",
+                    "actionId": "fb0f7193-6d41-44c6assdf-a9a1-afdb0b50a7b1",
+                    "numQuestions": "1",
+                    "utility": "0.52",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "02/18/2012 2:00 PM"
+                },
+                {
+                    "descr": "Ask for number of deployments ",
+                    "questionnaireId": "0d6esdfga4bb-cb8f-478a-99fd-106c2b62ef30",
+                    "actionId": "94fdba27-bsdf7c2-42c1-ad62-4dfdea0e09af",
+                    "numQuestions": "1",
+                    "utility": "0.54",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "02/18/2012 2:00 PM"
+                },
+                {
+                    "descr": "You had better not know",
+                    "confirm": false,
+                    "questionnaireId": "87e20f5b-fa92-4jfhg957-b703-71b277ad9841",
+                    "actionId": "da58f128-06f2-4adfg54867-874d-ddfd1bba57cc",
+                    "numQuestions": "1",
+                    "utility": "0.56",
+                    "utilityLevel": "Normal",
+                    "status": "Started",
+                    "statusUpdated": "02/27/2012 3:00 PM"
+                }
+            ]
+        },
+        {
+            "nodeId": "3c635aca-bacasdf9-4cb4-aabe-1234",
+            "stage": "2",
+            "descr": "Stage 2",
+            "diseaseProbability": "20",
+            "severity": "Average",
+            "response": "Testing a single center action",
+            "actions": [
+                {
+                    "descr": "Ask for alcohol abuse",
+                    "question": "ul",
+                    "questionnaireId": "54209e03-sdfg5c96-47bc-a6d3-b2bef4b298df",
+                    "actionId": "b8a8ab59-9sdfge12-4fc5-b778-h",
+                    "numQuestions": "1",
+                    "utility": "0.51",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "10/14/11 1:39 PM"
+                },
+                {
+                    "descr": "Ask something else",
+                    "question": "ul",
+                    "questionnaireId": "54209e03-sdfg5c96-47bc-a6d3-b2bef4b298df",
+                    "actionId": "b8a8ab59-9sdfge12-4fc5-b778-h",
+                    "numQuestions": "1",
+                    "utility": "0.22",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "10/14/11 1:39 PM"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "a72bfdg1567-28a4-4dfa-b0af-277eb57b2bd0",
+                    "actionId": "fb0f7193-6d41-44c6assdf-a9a1-afdb0b50a7b1",
+                    "numQuestions": "1",
+                    "utility": "0.52",
+                    "utilityLevel": "Normal",
+                    "status": "Started",
+                    "statusUpdated": "02/18/2012 2:00 PM"
+                },
+                {
+                    "descr": "Ask for number of deployments ",
+                    "questionnaireId": "0d6esdfga4bb-cb8f-478a-99fd-106c2b62ef30",
+                    "actionId": "94fdba27-bsdf7c2-42c1-ad62-4dfdea0e09af",
+                    "numQuestions": "1",
+                    "utility": "0.54",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "02/18/2012 2:00 PM"
+                },
+                {
+                    "descr": "You had better not know",
+                    "confirm": false,
+                    "questionnaireId": "87e20f5b-fa92-4jfhg957-b703-71b277ad9841",
+                    "actionId": "da58f128-06f2-4adfg54867-874d-ddfd1bba57cc",
+                    "numQuestions": "1",
+                    "utility": "0.56",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "02/27/2012 3:00 PM"
+                }
+            ]
+        },
+        {
+            "nodeId": "3c635aca-bacasdf9-4cb4-aabe-12asdf34",
+            "stage": "3",
+            "current": true,
+            "descr": "Stage 3",
+            "diseaseProbability": "20",
+            "severity": "Average",
+            "response": "Testing single far right, odd number of actions",
+            "actions": [
+                {
+                    "descr": "This is an other option, just complete",
+                    "question": false,
+                    "questionnaireId": "801fa8casdf1-4285-42c5-acfd-3adcd3ea644b",
+                    "actionId": "99f9e1a5-ef8c-432d-sdfg8260-abdc87b39469",
+                    "numQuestions": "1",
+                    "utility": "0.0",
+                    "utilityLevel": "Low",
+                    "status": "Not Started"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "cfbcdd52-1faf-4931-b7sdfg05-e014a957c0f2",
+                    "actionId": "c13139a6-0706-4b94-be81-38c7e2354699bd47c",
+                    "numQuestions": "1",
+                    "utility": "0.05",
+                    "utilityLevel": "Low",
+                    "status": "Not Started"
+                },
+                {
+                    "descr": "Ask for alcohol abuse",
+                    "question": "ul",
+                    "questionnaireId": "54209e03-sdfg5c96-47bc-a6d3-b2bef4b298df",
+                    "actionId": "b8a8ab59-9sdfge12-4fc5-b778-h",
+                    "numQuestions": "1",
+                    "utility": "0.51",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "10/14/11 1:39 PM"
+                },
+                {
+                    "descr": "No survey here, just complete",
+                    "question": false,
+                    "questionnaireId": "a72bfdg1567-28a4-4dfa-b0af-277eb57b2bd0",
+                    "actionId": "fb0f7193-6d41-44c6assdf-a9a1-afdb0b50a7b1",
+                    "numQuestions": "1",
+                    "utility": "0.52",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "02/18/2012 2:00 PM"
+                },
+                {
+                    "descr": "Ask for number of deployments ",
+                    "questionnaireId": "0d6esdfga4bb-cb8f-478a-99fd-106c2b62ef30",
+                    "actionId": "94fdba27-bsdf7c2-42c1-ad62-4dfdea0e09af",
+                    "numQuestions": "1",
+                    "utility": "0.54",
+                    "utilityLevel": "Normal",
+                    "status": "Not Started",
+                    "statusUpdated": "02/18/2012 2:00 PM"
+                },
+                {
+                    "descr": "You had better not know",
+                    "confirm": false,
+                    "questionnaireId": "87e20f5b-fa92-4jfhg957-b703-71b277ad9841",
+                    "actionId": "da58f128-06f2-4adfg54867-874d-ddfd1bba57cc",
+                    "numQuestions": "1",
+                    "utility": "0.56",
+                    "utilityLevel": "Normal",
+                    "status": "Started",
+                    "statusUpdated": "02/27/2012 3:00 PM"
+                }
+            ]
+        }
+    ],
+    "canAdvance": false,
+    "canCancel": true,
+    "actions": [
+        "org.kmr2.decision.impl.AskSomething6",
+        "org.kmr2.decision.impl.AskSomething5",
+        "org.kmr2.decision.impl.AskSomething7",
+        "org.kmr2.decision.impl.AskAlcohol",
+        "org.kmr2.decision.impl.AskSomething4",
+        "org.kmr2.decision.impl.AskDeployment",
+        "org.kmr2.decision.impl.DoExcruciatinglyPainfulTest",
+        "org.kmr2.decision.impl.AskSomething2",
+        "org.kmr2.decision.impl.AskSomething8",
+        "org.kmr2.decision.impl.AskSomething1",
+        "org.kmr2.decision.impl.AskSomething3"
+    ],
+    "successStatus": true
+}

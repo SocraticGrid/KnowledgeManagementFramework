@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TaggedTextArray xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://mdws.medora.va.gov/EmrSvc"><count>1</count><results><TaggedText><tag>102</tag><text><results version='1.1' timeZone='-0500' >
+<procedures total='2' >
+<procedure>
+<category value='SR' />
+<dateTime value='3070405.073' />
+<documents>
+<document id='3832' localTitle='OPERATION REPORT' />
+<document id='3831' localTitle='NURSE INTRAOPERATIVE REPORT' />
+<document id='3830' localTitle='ANESTHESIA REPORT' />
+</documents>
+<facility code='500' name='CAMP MASTER' />
+<id value='10107' />
+<name value='LEFT INGUINAL HERNIA REPAIR WITH MESH' />
+<opReport id='3832' localTitle='OPERATION REPORT' />
+<provider code='983' name='PROVIDER,ONE' />
+<status value='COMPLETED' />
+</procedure>
+<procedure>
+<case value='41' />
+<category value='RA' />
+<dateTime value='3060913.1' />
+<documents>
+<document id='6939086.8999-1' localTitle='CHEST 2 VIEWS PA&amp;LAT' status='Verified' />
+</documents>
+<facility code='500' name='CAMP MASTER' />
+<hasImages value='0' />
+<id value='6939086.8999-1' />
+<imagingType code='RAD' name='GENERAL RADIOLOGY' />
+<location code='40' name='RADIOLOGY MAIN FLOOR' />
+<name value='CHEST 2 VIEWS PA&amp;LAT' />
+<order code='33247' name='CHEST 2 VIEWS PA&amp;LAT' />
+<provider code='11716' name='RADIOLOGIST,ONE' />
+<status value='WAITING FOR EXAM' />
+<type code='71020' name='RADIOLOGIC EXAMINATION, CHEST, 2 VIEWS, FRONTAL AND LATERAL;' />
+</procedure>
+</procedures>
+</results>
+</text></TaggedText></results></TaggedTextArray>

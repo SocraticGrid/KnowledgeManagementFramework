@@ -1,0 +1,107 @@
+{
+	"patientDataFact": {
+		"factType": "Allergies",
+		"trxnType": "detail",
+		"visibleGridHeaders": true,
+		"maxcolumns": 7,
+		"itemId": 10,
+		"status": "Active",
+		"gridHeaders": [
+			{
+				"columnId": "reportDate",
+				"value": "Report Date",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "onsetDate",
+				"value": "Onset Date",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "resolutionDate",
+				"value": "Resolution Date",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "reaction",
+				"value": "Reaction",
+				"description": "A column header.",
+				"width": 20
+			}, {
+				"columnId": "severity",
+				"value": "Severity",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "recorder",
+				"value": "Recorder",
+				"description": "A column header.",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+				"reportDate": "2002-12-15",
+				"onsetDate": "2002-12-11",
+				"resolutionDate": "2002-12-11",
+				"allergen": "Sulfa Drugs",
+				"code": "91939003",
+				"codeSystemName": "snomed",
+				"codeSystemCode": "snomed",
+				"reaction": "Rash",
+				"severity": "Mild",
+				"recorder": "Dr. Fry",
+				"hoverTexts": [
+					"", "", "", "91939003 (snomed)"
+				]
+			},
+			{
+				"reportDate": "2001-12-02",
+				"onsetDate": "2001-12-01",
+				"resolutionDate": "2002-12-02",
+				"allergen": "Sulfa Drugs",
+				"code": "91939003",
+				"codeSystemName": "snomed",
+				"codeSystemCode": "snomed",
+				"reaction": "Shortness of Breath",
+				"severity": "Mild",
+				"recorder": "Dr. Fry",
+				"hoverTexts": [
+					"", "", "", "91939003 (snomed)"
+				]
+			},
+			{
+				"reportDate": "2001-06-11",
+				"onsetDate": "2001-06-10",
+				"resolutionDate": "2001-06-12",
+				"allergen": "Sulfa Drugs",
+				"code": "91939003",
+				"codeSystemName": "snomed",
+				"codeSystemCode": "snomed",
+				"reaction": "Shortness of Breath",
+				"severity": "Mild",
+				"recorder": "Dr. Fry",
+				"hoverTexts": [
+					"", "", "", "91939003 (snomed)"
+				]
+			},
+			{
+				"reportDate": "1999-06-06",
+				"onsetDate": "1999-06-06",
+				"resolutionDate": "1999-06-06",
+				"allergen": "Sulfa Drugs",
+				"code": "91939003",
+				"codeSystemName": "snomed",
+				"codeSystemCode": "snomed",
+				"reaction": "Anaphylaxis",
+				"severity": "Severe",
+				"recorder": "Dr. Smith",
+				"hoverTexts": [
+					"", "", "", "91939003 (snomed)"
+				]
+			}
+		],
+		"successStatus": true
+	}
+}
+

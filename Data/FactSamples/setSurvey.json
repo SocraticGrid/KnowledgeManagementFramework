@@ -1,0 +1,76 @@
+{
+    "surveyFact":{
+        "successStatus":true,
+        "statusMessage":"There was a problem with this answer",
+        "surveyPercentComplete":67,
+        "updateQuestions":[
+            {
+               "itemId":"300UNIQUEitemId",
+                "action":"add",
+                "position":0,
+               "preLabel":"This question was put on top of all questions with position 0 : ",
+               "required":true,
+               "answerType":"date",
+               "suggestedControl":"text",
+               "singleAnswer":true
+            },
+            {
+               "itemId":"400UNIQUEitemId",
+                "action":"add",
+                "position":4,
+               "preLabel":"This question was inserted into index position 4: ",
+               "required":true,
+               "answerType":"text",
+               "suggestedControl":"text",
+               "singleAnswer":true
+            },
+            {
+               "itemId":"500UNIQUEitemId",
+                "action":"add",
+               "preLabel":"This question will be appended to the bottom since there is no position : ",
+               "required":true,
+               "answerType":"text",
+               "suggestedControl":"text",
+               "singleAnswer":true
+            },
+            {
+               "itemId":"213UNIQUEitemId",
+               "preLabel":"This question was answered incorrectly.  Please enter a valid numeric value : ",
+                "currentAnswer":"gwe5",
+                "successType":"invalid",
+                "action":"update"
+            },
+            {
+               "itemId":"123UNIQUEitemId",
+                "action":"delete"
+            },
+            {
+                "itemId":"124UNIQUEitemId",
+                "action":"update",
+                "position":2,
+                "preLabel":"This Domicile question was updated and moved to position 2 : ",
+                "required":false,
+                "answerType":"text",
+                "currentAnswer":"Rural",
+                "suggestedControl":"radio",
+                "singleAnswer":false,
+                "successType":"valid",
+                "possibleAnswers":[
+                   {
+                      "key":"Rural",
+                      "value":"Rural Dom."
+                   },
+                    {
+                       "key":"Urban",
+                       "value":"Urban Dom."
+                    },
+                    {
+                       "key":"Suburban",
+                       "value":"Suburban Dom."
+                    }
+                ]
+             }
+
+        ]
+    }
+}

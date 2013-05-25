@@ -1,0 +1,46 @@
+
+    //REQUIRED ATTRIBUTES
+    protected String code;
+    protected String codeSystemName;
+    protected String codeSystemCode;
+    protected List<String> hoverTexts;
+    protected String itemId;
+    protected String status;
+
+    //PROBLEMS LIST ATTRIBUTES
+    protected String lastRecordedDate;
+    protected String problem;
+    protected String onset;
+    protected String acuity;
+    protected String facilicy;
+
+    //PROBLEMS DETAILS ATTRIBUTES
+    protected String drugClass;
+    protected String example;
+    protected String utilization;
+    protected String d90Days;
+    protected String d180Days;
+    protected String d270Days;
+
+
+    //MEDICATIONS LIST ATTRIBUTES
+    protected String orderDate;
+    protected String medication;
+    protected String sig;
+    protected String formulation;
+    protected String unit;
+    protected String dose;
+    protected String route;
+    protected String frequency;
+    protected String duration;
+    protected String quantity;
+    protected String refills;
+    protected String prescriber;
+    protected String orderExpireDate;
+    //protected String drugClass; //NOTE: ALREADY DECLARED
+    protected String drugClassCode;
+    protected String drugClassCodeSystem;
+
+    //MEDICATIONS DETAILS ATTRIBUTES
+    protected String title;
+    protected List<String> items;

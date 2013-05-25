@@ -1,0 +1,31 @@
+{
+    "surveyFact": {
+        "successStatus": true,
+        "statusMessage": "(ok)",
+        "interactive": false,
+        "language": "EN",
+        "surveyClass": "org.kmr2.mock.SurveyBean",
+        "surveyQuestions": [
+            {
+                "questionName": "question4",
+                "required": false,
+                "answerType": "text",
+                "suggestedControl": "button",
+                "itemId": "39efb60c-616b-4276-a644-9421b22f0746",
+                "dirty": false,
+                "possibleAnswers": [
+                    {
+                        "value": "cancel",
+                        "label": "Cancel"
+                    },
+                    {
+                        "value": "start",
+                        "label": "Start"
+                    }
+                ]
+            }
+        ],
+        "itemId": "uniqueSurveyId-18734",
+        "dirty": false
+    }
+}

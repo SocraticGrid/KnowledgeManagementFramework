@@ -1,0 +1,75 @@
+{
+    "patientDataFact": {
+        "factType": "Diagnoses",
+        "trxnType": "detail",
+        "visibleGridHeaders":  true,
+        "maxcolumns":8,
+        "itemId":10,
+        "status":"Active",
+        
+        "gridHeaders": [
+            { "columnId":       "date",
+              "value":          "Date",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "problem",
+              "value":          "Problem",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "provider",
+              "value":          "Provider",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "status",
+              "value":          "Status",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "source",
+              "value":          "Source",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"date":            "2003-01-12",
+                 "problem":         "Asthma",
+                 "code":            "123",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Smith",
+                 "status":          "Active",
+                 "source":          "EMR",
+                 "hoverTexts":      ["",
+                                     "123 (icd9)"]
+                },
+                {"date":            "2004-02-01",
+                 "problem":         "Asthma",
+                 "code":            "123",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Smith",
+                 "status":          "Active",
+                 "source":          "EMR",
+                 "hoverTexts":      ["",
+                                     "123 (icd9)"]
+                },
+                {"date":            "2004-12-15",
+                 "problem":         "Asthma NOS",
+                 "code":            "123.88",
+                 "codeSystemName":  "icd9",
+                 "codeSystemCode":  "icd9",
+                 "provider":        "Dr. Jones",
+                 "status":          "Resolved",
+                 "source":          "VA",
+                 "hoverTexts":      ["",
+                                     "123.88 (icd9)"]
+                }
+        ],
+        "successStatus": true
+    }
+}

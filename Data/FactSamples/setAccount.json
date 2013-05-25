@@ -1,0 +1,20 @@
+{
+    "setAccountFact":{
+        "successStatus":true,
+        "statusMessage":"Your new account reqeust has been received and is being processed.\nCheck your email for updates.",
+        "userName":"patient.one",
+        "firstName":"Patient",
+        "middleName":"No.",
+        "lastName":"One",
+        "SSN":"123-45-6789",
+        "address1":"123 First Address line",
+        "address2":"Apt. #456",
+        "city":"Test City",
+        "state":"ST",
+        "postalCode":"01234-7893",
+        "homePhone":"123-456-7890",
+        "mobilePhone":"mobile #",
+        "workPhone":"work #",
+        "email":"anything@anydomain.com"
+   }
+}

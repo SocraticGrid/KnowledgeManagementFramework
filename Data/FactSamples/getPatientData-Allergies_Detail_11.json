@@ -1,0 +1,63 @@
+{
+	"patientDataFact": {
+		"factType": "Problems",
+		"trxnType": "detail",
+		"visibleGridHeaders": true,
+		"maxcolumns": 7,
+		"itemId": 11,
+		"status": "Active",
+
+		"gridHeaders": [
+			{
+				"columnId": "drugClass",
+				"value": "Drug Class",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "example",
+				"value": "Example",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "utilization",
+				"value": "Utilization @ Dx",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "90Days",
+				"value": "@ 90 Days Post-Dx",
+				"description": "A column header.",
+				"width": 20
+			}, {
+				"columnId": "180Days",
+				"value": "@ 180 Days Post-Dx",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "recorder",
+				"value": "Recorder",
+				"description": "A column header.",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+				"reportDate": "2001-12-02",
+				"onsetDate": "2001-12-01",
+				"resolutionDate": "2002-12-02",
+				"allergen": "Penicillin",
+				"code": "YYYY",
+				"codeSystemName": "ndc",
+				"codeSystemCode": "ndc",
+				"reaction": "Shortness of Breath",
+				"severity": "Mild",
+				"recorder": "Dr. Fry",
+				"hoverTexts": [
+					"", "", "", "YYYY (ndc)"
+				]
+			}
+		],
+		"successStatus": true
+	}
+}
+

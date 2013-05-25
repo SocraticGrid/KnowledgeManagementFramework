@@ -1,0 +1,29 @@
+{
+    "patientDataFact": {
+        "facts": [
+            {
+                "recordedDate": "1997-03-04T00:00:00-08:00",
+                "onsetDate": "1997-03-03T00:00:00-08:00",
+                "status": "EMR",
+                "source": "416098002",
+                "recorder":"Dr Smith"
+            },
+            {
+                "recordedDate": "1997-03-04T00:00:00-08:00",
+                "onsetDate": "1997-03-03T00:00:00-08:00",
+                "status": "EMR",
+                "source": "416098002",
+                "recorder":"Dr Smith"
+            },
+            {
+                "recordedDate": "1997-03-04T00:00:00-08:00",
+                "onsetDate": "1997-03-03T00:00:00-08:00",
+                "status": "EMR",
+                "source": "416098002",
+                "recorder":"Dr Smith"
+            }
+         ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

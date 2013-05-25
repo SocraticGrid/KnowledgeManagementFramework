@@ -1,0 +1,51 @@
+{
+    "patientId": "99990070",
+    "tags": [
+        "Risk"
+    ],
+    "models": [
+        {
+            "modelId": "1",
+            "tags": [
+                "E",
+                "Risk"
+            ],
+            "name":"",
+            "shortDescr": "Scheduling Optimization",
+            "longDescr":"<h3>This is an HTML blob of text describing Scheduling Optimization for PTSD</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet placerat nisl. Praesent id velit eget erat dignissim lacinia quis vel urna. Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim. Morbi vulputate convallis magna, nec euismod felis vehicula eget. Duis feugiat euismod justo eu fermentum. Phasellus augue risus, imperdiet quis lobortis venenatis, auctor id tortor. Proin iaculis facilisis eros posuere faucibus. Nulla facilisi. Integer eget libero felis. Fusce lorem velit, facilisis vitae dictum eu, ultricies id neque. Ut ac nisl arcu, nec laoreet augue.",
+            "disease": "PTSD",
+            "modelRunInfo": [
+                {"startedSimulations":2, "pausedSimulations":0, "resultedSimulations":5}
+            ]
+        },
+        {
+            "modelId": "2",
+            "tags": [
+                "E",
+                "Risk"
+            ],
+            "name":"",
+            "shortDescr": "Specialty Optimization",
+            "longDescr":"<h3>This is an HTML blob of text describing Specialty Optimization for PTSD</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet placerat nisl. Praesent id velit eget erat dignissim lacinia quis vel urna. Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim. Morbi vulputate convallis magna, nec euismod felis vehicula eget. Duis feugiat euismod justo eu fermentum. Phasellus augue risus, imperdiet quis lobortis venenatis, auctor id tortor. Proin iaculis facilisis eros posuere faucibus. Nulla facilisi. Integer eget libero felis. Fusce lorem velit, facilisis vitae dictum eu, ultricies id neque. Ut ac nisl arcu, nec laoreet augue.",
+            "disease": "PTSD",
+            "modelRunInfo": [
+                {"startedSimulations":1, "pausedSimulations":1, "resultedSimulations":2}
+            ]
+        },
+        {
+            "modelId": "3",
+            "tags": [
+                "E",
+                "Risk"
+            ],
+            "shortDescr": "Specialty Optimization",
+            "longDescr":"<h3>This is an HTML blob of text describing Specialty Optimization for Uncommon Cold</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet placerat nisl. Praesent id velit eget erat dignissim lacinia quis vel urna. Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim. Morbi vulputate convallis magna, nec euismod felis vehicula eget. Duis feugiat euismod justo eu fermentum. Phasellus augue risus, imperdiet quis lobortis venenatis, auctor id tortor. Proin iaculis facilisis eros posuere faucibus. Nulla facilisi. Integer eget libero felis. Fusce lorem velit, facilisis vitae dictum eu, ultricies id neque. Ut ac nisl arcu, nec laoreet augue.",
+            "disease": "Uncommon Cold",
+            "modelRunInfo": [
+                {"startedSimulations":1, "pausedSimulations":1, "resultedSimulations":3}
+            ]
+        }
+    ],
+    "successStatus": true,
+    "successMessage": "(ok)"
+}

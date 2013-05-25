@@ -1,0 +1,16 @@
+{
+    "patientDataFact": {
+        "factType": "ClinicNotes",
+        "trxnType": "detail",
+        "visibleGridHeaders":  false,
+        "maxcolumns":1,
+        "itemId":12,
+        "status":"Final",
+
+        "facts": [
+                {"report": "<p><b>Patient Name: </b>Jane Doe</p><p><b>DOB: </b> 12/31/1961</p><p><b>Record No.: </b>T-3459p234</p><p><b>Date: </b>2011-06-24</p> <br/><p>S-Pt. Nunc diam sem, semper sed gravida a, dapibus in est. Proin consectetur dui et lectus rhoncus blandit in sit amet eros. Pellentesque a ligula vel diam scelerisque tincidunt.</p><p>P-Vestibulum vestibulum ligula risus. Sed at nisi dui, nec luctus turpis. Vestibulum scelerisque sem ut odio ullamcorper porttitor. Maecenas interdum rutrum enim, sit amet scelerisque enim semper ac.</p><p>Dr. Brown</p>"
+                }
+        ],
+        "successStatus": true
+    }
+}

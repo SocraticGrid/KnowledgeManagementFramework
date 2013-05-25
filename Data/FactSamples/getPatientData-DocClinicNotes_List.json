@@ -1,0 +1,110 @@
+{
+	"patientDataFact": {
+		"factType": "ClinicNotes",
+		"trxnType": "list",
+		"visibleGridHeaders": true,
+		"maxColumns": 7,
+		"listTabs":   [
+			{"domain": "",            "label": "All"         ,"disable": true  },
+			{"domain": "clinicnotes", "label": "Clinic Note" ,"disable": false },
+			{"domain": "",            "label": "Consults"    ,"disable": true  },
+			{"domain": "directives",  "label": "Directives"  ,"disable": true  },
+			{"domain": "",            "label": "Telcon"      ,"disable": true  },
+			{"domain": "",            "label": "Letters"     ,"disable": true },
+			{"domain": "",            "label": "Other"       ,"disable": true  }
+		],
+    "detailTabs":   [
+        {"label": "Detail",  "type":"text", "responseType":"detail",  "sectionId":"report",
+         "filters": ["code","codeSystemCode"]
+        }
+    ],
+		"gridHeaders": [
+			{
+				"columnId": "effectiveDate",
+				"value": "Date",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "description",
+				"value": "Description",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "provider",
+				"value": "Provider",
+				"description": "A column header.",
+				"width": 20
+			}, {
+				"columnId": "specialty",
+				"value": "Specialty",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "docType",
+				"value": "Document Type",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "status",
+				"value": "Status",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "source",
+				"value": "Source",
+				"description": "A column header.",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+				"effectiveDate": "2011-23-01",
+				"description":   "Clinic Note",
+				"provider":      "Dr. K. Smith",
+				"specialty":     "Family Practice",
+				"code":          9999,
+				"codeSystemName": "KMR System",
+				"codeSystemCode": "kmr99",
+				"docType":       "CBC w/diff",
+				"source":        "EMR",
+				"hoverTexts": [
+					 "", "", "", "", "9999 (kmr99)"
+				],
+				"itemId": 10,
+				"status": "Final"
+			},{
+				"effectiveDate": "2011-12-11 03:00 PM",
+				"description":   "Clinic Note",
+				"provider":      "Dr. K. Smith",
+				"specialty":     "Family Practice",
+				"code":          8888,
+				"codeSystemName": "KMR System",
+				"codeSystemCode": "kmr99",
+				"docType":       "CXR",
+				"source":        "EMR",
+				"hoverTexts": [
+					 "", "", "", "", "8888 (kmr99)"
+				],
+				"itemId": 11,
+				"status": "Final"
+			},{
+				"effectiveDate": "2011-06-24",
+				"description":   "Telcon",
+				"provider":      "Dr. Brown",
+				"specialty":     "Cardiology",
+				"code":          7777,
+				"codeSystemName": "KMR System",
+				"codeSystemCode": "kmr99",
+				"docType":       "Urine Analysis",
+				"source":        "EMR",
+				"hoverTexts": [
+					 "", "", "", "", "7777 (kmr99)"
+				],
+				"itemId": 12,
+				"status": "Final"
+			}
+		],
+		"successStatus": true
+	}
+}
+

@@ -1,0 +1,62 @@
+{
+	"patientDataFact": {
+		"factType": "Demographics",
+		"trxnType": "detail",
+		"visibleGridHeaders": true,
+		"maxcolumns": 7,
+		"itemId": 14,
+		"status": "Active",
+		"gridHeaders": [
+			{
+				"columnId": "street",
+				"value": "Street",
+				"description": "A column header.",
+				"width": 15
+			}, {
+				"columnId": "city",
+				"value": "City",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "state",
+				"value": "State",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "zip",
+				"value": "Zip",
+				"description": "A column header.",
+				"width": 7
+			}, {
+				"columnId": "type",
+				"value": "Type",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId":    "active",
+				"value":       "Active",
+				"description": "A column header.",
+				"formatter":   "factFlagFormatter",
+				"width": 7
+			}, {
+				"columnId": "preferred",
+				"value": "Preferred",
+				"description": "A column header.",
+				"formatter":   "factFlagFormatter",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+				"street":     "1020 Constitution Ave",
+				"city":       "San Diego",
+				"state":      "CA",
+				"zip":        "92126",
+				"type":       "Office",
+				"active":     true,
+				"preferred":  true
+			}
+		],
+		"successStatus": true
+	}
+}

@@ -1,0 +1,1 @@
+Folder used to hold last deployed war.

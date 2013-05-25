@@ -10,3 +10,4 @@ nb-configuration.xml
 MANIFEST.MF
 catalog.xml
 /temp/
+/Common/KMRCommonLib/target.ck/

@@ -1,0 +1,125 @@
+{
+    "getDiagnosticGuideProcessStatusFact": {
+        "dxProcessId":"UniqueProcessId",
+        "canAdvance":true,
+        "decision": [
+            {
+                "nodeId": "stage1NodeId",
+                "stage": 1,
+                "descr": "State 1",
+                "diseaseProbability":50,
+                "severity":"Low",
+                "response": "Disease Probability: High 75%<br/>Confidence Interval: Strong (0.8)",
+                "actions": [
+                    {
+                        "questionnaireId": "action1questionnaireId",
+                        "descr": "This is low utility option 1",
+                        "utilityLevel":"Low",
+                        "utility": ".01",
+                        "status": "Not Started"
+                    },
+                    {
+                        "questionnaireId": "action2questionnaireId",
+                        "descr": "Ask Alcohol",
+                        "utilityLevel":"Normal",
+                        "utility": "0.03",
+                        "status": "Not Started"
+                    },
+                    {
+                        "questionnaireId": "action3questionnaireId",
+                        "utilityLevel":"Normal",
+                        "descr": "Test Alcohol",
+                        "utility": "0.1",
+                        "status": "Completed",
+                        "statusUpdated":"08/19/2004 12:00pm"
+                    },
+                    {
+                        "questionnaireId": "action4questionnaireId",
+                        "descr": "This is low utility option 2",
+                        "utilityLevel":"Low",
+                        "utility": "0.04",
+                        "status": "Completed",
+                        "statusUpdated":"08/1/2004 12:00pm"
+                    },
+                    {
+                        "questionnaireId": "action5questionnaireId",
+                        "descr": "Ask Anything",
+                        "utilityLevel":"Normal",
+                        "utility": "0.02",
+                        "status": "Not Started"
+                    },
+                    {
+                        "questionnaireId": "action7questionnaireId",
+                        "descr": "# of Deployments",
+                        "utilityLevel":"Suggested",
+                        "utility": "0.5",
+                        "status": "Completed",
+                        "statusUpdated":"08/20/2004 12:00pm"
+                    },
+                    {
+                        "questionnaireId": "action6questionnaireId",
+                        "descr": "Ask Anything Again",
+                        "utilityLevel":"Normal",
+                        "utility": "0.02",
+                        "statusUpdated":"08/20/2004 12:05pm",
+                        "status": "Complete"
+                    }
+                ]
+            },
+            {
+                "nodeId": "stage2NodeId",
+                "stage": 2,
+                "current": true,
+                "descr": "State 2",
+                "diseaseProbability":50,
+                "severity":"Average",
+                "response": "Disease Probability: High 80%<br/>Confidence Interval: Strong (0.9)",
+                "actions": [
+                    {
+                        "questionnaireId": "6b6cb670-6219-44f2-babd-1c1a21f17534",
+                        "status": "Not Started",
+                        "descr": "Test Alcohol",
+                        "utilityLevel":"Low",
+                        "utility": "0.1"
+                    },
+                    {
+                        "questionnaireId": "6b6cb670-6219-44f2-babd-1c1a21f16324",
+                        "status": "Not Started",
+                        "descr": "Ask Alcohol",
+                        "utility": "0.03"
+                    },
+                    {
+                        "questionnaireId": "6b6cb670-6219-44f2-babd-1c1a21f16asd",
+                        "status": "Started",
+                        "statusUpdated":"09/20/2004 12:00pm",
+                        "descr": "Ask Smoking",
+                        "utility": "0.04"
+                    },
+                    {
+                        "questionnaireId": "6b6cb670-6219-44f2-babd-1c1a21f16lkjh234",
+                        "status": "Not Started",
+                        "utilityLevel":"Low",
+                        "descr": "Ask Anything",
+                        "utility": "0.02"
+                    },
+                    {
+                        "questionnaireId": "6b6cb670-6219-44f2-babd-1c1a2kkljt543",
+                        "descr": "Ask Anything Again",
+                        "utilityLevel":"Low",
+                        "utility": "0.02"
+                    },
+                    {
+                        "questionnaireId": "6b6cb670-6219-44f2-babd-1c1a2987613hjkjh",
+                        "status": "Completed",
+                        "statusUpdated":"09/22/2004 12:00pm",
+                        "descr": "# of Deployments",
+                        "utilityLevel":"Suggested",
+                        "utility": "0.5"
+                    }
+                ]
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": "Any error messages go here if successStatus=true"
+    }
+}

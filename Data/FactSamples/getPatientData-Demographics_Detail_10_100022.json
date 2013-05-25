@@ -1,0 +1,80 @@
+{
+	"patientDataFact": {
+		"factType": "Demographics",
+		"trxnType": "detail",
+		"visibleGridHeaders": true,
+		"maxcolumns": 7,
+		"itemId": 10,
+		"status": "Active",
+		"gridHeaders": [
+			{
+				"columnId": "street",
+				"value": "Street",
+				"description": "A column header.",
+				"width": 15
+			}, {
+				"columnId": "city",
+				"value": "City",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "state",
+				"value": "State",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId": "zip",
+				"value": "Zip",
+				"description": "A column header.",
+				"width": 7
+			}, {
+				"columnId": "type",
+				"value": "Type",
+				"description": "A column header.",
+				"width": 10
+			}, {
+				"columnId":    "active",
+				"value":       "Active",
+				"description": "A column header.",
+				"formatter":   "factFlagFormatter",
+				"width": 7
+			}, {
+				"columnId": "preferred",
+				"value": "Preferred",
+				"description": "A column header.",
+				"formatter":   "factFlagFormatter",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+				"street":     "Mt Elbrus Drive",
+				"city":       "San Diego",
+				"state":      "CA",
+				"zip":        "92124",
+				"type":       "Home",
+				"active":     true,
+				"preferred":  true
+			},
+			{
+				"street":     "45 Corondo Ave",
+				"city":       "San Diego",
+				"state":      "CA",
+				"zip":        "92106",
+				"type":       "Work",
+				"active":     true,
+				"preferred":  false
+			},
+			{
+				"street":     "6745 Happy Days",
+				"city":       "Teluride",
+				"state":      "NM",
+				"zip":        "8344",
+				"type":       "Vacation",
+				"active":     false,
+				"preferred":  false
+			}
+		],
+		"successStatus": true
+	}
+}

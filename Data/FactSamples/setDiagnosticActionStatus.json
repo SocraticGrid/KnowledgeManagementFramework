@@ -1,0 +1,6 @@
+{
+    "setDiagnosticActionStatusFact":{
+        "successStatus":true,
+        "statusMessage":"Your new account reqeust has been received and is being processed.\nCheck your email for updates."
+    }
+}

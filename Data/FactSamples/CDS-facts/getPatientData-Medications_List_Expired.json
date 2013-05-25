@@ -1,0 +1,129 @@
+{
+    "patientDataFact": {
+        "factType": "Medications",
+        "trxnType": "list",
+        "visibleGridHeaders":  true,
+        "maxcolumns":15,
+	"sectionId":"expired",
+        
+        "listTabs":   [
+            {"domain": "labs",        "label": "Active"      ,"disable": false, "sectionId":"active" },
+            {"domain": "labs",        "label": "Expired"     ,"disable": false, "sectionId":"expired" }
+        ],
+
+        "detailTabs": [
+            {"label":        "Original SPL",
+             "type":         "grid",
+             "responseType": "detail",
+             "sectionId":    "origSPL",
+             "filters":      ["code","codeSystemCode"]
+            },
+            {"label":        "SPL Triples",
+             "type":         "grid",
+             "responseType": "detail",
+             "sectionId":    "triplesSPL",
+             "filters":      ["code","codeSystemCode"]
+            }
+        ],
+
+        "gridHeaders": [
+            { "columnId":       "medication",
+              "value":          "Medication",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":      "formulation",
+              "value":          "Form",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "dose",
+              "value":          "Dose",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "route",
+              "value":          "Route",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "schedule",
+              "value":          "Schedule",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "duration",
+              "value":          "Duration",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "orderDate",
+              "value":          "Order Date",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "drugclass",
+              "value":          "Drug Class",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "prescriber",
+              "value":          "Provider",
+              "description":    "A column header.",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+            {
+                "orderDate": "2004-03-30",
+                "medication": "METOPROLOL",
+                "code": "4019836",
+                "codeSystemName": "vuid not translated",
+                "codeSystemCode": "vuid",
+                "sig": "TAKE ONE TABLET BY BY MOUTH TWICE A DAY",
+                "formulation": "TAB",
+                "unit": "MG",
+                "dose": "50",
+                "route": "PO",
+                "frequency": "TDB",
+                "schedule": "BID",
+                "duration": "TDB",
+                "quantity": "180",
+                "refills": "3",
+                "prescriber": "LABTECH,SPECIAL",
+                "orderExpireDate": "2004-03-30",
+                "itemId": "15415",
+                "status": "completed",
+                "drugClass": "BETA BLOCKERS/RELATED",
+                "drugClassCode": "CV100",
+                "drugClassCodeSystem": "drugclass"
+            },
+            {
+                "orderDate": "2004-03-30",
+                "medication": "SIMVASTATIN",
+                "code": "4020400",
+                "codeSystemName": "vuid not translated",
+                "codeSystemCode": "vuid",
+                "sig": "TAKE ONE TABLET BY BY MOUTH EVERY EVENING",
+                "formulation": "TAB",
+                "unit": "MG",
+                "dose": "40",
+                "route": "PO",
+                "frequency": "TDB",
+                "schedule": "QPM",
+                "duration": "TDB",
+                "quantity": "90",
+                "refills": "3",
+                "prescriber": "LABTECH,SPECIAL",
+                "orderExpireDate": "2004-03-30",
+                "itemId": "15416",
+                "status": "completed",
+                "drugClass": "ANTILIPEMIC AGENTS",
+                "drugClassCode": "CV350",
+                "drugClassCodeSystem": "drugclass"
+            }
+        ],
+        "successStatus": true
+    }
+}

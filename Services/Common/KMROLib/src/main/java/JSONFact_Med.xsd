@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="patientDataFact">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="factType" type="xs:string"/>
+				<xs:element name="facts" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="orderDate" type="xs:date"/>
+							<xs:element name="medication" type="xs:string"/>
+							<xs:element name="code" type="xs:string"/>
+							<xs:element name="codeSystemName" type="xs:string"/>
+							<xs:element name="codeSystemCode" type="xs:string"/>
+							<xs:element name="sig" type="xs:string"/>
+							<xs:element name="formulation" type="xs:string"/>
+							<xs:element name="unit" type="xs:string"/>
+							<xs:element name="dose" type="xs:string"/>
+							<xs:element name="route" type="xs:string"/>
+							<xs:element name="frequency" type="xs:string" minOccurs="0"/>
+							<xs:element name="schedule" type="xs:string"/>
+							<xs:element name="duration" type="xs:string" minOccurs="0"/>
+							<xs:element name="quantity" type="xs:string" minOccurs="0"/>
+							<xs:element name="refills" type="xs:string"  minOccurs="0"/>
+							<xs:element name="prescriber" type="xs:string"/>
+							<xs:element name="orderExpireDate" type="xs:date" minOccurs="0"/>
+							<xs:element name="indication" type="xs:string" minOccurs="0"/>
+							<xs:element name="source" type="xs:string" minOccurs="0"/>
+							<xs:element name="hoverTexts" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="itemId" type="xs:string"/>
+							<xs:element name="status" type="xs:string"/>
+							<xs:element name="drugClass" type="xs:string"/>
+							<xs:element name="drugClassCode" type="xs:string"/>
+							<xs:element name="drugClassCodeSystem" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

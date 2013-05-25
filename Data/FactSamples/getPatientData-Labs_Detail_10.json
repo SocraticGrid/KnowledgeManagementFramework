@@ -1,0 +1,147 @@
+{
+	"patientDataFact": {
+		"factType": "Labs",
+		"trxnType": "detail",
+		"visibleGridHeaders": false,
+		"maxColumns": 4,
+		"itemId": 10,
+		"status": "Complete",
+		"detailTabs": [
+			{
+				"label": "Results",
+				"type": "grid",
+				"responseType": "detail",
+				"sectionId": "labTests",
+				"filters": [
+					"code", "codeSystemCode"
+				]
+			}, {
+				"label": "Description",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 4,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Images",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 20,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Summary Information",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 2,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Indications",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 104,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Risk-Benefits",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 109,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Literature",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 23,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Podcasts",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 22,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}, {
+				"label": "Videos",
+				"type": "text",
+				"responseType": "ecs",
+				"sectionId": 21,
+				"filters": [
+					"code", "codeSystemCode", "sectionId"
+				]
+			}
+		],
+		"gridHeaders": [
+			{
+				"columnId": "header",
+				"width": 10,
+				"formatter": "boldFormatter"
+			}, {
+				"columnId": "c1",
+				"width": 10
+			}, {
+				"columnId": "c2",
+				"width": 10
+			}, {
+				"columnId": "c3",
+				"width": 10
+			}, {
+				"columnId": "c4",
+				"width": 10
+			}
+		],
+		"facts": [
+			{
+				"header": "Test Name",
+				"c1": "Hematocrit",
+				"c2": "Hemoglobin",
+				"c3": "MCH",
+				"c4": "New Test",
+				"hoverTexts": [
+					"", "Hematocrit-code (c1-codesystem)", "Hemoglobin-code (c2-codesystem)", "MCH-code (c3-codesystem)", "c4-code (c4-codesystem)"
+				]
+			}, {
+				"header": "Result",
+				"c1": 43,
+				"c2": 64,
+				"c3": 90,
+				"c4": 4
+			}, {
+				"header": "Interpretation Code",
+				"c1": "Low",
+				"c2": "Low",
+				"c3": "Normal",
+				"c4": "Low"
+			}, {
+				"header": "Unit",
+				"c1": "%",
+				"c2": "%",
+				"c3": "pg",
+				"c4": "pg"
+			}, {
+				"header": "High",
+				"c1": 6.5,
+				"c2": 16.0,
+				"c3": 34,
+				"c4": 56
+			}, {
+				"header": "Low",
+				"c1": 4.1,
+				"c2": 12.0,
+				"c3": 26,
+				"c4": 3
+			}
+		],
+		"successStatus": true
+	}
+}

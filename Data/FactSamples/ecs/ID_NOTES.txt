@@ -1,0 +1,31 @@
+General Info              1
+Summary                   2
+Detailed Info             3
+Description               4
+Additional References     5
+
+Images                    20
+Videos                    21
+Podcasts                  22
+Literature                23
+
+Background                101
+Instructions              102
+Disease                   103
+Indications               104
+Side-Effects              105
+Potential Interactions    106
+Diagnoses                 107
+Treatment                 108
+Risk-Benefit              109
+
+STUBBED DATA
+json --> string 
+
+LIVE DATA
+object(onto) --> object(gui) --> JSON(gson)
+
+object --> json            GSON
+Json ----> object          GSON
+xml --> json               XMLSerializer
+object --> xml --> json

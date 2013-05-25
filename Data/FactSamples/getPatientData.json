@@ -1,0 +1,23 @@
+{
+"patientDataFact": {
+  "facts": [
+    {
+      "reactions": [
+        {
+          "reactionName": "Anaphylaxis",
+          "reactionDate": "",
+          "reactionSeverity": "Severe"
+        }
+      ],
+      "allergyName": "Sulfa-Drugs",
+      "allergyType": "drug allergy",
+      "factNo": 1,
+      "factCode": "416098002",
+      "reportDate": "1997-03-03T00:00:00-08:00",
+      "factCodeSystem": "2.16.840.1.113883.6.96"
+    }
+  ],
+  "successStatus": true,
+  "statusMessage": "Successful retrieval of Allergies Fact List Info",
+  "factCount": 1
+}}

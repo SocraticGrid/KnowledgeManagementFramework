@@ -1,0 +1,112 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!--
+  ~ /*****************************************************************************************************************
+  ~  *
+  ~  * Copyright (C) 2012 by Cognitive Medical Systems, Inc (http://www.cognitivemedciine.com)
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+  ~  * with the License. You may obtain a copy of the License at
+  ~  *
+  ~  *     http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software distributed under the License is
+  ~  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and limitations under the License.
+  ~  *
+  ~  *****************************************************************************************************************/
+  ~
+  ~ /*****************************************************************************************************************
+  ~  * Socratic Grid contains components to which third party terms apply. To comply with these terms, the following
+  ~  * notice is provided:
+  ~  *
+  ~  * TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+  ~  * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+  ~  * the following conditions are met:
+  ~  *
+  ~  * - Redistributions of source code must retain the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer.
+  ~  * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~  * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or
+  ~  *     promote products derived from this software without specific prior written permission.
+  ~  *
+  ~  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+  ~  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  ~  * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ~  * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  ~  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER
+  ~  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  ~  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~  *
+  ~  * END OF TERMS AND CONDITIONS
+  ~  *
+  ~  *****************************************************************************************************************/
+  -->
+
+<!-- $Header: /cvsroot/ebxmlrr/ebxmlrr-spec/misc/3.0/schema/rs.xsd,v 1.9 2005/01/31 22:33:54 farrukh_najmi Exp $ -->
+<schema targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" 
+  xmlns="http://www.w3.org/2001/XMLSchema" 
+  xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" 
+  xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  >
+  
+  <annotation>
+    <documentation xml:lang="en">The schema for OASIS ebXML Registry Services</documentation>
+  </annotation>
+  <!-- Import the rim.xsd file with XML schema mappaing from RIM -->
+  <import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" schemaLocation="rim.xsd"/>
+  <complexType name="RegistryRequestType">
+    <annotation>
+      <documentation xml:lang="en">Base type for all ebXML Registry requests</documentation>
+    </annotation>
+    <sequence>
+      <!-- every request may be extended using Slots. -->
+      <element maxOccurs="1" minOccurs="0" name="RequestSlotList" type="rim:SlotListType"/>
+    </sequence>    
+    <attribute name="id" type="anyURI" use="optional"/>
+    <!--Comment may be used by requestor to describe the request. Used in VersionInfo.comment-->
+    <attribute name="comment" type="string" use="optional"/>
+  </complexType>
+  <element name="RegistryRequest" type="tns:RegistryRequestType"/>  
+  <element name="RegistryErrorList">
+    <annotation>
+      <documentation xml:lang="en">The RegistryErrorList is derived from the ErrorList element from the ebXML Message Service Specification</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" ref="tns:RegistryError"/>
+      </sequence>
+      <attribute name="highestSeverity" type="rim:referenceURI" use="optional"/>
+    </complexType>
+  </element>
+  <element name="RegistryError">
+    <complexType>
+      <simpleContent>
+        <extension base="string">
+          <attribute name="codeContext" type="string" use="required"/>
+          <attribute name="errorCode" type="string" use="required"/>
+          <attribute default="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error" name="severity" type="rim:referenceURI" />
+          <attribute name="location" type="string" use="optional"/>
+        </extension>
+      </simpleContent>
+    </complexType>
+  </element>
+  <complexType name="RegistryResponseType">
+    <annotation>
+      <documentation xml:lang="en">Base type for all ebXML Registry responses</documentation>
+    </annotation>
+    <sequence>
+      <!-- every response may be extended using Slots. -->
+      <element maxOccurs="1" minOccurs="0" name="ResponseSlotList" type="rim:SlotListType"/>
+      <element minOccurs="0" ref="tns:RegistryErrorList"/>
+    </sequence>
+    <attribute name="status" type="rim:referenceURI" use="required"/>
+    <!-- id is the request if for the request for which this is a response -->
+    <attribute name="requestId" type="anyURI" use="optional"/>
+  </complexType>
+  <element name="RegistryResponse" type="tns:RegistryResponseType"/>
+</schema>

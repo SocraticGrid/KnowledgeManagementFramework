@@ -1,0 +1,50 @@
+{
+    "searchConfigurationsFact": {
+        "configInfo": [
+            {
+                "configId":"99990070",
+                "name": "configinfo name 1",
+                "description": "configinfo desc 1:  Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim",
+                "createdDate": "2011-11-04 10:00",
+                "lastSavedDate": "2011-11-05 10:00",
+                "lastRunDate": "2011-11-06 10:00",
+                "author": "configinfo author 1",
+                "goal": "configinfo goal 1",
+                "score": 20 ,
+                "startDate":"2011-11-07 10:00" ,
+                "endDate":"2011-11-08 10:00",
+                "duration":"1 day"
+            },
+            {
+                "configId":"2",
+                "name": "configinfo name 2",
+                "description": "configinfo desc 2:  Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim",
+                "createdDate": "2011-11-04 10:00",
+                "lastSavedDate": "2011-11-05 10:00",
+                "lastRunDate": "2011-11-06 10:00",
+                "author": "configinfo author 2",
+                "goal": "configinfo goal 2",
+                "score": 30 ,
+                "startDate":"2011-11-07 10:00" ,
+                "endDate":"2011-11-08 10:00",
+                "duration":"1 day"
+            },
+            {
+                "configId":"3",
+                "name": "configinfo name 3",
+                "description": "configinfo desc 3:   Phasellus vestibulum ipsum augue, id molestie purus. Donec viverra orci ac sem tincidunt facilisis. Morbi eget rhoncus nulla. Aliquam porttitor odio vel metus viverra lacinia sit amet quis erat. Nulla fringilla malesuada ante eu dignissim",
+                "createdDate": "2011-11-04 10:00",
+                "lastSavedDate": "2011-11-05 10:00",
+                "lastRunDate": "2011-11-06 10:00",
+                "author": "configinfo author 3",
+                "goal": "configinfo goal 3",
+                "score": 40 ,
+                "startDate":"2011-11-07 10:00" ,
+                "endDate":"2011-11-08 10:00",
+                "duration":"1 day"
+            }
+        ],
+        "successStatus": true,
+        "statusMessage": ""
+    }
+}

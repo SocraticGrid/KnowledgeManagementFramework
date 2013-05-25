@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <!--system systemId="http://172.31.5.48/mdws2/EmrSvc.asmx?wsdl" uri="wsdl/172.31.5.48/mdws2/EmrSvc.asmx.wsdl"/-->
+    <!--system systemId="file:/Users/tnguyen/VirtualBox-Shared/CDS/trunk.KMR2redo/projects/KMR/Services/Common/KMROLib/src/wsdl/mdws2/EmrSvc.asmx.wsdl" uri="wsdl/EmrSvc.asmx.wsdl"/-->
+    <system systemId="file:/home/nhin/KMR/Properties/wsdl/EmrSvc.asmx.wsdl" uri="wsdl/EmrSvc.asmx.wsdl"/>
+
+</catalog>

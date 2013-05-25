@@ -1,0 +1,52 @@
+{
+"allergyFact":{
+"historical":"true",
+"id":{
+"codeSystem":"",
+"codeSystemName":"",
+"value":"f7cac88d-e5d1-48f3-a464-8d1204ae92c3",
+"floatValue":"0.0",
+"displayable":"true"
+},
+"sourceSystem":"2.16.840.1.113883.3.200",
+"patientId":{
+"codeSystem":"2.16.840.1.113883.3.200",
+"codeSystemName":"",
+"value":"99990070",
+"floatValue":"9.9990072E7",
+"displayable":"true"
+},
+"adverseEventType":{
+"codeSystem":"2.16.840.1.113883.6.96",
+"codeSystemName":"SNOMED CT",
+"code":"416098002",
+"label":"drug allergy"
+},
+"codedProduct":{
+"codeSystem":"",
+"codeSystemName":"",
+"code":"UNK",
+"label":"Sulfa-Drugs"
+},
+"freeTextProduct":"Sulfa-Drugs",
+"adverseEventDate":"1997-03-03T00:00:00-08:00",
+"reaction":{
+"codedReaction":{
+"codeSystem":"2.16.840.1.113883.6.96",
+"codeSystemName":"SNOMED CT",
+"code":"UNK",
+"label":"Anaphylaxis"
+},
+"freeTextReaction":"Anaphylaxis",
+"severity":{
+"codedSeverity":{
+"codeSystem":"2.16.840.1.113883.6.96",
+"codeSystemName":"SNOMED CT",
+"code":"2448400",
+"label":"Severe"
+},
+"freeTextSeverity":"Severe"
+}
+}
+}
+}

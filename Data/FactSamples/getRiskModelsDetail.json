@@ -1,0 +1,57 @@
+{
+    "riskModelsDetailFact" : {
+        "successStatus":true,
+        "statusMessage":"This is a message to the user if the request was unsuccessful",
+        "riskModels":[
+            {
+                "modelId":"MockPTSD",
+                "position":1,
+                "severity":"Very High",
+                "disease":"Post Traumatic Stress Disorder",
+                "title":"PTSD",
+                "relativeRisk":"60",
+                "relativeRiskRange":"10",
+                "displayThreshold":"50",
+                "surveyId":"123456UNIQUESURVEYID",
+                "dxProcessId":"DIAG71345",
+                "dxGuideStatus":"Started"
+            },
+            {
+                "modelId":"MockCold",
+                "position":0,
+                "severity":"Average",
+                "title":"Uncommon Cold",
+                "disease":"Uncommon Cold",
+                "relativeRisk":"30",
+                "relativeRiskRange":"25",
+                "displayThreshold":"40",
+                "surveyId":"UNIQUESURVEYID1",
+                "dxProcessId":"DIAG7310",
+                "dxGuideStatus":"Completed"
+            },
+            {
+                "modelId":"modelId3",
+                "position":0,
+                "severity":"High",
+                "title":"Depression",
+                "disease":"Depression",
+                "relativeRisk":"30",
+                "relativeRiskRange":"25",
+                "displayThreshold":"40",
+                "surveyId":"UNIQUESURVEYID2"
+            },
+            {
+                "modelId":"modelId4",
+                "position":2,
+                "severity":"Average",
+                "title":"Lorem ipsum",
+                "disease":"Diabetes",
+                "relativeRisk":"5",
+                "relativeRiskRange":"15",
+                "displayThreshold":"80",
+                "dxProcessId":"DIAG7asdf3456",
+                "dxGuideStatus":"Started"
+            }
+        ]
+    }
+}

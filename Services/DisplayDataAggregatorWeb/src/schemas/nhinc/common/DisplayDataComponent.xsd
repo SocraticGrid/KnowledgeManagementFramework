@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ /*****************************************************************************************************************
+  ~  *
+  ~  * Copyright (C) 2012 by Cognitive Medical Systems, Inc (http://www.cognitivemedciine.com)
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+  ~  * with the License. You may obtain a copy of the License at
+  ~  *
+  ~  *     http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software distributed under the License is
+  ~  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and limitations under the License.
+  ~  *
+  ~  *****************************************************************************************************************/
+  ~
+  ~ /*****************************************************************************************************************
+  ~  * Socratic Grid contains components to which third party terms apply. To comply with these terms, the following
+  ~  * notice is provided:
+  ~  *
+  ~  * TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+  ~  * Copyright (c) 2008, Nationwide Health Information Network (NHIN) Connect. All rights reserved.
+  ~  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+  ~  * the following conditions are met:
+  ~  *
+  ~  * - Redistributions of source code must retain the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer.
+  ~  * - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+  ~  *     following disclaimer in the documentation and/or other materials provided with the distribution.
+  ~  * - Neither the name of the NHIN Connect Project nor the names of its contributors may be used to endorse or
+  ~  *     promote products derived from this software without specific prior written permission.
+  ~  *
+  ~  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+  ~  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+  ~  * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+  ~  * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+  ~  * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION HOWEVER
+  ~  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  ~  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  ~  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~  *
+  ~  * END OF TERMS AND CONDITIONS
+  ~  *
+  ~  *****************************************************************************************************************/
+  -->
+
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.3.3-hudson-757-SNAPSHOT. -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:tns="urn:org:socraticgrid:common:dda"
+targetNamespace="urn:org:socraticgrid:common:dda" elementFormDefault="qualified">
+    <xsd:complexType name="serviceError">
+        <xsd:sequence>
+            <xsd:element name="code" type="xsd:int" minOccurs="0"></xsd:element>
+            <xsd:element name="text" type="xsd:string" minOccurs="0"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="nameValuesPair">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" minOccurs="0"></xsd:element>
+            <xsd:element name="values" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="summaryData">
+        <xsd:sequence>
+            <xsd:element name="itemId" type="xsd:string"></xsd:element>
+            <xsd:element name="dataSource" type="xsd:string"></xsd:element>
+            <xsd:element name="from" type="xsd:string"></xsd:element>
+            <xsd:element name="author" type="xsd:string"></xsd:element>
+            <xsd:element name="patient" type="xsd:string"></xsd:element>
+            <xsd:element name="description" type="xsd:string"></xsd:element>
+            <xsd:element name="dateCreated" type="xsd:dateTime"></xsd:element>
+            <xsd:element name="folder" type="xsd:string"></xsd:element>
+            <xsd:element name="itemValues" type="tns:nameValuesPair" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="detailData">
+        <xsd:sequence>
+            <xsd:element name="itemId" type="xsd:string"></xsd:element>
+            <xsd:element name="dataSource" type="xsd:string"></xsd:element>
+            <xsd:element name="from" type="xsd:string"></xsd:element>
+            <xsd:element name="author" type="xsd:string"></xsd:element>
+            <xsd:element name="patient" type="xsd:string"></xsd:element>
+            <xsd:element name="description" type="xsd:string"></xsd:element>
+            <xsd:element name="dateCreated" type="xsd:dateTime"></xsd:element>
+            <xsd:element name="data" type="xsd:string"></xsd:element>
+            <xsd:element name="itemValues" type="tns:nameValuesPair" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GetSummaryDataRequestType">
+        <xsd:sequence>
+            <xsd:element name="dataSources" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            <xsd:element name="providerId" type="xsd:string"></xsd:element>
+            <xsd:element name="patientId" type="xsd:string"></xsd:element>
+            <xsd:element name="groupId" type="xsd:string"></xsd:element>
+            <xsd:element name="locationId" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetSummaryDataRequest" type="tns:GetSummaryDataRequestType"></xsd:element>
+    <xsd:complexType name="GetSummaryDataResponseType">
+        <xsd:sequence>
+            <xsd:element name="summaryObjects" type="tns:summaryData" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetSummaryDataResponse" type="tns:GetSummaryDataResponseType"></xsd:element>
+    <xsd:complexType name="GetSummaryDataForUserRequestType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="dataSources" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            <xsd:element name="providerId" type="xsd:string"></xsd:element>
+            <xsd:element name="patientId" type="xsd:string"></xsd:element>
+            <xsd:element name="groupId" type="xsd:string"></xsd:element>
+            <xsd:element name="locationId" type="xsd:string"></xsd:element>
+            <xsd:element name="onlyNew" type="xsd:boolean"></xsd:element>
+            <xsd:element name="archive" type="xsd:boolean"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetSummaryDataForUserRequest" type="tns:GetSummaryDataForUserRequestType"></xsd:element>
+    <xsd:element name="GetSummaryDataForUserResponse" type="tns:GetSummaryDataResponseType"></xsd:element>
+    <xsd:complexType name="UpdateInboxStatusRequestType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="dataSource" type="xsd:string"></xsd:element>
+            <xsd:element name="itemId" type="xsd:string"></xsd:element>
+            <xsd:element name="read" type="xsd:boolean"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="UpdateInboxStatusRequest" type="tns:UpdateInboxStatusRequestType"></xsd:element>
+    <xsd:complexType name="UpdateInboxStatusResponseType">
+        <xsd:sequence>
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="UpdateInboxStatusResponse" type="tns:UpdateInboxStatusResponseType"></xsd:element>
+    <xsd:complexType name="GetAvailableSourcesRequestType">
+        <xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetAvailableSourcesRequest" type="tns:GetAvailableSourcesRequestType"></xsd:element>
+    <xsd:complexType name="GetAvailableSourcesResponseType">
+        <xsd:sequence>
+            <xsd:element name="return" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetAvailableSourcesResponse" type="tns:GetAvailableSourcesResponseType"></xsd:element>
+    <xsd:complexType name="GetDetailDataRequestType">
+        <xsd:sequence>
+            <xsd:element name="dataSource" type="xsd:string"></xsd:element>
+            <xsd:element name="itemId" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetDetailDataRequest" type="tns:GetDetailDataRequestType"></xsd:element>
+    <xsd:complexType name="GetDetailDataResponseType">
+        <xsd:sequence>
+            <xsd:element name="detailObject" type="tns:detailData"></xsd:element>
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetDetailDataResponse" type="tns:GetDetailDataResponseType"></xsd:element>
+    <xsd:complexType name="GetDetailDataForUserRequestType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="dataSource" type="xsd:string"></xsd:element>
+            <xsd:element name="itemId" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetDetailDataForUserRequest" type="tns:GetDetailDataForUserRequestType"></xsd:element>
+    <xsd:element name="GetDetailDataForUserResponse" type="tns:GetDetailDataResponseType"></xsd:element>
+    <xsd:complexType name="GetDataSourceNameRequestType">
+        <xsd:sequence>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetDataSourceNameRequest" type="tns:GetDataSourceNameRequestType"></xsd:element>
+    <xsd:complexType name="GetDataSourceNameResponseType">
+        <xsd:sequence>
+            <xsd:element name="return" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetDataSourceNameResponse" type="tns:GetDataSourceNameResponseType"></xsd:element>
+    <xsd:complexType name="UpdateComponentInboxStatusRequestType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="itemId" type="xsd:string"></xsd:element>
+            <xsd:element name="read" type="xsd:boolean"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="UpdateComponentInboxStatusRequest" type="tns:UpdateComponentInboxStatusRequestType"></xsd:element>
+    <xsd:complexType name="UpdateComponentInboxStatusResponseType">
+        <xsd:sequence>
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="UpdateComponentInboxStatusResponse" type="tns:UpdateComponentInboxStatusResponseType"></xsd:element>
+    <xsd:complexType name="GetComponentSummaryDataForUserRequestType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="providerId" type="xsd:string"></xsd:element>
+            <xsd:element name="patientId" type="xsd:string"></xsd:element>
+            <xsd:element name="groupId" type="xsd:string"></xsd:element>
+            <xsd:element name="locationId" type="xsd:string"></xsd:element>
+            <xsd:element name="onlyNew" type="xsd:boolean"></xsd:element>
+            <xsd:element name="archive" type="xsd:boolean"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetComponentSummaryDataForUserRequest" type="tns:GetComponentSummaryDataForUserRequestType"></xsd:element>
+    <xsd:complexType name="GetComponentSummaryDataResponseType">
+        <xsd:sequence>
+            <xsd:element name="summaryObjects" type="tns:summaryData" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetComponentSummaryDataForUserResponse" type="tns:GetComponentSummaryDataResponseType"></xsd:element>
+    <xsd:complexType name="GetComponentDetailDataForUserRequestType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="itemId" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetComponentDetailDataForUserRequest" type="tns:GetComponentDetailDataForUserRequestType"></xsd:element>
+    <xsd:complexType name="GetComponentDetailDataResponseType">
+        <xsd:sequence>
+            <xsd:element name="detailObject" type="tns:detailData"></xsd:element>
+            <xsd:element name="errorList" type="tns:serviceError" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetComponentDetailDataForUserResponse" type="tns:GetComponentDetailDataResponseType"></xsd:element>
+    <xsd:complexType name="SetMessageRequestType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="messageId" type="xsd:string"></xsd:element>
+            <xsd:element name="action" type="xsd:string"></xsd:element>
+            <xsd:element name="contactTo" type="xsd:int"></xsd:element>
+            <xsd:element name="contactCC" type="xsd:int"></xsd:element>
+            <xsd:element name="contactBCC" type="xsd:int"></xsd:element>
+            <xsd:element name="document" type="xsd:hexBinary"></xsd:element>
+            <xsd:element name="folder" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+            <xsd:element name="status" type="xsd:string"></xsd:element>
+            <xsd:element name="attachment" type="xsd:hexBinary"></xsd:element>
+            <xsd:element name="tasks" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="SetMessageRequest" type="tns:SetMessageRequestType"></xsd:element>
+    <xsd:complexType name="SetMessageResponseType">
+        <xsd:sequence>
+            <xsd:element name="successStatus" type="xsd:boolean">		</xsd:element>
+            <xsd:element name="message" type="xsd:string" minOccurs="0"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="SetMessageResponse" type="tns:SetMessageResponseType"></xsd:element>
+    <xsd:complexType name="SetMessageDataRequestType">
+        <xsd:sequence>
+            <xsd:element name="dataSource" type="xsd:string"></xsd:element>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="messageId" type="xsd:string"></xsd:element>
+            <xsd:element name="action" type="xsd:string"></xsd:element>
+            <xsd:element name="contactTo" type="xsd:int"></xsd:element>
+            <xsd:element name="contactCC" type="xsd:int"></xsd:element>
+            <xsd:element name="contactBCC" type="xsd:int"></xsd:element>
+            <xsd:element name="document" type="xsd:hexBinary"></xsd:element>
+            <xsd:element name="folder" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded">
+            </xsd:element>
+            <xsd:element name="status" type="xsd:string"></xsd:element>
+            <xsd:element name="attachment" type="xsd:hexBinary"></xsd:element>
+            <xsd:element name="tasks" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="SetMessageDataRequest" type="tns:SetMessageDataRequestType"></xsd:element>
+    <xsd:complexType name="SetMessageDataResponseType">
+        <xsd:sequence>
+            <xsd:element name="dataSources" type="xsd:string"></xsd:element>
+            <xsd:element name="successStatus" type="xsd:boolean">		</xsd:element>
+            <xsd:element name="message" type="xsd:string" minOccurs="0"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="SetMessageDataResponse" type="tns:SetMessageDataResponseType"></xsd:element>
+    <xsd:complexType name="GetMessageDetailRequestType">
+        <xsd:sequence>
+            <xsd:element name="userId" type="xsd:string"></xsd:element>
+            <xsd:element name="messageId" type="xsd:string"></xsd:element>
+            <xsd:element name="messageType" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetMessageDetailRequest" type="tns:GetMessageDetailRequestType"></xsd:element>
+    <xsd:complexType name="GetMessageDetailResponseType">
+        <xsd:sequence>
+            <xsd:element name="messageDetail" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetMessageDetailResponse" type="tns:GetMessageDetailResponseType"></xsd:element>
+    <xsd:complexType name="GetMessagesRequestType">
+        <xsd:sequence>
+            <xsd:element name="patientId" type="xsd:string"></xsd:element>
+            <xsd:element name="providerId" type="xsd:string"></xsd:element>
+            <xsd:element name="messageType" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetMessagesRequest" type="tns:GetMessagesRequestType"></xsd:element>
+    <xsd:complexType name="GetMessagesResponseType">
+      <xsd:sequence>
+        <xsd:element name="GetMessageResponse" maxOccurs="unbounded" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="messageType" type="xsd:string"></xsd:element>
+                <xsd:element name="folders" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+                <xsd:element name="messageId" type="xsd:string"></xsd:element>
+                <xsd:element name="messageDate" type="xsd:dateTime"></xsd:element>
+                <xsd:element name="description" type="xsd:string"></xsd:element>
+                <xsd:element name="from" type="xsd:string"></xsd:element>
+                <xsd:element name="title" type="xsd:string"></xsd:element>
+                <xsd:element name="messageStatus" type="xsd:string"></xsd:element>
+                <xsd:element name="priority" type="xsd:string"></xsd:element>
+                <xsd:element name="tasksCount" type="xsd:int"></xsd:element>
+                <xsd:element name="tasksComplete" type="xsd:int"></xsd:element>
+                <xsd:element name="statusMessage" type="xsd:string"></xsd:element>
+                <xsd:element name="successStatus" type="xsd:boolean"></xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetMessagesResponse" type="tns:GetMessagesResponseType">
+  </xsd:element>
+</xsd:schema>

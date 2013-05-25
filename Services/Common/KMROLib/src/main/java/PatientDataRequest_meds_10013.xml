@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TaggedTextArray xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://mdws.medora.va.gov/EmrSvc">
+	<count>1</count>
+	<results>
+		<TaggedText>
+			<tag>102</tag>
+			<text>
+				<results version='1.1' timeZone='-0500'>
+					<meds total='20'>
+						<med>
+							<currentProvider code='20001' name='VEHU,ONE'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='40' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QPM' doseStart='3020305' doseStop='3030306'/>
+							</doses>
+							<expires value='3030306'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='72'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB'/>
+							<id value='12726'/>
+							<lastFilled value='3020305'/>
+							<medID value='402188;O'/>
+							<name value='SIMVASTATIN TAB'/>
+							<orderID value='12726'/>
+							<ordered value='3020305.134407'/>
+							<orderingProvider code='20001' name='VEHU,ONE'/>
+							<pharmacist code='923' name='PROGRAMMER,TWENTYEIGHT'/>
+							<prescription value='800012'/>
+							<products>
+								<product code='153' name='SIMVASTATIN 40MG TAB' role='D' concentration='40 MG'>
+									<class code='CV350' name='ANTILIPEMIC AGENTS' vuid='4021569'/>
+									<vaGeneric code='2708' name='SIMVASTATIN' vuid='4020400'/>
+									<vaProduct code='9744' name='SIMVASTATIN 40MG TAB' vuid='4010153'/>
+								</product>
+							</products>
+							<quantity value='90'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH EVERY EVENING</sig>
+							<start value='3020305'/>
+							<status value='historical'/>
+							<stop value='3030306'/>
+							<type value='Prescription'/>
+							<vaStatus value='EXPIRED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='11745' name='LABTECH,SPECIAL'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='50' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3040330' doseStop='3040330'/>
+							</doses>
+							<expires value='3050331'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='11.88'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB'/>
+							<id value='15415'/>
+							<lastFilled value='3040330'/>
+							<medID value='402484;O'/>
+							<name value='METOPROLOL TAB'/>
+							<orderID value='15415'/>
+							<ordered value='3040330.154619'/>
+							<orderingProvider code='11745' name='LABTECH,SPECIAL'/>
+							<pharmacist code='11745' name='LABTECH,SPECIAL'/>
+							<prescription value='500230'/>
+							<products>
+								<product code='1752' name='METOPROLOL TARTRATE 50MG TAB' role='D' concentration='50 MG'>
+									<class code='CV100' name='BETA BLOCKERS/RELATED' vuid='4021565'/>
+									<vaGeneric code='700' name='METOPROLOL' vuid='4019836'/>
+									<vaProduct code='4055' name='METOPROLOL TARTRATE 50MG TAB' vuid='4004608'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH TWICE A DAY</sig>
+							<start value='3040330'/>
+							<status value='not active'/>
+							<stop value='3040330'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='11745' name='LABTECH,SPECIAL'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='40' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QPM' doseStart='3040330' doseStop='3040330'/>
+							</doses>
+							<expires value='3050331'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='72'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB'/>
+							<id value='15416'/>
+							<lastFilled value='3040330'/>
+							<medID value='402485;O'/>
+							<name value='SIMVASTATIN TAB'/>
+							<orderID value='15416'/>
+							<ordered value='3040330.154623'/>
+							<orderingProvider code='11745' name='LABTECH,SPECIAL'/>
+							<pharmacist code='11745' name='LABTECH,SPECIAL'/>
+							<prescription value='500231'/>
+							<products>
+								<product code='153' name='SIMVASTATIN 40MG TAB' role='D' concentration='40 MG'>
+									<class code='CV350' name='ANTILIPEMIC AGENTS' vuid='4021569'/>
+									<vaGeneric code='2708' name='SIMVASTATIN' vuid='4020400'/>
+									<vaProduct code='9744' name='SIMVASTATIN 40MG TAB' vuid='4010153'/>
+								</product>
+							</products>
+							<quantity value='90'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH EVERY EVENING</sig>
+							<start value='3040330'/>
+							<status value='not active'/>
+							<stop value='3040330'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='11745' name='LABTECH,SPECIAL'/>
+							<daysSupply value='30'/>
+							<doses>
+								<dose dose='50' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3050317' doseStop='3060318'/>
+							</doses>
+							<expires value='3060318'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='11.88'/>
+							<fillsAllowed value='5'/>
+							<fillsRemaining value='5'/>
+							<form value='TAB'/>
+							<id value='16772'/>
+							<lastFilled value='3050317'/>
+							<medID value='402576;O'/>
+							<name value='METOPROLOL TAB'/>
+							<orderID value='16772'/>
+							<ordered value='3050317.130201'/>
+							<orderingProvider code='11745' name='LABTECH,SPECIAL'/>
+							<pharmacist code='923' name='PROGRAMMER,TWENTYEIGHT'/>
+							<prescription value='500230A'/>
+							<products>
+								<product code='1752' name='METOPROLOL TARTRATE 50MG TAB' role='D' concentration='50 MG'>
+									<class code='CV100' name='BETA BLOCKERS/RELATED' vuid='4021565'/>
+									<vaGeneric code='700' name='METOPROLOL' vuid='4019836'/>
+									<vaProduct code='4055' name='METOPROLOL TARTRATE 50MG TAB' vuid='4004608'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH TWICE A DAY</sig>
+							<start value='3050317'/>
+							<status value='historical'/>
+							<stop value='3060318'/>
+							<type value='Prescription'/>
+							<vaStatus value='EXPIRED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='11745' name='LABTECH,SPECIAL'/>
+							<daysSupply value='30'/>
+							<doses>
+								<dose dose='40' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QPM' doseStart='3050317' doseStop='3050317'/>
+							</doses>
+							<expires value='3060318'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='72'/>
+							<fillsAllowed value='5'/>
+							<fillsRemaining value='5'/>
+							<form value='TAB'/>
+							<id value='16773'/>
+							<lastFilled value='3050317'/>
+							<medID value='402577;O'/>
+							<name value='SIMVASTATIN TAB'/>
+							<orderID value='16773'/>
+							<ordered value='3050317.130202'/>
+							<orderingProvider code='11745' name='LABTECH,SPECIAL'/>
+							<pharmacist code='923' name='PROGRAMMER,TWENTYEIGHT'/>
+							<prescription value='500231A'/>
+							<products>
+								<product code='153' name='SIMVASTATIN 40MG TAB' role='D' concentration='40 MG'>
+									<class code='CV350' name='ANTILIPEMIC AGENTS' vuid='4021569'/>
+									<vaGeneric code='2708' name='SIMVASTATIN' vuid='4020400'/>
+									<vaProduct code='9744' name='SIMVASTATIN 40MG TAB' vuid='4010153'/>
+								</product>
+							</products>
+							<quantity value='90'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH EVERY EVENING</sig>
+							<start value='3050317'/>
+							<status value='not active'/>
+							<stop value='3050317'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='11745' name='LABTECH,SPECIAL'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='500' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3050318' doseStop='3050318'/>
+							</doses>
+							<expires value='3060319'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='90'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB,SA'/>
+							<id value='17074'/>
+							<lastFilled value='3050318'/>
+							<medID value='402878;O'/>
+							<name value='METFORMIN TAB,SA'/>
+							<orderID value='17074'/>
+							<ordered value='3050318.140956'/>
+							<orderingProvider code='11745' name='LABTECH,SPECIAL'/>
+							<pharmacist code='10000000019' name='TDPHARMACIST,ONE'/>
+							<prescription value='500382'/>
+							<products>
+								<product code='92' name='METFORMIN HCL 500MG TAB,SA' role='D' concentration='500 MG'>
+									<class code='HS502' name='ORAL HYPOGLYCEMIC AGENTS,ORAL' vuid='4021632'/>
+									<vaGeneric code='3277' name='METFORMIN' vuid='4023979'/>
+									<vaProduct code='14620' name='METFORMIN HCL 500MG TAB,SA' vuid='4014984'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH TWICE A DAY</sig>
+							<start value='3050318'/>
+							<status value='not active'/>
+							<stop value='3050318'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='500' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3060531' doseStop='3060604'/>
+							</doses>
+							<expires value='3070601'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='90'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB,SA'/>
+							<id value='17186'/>
+							<lastFilled value='3060604'/>
+							<location code='240' name='20 MINUTE'/>
+							<medID value='403199;O'/>
+							<name value='METFORMIN TAB,SA'/>
+							<orderID value='17186'/>
+							<ordered value='3060531.154508'/>
+							<orderingProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<pharmacist code='20144' name='PHARMACIST,THIRTY'/>
+							<prescription value='500382A'/>
+							<products>
+								<product code='92' name='METFORMIN HCL 500MG TAB,SA' role='D' concentration='500 MG'>
+									<class code='HS502' name='ORAL HYPOGLYCEMIC AGENTS,ORAL' vuid='4021632'/>
+									<vaGeneric code='3277' name='METFORMIN' vuid='4023979'/>
+									<vaProduct code='14620' name='METFORMIN HCL 500MG TAB,SA' vuid='4014984'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH TWICE A DAY</sig>
+							<start value='3060531'/>
+							<status value='not active'/>
+							<stop value='3060604'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<daysSupply value='30'/>
+							<doses>
+								<dose dose='40' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QPM' doseStart='3060531' doseStop='3060604'/>
+							</doses>
+							<expires value='3070601'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='72'/>
+							<fillsAllowed value='5'/>
+							<fillsRemaining value='5'/>
+							<form value='TAB'/>
+							<id value='17188'/>
+							<lastFilled value='3060604'/>
+							<location code='240' name='20 MINUTE'/>
+							<medID value='403200;O'/>
+							<name value='SIMVASTATIN TAB'/>
+							<orderID value='17188'/>
+							<ordered value='3060531.154509'/>
+							<orderingProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<pharmacist code='20144' name='PHARMACIST,THIRTY'/>
+							<prescription value='500231B'/>
+							<products>
+								<product code='153' name='SIMVASTATIN 40MG TAB' role='D' concentration='40 MG'>
+									<class code='CV350' name='ANTILIPEMIC AGENTS' vuid='4021569'/>
+									<vaGeneric code='2708' name='SIMVASTATIN' vuid='4020400'/>
+									<vaProduct code='9744' name='SIMVASTATIN 40MG TAB' vuid='4010153'/>
+								</product>
+							</products>
+							<quantity value='90'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH EVERY EVENING</sig>
+							<start value='3060531'/>
+							<status value='not active'/>
+							<stop value='3060604'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<daysSupply value='30'/>
+							<doses>
+								<dose dose='5' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QD-WARF' doseStart='3060531' doseStop='3060604'/>
+							</doses>
+							<expires value='3070601'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='1.65'/>
+							<fillsAllowed value='5'/>
+							<fillsRemaining value='5'/>
+							<form value='TAB'/>
+							<id value='17187'/>
+							<lastFilled value='3060604'/>
+							<location code='240' name='20 MINUTE'/>
+							<medID value='403201;O'/>
+							<name value='WARFARIN TAB'/>
+							<orderID value='17187'/>
+							<ordered value='3060531.154509'/>
+							<orderingProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<pharmacist code='20144' name='PHARMACIST,THIRTY'/>
+							<prescription value='500503'/>
+							<products>
+								<product code='1812' name='WARFARIN (C0UMADIN) NA 5MG TAB' role='D' concentration='5 MG'>
+									<class code='BL110' name='ANTICOAGULANTS' vuid='4021557'/>
+									<vaGeneric code='865' name='WARFARIN' vuid='4019972'/>
+									<vaProduct code='13625' name='WARFARIN NA 5MG TAB,UD' vuid='4013990'/>
+								</product>
+							</products>
+							<quantity value='30'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH EVERY DAY AT 1 PM</sig>
+							<start value='3060531'/>
+							<status value='not active'/>
+							<stop value='3060604'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='20012' name='VEHU,TEN'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='500' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3070410' doseStop='3080128'/>
+							</doses>
+							<expires value='3080410'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='90'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB,SA'/>
+							<id value='17700'/>
+							<lastFilled value='3070410'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='403202;O'/>
+							<name value='METFORMIN TAB,SA'/>
+							<orderID value='17700'/>
+							<ordered value='3070410.140609'/>
+							<orderingProvider code='20012' name='VEHU,TEN'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500382B'/>
+							<products>
+								<product code='92' name='METFORMIN HCL 500MG TAB,SA' role='D' concentration='500 MG'>
+									<class code='HS502' name='ORAL HYPOGLYCEMIC AGENTS,ORAL' vuid='4021632'/>
+									<vaGeneric code='3277' name='METFORMIN' vuid='4023979'/>
+									<vaProduct code='14620' name='METFORMIN HCL 500MG TAB,SA' vuid='4014984'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH TWICE A DAY</sig>
+							<start value='3070410'/>
+							<status value='not active'/>
+							<stop value='3080128'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='50' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3070410' doseStop='3080128'/>
+							</doses>
+							<expires value='3080410'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='2.466'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB'/>
+							<id value='17701'/>
+							<lastFilled value='3070410'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='403203;O'/>
+							<name value='METOPROLOL TARTRATE TAB'/>
+							<orderID value='17701'/>
+							<ordered value='3070410.140833'/>
+							<orderingProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500504'/>
+							<products>
+								<product code='1752' name='METOPROLOL TARTRATE 50MG TAB' role='D' concentration='50 MG'>
+									<class code='CV100' name='BETA BLOCKERS/RELATED' vuid='4021565'/>
+									<vaGeneric code='700' name='METOPROLOL' vuid='4019836'/>
+									<vaProduct code='4055' name='METOPROLOL TARTRATE 50MG TAB' vuid='4004608'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='M'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH TWICE A DAY</sig>
+							<start value='3070410'/>
+							<status value='not active'/>
+							<stop value='3080128'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='20012' name='VEHU,TEN'/>
+							<daysSupply value='30'/>
+							<doses>
+								<dose dose='40' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QPM' doseStart='3070410' doseStop='3080128'/>
+							</doses>
+							<expires value='3080410'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='45.378'/>
+							<fillsAllowed value='5'/>
+							<fillsRemaining value='5'/>
+							<form value='TAB'/>
+							<id value='17699'/>
+							<lastFilled value='3070410'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='403204;O'/>
+							<name value='SIMVASTATIN TAB'/>
+							<orderID value='17699'/>
+							<ordered value='3070410.140609'/>
+							<orderingProvider code='20012' name='VEHU,TEN'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500231C'/>
+							<products>
+								<product code='153' name='SIMVASTATIN 40MG TAB' role='D' concentration='40 MG'>
+									<class code='CV350' name='ANTILIPEMIC AGENTS' vuid='4021569'/>
+									<vaGeneric code='2708' name='SIMVASTATIN' vuid='4020400'/>
+									<vaProduct code='9744' name='SIMVASTATIN 40MG TAB' vuid='4010153'/>
+								</product>
+							</products>
+							<quantity value='90'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH EVERY EVENING</sig>
+							<start value='3070410'/>
+							<status value='not active'/>
+							<stop value='3080128'/>
+							<type value='Prescription'/>
+							<vaStatus value='DISCONTINUED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='983' name='PROVIDER,ONE'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='500' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3080128' doseStop='3090128'/>
+							</doses>
+							<expires value='3090128'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fills>
+								<fill fillDate='3080426' fillRouting='M' releaseDate='3080426' fillQuantity='180' fillDaysSupply='90'/>
+							</fills>
+							<fillCost value='90'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='2'/>
+							<form value='TAB,SA'/>
+							<id value='21454'/>
+							<lastFilled value='3080426'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='403814;O'/>
+							<name value='METFORMIN TAB,SA'/>
+							<orderID value='21454'/>
+							<ordered value='3080128.164057'/>
+							<orderingProvider code='983' name='PROVIDER,ONE'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500382C'/>
+							<products>
+								<product code='92' name='METFORMIN HCL 500MG TAB,SA' role='D' concentration='500 MG'>
+									<class code='HS502' name='ORAL HYPOGLYCEMIC AGENTS,ORAL' vuid='4021632'/>
+									<vaGeneric code='3277' name='METFORMIN' vuid='4023979'/>
+									<vaProduct code='14620' name='METFORMIN HCL 500MG TAB,SA' vuid='4014984'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH TWICE A DAY</sig>
+							<start value='3080128'/>
+							<status value='historical'/>
+							<stop value='3090128'/>
+							<type value='Prescription'/>
+							<vaStatus value='EXPIRED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='983' name='PROVIDER,ONE'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='50' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3080128' doseStop='3090128'/>
+							</doses>
+							<expires value='3090128'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fills>
+								<fill fillDate='3080426' fillRouting='M' releaseDate='3080426' fillQuantity='180' fillDaysSupply='90'/>
+							</fills>
+							<fillCost value='2.466'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='2'/>
+							<form value='TAB'/>
+							<id value='21455'/>
+							<lastFilled value='3080426'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='403815;O'/>
+							<name value='METOPROLOL TARTRATE TAB'/>
+							<orderID value='21455'/>
+							<ordered value='3080128.164059'/>
+							<orderingProvider code='983' name='PROVIDER,ONE'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500504A'/>
+							<products>
+								<product code='1752' name='METOPROLOL TARTRATE 50MG TAB' role='D' concentration='50 MG'>
+									<class code='CV100' name='BETA BLOCKERS/RELATED' vuid='4021565'/>
+									<vaGeneric code='700' name='METOPROLOL' vuid='4019836'/>
+									<vaProduct code='4055' name='METOPROLOL TARTRATE 50MG TAB' vuid='4004608'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH TWICE A DAY</sig>
+							<start value='3080128'/>
+							<status value='historical'/>
+							<stop value='3090128'/>
+							<type value='Prescription'/>
+							<vaStatus value='EXPIRED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='983' name='PROVIDER,ONE'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='40' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QPM' doseStart='3080128' doseStop='3090128'/>
+							</doses>
+							<expires value='3090128'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fills>
+								<fill fillDate='3080426' fillRouting='M' releaseDate='3080426' fillQuantity='90' fillDaysSupply='90'/>
+							</fills>
+							<fillCost value='45.378'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='2'/>
+							<form value='TAB'/>
+							<id value='21456'/>
+							<lastFilled value='3080426'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='403816;O'/>
+							<name value='SIMVASTATIN TAB'/>
+							<orderID value='21456'/>
+							<ordered value='3080128.164059'/>
+							<orderingProvider code='983' name='PROVIDER,ONE'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500231D'/>
+							<products>
+								<product code='153' name='SIMVASTATIN 40MG TAB' role='D' concentration='40 MG'>
+									<class code='CV350' name='ANTILIPEMIC AGENTS' vuid='4021569'/>
+									<vaGeneric code='2708' name='SIMVASTATIN' vuid='4020400'/>
+									<vaProduct code='9744' name='SIMVASTATIN 40MG TAB' vuid='4010153'/>
+								</product>
+							</products>
+							<quantity value='90'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH EVERY EVENING</sig>
+							<start value='3080128'/>
+							<status value='historical'/>
+							<stop value='3090128'/>
+							<type value='Prescription'/>
+							<vaStatus value='EXPIRED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='983' name='PROVIDER,ONE'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='500' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3100227' doseStop='3100528'/>
+							</doses>
+							<expires value='3100528'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='90'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB,SA'/>
+							<id value='27834'/>
+							<lastFilled value='3100227'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='403828;O'/>
+							<name value='METFORMIN TAB,SA'/>
+							<orderID value='27834'/>
+							<ordered value='3100227.090342'/>
+							<orderingProvider code='983' name='PROVIDER,ONE'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500606'/>
+							<products>
+								<product code='92' name='METFORMIN HCL 500MG TAB,SA' role='D' concentration='500 MG'>
+									<class code='HS502' name='ORAL HYPOGLYCEMIC AGENTS,ORAL' vuid='4021632'/>
+									<vaGeneric code='3277' name='METFORMIN' vuid='4023979'/>
+									<vaProduct code='14620' name='METFORMIN HCL 500MG TAB,SA' vuid='4014984'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET MOUTH TWICE A DAY</sig>
+							<start value='3100227'/>
+							<status value='historical'/>
+							<stop value='3100528'/>
+							<type value='Prescription'/>
+							<vaStatus value='EXPIRED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='983' name='PROVIDER,ONE'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='50' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' doseStart='3100227' doseStop='3110228'/>
+							</doses>
+							<expires value='3110228'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='2.466'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB'/>
+							<id value='27835'/>
+							<lastFilled value='3100227'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='403829;O'/>
+							<name value='METOPROLOL TARTRATE TAB'/>
+							<orderID value='27835'/>
+							<ordered value='3100227.090343'/>
+							<orderingProvider code='983' name='PROVIDER,ONE'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500607'/>
+							<products>
+								<product code='1752' name='METOPROLOL TARTRATE 50MG TAB' role='D' concentration='50 MG'>
+									<class code='CV100' name='BETA BLOCKERS/RELATED' vuid='4021565'/>
+									<vaGeneric code='700' name='METOPROLOL' vuid='4019836'/>
+									<vaProduct code='4055' name='METOPROLOL TARTRATE 50MG TAB' vuid='4004608'/>
+								</product>
+							</products>
+							<quantity value='180'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH TWICE A DAY</sig>
+							<start value='3100227'/>
+							<status value='historical'/>
+							<stop value='3110228'/>
+							<type value='Prescription'/>
+							<vaStatus value='EXPIRED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='983' name='PROVIDER,ONE'/>
+							<daysSupply value='90'/>
+							<doses>
+								<dose dose='40' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QPM' doseStart='3100227' doseStop='3110228'/>
+							</doses>
+							<expires value='3110228'/>
+							<facility code='500' name='CAMP MASTER'/>
+							<fillCost value='45.378'/>
+							<fillsAllowed value='3'/>
+							<fillsRemaining value='3'/>
+							<form value='TAB'/>
+							<id value='27836'/>
+							<lastFilled value='3100227'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='403830;O'/>
+							<name value='SIMVASTATIN TAB'/>
+							<orderID value='27836'/>
+							<ordered value='3100227.090343'/>
+							<orderingProvider code='983' name='PROVIDER,ONE'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500608'/>
+							<products>
+								<product code='153' name='SIMVASTATIN 40MG TAB' role='D' concentration='40 MG'>
+									<class code='CV350' name='ANTILIPEMIC AGENTS' vuid='4021569'/>
+									<vaGeneric code='2708' name='SIMVASTATIN' vuid='4020400'/>
+									<vaProduct code='9744' name='SIMVASTATIN 40MG TAB' vuid='4010153'/>
+								</product>
+							</products>
+							<quantity value='90'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH EVERY EVENING</sig>
+							<start value='3100227'/>
+							<status value='historical'/>
+							<stop value='3110228'/>
+							<type value='Prescription'/>
+							<vaStatus value='EXPIRED'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='983' name='PROVIDER,ONE'/>
+							<daysSupply value='30'/>
+							<doses>
+								<dose dose='120' units='MG' unitsPerDose='3' noun='TABLETS' route='PO' schedule='QDAY' doseStart='3130412' doseStop='3130512'/>
+							</doses>
+							<expires value='3130512'/>
+							<facility code='998' name='ABILENE (CAA)'/>
+							<fillCost value='45.378'/>
+							<fillsAllowed value='0'/>
+							<fillsRemaining value='0'/>
+							<form value='TAB'/>
+							<id value='33339'/>
+							<lastFilled value='3130412'/>
+							<location code='32' name='PRIMARY CARE'/>
+							<medID value='404193;O'/>
+							<name value='SIMVASTATIN TAB'/>
+							<orderID value='33339'/>
+							<ordered value='3130412.173813'/>
+							<orderingProvider code='983' name='PROVIDER,ONE'/>
+							<pharmacist code='10000000056' name='PHARMACIST,ONE'/>
+							<prescription value='500971'/>
+							<products>
+								<product code='153' name='SIMVASTATIN 40MG TAB' role='D' concentration='40 MG'>
+									<class code='CV350' name='ANTILIPEMIC AGENTS' vuid='4021569'/>
+									<vaGeneric code='2708' name='SIMVASTATIN' vuid='4020400'/>
+									<vaProduct code='9744' name='SIMVASTATIN 40MG TAB' vuid='4010153'/>
+								</product>
+							</products>
+							<quantity value='90'/>
+							<routing value='W'/>
+							<sig xml:space='preserve'>TAKE THREE TABLETS BY MOUTH EVERY DAY</sig>
+							<start value='3130412'/>
+							<status value='active'/>
+							<stop value='3130512'/>
+							<type value='Prescription'/>
+							<vaStatus value='ACTIVE'/>
+							<vaType value='O'/>
+						</med>
+						<med>
+							<currentProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<doses>
+								<dose dose='81' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QAM'/>
+							</doses>
+							<facility code='500' name='CAMP MASTER'/>
+							<form value='TAB,EC'/>
+							<id value='17702'/>
+							<location code='23' name='GENERAL MEDICINE'/>
+							<medID value='1N;O'/>
+							<name value='ASPIRIN TAB,EC '/>
+							<orderID value='17702'/>
+							<ordered value='3070410.1408'/>
+							<orderingProvider code='10000000031' name='VEHU,ONEHUNDRED'/>
+							<products>
+								<product code='872' name='ASPIRIN 81MG EC TAB' role='D' concentration='81 MG'>
+									<class code='CN103' name='NON-OPIOID ANALGESICS' vuid='4021582'/>
+									<vaGeneric code='964' name='ASPIRIN' vuid='4017536'/>
+									<vaProduct code='5227' name='ASPIRIN 81MG TAB,EC' vuid='4005766'/>
+								</product>
+							</products>
+							<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH EVERY MORNING</sig>
+							<status value='active'/>
+							<type value='OTC'/>
+							<vaStatus value='ACTIVE'/>
+							<vaType value='N'/>
+						</med>
+					</meds>
+				</results>
+			</text>
+		</TaggedText>
+	</results>
+</TaggedTextArray>

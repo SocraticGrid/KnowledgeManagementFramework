@@ -1,0 +1,54 @@
+domainType      label                   sectionId  activeFlag
+
+ADMISSIONS      Detail                  0          Y
+ALLERGIES       Reactions               0          Y
+DEMOGRAPHICS    Address                 0          Y
+DEMOGRAPHICS    Telcom                  0          Y
+DEMOGRAPHICS    Accounts                0          Y
+DOC_INPATIENT   Detail                  0          Y
+DOC_OUTPATIENT  Detail                  0          Y
+DOC_OUTPATIENT  Summary Information     2          Y
+IMAGING         Detail                  0          Y
+IMAGING         Images                  20         Y
+IMAGING         Summary Information     2          Y
+IMAGING         Indications             104        Y
+IMAGING         Risk-Benefit            109        Y
+IMAGING         Literature              23         Y
+IMAGING         Podcasts                22         Y
+IMAGING         Videos                  21         Y
+IMMUNIZATIONS   Detail                  0          Y
+IMMUNIZATIONS   Background              101        Y
+IMMUNIZATIONS   Disease                 103        Y
+IMMUNIZATIONS   Podcasts                22         Y
+IMMUNIZATIONS   Videos                  21         Y
+LABS            Results                 0          Y
+LABS            Description             4          Y
+LABS            Images                  20         Y
+LABS            Summary Information     2          Y
+LABS            Indications             104        Y
+LABS            Risk-Benefit            109        Y
+LABS            Literature              23         Y
+LABS            Podcasts                22         Y
+LABS            Videos                  21         Y
+MEDICATIONS     Dispensations           0          Y
+MEDICATIONS     Description             4          Y
+MEDICATIONS     Instructions            102        Y
+MEDICATIONS     Indications             104        Y
+MEDICATIONS     Side-Effects            105        Y
+MEDICATIONS     Potential Interactions  106        Y
+MEDICATIONS     Additional References   5          N
+PROBLEMS        Detail                  0          Y
+PROBLEMS        Summary Information     2          Y
+PROBLEMS        Diagnoses               107        Y
+PROBLEMS        Treatment               108        Y
+PROBLEMS        Literature              23         Y
+PROBLEMS        Podcasts                22         Y
+PROBLEMS        Videos                  21         Y
+PROCEDURES      Detail                  0          Y
+PROCEDURES      Images                  20         Y
+PROCEDURES      Summary Information     2          Y
+PROCEDURES      Indications             104        Y
+PROCEDURES      Risk-Benefit            109        Y
+PROCEDURES      Literature              23         Y
+PROCEDURES      Podcasts                22         Y
+PROCEDURES      Videos                  21         Y

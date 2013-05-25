@@ -1,0 +1,151 @@
+{
+    "patientDataFact": {
+        "factType": "Demographics",
+        "trxnType": "list",
+        "visibleGridHeaders":  true,
+        "maxcolumns":9,
+        
+        "detailTabs":   [
+            {"label": "Addresses",            "type":"grid", "responseType":"detail",  "sectionId":"addresses",
+             "filters": ["code","codeSystemCode"] 
+            },
+            {"label": "Telcom",              "type":"text",  "responseType":"detail",  "sectionId":"telcom",
+             "filters": ["code","codeSystemCode"] 
+            },
+            {"label": "EmailAddress",        "type":"text",  "responseType":"detail",  "sectionId":"emailAddress",
+             "filters": ["code","codeSystemCode"] 
+            }
+        ],
+        "gridHeaders": [
+            { "columnId":       "name",
+              "value":          "Name",
+              "description":    "A column header.",
+              "width":          "20"
+            },
+            { "columnId":       "age",
+              "value":          "Age",
+              "description":    "A column header.",
+              "width":          "3"
+            },
+            { "columnId":       "sex",
+              "value":          "Sex",
+              "description":    "A column header.",
+              "width":          "3"
+            },
+            { "columnId":       "relationship",
+              "value":          "Relationship",
+              "description":    "A column header.",
+              "width":          "10"
+            },
+            { "columnId":       "nextOfKin",
+              "value":          "Next Of Kin",
+              "description":    "A column header.",
+              "formatter":      "factFlagFormatter",
+              "width":          "10"
+            },
+            { "columnId":       "hipaaRelease",
+              "value":          "HIPAA Release",
+              "description":    "A column header.",
+              "formatter":      "factFlagFormatter",
+              "width":          "10"
+            },
+            { "columnId":       "emergencyContact",
+              "value":          "Emergency Contact",
+              "description":    "A column header.",
+              "formatter":      "factFlagFormatter",
+              "width":          "10"
+            },
+            { "columnId":       "powerOfAttorney",
+              "value":          "Power Of Attorney",
+              "description":    "A column header.",
+              "formatter":      "factFlagFormatter",
+              "width":          "10"
+            },
+            { "columnId":       "healthcarePOA",
+              "value":          "Healthcare POA",
+              "description":    "A column header.",
+              "formatter":      "factFlagFormatter",
+              "width":          "10"
+            }
+        ],
+
+        "facts": [
+                {"name":            "Eight Bcma",
+                 "age":             "34",
+                 "sex":             "F",
+                 "uid":             "100022",
+                 "relationship":    "Patient",
+                 "nextOfKin":       false,
+                 "hipaaRelease":    false,
+                 "emergencyContact":false,
+                 "powerOfAttorney": false,
+                 "healthcarePOA":   false,
+                 "itemId":          10,
+                 "code":            "YYYY",
+                 "codeSystemName":  "ndc",
+                 "codeSystemCode":  "ndc"
+                },
+                {"name":            "John Bcma",
+                 "age":             "40",
+                 "sex":             "M",
+                 "uid":             "9990070.1",
+                 "relationship":    "Husband",
+                 "nextOfKin":       true,
+                 "hipaaRelease":    true,
+                 "emergencyContact":true,
+                 "powerOfAttorney": true,
+                 "healthcarePOA":   "<img src='http://bearingfalsewitness.com/hipaaForm.jpg'>",
+                 "itemId":          11,
+                 "code":            "YYYY",
+                 "codeSystemName":  "ndc",
+                 "codeSystemCode":  "ndc"
+                },
+                {"name":            "Mary Jane Bcma",
+                 "age":             "1",
+                 "sex":             "F",
+                 "uid":             "100022.2",
+                 "relationship":    "Daughter",
+                 "nextOfKin":       true,
+                 "hipaaRelease":    false,
+                 "emergencyContact":false,
+                 "powerOfAttorney": false,
+                 "healthcarePOA":   false,
+                 "itemId":          12,
+                 "code":            "YYYY",
+                 "codeSystemName":  "ndc",
+                 "codeSystemCode":  "ndc"
+                },
+                {"name":            "Eddie Sammuel Bcma",
+                 "age":             "18",
+                 "sex":             "M",
+                 "uid":             "100022.3",
+                 "relationship":    "Son",
+                 "nextOfKin":       true,
+                 "hipaaRelease":    true,
+                 "emergencyContact":true,
+                 "powerOfAttorney": false,
+                 "healthcarePOA":   false,
+                 "itemId":          13,
+                 "code":            "YYYY",
+                 "codeSystemName":  "ndc",
+                 "codeSystemCode":  "ndc"
+                },
+                {"name":            "Kelly Smith",
+                 "age":             "64",
+                 "sex":             "F",
+                 "uid":             "100022.5",
+                 "relationship":    "Friend",
+                 "nextOfKin":       false,
+                 "hipaaRelease":    "<img src='http://bearingfalsewitness.com/hipaaForm.jpg'>",
+                 "emergencyContact":true,
+                 "powerOfAttorney": false,
+                 "healthcarePOA":   false,
+                 "itemId":          15,
+                 "code":            "YYYY",
+                 "codeSystemName":  "ndc",
+                 "codeSystemCode":  "ndc"
+                }
+        ],
+        "successStatus": true
+    }
+}
