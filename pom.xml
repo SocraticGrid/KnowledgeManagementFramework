@@ -87,9 +87,9 @@
 
         <module>Common/TaskManagerClient</module>
         <module>Common/TaskExecHandler</module>
-        <module>../FHIRLib</module>
         <module>../CodeConversion</module>
         <module>../DocumentTransformer</module>
+        <module>../FHIRLib</module>
         
         <module>Services/DSAServiceWeb</module>
         <module>Services/Common/AdapterFactServiceLib</module>

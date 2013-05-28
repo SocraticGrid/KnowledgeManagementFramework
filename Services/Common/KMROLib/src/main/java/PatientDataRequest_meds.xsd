@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://mdws.medora.va.gov/EmrSvc" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://mdws.medora.va.gov/EmrSvc" elementFormDefault="qualified">
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<xsd:complexType name="T8_vaType">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_vaStatus">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_type">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_stop">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_status">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_start">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_sig">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute ref="xml:space" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="T8_routing">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_quantity">
+		<xsd:attribute name="value" type="xsd:short" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_products">
+		<xsd:sequence>
+			<xsd:element name="product">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="class">
+							<xsd:complexType>
+								<xsd:attribute name="vuid" type="xsd:int" use="required"/>
+								<xsd:attribute name="name" type="xsd:string" use="required"/>
+								<xsd:attribute name="code" type="xsd:string" use="required"/>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="vaGeneric">
+							<xsd:complexType>
+								<xsd:attribute name="vuid" type="xsd:int" use="required"/>
+								<xsd:attribute name="name" type="xsd:string" use="required"/>
+								<xsd:attribute name="code" type="xsd:short" use="required"/>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="vaProduct">
+							<xsd:complexType>
+								<xsd:attribute name="vuid" type="xsd:int" use="required"/>
+								<xsd:attribute name="name" type="xsd:string" use="required"/>
+								<xsd:attribute name="code" type="xsd:short" use="required"/>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+					<xsd:attribute name="role" type="xsd:string" use="required"/>
+					<xsd:attribute name="name" type="xsd:string" use="required"/>
+					<xsd:attribute name="concentration" type="xsd:string" use="required"/>
+					<xsd:attribute name="code" type="xsd:short" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="T8_prescription">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_pharmacist">
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="code" type="xsd:long" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_orderingProvider">
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="code" type="xsd:long" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_ordered">
+		<xsd:attribute name="value" type="xsd:decimal" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_orderID">
+		<xsd:attribute name="value" type="xsd:short" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_name">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_medID">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_location">
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="code" type="xsd:short" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_lastFilled">
+		<xsd:attribute name="value" type="xsd:int" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_id">
+		<xsd:attribute name="value" type="xsd:short" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_form">
+		<xsd:attribute name="value" type="xsd:string" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_fillsRemaining">
+		<xsd:attribute name="value" type="xsd:byte" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_fillsAllowed">
+		<xsd:attribute name="value" type="xsd:byte" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_fillCost">
+		<xsd:attribute name="value" type="xsd:decimal" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_facility">
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="code" type="xsd:short" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="T8_doses">
+		<xsd:sequence>
+			<xsd:element name="dose">
+				<xsd:complexType>
+					<xsd:attribute name="unitsPerDose" type="xsd:byte" use="required"/>
+					<xsd:attribute name="units" type="xsd:string" use="required"/>
+					<xsd:attribute name="schedule" type="xsd:string" use="required"/>
+					<xsd:attribute name="route" type="xsd:string" use="required"/>
+					<xsd:attribute name="noun" type="xsd:string" use="required"/>
+					<xsd:attribute name="doseStop" type="xsd:int"/>
+					<xsd:attribute name="doseStart" type="xsd:int"/>
+					<xsd:attribute name="dose" type="xsd:short" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="TaggedTextArray">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="count" type="xsd:byte"/>
+				<xsd:element name="results">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="TaggedText">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="tag" type="xsd:byte"/>
+										<xsd:element name="text">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="results">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="meds">
+																	<xsd:complexType>
+																		<xsd:sequence>
+																			<xsd:element name="med" maxOccurs="unbounded">
+																				<xsd:complexType>
+																					<xsd:sequence>
+																						<xsd:element name="currentProvider">
+																							<xsd:complexType>
+																								<xsd:attribute name="name" type="xsd:string" use="required"/>
+																								<xsd:attribute name="code" type="xsd:long" use="required"/>
+																							</xsd:complexType>
+																						</xsd:element>
+																						<xsd:choice>
+																							<xsd:sequence>
+																								<xsd:element name="doses" type="T8_doses"/>
+																								<xsd:element name="facility" type="T8_facility"/>
+																								<xsd:element name="form" type="T8_form"/>
+																								<xsd:element name="id" type="T8_id"/>
+																								<xsd:element name="location" type="T8_location"/>
+																								<xsd:element name="medID" type="T8_medID"/>
+																								<xsd:element name="name" type="T8_name"/>
+																								<xsd:element name="orderID" type="T8_orderID"/>
+																								<xsd:element name="ordered" type="T8_ordered"/>
+																								<xsd:element name="orderingProvider" type="T8_orderingProvider"/>
+																								<xsd:element name="products" type="T8_products"/>
+																								<xsd:element name="sig" type="T8_sig"/>
+																								<xsd:element name="status" type="T8_status"/>
+																								<xsd:element name="type" type="T8_type"/>
+																								<xsd:element name="vaStatus" type="T8_vaStatus"/>
+																								<xsd:element name="vaType" type="T8_vaType"/>
+																							</xsd:sequence>
+																							<xsd:sequence>
+																								<xsd:element name="daysSupply">
+																									<xsd:complexType>
+																										<xsd:attribute name="value" type="xsd:byte" use="required"/>
+																									</xsd:complexType>
+																								</xsd:element>
+																								<xsd:element name="doses" type="T8_doses"/>
+																								<xsd:element name="expires">
+																									<xsd:complexType>
+																										<xsd:attribute name="value" type="xsd:int" use="required"/>
+																									</xsd:complexType>
+																								</xsd:element>
+																								<xsd:element name="facility" type="T8_facility"/>
+																								<xsd:choice>
+																									<xsd:sequence>
+																										<xsd:element name="fills">
+																											<xsd:complexType>
+																												<xsd:sequence>
+																													<xsd:element name="fill">
+																														<xsd:complexType>
+																															<xsd:attribute name="releaseDate" type="xsd:int" use="required"/>
+																															<xsd:attribute name="fillRouting" type="xsd:string" use="required"/>
+																															<xsd:attribute name="fillQuantity" type="xsd:short" use="required"/>
+																															<xsd:attribute name="fillDaysSupply" type="xsd:byte" use="required"/>
+																															<xsd:attribute name="fillDate" type="xsd:int" use="required"/>
+																														</xsd:complexType>
+																													</xsd:element>
+																												</xsd:sequence>
+																											</xsd:complexType>
+																										</xsd:element>
+																										<xsd:element name="fillCost" type="T8_fillCost"/>
+																										<xsd:element name="fillsAllowed" type="T8_fillsAllowed"/>
+																										<xsd:element name="fillsRemaining" type="T8_fillsRemaining"/>
+																										<xsd:element name="form" type="T8_form"/>
+																										<xsd:element name="id" type="T8_id"/>
+																										<xsd:element name="lastFilled" type="T8_lastFilled"/>
+																										<xsd:element name="location" type="T8_location"/>
+																										<xsd:element name="medID" type="T8_medID"/>
+																										<xsd:element name="name" type="T8_name"/>
+																										<xsd:element name="orderID" type="T8_orderID"/>
+																										<xsd:element name="ordered" type="T8_ordered"/>
+																										<xsd:element name="orderingProvider" type="T8_orderingProvider"/>
+																										<xsd:element name="pharmacist" type="T8_pharmacist"/>
+																										<xsd:element name="prescription" type="T8_prescription"/>
+																										<xsd:element name="products" type="T8_products"/>
+																										<xsd:element name="quantity" type="T8_quantity"/>
+																										<xsd:element name="routing" type="T8_routing"/>
+																										<xsd:element name="sig" type="T8_sig"/>
+																										<xsd:element name="start" type="T8_start"/>
+																										<xsd:element name="status" type="T8_status"/>
+																										<xsd:element name="stop" type="T8_stop"/>
+																										<xsd:element name="type" type="T8_type"/>
+																										<xsd:element name="vaStatus" type="T8_vaStatus"/>
+																										<xsd:element name="vaType" type="T8_vaType"/>
+																									</xsd:sequence>
+																									<xsd:sequence>
+																										<xsd:element name="fillCost" type="T8_fillCost"/>
+																										<xsd:element name="fillsAllowed" type="T8_fillsAllowed"/>
+																										<xsd:element name="fillsRemaining" type="T8_fillsRemaining"/>
+																										<xsd:element name="form" type="T8_form"/>
+																										<xsd:element name="id" type="T8_id"/>
+																										<xsd:element name="lastFilled" type="T8_lastFilled"/>
+																										<xsd:element name="location" type="T8_location" minOccurs="0"/>
+																										<xsd:element name="medID" type="T8_medID"/>
+																										<xsd:element name="name" type="T8_name"/>
+																										<xsd:element name="orderID" type="T8_orderID"/>
+																										<xsd:element name="ordered" type="T8_ordered"/>
+																										<xsd:element name="orderingProvider" type="T8_orderingProvider"/>
+																										<xsd:element name="pharmacist" type="T8_pharmacist"/>
+																										<xsd:element name="prescription" type="T8_prescription"/>
+																										<xsd:element name="products" type="T8_products"/>
+																										<xsd:element name="quantity" type="T8_quantity"/>
+																										<xsd:element name="routing" type="T8_routing"/>
+																										<xsd:element name="sig" type="T8_sig"/>
+																										<xsd:element name="start" type="T8_start"/>
+																										<xsd:element name="status" type="T8_status"/>
+																										<xsd:element name="stop" type="T8_stop"/>
+																										<xsd:element name="type" type="T8_type"/>
+																										<xsd:element name="vaStatus" type="T8_vaStatus"/>
+																										<xsd:element name="vaType" type="T8_vaType"/>
+																									</xsd:sequence>
+																								</xsd:choice>
+																							</xsd:sequence>
+																						</xsd:choice>
+																					</xsd:sequence>
+																				</xsd:complexType>
+																			</xsd:element>
+																		</xsd:sequence>
+																		<xsd:attribute name="total" type="xsd:byte" use="required"/>
+																	</xsd:complexType>
+																</xsd:element>
+															</xsd:sequence>
+															<xsd:attribute name="version" type="xsd:decimal" use="required"/>
+															<xsd:attribute name="timeZone" type="xsd:short" use="required"/>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patientDataFact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<factType>Demographics</factType>
+	<facts>
+		<patientId>100022</patientId>
+		<contactId>bcma.eight</contactId>
+		<name>Eight Bcma</name>
+		<lastName>Bcma</lastName>
+		<firstName>Eight</firstName>
+		<middleName/>
+		<age>34</age>
+		<dob>1945-11-04</dob>
+		<gender>F</gender>
+		<address>123 Garry Lane</address>
+		<city>San Diego</city>
+		<dateOfBirth>1945-11-04</dateOfBirth>
+		<gender>F</gender>
+		<ssn>123-45-6789</ssn>
+		<medicalRecordNo>med01</medicalRecordNo>
+		<primaryDoctor>Dr. Smith</primaryDoctor>
+		<patientStatus>Inpatient</patientStatus>
+		<uid>100022</uid>
+		<relationship>Patient</relationship>
+		<nextOfKin>false</nextOfKin>
+		<hipaaRelease>false</hipaaRelease>
+		<emergencyContact>false</emergencyContact>
+		<powerOfAttorney>false</powerOfAttorney>
+		<healthcarePOA>false</healthcarePOA>
+		<itemId>10</itemId>
+		<code>YYYY</code>
+		<codeSystemName>ndc</codeSystemName>
+		<codeSystemCode>ndc</codeSystemCode>
+	</facts>
+	<facts>
+		<patientId>100022</patientId>
+		<contactId>bcma.eight</contactId>
+		<name>Test Bcma</name>
+		<lastName>Bcma</lastName>
+		<firstName>Eight</firstName>
+		<middleName/>
+		<age>34</age>
+		<dob>1945-11-04</dob>
+		<gender>F</gender>
+		<address>123 Garry Lane</address>
+		<city>San Diego</city>
+		<dateOfBirth>1945-11-04</dateOfBirth>
+		<gender>F</gender>
+		<ssn>123-45-6789</ssn>
+		<medicalRecordNo>med01</medicalRecordNo>
+		<primaryDoctor>Dr. Smith</primaryDoctor>
+		<patientStatus>Inpatient</patientStatus>
+		<uid>100022</uid>
+		<relationship>Patient</relationship>
+		<nextOfKin>false</nextOfKin>
+		<hipaaRelease>false</hipaaRelease>
+		<emergencyContact>false</emergencyContact>
+		<powerOfAttorney>false</powerOfAttorney>
+		<healthcarePOA>false</healthcarePOA>
+		<itemId>10</itemId>
+		<code>YYYY</code>
+		<codeSystemName>ndc</codeSystemName>
+		<codeSystemCode>ndc</codeSystemCode>
+	</facts>
+</patientDataFact>

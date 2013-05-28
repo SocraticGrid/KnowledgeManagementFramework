@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+          http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd" xmlns:aop="http://www.springframework.org/schema/aop">
+    <context:annotation-config/>
+
+   <!--  
+    <bean name="VUIDRxNorm" class="org.socraticgrid.codeconversion.matchers.VUIDtoRXNormMatcher">
+        <property name="jenaServerURL" value="http://192.168.1.111:3030/data/sparql"/>
+    </bean>
+
+    
+    <bean name="MainPipeline" class="org.socraticgrid.codeconversion.SearchPipeline">
+        <property name="name" value="Main"/>
+        <property name="matchChain">
+            <list>
+                <ref bean="VUIDRxNorm"/>
+            </list>
+        </property>
+    </bean>
+    
+    <bean name="SearchProcessor" class="org.socraticgrid.codeconversion.SearchProcessor">
+        <property name="PipeLineList">
+            <list>
+                <ref bean="MainPipeline"/>
+            </list>
+        </property>
+    </bean>
+    -->
+    <bean name="XML2JSONXform" class="org.socraticgrid.documenttransformer.XSLTTransformStep">
+        <property name="xsltStyleSheet">
+            <bean class="org.springframework.core.io.ClassPathResource">
+                <constructor-arg value="xml-to-json.xsl"/>          
+            </bean>
+        </property>
+        <property name="styleSheetParameters">
+            <map>
+                <entry key="use-badgerfish" value="#{false}"/>
+                <entry key="use-rayfish" value="#{false}"/>
+                <entry key="use-namespaces"  value="#{false}"/>
+            </map>
+        </property>
+    </bean>
+    <!--
+    <bean name="FHIRRX_Vuid2RxNorm" class="org.socraticgrid.documenttransformer.FHIRCodeTranslator">
+        <property name="codeProcessor" ref="SearchProcessor"/>
+        <property name="replacementList">
+            <list>
+                <bean class="org.socraticgrid.documenttransformer.CodeReplacement">
+                    <property name="targetSystem" value="RxNorm"/>
+                    <property name="defaultSystem" value="vuid"/>
+                    <property name="xPath" value="/fhir:PrescriptionList/fhir:Prescription/fhir:medicine/fhir:identification/fhir:coding"/>
+                </bean>
+                <bean class="org.socraticgrid.documenttransformer.CodeReplacement">
+                    <property name="targetSystem" value="RxNorm"/>
+                    <property name="defaultSystem" value="vuid"/>
+                    <property name="xPath" value="/fhir:PrescriptionList/fhir:Prescription/fhir:medicine/fhir:activeIngredient/fhir:identification/fhir:coding"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    -->
+    
+    <bean name="MDWS2FHIR_Meds" class="org.socraticgrid.documenttransformer.XSLTTransformStep">
+        <property name="xsltStyleSheet">
+            <bean class="org.springframework.core.io.ClassPathResource">
+                <constructor-arg value="MDWSToFHIR_Prescriptions.xslt"/>
+            </bean>
+        </property>
+    </bean>
+    <bean name="MDWS2FHIR_Problems" class="org.socraticgrid.documenttransformer.XSLTTransformStep">
+        <property name="xsltStyleSheet">
+            <bean class="org.springframework.core.io.ClassPathResource">
+                <constructor-arg value="MDWSToFHIR_Problems.xslt"/>          
+            </bean>
+        </property>
+    </bean>
+    <bean name="MDWS2FHIR_Patient" class="org.socraticgrid.documenttransformer.XSLTTransformStep">
+        <property name="xsltStyleSheet">
+            <bean class="org.springframework.core.io.ClassPathResource">
+                <constructor-arg value="MDWSToFHIR_Patient.xslt"/>
+            </bean>
+        </property>
+    </bean>
+    <bean name="FHIR2Display_Problems" class="org.socraticgrid.documenttransformer.XSLTTransformStep">
+        <property name="xsltStyleSheet">
+            <bean class="org.springframework.core.io.ClassPathResource">
+                <constructor-arg value="FHIRToJSONFact_Problems.xslt"/>
+            </bean>
+        </property>
+    </bean>
+    <bean name="FHIR2Display_Meds" class="org.socraticgrid.documenttransformer.XSLTTransformStep">
+        <property name="xsltStyleSheet">
+            <bean class="org.springframework.core.io.ClassPathResource">
+                <constructor-arg value="FHIRToJSONFact_Meds.xslt"/>
+            </bean>
+        </property>
+    </bean>
+    <bean name="FHIR2Display_Demographic" class="org.socraticgrid.documenttransformer.XSLTTransformStep">
+        <property name="xsltStyleSheet"> 
+            <bean class="org.springframework.core.io.ClassPathResource">
+                <constructor-arg value="FHIRToJSONFact_Demographic.xslt"/>
+            </bean>
+        </property>
+    </bean>
+    
+    <bean name="Demographics" class="org.socraticgrid.documenttransformer.TransformPipeline">
+        <property name="transformChain">
+            <list>
+                <ref bean="MDWS2FHIR_Patient" />
+                <ref bean="FHIR2Display_Demographic" />
+                <ref bean="XML2JSONXform" />
+            </list>
+        </property>
+    </bean>
+
+    <bean name="Medications" class="org.socraticgrid.documenttransformer.TransformPipeline">
+        <property name="transformChain">
+            <list>
+                <ref bean="MDWS2FHIR_Meds" />
+                <!--               <ref bean="FHIRRX_Vuid2RxNorm"/> -->
+                <ref bean="FHIR2Display_Meds" />
+                <ref bean="XML2JSONXform" /> 
+            </list>
+        </property>
+    </bean>
+    
+    
+    <bean name="Problems" class="org.socraticgrid.documenttransformer.TransformPipeline">
+        <property name="transformChain">
+            <list>
+                <ref bean="MDWS2FHIR_Problems" />
+                <ref bean="FHIR2Display_Problems" />
+                <ref bean="XML2JSONXform" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean name="Xform" class="org.socraticgrid.documenttransformer.Transformer">
+        <property name="transformPipeline">
+            <map>
+                <entry key="Medications" value-ref="Medications"/>
+                <entry key="Problems" value-ref="Problems"/>
+                <entry key="Demographics" value-ref="Demographics"/>
+            </map>
+        </property>
+    </bean>
+</beans>

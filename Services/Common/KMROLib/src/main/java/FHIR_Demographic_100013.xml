@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patient xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir C:/Users/JERRYG~1/Dropbox/Cognitive/CDS/fhir-all-xsd/patient.xsd" id="100013">
+	<identifier>
+		<label value="100013"/>
+		<system value="dfn"/>
+		<id value="100013"/>
+	</identifier>
+	<details>
+		<identifier>
+			<label value="XXX-XX-0100"/>
+			<system value="ssn"/>
+			<id value="666000100"/>
+		</identifier>
+		<identifier>
+			<label value="11000"/>
+			<system value="national.dfn"/>
+			<id value="11000"/>
+		</identifier>
+		<name>
+			<text value="ONEHUNDRED,PATIENT"/>
+			<family value="ONEHUNDRED"/>
+			<given value="PATIENT"/>
+		</name>
+		<telecom>
+			<value value="(222)555-8235"/>
+			<use value="home"/>
+		</telecom>
+		<telecom>
+			<value value="(222)555-7720"/>
+			<use value="work"/>
+		</telecom>
+		<gender>
+			<display value="M"/>
+		</gender>
+		<birthDate value="19350407"/>
+		<address>
+			<line value="Any Street"/>
+			<city value="Any Town"/>
+			<state value="WEST VIRGINIA"/>
+			<zip value="30000-0030"/>
+		</address>
+	</details>
+	<contact>
+		<details>
+			<name>
+				<text value="VETERAN,BROTHER"/>
+			</name>
+		</details>
+	</contact>
+</Patient>
