@@ -45,8 +45,10 @@ http://www.altova.com/mapforce
 					</xsl:for-each>
 					<middleName></middleName>
 					<xsl:for-each select="($var1_details/ns0:birthDate)[fn:exists(@value)]">
+						<xsl:variable name="var2_resultof_cast" as="xs:double" select="xs:double(xs:decimal('2'))"/>
+						<xsl:variable name="var3_resultof_cast" as="xs:string" select="fn:string(@value)"/>
 						<age>
-							<xsl:sequence select="xs:string(xs:integer(fn:floor((fn:days-from-duration((fn:current-date() - xs:date(fn:string(@value)))) div xs:integer('365')))))"/>
+							<xsl:sequence select="xs:string(xs:integer(fn:floor((fn:days-from-duration((fn:current-date() - xs:date(fn:concat(fn:concat(fn:concat(fn:concat(fn:substring($var3_resultof_cast, xs:double(xs:decimal('1')), xs:double(xs:decimal('4'))), '-'), fn:substring($var3_resultof_cast, xs:double(xs:decimal('5')), $var2_resultof_cast)), '-'), fn:substring($var3_resultof_cast, xs:double(xs:decimal('7')), $var2_resultof_cast))))) div xs:integer('365')))))"/>
 						</age>
 					</xsl:for-each>
 					<xsl:for-each select="($var1_details/ns0:gender/ns0:display)[fn:exists(@value)]">
@@ -70,51 +72,53 @@ http://www.altova.com/mapforce
 						</state>
 					</xsl:for-each>
 					<xsl:for-each select="($var1_details/ns0:birthDate)[fn:exists(@value)]">
+						<xsl:variable name="var4_resultof_cast" as="xs:double" select="xs:double(xs:decimal('2'))"/>
+						<xsl:variable name="var5_resultof_cast" as="xs:string" select="fn:string(@value)"/>
 						<dateOfBirth>
-							<xsl:sequence select="xs:string(xs:date(fn:string(@value)))"/>
+							<xsl:sequence select="xs:string(xs:date(fn:concat(fn:concat(fn:concat(fn:concat(fn:substring($var5_resultof_cast, xs:double(xs:decimal('1')), xs:double(xs:decimal('4'))), '-'), fn:substring($var5_resultof_cast, xs:double(xs:decimal('5')), $var4_resultof_cast)), '-'), fn:substring($var5_resultof_cast, xs:double(xs:decimal('7')), $var4_resultof_cast))))"/>
 						</dateOfBirth>
 					</xsl:for-each>
 					<xsl:for-each select="$var1_details/ns0:identifier">
-						<xsl:variable name="var8_cur" as="node()" select="."/>
-						<xsl:variable name="var5_resultof_filter" as="node()?">
+						<xsl:variable name="var12_cur" as="node()" select="."/>
+						<xsl:variable name="var9_resultof_filter" as="node()?">
 							<xsl:for-each select="ns0:id[fn:exists(@value)]">
-								<xsl:variable name="var3_resultof_map" as="xs:boolean?">
-									<xsl:for-each select="$var8_cur/ns0:system">
-										<xsl:variable name="var2_value" as="node()?" select="@value"/>
-										<xsl:sequence select="(fn:exists($var2_value) and ('ssn' = xs:string(xs:anyURI(fn:string($var2_value)))))"/>
+								<xsl:variable name="var7_resultof_map" as="xs:boolean?">
+									<xsl:for-each select="$var12_cur/ns0:system">
+										<xsl:variable name="var6_value" as="node()?" select="@value"/>
+										<xsl:sequence select="(fn:exists($var6_value) and ('ssn' = xs:string(xs:anyURI(fn:string($var6_value)))))"/>
 									</xsl:for-each>
 								</xsl:variable>
-								<xsl:variable name="var4_resultof_any" as="xs:boolean" select="fn:exists($var3_resultof_map[.])"/>
-								<xsl:if test="$var4_resultof_any">
+								<xsl:variable name="var8_resultof_any" as="xs:boolean" select="fn:exists($var7_resultof_map[.])"/>
+								<xsl:if test="$var8_resultof_any">
 									<xsl:sequence select="."/>
 								</xsl:if>
 							</xsl:for-each>
 						</xsl:variable>
-						<xsl:for-each select="$var5_resultof_filter">
-							<xsl:variable name="var6_resultof_cast" as="xs:double" select="xs:double(xs:decimal('4'))"/>
-							<xsl:variable name="var7_resultof_cast" as="xs:string" select="fn:string(@value)"/>
+						<xsl:for-each select="$var9_resultof_filter">
+							<xsl:variable name="var10_resultof_cast" as="xs:double" select="xs:double(xs:decimal('4'))"/>
+							<xsl:variable name="var11_resultof_cast" as="xs:string" select="fn:string(@value)"/>
 							<ssn>
-								<xsl:sequence select="fn:concat(fn:concat(fn:concat(fn:concat(fn:substring($var7_resultof_cast, xs:double(xs:decimal('1')), xs:double(xs:decimal('3'))), '-'), fn:substring($var7_resultof_cast, $var6_resultof_cast, xs:double(xs:decimal('2')))), '-'), fn:substring($var7_resultof_cast, xs:double(xs:decimal('6')), $var6_resultof_cast))"/>
+								<xsl:sequence select="fn:concat(fn:concat(fn:concat(fn:concat(fn:substring($var11_resultof_cast, xs:double(xs:decimal('1')), xs:double(xs:decimal('3'))), '-'), fn:substring($var11_resultof_cast, $var10_resultof_cast, xs:double(xs:decimal('2')))), '-'), fn:substring($var11_resultof_cast, xs:double(xs:decimal('6')), $var10_resultof_cast))"/>
 							</ssn>
 						</xsl:for-each>
 					</xsl:for-each>
 					<xsl:for-each select="$var1_details/ns0:identifier">
-						<xsl:variable name="var13_cur" as="node()" select="."/>
-						<xsl:variable name="var12_resultof_filter" as="node()?">
+						<xsl:variable name="var17_cur" as="node()" select="."/>
+						<xsl:variable name="var16_resultof_filter" as="node()?">
 							<xsl:for-each select="ns0:id[fn:exists(@value)]">
-								<xsl:variable name="var10_resultof_map" as="xs:boolean?">
-									<xsl:for-each select="$var13_cur/ns0:system">
-										<xsl:variable name="var9_value" as="node()?" select="@value"/>
-										<xsl:sequence select="(fn:exists($var9_value) and ('national.dfn' = xs:string(xs:anyURI(fn:string($var9_value)))))"/>
+								<xsl:variable name="var14_resultof_map" as="xs:boolean?">
+									<xsl:for-each select="$var17_cur/ns0:system">
+										<xsl:variable name="var13_value" as="node()?" select="@value"/>
+										<xsl:sequence select="(fn:exists($var13_value) and ('national.dfn' = xs:string(xs:anyURI(fn:string($var13_value)))))"/>
 									</xsl:for-each>
 								</xsl:variable>
-								<xsl:variable name="var11_resultof_any" as="xs:boolean" select="fn:exists($var10_resultof_map[.])"/>
-								<xsl:if test="$var11_resultof_any">
+								<xsl:variable name="var15_resultof_any" as="xs:boolean" select="fn:exists($var14_resultof_map[.])"/>
+								<xsl:if test="$var15_resultof_any">
 									<xsl:sequence select="."/>
 								</xsl:if>
 							</xsl:for-each>
 						</xsl:variable>
-						<xsl:for-each select="$var12_resultof_filter">
+						<xsl:for-each select="$var16_resultof_filter">
 							<medicalRecordNo>
 								<xsl:sequence select="fn:string(@value)"/>
 							</medicalRecordNo>

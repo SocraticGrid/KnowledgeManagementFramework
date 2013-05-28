@@ -38,9 +38,9 @@
 							<quantity value='90'/>
 							<routing value='W'/>
 							<sig xml:space='preserve'>TAKE ONE TABLET BY BY MOUTH EVERY EVENING</sig>
-							<start value='3020305'/>
+							<start value='3060616.1231'/>
 							<status value='historical'/>
-							<stop value='3030306'/>
+							<stop value='3060924.24'/>
 							<type value='Prescription'/>
 							<vaStatus value='EXPIRED'/>
 							<vaType value='O'/>

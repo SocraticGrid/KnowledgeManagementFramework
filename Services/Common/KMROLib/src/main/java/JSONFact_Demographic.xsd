@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by Emory Fry (Naval Health Research Center) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="patientDataFact">
 		<xs:complexType>
@@ -7,21 +8,24 @@
 				<xs:element name="facts" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="patientId" type="xs:int"/>
+							<xs:element name="contactId" type="xs:string"/>
 							<xs:element name="name" type="xs:string"/>
+							<xs:element name="lastName" type="xs:string"/>
+							<xs:element name="firstName" type="xs:string"/>
+							<xs:element name="middleName"  type="xs:string"/>
 							<xs:element name="age" type="xs:byte"/>
-							<xs:element name="dob" type="xs:string"/>
-							<xs:element name="sex" type="xs:string"/>
-							<xs:element name="uid" type="xs:int"/>
-							<xs:element name="relationship" type="xs:string"/>
-							<xs:element name="nextOfKin" type="xs:boolean"/>
-							<xs:element name="hipaaRelease" type="xs:boolean"/>
-							<xs:element name="emergencyContact" type="xs:boolean"/>
-							<xs:element name="powerOfAttorney" type="xs:boolean"/>
-							<xs:element name="healthcarePOA" type="xs:boolean"/>
-							<xs:element name="itemId" type="xs:byte"/>
-							<xs:element name="code" type="xs:string"/>
-							<xs:element name="codeSystemName" type="xs:string"/>
-							<xs:element name="codeSystemCode" type="xs:string"/>
+							<xs:element name="gender" type="xs:string"/>
+							<xs:element name="address" type="xs:string"/>
+							<xs:element name="city" type="xs:string"/>
+							<xs:element name="state" type="xs:string"/>
+							<xs:element name="dateOfBirth" type="xs:date"/>
+							<xs:element name="gender" type="xs:string"/>
+							<xs:element name="ssn" type="xs:string"/>
+							<xs:element name="medicalRecordNo" type="xs:string"/>
+							<xs:element name="primaryDoctor" type="xs:string"/>
+							<xs:element name="patientStatus" type="xs:string"/>
+							<xs:element name="emergencyContact" type="xs:string"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

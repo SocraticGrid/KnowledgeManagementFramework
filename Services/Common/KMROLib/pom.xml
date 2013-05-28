@@ -232,9 +232,19 @@
             <version>3.1.0.RELEASE</version>
         </dependency>
         <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>FHIRLib</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>CodeConversion</artifactId>
+            <version>1.3-RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>org.socraticgrid</groupId>
             <artifactId>DocumentTransformer</artifactId>
-            <version>1.7-SNAPSHOT</version>
+            <version>1.7-RELEASE</version>
         </dependency>
         
     </dependencies>
