@@ -66,29 +66,7 @@ public class Facts {
     protected String title;
     protected List<String> items;
 /*
-     * {
- Ê"patientDataFact": {
- Ê Ê"-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
- Ê Ê"-xsi:noNamespaceSchemaLocation": "C:/Users/JERRYG~1/Dropbox/Cognitive/CDS/JSONFact_Demographic.xsd",
- Ê Ê"facts": {
- Ê Ê Ê"patientId": "100013",
- Ê Ê Ê"contactId": "ONEHUNDRED,PATIENT",
- Ê Ê Ê"name": "ONEHUNDRED,PATIENT",
- Ê Ê Ê"lastName": "ONEHUNDRED",
- Ê Ê Ê"firstName": "PATIENT",
- Ê Ê Ê"age": "78",
- Ê Ê Ê"gender": "M",
- Ê Ê Ê"address": "Any Street",
- Ê Ê Ê"city": "Any Town",
- Ê Ê Ê"state": "WEST VIRGINIA",
- Ê Ê Ê"dateOfBirth": "1935-04-07",
- Ê Ê Ê"ssn": "666-00-0100",
- Ê Ê Ê"medicalRecordNo": "11000",
- Ê Ê Ê"primaryDoctor": "Not Mapped",
- Ê Ê Ê"patientStatus": "Unknown",
- Ê Ê Ê"emergencyContact": "VETERAN,BROTHER"
- Ê Ê}
- Ê}
+  
 }
      *
      */
