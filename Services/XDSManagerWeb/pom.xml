@@ -232,7 +232,7 @@
             <name>Repository for library[metro]</name>
         </repository>
     </repositories>
-    <properties>
+    <!--properties>
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
-    </properties>
+    </properties-->
 </project>

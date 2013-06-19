@@ -215,7 +215,7 @@
             <url>http://localhost:8080/RegistriesService</url>
         </repository>
     </distributionManagement>
-    <properties>
+    <!--properties>
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
-    </properties>
+    </properties-->
 </project>
