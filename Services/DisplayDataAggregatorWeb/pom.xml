@@ -270,8 +270,8 @@
             <url>http://localhost:8080/DisplayDataAggregator</url>
         </repository>
     </distributionManagement>
-    <properties>
+    <!--properties>
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
         <skipTests>true</skipTests>
-    </properties>
+    </properties-->
 </project>
