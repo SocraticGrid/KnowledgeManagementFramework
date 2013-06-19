@@ -176,9 +176,9 @@
             <url>http://download.java.net/maven/2/</url>
         </pluginRepository>
     </pluginRepositories>
-    <properties>
+    <!--properties>
         <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
-    </properties>
+    </properties-->
     <distributionManagement>
         <repository>
             <id>DSAServiceWeb</id>
