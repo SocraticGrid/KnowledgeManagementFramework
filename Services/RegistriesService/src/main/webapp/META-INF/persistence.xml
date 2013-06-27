@@ -65,7 +65,7 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.connection.username" value="kmruser"/>
             <property name="hibernate.connection.password" value="kmrpass"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/kmr"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://10.255.167.123:3306/kmr"/>
             <property name="hibernate.max_fetch_depth" value="3"/>
         </properties>
     </persistence-unit>
