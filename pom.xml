@@ -87,9 +87,11 @@
 
         <module>Common/TaskManagerClient</module>
         <module>Common/TaskExecHandler</module>
-        <module>../CodeConversion</module>
-        <module>../DocumentTransformer</module>
-        <module>../FHIRLib</module>
+        <!-- NOTE:  MAKE SURE TO HAVE THESE SOCRATICGRID modules compiled 
+        CodeConversion
+        DocumentTransformer
+        
+        -->
         
         <module>Services/DSAServiceWeb</module>
         <module>Services/Common/AdapterFactServiceLib</module>
