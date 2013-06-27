@@ -114,6 +114,12 @@
             <artifactId>jaxws-api</artifactId>
             <version>2.2.8</version>
         </dependency>
+        <!--dependency>
+            <groupId>javaee</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>5</version>
+            <scope>provided</scope>
+        </dependency-->
         <!-- ADDITIONAL FOR WEBSPHERE SUPPORT -->
         
     </dependencies>
