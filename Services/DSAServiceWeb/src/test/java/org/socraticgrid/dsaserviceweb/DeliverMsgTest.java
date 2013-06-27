@@ -73,7 +73,7 @@ public class DeliverMsgTest {
     public static final String ENDPT_LOCAL =
             "http://localhost:8080/DSAServiceWeb/DSAIntegration";
     public static final String ENDPT_47 =
-            "http://192.168.5.47:9763/DSAServiceWeb/DSAIntegration";
+            "http://10.255.167.124:8080/DSAServiceWeb/DSAIntegration";
 
     public DeliverMsgTest() {
     }
@@ -94,6 +94,26 @@ public class DeliverMsgTest {
     public void tearDown() {
     }
 
+    @Test
+    public void testDeliverMsgAlertInsert_IMPL() {
+        
+        DeliverMessageRequestType request = new DeliverMessageRequestType();
+        request.setRefId("17777");
+        request.getSubject().add("99990070");
+        request.setBody("TEST PAYLOAD - DATE IS " + new Date());
+        request.setHeader("TEST HEADER - DATE IS " + new Date());
+        request.setDeliveryDate("10/01/2011 10:10:10");
+        request.setSender("1");
+        request.getMainRecipients().add("1");
+        request.setPriority("HIGH");
+        request.getType().add("ALERT");
+        
+        DSAIntegrationImpl instance = new DSAIntegrationImpl();
+        DeliverMessageResponseType response = instance.deliverMessage(request);
+        
+        System.out.println("DELIVER MESSAGE RESPONSE IS " + response.getStatus());
+    }
+    
     @Test
     public void testDeliverMsgAlertInsert() {
         DSAIntegrationPortType port = getPort();

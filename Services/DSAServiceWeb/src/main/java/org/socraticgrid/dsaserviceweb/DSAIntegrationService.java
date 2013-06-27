@@ -57,7 +57,10 @@ import org.socraticgrid.dsa.*;
  *
  * @author nhin
  */
-@WebService(serviceName = "DSAIntegration", portName = "DSAIntegrationPortSoap11", endpointInterface = "org.socraticgrid.dsa.DSAIntegrationPortType", targetNamespace = "urn:org:socraticgrid:dsa", wsdlLocation = "WEB-INF/wsdl/DSAIntegration.wsdl")
+@WebService(serviceName = "DSAIntegration", portName = "DSAIntegrationPortSoap11",
+        endpointInterface = "org.socraticgrid.dsa.DSAIntegrationPortType",
+        targetNamespace = "urn:org:socraticgrid:dsa",
+        wsdlLocation = "WEB-INF/wsdl/DSAIntegration.wsdl")
 public class DSAIntegrationService {
 
     public DeliverMessageResponseType deliverMessage(DeliverMessageRequestType deliverMessageRequest) {
