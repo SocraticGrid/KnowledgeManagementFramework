@@ -93,6 +93,8 @@ public class HibernateAccessor
     public static File getHibernateFile(String hibernateFileName)
            throws PropertyAccessException
     {
+System.out.println("===========> [HibernateAccessor] hibernateFileName="+hibernateFileName);
+        
         String sFileSeparator = System.getProperty("file.separator");
         checkEnvVarSet();
 
