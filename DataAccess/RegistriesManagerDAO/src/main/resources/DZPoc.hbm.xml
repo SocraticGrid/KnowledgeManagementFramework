@@ -47,7 +47,7 @@
 
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class mutable="true" name="mil.navy.med.dzreg.model.DzPoc" select-before-update="false"/>
+  <class mutable="true" name="mil.navy.med.dzreg.model.DzPoc" select-before-update="false">
         <id column="POCID" name="pocid" type="long">
             <generator class="increment"/>
         </id>
@@ -58,4 +58,5 @@
         <property column="DIVISION_ID" type="integer" name="divisionId" />
         <property column="DIVISION_DMIS" name="divisionDmis" length="4" type="string"/>
         <property column="FLAG" type="integer" name="flag" />
+  </class>
 </hibernate-mapping>
