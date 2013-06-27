@@ -193,7 +193,8 @@ public class AlertAction
 
         //If dates are equal, check action id (db generated incrementer)
         if (compareTo == 0) {
-            return that.getActionId().compareTo(actionId);
+            if ((actionId != null))
+                return that.getActionId().compareTo(actionId);
         }
 
         return compareTo;

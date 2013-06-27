@@ -59,9 +59,10 @@ import org.apache.commons.logging.LogFactory;
  *
  * @author dunnek
  */
-public class HibernateAccessor
+
+public class HibernateAccessor2
 {
-    private static Log log = LogFactory.getLog(HibernateAccessor.class);
+    private static Log log = LogFactory.getLog(HibernateAccessor2.class);
     private static final String CRLF = System.getProperty("line.separator");
     private static String m_sPropertyFileDir = "";
     private static boolean m_bFailedToLoadEnvVar = false;

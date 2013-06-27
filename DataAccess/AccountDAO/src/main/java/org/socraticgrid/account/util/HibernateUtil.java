@@ -60,7 +60,7 @@ public class HibernateUtil {
 
     private static final SessionFactory sessionFactory;
     private static Log log = LogFactory.getLog(HibernateUtil.class);
-    private static final String HIBERNATE_TASK_REPOSITORY = "acctmanager.hibernate.cfg.xml";
+    private static final String HIBERNATE_ACCT_REPOSITORY = "acctmanager.hibernate.cfg.xml";
 
     static {
         try {
@@ -87,9 +87,9 @@ public class HibernateUtil {
         File result = null;
 
         try {
-            result = HibernateAccessor.getHibernateFile(HIBERNATE_TASK_REPOSITORY);
+            result = HibernateAccessor2.getHibernateFile(HIBERNATE_ACCT_REPOSITORY);
         } catch (Exception ex) {
-            log.error("Unable to load " + HIBERNATE_TASK_REPOSITORY + " " + ex.getMessage(), ex);
+            log.error("Unable to load " + HIBERNATE_ACCT_REPOSITORY + " " + ex.getMessage(), ex);
         }
 
         //      result = new File("/Users/jharby/src/NHINC/Current/Product/Production/Common/Properties/hibernate/alertmanager.hibernate.cfg.xml");
