@@ -207,7 +207,8 @@ public class ValidateAccountResource extends BaseResource {
 
         SessionUtilities.storeTokenData(username, providerId, uid, securityToken);
 
-        removeDocs();
+        //NEED TO DBG .... REMOVE FOR NOW
+        //removeDocs();
 
         return responseBuilder.toString();
     }
