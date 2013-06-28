@@ -50,9 +50,6 @@
  */
 package org.socraticgrid.displayalert;
 
-import org.socraticgrid.dsa.DeliverMessageResponseType;
-import java.util.Date;
-import org.socraticgrid.dsa.DeliverMessageRequestType;
 import org.socraticgrid.displayalert.DisplayAlertMessages;
 import org.socraticgrid.displayalert.DisplayAlertDataUtil;
 import org.socraticgrid.alertmanager.model.RiskModelFavorite;
@@ -92,39 +89,25 @@ public class DisplayAlertMessagesTest {
     public void setUp() {
     }
 
-    @Test
-    public void testDeliverMsgAlertInsert() {
-
-        DeliverMessageRequestType request = new DeliverMessageRequestType();
-        request.setRefId("55555");
-        request.getSubject().add("99990070");
-        request.setBody("TEST PAYLOAD - DATE IS " + new Date());
-        request.setHeader("TEST HEADER - DATE IS " + new Date());
-        request.setDeliveryDate("10/01/2011 10:10:10");
-        request.setSender("1");
-        request.getMainRecipients().add("1");
-        request.setPriority("HIGH");
-        request.getType().add("ALERT");
-
-        DeliverMsgUtil d = new DeliverMsgUtil();
-        DeliverMessageResponseType response = d.deliverMsg(request, "/home/nhin/Properties");
-        System.out.println("DELIVER MESSAGE RESPONSE IS " + response.getStatus());
-    }
-
     /**
      * Test of setMessage method, of class DisplayAlertMessages.
      */
-    //@Test
+    @Test
     public void testSetMessage() {
         System.out.println("setMessage");
 
-        SetMessageRequestType request = null;
+        SetMessageRequestType request = new SetMessageRequestType();
+
+        request.setAction( "Unarchive");
+        request.setPatientId("99990070");
+        request.setMessageId("5");
+        request.setLocation("INBOX");
+        request.setUserId("1");
+        
         DisplayAlertMessages instance = new DisplayAlertMessages();
-        SetMessageResponseType expResult = null;
         SetMessageResponseType result = instance.setMessage(request);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        System.out.println("DONE");
     }
 
     @Test
