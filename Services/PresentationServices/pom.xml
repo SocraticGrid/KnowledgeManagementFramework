@@ -284,12 +284,27 @@
             <artifactId>commons-beanutils</artifactId>
             <version>20030211.134440</version>
         </dependency>
-        <dependency>
+        
+        <!--dependency>
             <groupId>org.socraticgrid.taps</groupId>
             <artifactId>DSANotificationLib</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
+            <exclusions>
+                <exclusion>
+                    <artifactId>drools-mas-generic-client</artifactId>
+                    <groupId>org.drools.mas</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency-->
+        
+        <dependency>
+            <groupId>org.drools.mas</groupId>
+            <artifactId>drools-mas-generic-client</artifactId>
+            <version>1.0-SG</version>
+            <type>jar</type>
         </dependency>
+                        
         <dependency>
             <groupId>javaee</groupId>
             <artifactId>javaee-api</artifactId>
@@ -381,21 +396,6 @@
                             <staleFile>${project.build.directory}/jaxws/stale/PatientDataService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-PatientDataService</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
-                                <wsdlFile>DSAIntegration.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <wsdlLocation>file:///home/nhin/Properties/wsdl/DSAIntegration.wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/DSAIntegration.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-DSAIntegration</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>

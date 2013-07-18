@@ -92,68 +92,60 @@ public class ApiDocResource extends BaseResource {
     public Representation represent(Variant variant)
             throws ResourceException {
 
+        
         String response = "LIST OF DEPLOYED RESOURCES PASTED FROM PresentationServicesApplication.java:\n\n" +
-                        "        router.attach(\"/Allergies\", AllergiesResource.class);\n" + 
-			"        router.attach(\"/Admissions\", AdmissionsResource.class);\n" + 
-			"        router.attach(\"/advanceDiagnosticGuideProcess\", AdvanceDGProcessResource.class); \n" + 
-			"        router.attach(\"/Appointments\", AppointmentsResource.class);\n" + 
-			"        router.attach(\"/Calendar/External\", ExternalCalendarResource.class);\n" + 
-			"        router.attach(\"/completeDiagnosticGuideProcess\", CompleteDGProcessResource.class); \n" + 
-			"        router.attach(\"/Demographics\", PatientDemographicsResource.class);\n" + 
-			"        router.attach(\"/DiagnosticImaging\", DiagnosticImagingResource.class);\n" + 
-			"        router.attach(\"/Documents\", DocumentsResource.class);\n" + 
-			"        router.attach(\"/EmergencyContact\", EmergencyContactResource.class);\n" + 
-			"        router.attach(\"/EncounterDetail\", EncounterDetailResource.class);\n" + 
-			"        router.attach(\"/Encounter/Detail\", EncounterDetailResource.class);\n" + 
-			"        router.attach(\"/Encounter/Note\", EncounterNoteResource.class);\n" + 
-			"        router.attach(\"/getAddressBook\", GetAddressBookResource.class);\n" + 
-			"        router.attach(\"/getCalendar\", GetCalendarResource.class);\n" + 
-			"        router.attach(\"/getDiagnosticGuideProcessStatus\", GetDGProcessStatusResource.class);\n" + 
-			"        router.attach(\"/getECS\", GetECSResource.class);\n" + 
-			"        router.attach(\"/getDocuments\", GetDocumentsResource.class);\n" +
-			"        router.attach(\"/getMessageDetail\", GetMessageDetailResource.class);\n" + 
-			"        router.attach(\"/getMessages\", GetMessagesResource.class);\n" + 
-			"        router.attach(\"/getPatientData\", GetPatientDataResource.class);\n" + 
-			"        router.attach(\"/getRequiredFields\", GetRequiredsResource.class);\n" + 
-			"        router.attach(\"/getRiskModels\", GetRiskModelsResource.class);\n" + 
-			"        router.attach(\"/getRiskModelsDetail\", GetRiskModelsDetailResource.class);\n" + 
-			"        router.attach(\"/getSurvey\", SurveyResource.class);\n" + 
-			"        router.attach(\"/Immunizations\", ImmunizationsResource.class);\n" + 
-			"        router.attach(\"/Labs\", LabsResource.class);\n" + 
-			"        router.attach(\"/LocationSchedule\", LocationScheduleResource.class);\n" + 
-			"        router.attach(\"/Locations/Clinics\", LocationClinicsResource.class);\n" + 
-			"        router.attach(\"/Locations/Wards\", LocationWardsResource.class);\n" + 
-			"        router.attach(\"/Login\", LoginResource.class);\n" + 
-			"        router.attach(\"/Mail\", MailResource.class);\n" + 
-			"        router.attach(\"/Mail/Status\", MailStatusResource.class);\n" + 
-			"        router.attach(\"/MailAction\", MailActionResource.class);\n" + 
-			"        router.attach(\"/Mail/Action\", MailActionResource.class);\n" + 
-			"        router.attach(\"/setAccount\", MaintainAccountResource.class);\n" + 
-			"        router.attach(\"/Medications\", MedicationsResource.class);\n" + 
-			"        router.attach(\"/MessageDetail\", GetMessageDetailResource.class);\n" + 
-			"        router.attach(\"/Mobile\", MobileResource.class);\n" + 
-			"        router.attach(\"/Orders\", OrdersResource.class);\n" + 
-			"        router.attach(\"/PatientCensus\", PatientCensusResource.class);\n" + 
-			"        router.attach(\"/Patients\", PatientsResource.class);\n" + 
-			"        router.attach(\"/PmrPreferences\", PmrPreferencesResource.class);\n" + 
-			"        router.attach(\"/Problems\", ProblemsResource.class);\n" + 
-			"        router.attach(\"/Procedures\", ProcedureResource.class);\n" + 
-			"        router.attach(\"/Provider\", ProvidersResource.class);\n" + 
-			"        router.attach(\"/Providers\", ProvidersResource.class);\n" + 
-			"        router.attach(\"/Providers/Image\", ProvidersImageResource.class);\n" + 
-			"        router.attach(\"/setDiagnosticActionStatus\", SetDiagnosticActionStatusResource.class);\n" + 
-			"        router.attach(\"/setMessages\", SetMessagesResource.class);\n" + 
-			"        router.attach(\"/setRiskModelFavorites\", SetRiskModelFavoritesResource.class);\n" + 
-			"        router.attach(\"/setSurvey\", SurveyResource.class);\n" + 
-			"        router.attach(\"/Schedules\", SchedulingResource.class);\n" + 
-			"        router.attach(\"/startDiagnosticGuideProcess\", StartDGProcessResource.class);\n" + 
-			"        router.attach(\"/Todos\", ToDoResource.class);\n" + 
-			"        router.attach(\"/validateAccount\", ValidateAccountResource.class);\n" + 
-			"        router.attach(\"/Vitals\", VitalsResource.class);\n" + 
-			"        //these are for testing - sandbox related\n" + 
-			"        router.attach(\"/test\", TestResource.class);\n" + 
-			"        router.attach(\"/SMSResource\", SMSResource.class);\n" + 
-			"        router.attach(\"/RegistryResource\", RegistryResource.class);";
+                            "\n/validateAccount " + 
+                            "\n/setAccount " +
+
+                            //INBOX MSGS APIs
+                            "\n/getMessages " + 
+                            "\n/getMessageDetail " + 
+                            "\n/setMessages " + 
+                            "\n/getDocuments " + 
+                            "\n/getAddressBook " +
+
+                            "\n/getCalendar " + 
+
+                            "\n/getSurvey " + 
+                            "\n/setSurvey " + 
+
+                            //RISK MODEL PREDICTION APIs
+                            "\n/getRiskModels " +
+                            "\n/getRiskModelsDetail " +
+                            "\n/setRiskModelFavorites " + 
+
+
+                            //DX GUIDE APIs
+                            "\n/startDiagnosticGuideProcess " + 
+                            "\n/getDiagnosticGuideProcessStatus " + 
+                            "\n/completeDiagnosticGuideProcess " + 
+                            "\n/advanceDiagnosticGuideProcess " +
+                            "\n/setDiagnosticActionStatus " + 
+                            "\n/getDiagnosticGuideActionStatus " + 
+
+                            //SIMULATION APIs
+                            "\n/getPlanningModels " + 
+                            "\n/searchConfigurationsResource " + 
+                            "\n/getConfigurationDetail " + 
+                            "\n/saveConfiguration " + 
+                            "\n/getSimulations " + 
+                            "\n/getSimulationDetail " +
+                            "\n/commandSimulation " + 
+                            "\n/launchSimulation " +
+                            "\n/searchPlanResults " + 
+
+                            "\n/getResultDetails " +
+                            "\n/requestResultOperation " +
+
+                            //FACTS-ECS APIs
+                            "\n/getPatientData " +
+
+                            //NON-PATIENT-SPECIFIC FACT DATA
+                            "\n/getFactData " 
+                            ;
+
+                            //PATIENT ID NOTIFICATION
+                            //"\n/notifyDSA " ;
         
         Representation rep = new StringRepresentation(response,
                 MediaType.TEXT_PLAIN);
