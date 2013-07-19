@@ -141,11 +141,10 @@ public class ApiDocResource extends BaseResource {
                             "\n/getPatientData " +
 
                             //NON-PATIENT-SPECIFIC FACT DATA
-                            "\n/getFactData " 
-                            ;
+                            "\n/getFactData " +
 
                             //PATIENT ID NOTIFICATION
-                            //"\n/notifyDSA " ;
+                            "\n/notifyDSA " ;
         
         Representation rep = new StringRepresentation(response,
                 MediaType.TEXT_PLAIN);
