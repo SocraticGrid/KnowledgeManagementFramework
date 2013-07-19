@@ -48,8 +48,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="file:/home/nhin/KMR/Properties/wsdl/DisplayDataAggregator.wsdl" uri="wsdl/DisplayDataAggregator.wsdl"/>
     <system systemId="file:/home/nhin/KMR/Properties/schemas/nhinc/common/DisplayDataAggregator.xsd" uri="schemas/nhinc/common/DisplayDataAggregator.xsd"/>
-    <system systemId="file:/home/nhin/KMR/Properties/wsdl/DSAIntegration.wsdl" uri="wsdl/DSAIntegration.wsdl"/>
-    <system systemId="file:/home/nhin/KMR/Properties/wsdl/DSAIntegration.xsd" uri="wsdl/DSAIntegration.xsd"/>
     <system systemId="file:/E:/projects/KMR/Services/XDSManagerWeb/src/wsdl/DocumentManager.wsdl" uri="wsdl/DocumentManager.wsdl"/>
     <system systemId="file:/E:/projects/KMR/Services/XDSManagerWeb/src/wsdl/schemas/nhinc/common/DocManager.xsd" uri="wsdl/schemas/nhinc/common/DocManager.xsd"/>
     <system systemId="file:/E:/projects/KMR/Services/XDSManagerWeb/src/wsdl/schemas/ihe/XDS.b_DocumentRepository.xsd" uri="wsdl/schemas/ihe/XDS.b_DocumentRepository.xsd"/>

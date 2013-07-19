@@ -149,7 +149,7 @@
             <artifactId>drools-mas-generic-client</artifactId>
             <version>1.0-SG</version>
         </dependency>
-
+        
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -353,21 +353,6 @@
                             <staleFile>${project.build.directory}/jaxws/stale/PatientDataService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-PatientDataService</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
-                                <wsdlFile>DSAIntegration.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <wsdlLocation>file:///home/nhin/Properties/wsdl/DSAIntegration.wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/DSAIntegration.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-DSAIntegration</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>

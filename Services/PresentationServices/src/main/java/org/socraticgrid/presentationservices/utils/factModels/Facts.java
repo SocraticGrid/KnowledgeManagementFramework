@@ -65,11 +65,7 @@ public class Facts {
     //MEDICATIONS DETAILS ATTRIBUTES
     protected String title;
     protected List<String> items;
-/*
-  
-}
-     *
-     */
+
     // DEMOGRAPHICS LIST ATTRIBUTES
     protected String name;
     protected int age;

@@ -55,12 +55,22 @@ import java.io.IOException;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.WebClient;
+import java.util.List;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.restlet.Context;
+import org.restlet.data.Request;
+import org.restlet.data.Response;
+import org.socraticgrid.ldapaccess.ContactAcctDTO;
+import org.socraticgrid.ldapaccess.ContactDTO;
+import org.socraticgrid.ldapaccess.LdapService;
+import org.socraticgrid.presentationservices.resources.ValidateAccountResource;
+import org.socraticgrid.util.SessionUtilities;
 
 /**
  *
@@ -91,6 +101,86 @@ public class ValidateAccountTest {
     public void tearDown() {
     }
 
+    
+    @Test
+    public void testValidate() throws IOException {
+        
+        String username = "fry.emory";
+        String password = "nhinpass";
+        
+        this.authenticate(username, password);
+    }
+
+    private String authenticate(String username, String password) {
+        String retVal = "{\"validateAccountFact\": {\"statusMessage\" : \"Invalid User or System down\" , \"successStatus\" : false }}";
+        List<ContactDTO> contacts = LdapService.getContactDAO().findContact("cn,="+username);
+        if (contacts == null || contacts.isEmpty()){
+            //invalid
+            return retVal;
+        }
+        
+        List<ContactAcctDTO> accts = LdapService.getContactDAO().findContactAcct(username, "Mail.Account");
+        if (accts == null || accts.isEmpty()){
+            //invalid
+            return retVal;
+        }
+        
+        ContactAcctDTO acct = accts.get(0);
+        
+        if (!password.equals(acct.getClearPassword())){
+            //invalid
+            return retVal;
+        }
+        
+        ContactDTO contact = contacts.get(0);
+        
+        String uid = contact.getUid();
+        String providerId = contact.getEmployeeNumber();
+        String securityToken = UUID.randomUUID().toString();
+        String role = null;
+        
+        if (contact.getEmployeeNumber() == null){
+            //It is a Patient
+            role = "patient";
+        }else{
+            role = "provider";
+        }
+
+        StringBuilder responseBuilder = new StringBuilder();
+        responseBuilder.append("{\"validateAccountFact\" : {\"statusMessage\" : \"valid\", \"successStatus\" : true");
+        
+        //token
+        responseBuilder.append(",\"token\":\"");
+        responseBuilder.append(securityToken);
+        responseBuilder.append("\"");
+        
+        //role
+        responseBuilder.append(",\"role\":\"");
+        responseBuilder.append(role);
+        responseBuilder.append("\"");
+        
+        //userId
+        responseBuilder.append(",\"userId\":\"");
+        responseBuilder.append(uid);
+        responseBuilder.append("\"");
+
+        //providerId
+        if (providerId != null){
+            responseBuilder.append(",\"providerId\":\"");
+            responseBuilder.append(providerId);
+            responseBuilder.append("\"");
+        }
+        
+        responseBuilder.append("}}");
+
+        SessionUtilities.storeTokenData(username, providerId, uid, securityToken);
+
+        //removeDocs();
+
+        return responseBuilder.toString();
+    }
+    
+    //================================================
     @Test
     public void testValidateAcctProvider() throws IOException {
         System.out.println("TEST CASE: testValidateAcct - Provider");

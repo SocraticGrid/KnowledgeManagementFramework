@@ -45,6 +45,5 @@
   ~  *****************************************************************************************************************/
   -->
 <endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
-  <endpoint implementation="org.socraticgrid.presentationservices.dsaintegration.DSAIntegrationService" name="DSAIntegration" url-pattern="/DSAIntegration"/>
   <endpoint implementation="org.socraticgrid.presentationservices.ws.facts.PatientDataService" name="PatientDataService" url-pattern="/PatientDataService"/>
 </endpoints>
