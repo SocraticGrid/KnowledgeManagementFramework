@@ -40,19 +40,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AckType }
+     * Create an instance of {@link RegistryType }
      * 
      */
-    public AckType createAckType() {
-        return new AckType();
+    public RegistryType createRegistryType() {
+        return new RegistryType();
     }
 
     /**
-     * Create an instance of {@link RegisterPersonRequestType }
+     * Create an instance of {@link RegistryTypeResponseType }
      * 
      */
-    public RegisterPersonRequestType createRegisterPersonRequestType() {
-        return new RegisterPersonRequestType();
+    public RegistryTypeResponseType createRegistryTypeResponseType() {
+        return new RegistryTypeResponseType();
+    }
+
+    /**
+     * Create an instance of {@link RegistryProfileType }
+     * 
+     */
+    public RegistryProfileType createRegistryProfileType() {
+        return new RegistryProfileType();
     }
 
     /**
@@ -64,11 +72,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryProfileType }
+     * Create an instance of {@link PersonRegistryProfileResponseType }
      * 
      */
-    public RegistryProfileType createRegistryProfileType() {
-        return new RegistryProfileType();
+    public PersonRegistryProfileResponseType createPersonRegistryProfileResponseType() {
+        return new PersonRegistryProfileResponseType();
+    }
+
+    /**
+     * Create an instance of {@link RegisterPersonRequestType }
+     * 
+     */
+    public RegisterPersonRequestType createRegisterPersonRequestType() {
+        return new RegisterPersonRequestType();
     }
 
     /**
@@ -96,27 +112,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryType }
+     * Create an instance of {@link AckType }
      * 
      */
-    public RegistryType createRegistryType() {
-        return new RegistryType();
-    }
-
-    /**
-     * Create an instance of {@link RegistryTypeResponseType }
-     * 
-     */
-    public RegistryTypeResponseType createRegistryTypeResponseType() {
-        return new RegistryTypeResponseType();
-    }
-
-    /**
-     * Create an instance of {@link PersonRegistryProfileResponseType }
-     * 
-     */
-    public PersonRegistryProfileResponseType createPersonRegistryProfileResponseType() {
-        return new PersonRegistryProfileResponseType();
+    public AckType createAckType() {
+        return new AckType();
     }
 
     /**

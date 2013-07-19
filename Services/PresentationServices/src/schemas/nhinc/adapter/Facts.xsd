@@ -45,9 +45,9 @@
   -->
 
 <!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.7-hudson-48-. -->
-<xs:schema xmlns:tns="urn:org:socratcigrid:adapter:fact"
+<xs:schema xmlns:tns="urn:org:socraticgrid:adapter:fact"
 xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-version="1.0" targetNamespace="urn:org:socratcigrid:adapter:fact">
+version="1.0" targetNamespace="urn:org:socraticgrid:adapter:fact">
 
 <xs:element name="FactQueryResponse" type="tns:FactQueryResponseType" />
 

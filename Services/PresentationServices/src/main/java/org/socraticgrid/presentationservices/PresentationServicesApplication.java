@@ -129,7 +129,7 @@ import org.restlet.Router;
 import org.restlet.Restlet;
 import org.restlet.data.LocalReference;
 import org.restlet.Redirector;
-import org.socraticgrid.presentationservices.resources.dsa.NotifyDSA;
+//import org.socraticgrid.presentationservices.resources.dsa.NotifyDSA;
 import org.socraticgrid.presentationservices.resources.facts.GetFactDataResource;
 
 /**
@@ -231,7 +231,7 @@ public class PresentationServicesApplication extends Application {
 
 
         //PATIENT ID NOTIFICATION
-        router.attach("/notifyDSA", NotifyDSA.class);
+ //       router.attach("/notifyDSA", NotifyDSA.class);
 
         //FACTS - KMR1
         /*
