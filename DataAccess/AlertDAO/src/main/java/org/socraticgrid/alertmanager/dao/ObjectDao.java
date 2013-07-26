@@ -51,13 +51,15 @@
 
 package org.socraticgrid.alertmanager.dao;
 
-import org.socraticgrid.alertmanager.util.HibernateUtil;
+import java.util.Collection;
 import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.socraticgrid.alertmanager.util.HibernateUtil;
 
 /**
  *
@@ -145,6 +147,67 @@ public class ObjectDao<E> {
                 {
                     trans = sess.beginTransaction();
                     sess.delete(entity);
+                }
+                else
+                {
+                    throw new Exception("Failed to obtain a session from the sessionFactory");
+                }
+            }
+            else
+            {
+                throw new Exception("Session factory was null");
+            }
+        }
+        finally
+        {
+            if (trans != null)
+            {
+                try
+                {
+                    trans.commit();
+                }
+                catch (Throwable t)
+                {
+                    throw new Exception("Failed to commit transaction: " + t.getMessage(), t);
+                }
+            }
+            if (sess != null)
+            {
+                try
+                {
+                    sess.close();
+                }
+                catch (Throwable t)
+                {
+                    throw new Exception("Failed to close session: " + t.getMessage(), t);
+                }
+            }
+        }
+
+    }
+
+    /**
+     * Delete a list of objects
+     *
+     * @param object object to delete
+     */
+    void delete(Collection<E> entities)
+            throws Exception
+    {
+        Session sess = null;
+        Transaction trans = null;
+        try
+        {
+            SessionFactory fact = HibernateUtil.getSessionFactory();
+            if (fact != null)
+            {
+                sess = fact.openSession();
+                if (sess != null)
+                {
+                    trans = sess.beginTransaction();
+                    for(E entity : entities){
+                    	sess.delete(entity);
+                    }
                 }
                 else
                 {

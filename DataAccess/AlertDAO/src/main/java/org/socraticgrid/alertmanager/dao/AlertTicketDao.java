@@ -50,19 +50,18 @@
  */
 package org.socraticgrid.alertmanager.dao;
 
-import org.socraticgrid.alertmanager.model.AlertStatus;
-import org.socraticgrid.alertmanager.model.AlertTicket;
-import org.socraticgrid.alertmanager.model.TicketQueryParams;
-import org.socraticgrid.alertmanager.util.HibernateUtil;
-import java.util.Iterator;
+import java.util.Collection;
 import java.util.List;
-import java.util.Set;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.socraticgrid.alertmanager.model.AlertTicket;
+import org.socraticgrid.alertmanager.model.TicketQueryParams;
+import org.socraticgrid.alertmanager.util.HibernateUtil;
 
 /**
  *
@@ -101,6 +100,26 @@ public class AlertTicketDao {
 
         try {
             objectDao.delete(ticket);
+        } catch (Throwable t) {
+            log.error("Failure during object delete.", t);
+        }
+
+        log.debug("Completed ticket delete");
+    }
+
+    /**
+     * Delete a series of tickets
+     * Used by OpenCDSAdapter to delete VMR Proposals...
+     * Not the best approach (cmon we're using Hibernate..!) but will work for the lab.
+     *
+     * @param ticket AlertTicket to delete
+     */
+    //TODO: Fix me so I am more efficient
+    public void delete(Collection<AlertTicket> tickets) {
+        log.debug("Performing tickets delete");
+
+        try {
+            objectDao.delete(tickets);
         } catch (Throwable t) {
             log.error("Failure during object delete.", t);
         }

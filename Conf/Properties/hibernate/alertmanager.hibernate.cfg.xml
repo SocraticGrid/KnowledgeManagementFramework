@@ -50,15 +50,18 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
 
-        <!-- datasource for TOMCAT (PROD and DEV) -->
-        <property name="hibernate.connection.datasource">java:comp/env/jdbc/kmr</property>
+        <!-- datasource for TOMCAT (PROD and DEV) 
+        <property name="hibernate.connection.datasource">java:comp/env/jdbc/kmr</property>-->
 
-        <!-- datasource for locatl JUNIT testing against remote DERBY
+        <!-- datasource for locatl JUNIT testing against remote DERBY-->
         <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
-        <property name="hibernate.connection.url">jdbc:derby://172.31.5.254:1527//opt/KMRdatabases/kmr</property>
+        <!-- QA URL 
+        <property name="hibernate.connection.url">jdbc:derby://172.31.5.254:1527//opt/KMRdatabases/kmr</property>-->
+        <!-- DEV URL -->
+        <property name="hibernate.connection.url">jdbc:derby://172.31.5.32:1527//opt/KMRdatabases/kmr</property>
         <property name="hibernate.connection.username">kmruser</property>
         <property name="hibernate.connection.password">kmrpass</property>
-        -->
+        
 
 
         <!-- datasource for WSO2
