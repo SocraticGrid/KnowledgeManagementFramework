@@ -64,7 +64,7 @@ public class TicketQueryParams
     private boolean archive;
     private boolean folder;
     private Set<AlertContact> providerList;
-    private int deleteFlag;
+    private boolean deleteFlag;
 
     /**
      * @return the folder whether it belongs to starred folder or not
@@ -187,11 +187,11 @@ public class TicketQueryParams
         this.providerList = providerList;
     }
 
-    public int getDeleteFlag() {
+    public boolean getDeleteFlag() {
         return deleteFlag;
     }
 
-    public void setDeleteFlag(int deleteFlag) {
+    public void setDeleteFlag(boolean deleteFlag) {
         this.deleteFlag = deleteFlag;
     }
 

@@ -165,9 +165,10 @@ public class DisplayAlertMessagesTest {
         System.out.println("GET EMR INBOX Alerts");
         GetMessagesRequestType request = new GetMessagesRequestType();
         request.setMessageType("Alert");
-        request.setPatientId("100023");
-        request.setUserId("101");
+        request.setPatientId("99990070");
+        request.setUserId("99990061");
         request.setLocation("INBOX");
+        //request.setLocation("archive");
 
         DisplayAlertMessages instance = new DisplayAlertMessages();
         GetMessagesResponseType result = instance.getMessages(request);
@@ -179,7 +180,7 @@ public class DisplayAlertMessagesTest {
             System.out.println("ID/DESCR: "+msg.getMessageId()+" , "+msg.getDescription());
 
         }
-
+      
         //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

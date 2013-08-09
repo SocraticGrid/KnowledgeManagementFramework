@@ -78,6 +78,7 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.socraticgrid.alertmanager.model.TicketQueryParams;
 
 /**
  *
@@ -291,16 +292,74 @@ public class DisplayAlertMessages {
 
 // TMN - CHECK SLOW PERFORMANCE ISSUE HERE:
             
-//TMN: have to debug why filter select doesn't work before using.
-//            if (CommonUtil.strNullorEmpty(request.getPatientId())) {
-                ticketList = service.getAllTickets();
+////TMN: have to debug why filter select doesn't work before using.
+////            if (CommonUtil.strNullorEmpty(request.getPatientId())) {
+//                ticketList = service.getAllTickets();
+//                
+////            } else {
+////                TicketQueryParams filters = new TicketQueryParams();
+////                filters.setPatientId(request.getPatientId());
+////                ticketList = service.getTicketsByParams(filters);
+////            }
+                
 
-//            } else {
-//                TicketQueryParams filters = new TicketQueryParams();
-//                filters.setPatientId(request.getPatientId());
-//                ticketList = service.getTicketsByParams(filters);
-//            }
+            TicketQueryParams filters = new TicketQueryParams();
+            //----------------------------------------------------
+            // SET LOCATION FILTER
+            // IF request.getLocation() == "Archive" ,  actionStatus.Archive = true
+            // IF request.getLocation() == "Usertrash" ,  actionStatus.Deleted = true
+            // IF request.getLocation() == "INBOX" ,  actionStatus.Archive = false AND actionStatus.Deleted = false
+            //----------------------------------------------------
+            
+            boolean isArchived = false;
+            boolean noLocationRequested = CommonUtil.strNullorEmpty(request.getLocation());
 
+            if (!noLocationRequested && request.getLocation().equalsIgnoreCase("Archive")) {
+                filters.setArchive(true);
+                filters.setDeleteFlag(false);
+                isArchived = true;
+
+            } else if (!noLocationRequested && request.getLocation().equalsIgnoreCase("UserTrash")) {
+                filters.setArchive(false);
+                filters.setDeleteFlag(true);
+
+            } else if (!noLocationRequested && request.getLocation().equalsIgnoreCase("INBOX")) {
+                filters.setArchive(false);
+                filters.setDeleteFlag(false);
+            } 
+                
+            //----------------------------------------------------
+            // PERSONAL ALERT-INBOX
+            //      WHEN patientID IS NOT given
+            //      GET all alerts with given UserId as recipient.
+            //----------------------------------------------------
+            if (CommonUtil.strNullorEmpty(request.getPatientId())) {
+                filters.setActionUserId(request.getUserId());
+                
+            } else {
+                filters.setPatientId(request.getPatientId());
+                
+                if ((userRole != null) && (userRole.equalsIgnoreCase("administrator"))) {
+                    //----------------------------------------------------
+                    // PATIENT-FOCUS ALERT-INBOX
+                    //      WHEN patientID IS given AND userId has ROLE=administrator...
+                    //      GET all ALerts that is ABOUT that patientId, no matter who the recip is.
+                    //----------------------------------------------------
+                } else {
+                    //----------------------------------------------------
+                    // PERSONAL and PATIENT-FOCUS ALERT-INBOX
+                    //      WHEN patientID IS given
+                    //      GET all ALerts that is ABOUT that patientId AND where userId IS a recipient
+                    //----------------------------------------------------
+                    filters.setActionUserId(request.getUserId());
+                }
+            }
+            
+            //----------------------------------------------------
+            // GET tickets based on filters.
+            //----------------------------------------------------
+            ticketList = service.getTicketsByParams(filters);
+                
             //.........................................................
             // DBG: incoming filter attributes
             System.out.println(dbgHdr + "GIVEN ALERT FILTERS: "
@@ -312,217 +371,113 @@ public class DisplayAlertMessages {
             //.........................................................
             
             for (AlertTicket ticket : ticketList) {
-                
-                //----------------------------------------------------
-                // 2. As necessary, Reduce to tickets ABOUT request.patientId.
-                //    Skip this ticket if given Request.patientId <> ticket.ptunitnumber
-                //----------------------------------------------------
-                if (   !CommonUtil.strNullorEmpty(request.getPatientId())
-                    && !ticket.getPatientUnitNumber().equals(request.getPatientId()) )
-                {
-                    continue;
-                }
 
-                boolean isArchived = this.checkArchive(ticket, request.getUserId());
-                boolean isDeleted = this.checkDeleted(ticket, request.getUserId());
-
-                //.........................................................
-                // DBG: ticket state
-                //System.out.print(dbgHdr+"Processing ticketId="+ticket.getTicketId()+"/ptUnitNumber=" +ticket.getPatientUnitNumber());
-
-                //if (isArchived) System.out.print("/Archived"); else System.out.print("/NOT Archived");
-                //if (isDeleted) System.out.print("/Deleted"); else System.out.print("/NOT Deleted");
-                //.........................................................
-
-                //----------------------------------------------------
-                // 3. CHOOSE ticket IF request.userId listed as a recipient of
-                //    this ticket.  Get ALL recipients(contacts) for
-                //    this alert.
-                //    THEN only continue further checks IF
-                //         (this recipient == request.userId)
-                //      OR (request userId has userRole == "administrator"
-                //----------------------------------------------------
+                //GET THE CONTACT records for this ticket.
                 Set<AlertContact> tContacts = ticket.getProviders();
                 Iterator<AlertContact> contactIter = tContacts.iterator();
 
+                AlertContact alertContact = null;
                 while (contactIter.hasNext()) {
-                    AlertContact alertContact = contactIter.next();
+                    alertContact = contactIter.next();
+                    if (alertContact.getUserId().equalsIgnoreCase(request.getUserId())) {
+                        break;
+                    }
+                }
+                
+                GetMessageResponse gmr =
+                        createAlertResponse(ticket, alertContact,
+                        isArchived, request.getLocation());
 
-                    //System.out.println(" ...... TIX:contact= "+ alertContact.getUserId()+" request.getUserId()="+request.getUserId());
+                totalResponse.getGetMessageResponse().add(gmr);
 
-                     //FOUND userId as a recipient of this ticket...continue checks..
-                    if (   alertContact.getUserId().equals(request.getUserId())
-                        || ((userRole != null) && (userRole.equalsIgnoreCase("administrator")))
-                        ) {
-                        //----------------------------------------------------
-                        // 4. As necessary, filter further for tickets with
-                        //    correct request.location . Else, include the ticket.
-                        //----------------------------------------------------
-                        //----------------------------------------------------
-                        // return this alert only if
-                        //     1) asking for Archive AND this alert is archived.
-                        // OR  2) asking for UserTrash AND this alert is Deleted.
-                        // OR  3) asking for Inbox AND this alert is (NOT archived) AND (NOT Deleted).
-                        // OR  4) asking for NO location AND this alert is (NOT archived) AND (NOT Deleted).
-                        //----------------------------------------------------
-                        boolean noLocationRequested = CommonUtil.strNullorEmpty(request.getLocation());
-
-                        if (  (!noLocationRequested && request.getLocation().equalsIgnoreCase("Archive") && isArchived)
-                            ||(!noLocationRequested && request.getLocation().equalsIgnoreCase("UserTrash") && isDeleted)
-                            ||(!noLocationRequested && request.getLocation().equalsIgnoreCase("INBOX") && !isArchived && !isDeleted)
-                            ||(noLocationRequested && !isArchived && !isDeleted) )
-                        {
-                            GetMessageResponse gmr =
-                                    createAlertResponse(ticket, alertContact,
-                                                        isArchived, request.getLocation());
-
-                            totalResponse.getGetMessageResponse().add(gmr);
-
-                            //System.out.println(dbgHdr+"  ADDING Alert="+ticket.getTicketId() + " location="+request.getLocation());
-
-                            break;
-                        }
-//                        else {
-//                            System.out.println("     req.location="+request.getLocation()
-//                                    +" NOT SAME as ticket condition.");
+            }
+            
+//            for (AlertTicket ticket : ticketList) {
+//
+//                //----------------------------------------------------
+//                // 2. As necessary, Reduce to tickets ABOUT request.patientId.
+//                //    Skip this ticket if given Request.patientId <> ticket.ptunitnumber
+//                //----------------------------------------------------
+//                if (   !CommonUtil.strNullorEmpty(request.getPatientId())
+//                    && !ticket.getPatientUnitNumber().equals(request.getPatientId()) )
+//                {
+//                    continue;
+//                }
+//
+//                boolean isArchived = this.checkArchive(ticket, request.getUserId());
+//                boolean isDeleted = this.checkDeleted(ticket, request.getUserId());
+//
+//                //.........................................................
+//                // DBG: ticket state
+//                //System.out.print(dbgHdr+"Processing ticketId="+ticket.getTicketId()+"/ptUnitNumber=" +ticket.getPatientUnitNumber());
+//
+//                //if (isArchived) System.out.print("/Archived"); else System.out.print("/NOT Archived");
+//                //if (isDeleted) System.out.print("/Deleted"); else System.out.print("/NOT Deleted");
+//                //.........................................................
+//
+//                //----------------------------------------------------
+//                // 3. CHOOSE ticket IF request.userId listed as a recipient of
+//                //    this ticket.  Get ALL recipients(contacts) for
+//                //    this alert.
+//                //    THEN only continue further checks IF
+//                //         (this recipient == request.userId)
+//                //      OR (request userId has userRole == "administrator"
+//                //----------------------------------------------------
+//                Set<AlertContact> tContacts = ticket.getProviders();
+//                Iterator<AlertContact> contactIter = tContacts.iterator();
+//
+//                while (contactIter.hasNext()) {
+//                    AlertContact alertContact = contactIter.next();
+//
+//                    //System.out.println(" ...... TIX:contact= "+ alertContact.getUserId()+" request.getUserId()="+request.getUserId());
+//
+//                     //FOUND userId as a recipient of this ticket...continue checks..
+//                    if (   alertContact.getUserId().equals(request.getUserId())
+//                        || ((userRole != null) && (userRole.equalsIgnoreCase("administrator")))
+//                        ) {
+//                        //----------------------------------------------------
+//                        // 4. As necessary, filter further for tickets with
+//                        //    correct request.location . Else, include the ticket.
+//                        //----------------------------------------------------
+//                        //----------------------------------------------------
+//                        // return this alert only if
+//                        //     1) asking for Archive AND this alert is archived.
+//                        // OR  2) asking for UserTrash AND this alert is Deleted.
+//                        // OR  3) asking for Inbox AND this alert is (NOT archived) AND (NOT Deleted).
+//                        // OR  4) asking for NO location AND this alert is (NOT archived) AND (NOT Deleted).
+//                        //----------------------------------------------------
+//                        boolean noLocationRequested = CommonUtil.strNullorEmpty(request.getLocation());
+//
+//                        if (  (!noLocationRequested && request.getLocation().equalsIgnoreCase("Archive") && isArchived)
+//                            ||(!noLocationRequested && request.getLocation().equalsIgnoreCase("UserTrash") && isDeleted)
+//                            ||(!noLocationRequested && request.getLocation().equalsIgnoreCase("INBOX") && !isArchived && !isDeleted)
+//                            ||(noLocationRequested && !isArchived && !isDeleted) )
+//                        {
+//                            GetMessageResponse gmr =
+//                                    createAlertResponse(ticket, alertContact,
+//                                                        isArchived, request.getLocation());
+//
+//                            totalResponse.getGetMessageResponse().add(gmr);
+//
+//                            //System.out.println(dbgHdr+"  ADDING Alert="+ticket.getTicketId() + " location="+request.getLocation());
+//
+//                            break;
 //                        }
-
-                    }
-                }//end-while
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return totalResponse;
-
-/* TMN
-        // LDAP lookup of ContactDTO to find if pt or provider
-        try {
-            contactDto = findContactByUID(contactDAO, request.getUserId());
-        } catch (Exception e) {
-            response.setSuccessStatus(false);
-            response.setStatusMessage(e.getMessage());
-            totalResponse.getGetMessageResponse().add(response);
-            return totalResponse;
-        }
-
-        if (contactDto.getEmployeeNumber() != null) {
-            type = "pv";
-        }
-        else {
-            type = "pt";
-        }
-
-        try {
-            AlertService service = new AlertService();
-
-            List<AlertTicket> ticketList = service.getAllTickets();
-
-            // Case where patient id is sent, find messages for provider for this
-            // patient (where the ptUnitNumber in the alertticket table equals
-            // the patientId).
-            if (request.getPatientId() != null && !CommonUtil.listNullorEmpty(ticketList)) {
-
-                //
-                for (AlertTicket ticket : ticketList) {
-                    boolean isArch = checkArchive(ticket, request);
-                    if (!isArch && request.getLocation().equals("Archive")) {
-                        continue;
-                    }
-                    if (checkDeleted(ticket, request)
-                            && !request.getLocation().equals("UserTrash")) {
-                        continue;
-                    }
-
-                    if (ticket.getPatientUnitNumber().equals(request.getPatientId())) {
-                        Set<AlertContact> tContacts = ticket.getProviders();
-                        Iterator<AlertContact> iter = tContacts.iterator();
-                        while (iter.hasNext()) {
-                            AlertContact alertContact = iter.next();
-                            if (alertContact.getUserId().equals(request.getUserId())) {
-                                if (request.getLocation().equalsIgnoreCase("Archive") && isArch) {
-                                    GetMessageResponse gmr = createAlertResponse(
-                                            ticket, alertContact,
-                                            isArch, request.getLocation());
-                                    if (gmr.getLocation().equals(request.getLocation())) {
-                                        totalResponse.getGetMessageResponse().add(gmr);
-                                        break;
-                                    }
-                                }
-                                else {
-                                    break;
-                                }
-                                totalResponse.getGetMessageResponse().add(createAlertResponse(
-                                        ticket, alertContact, isArch, request.getLocation()));
-                                break;
-                            }
-                        }
-                    }
-                }
-                return totalResponse;
-            }
-            else {
-                List<GetMessagesResponseType.GetMessageResponse> responseList =
-                        new ArrayList<GetMessagesResponseType.GetMessageResponse>();
-                if (!CommonUtil.listNullorEmpty(ticketList)) {
-                    // Case patientId is null, retrieve all tickets for userId (this
-                    // could be a patient or a provider)
-                    for (AlertTicket ticket : ticketList) {
-                        boolean isArch = checkArchive(ticket, request);
-                        if (!isArch && request.getLocation().equals("Archive")) {
-                            continue;
-                        }
-                        if (checkDeleted(ticket, request)) {
-                            continue;
-                        }
-                        if (type.equals("pt")
-                                && ticket.getPatientUnitNumber().equals(request.getUserId())) {
-                            Set<AlertContact> ticketContacts = ticket.getProviders();
-                            for (AlertContact alertContact : ticketContacts) {
-                                if (alertContact.getUserId().equals(request.getUserId())) {
-                                    responseList.add(createAlertResponse(ticket, alertContact,
-                                            isArch, request.getLocation()));
-                                }
-                            }
-                        }
-                        else if (type.equals("pv")) {
-                            // for provider their userId will be in contact table
-                            Set<AlertContact> tContacts = ticket.getProviders();
-                            Iterator<AlertContact> iter = tContacts.iterator();
-                            while (iter.hasNext()) {
-                                AlertContact alertContact = iter.next();
-
-                                if (alertContact.getUserId().equals(request.getUserId())) {
-                                    GetMessageResponse gmr = createAlertResponse(
-                                            ticket, alertContact, isArch, request.getLocation());
-
-                                    if (gmr.getLocation().equals(request.getLocation())) {
-                                        totalResponse.getGetMessageResponse().add(gmr);
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    totalResponse.getGetMessageResponse().addAll(responseList);
-                }
-                else {
-                    GetMessagesResponseType.GetMessageResponse rsp =
-                            new GetMessagesResponseType.GetMessageResponse();
-                    rsp.setSuccessStatus(false);
-                    rsp.setStatusMessage("No alert tickets found for id " + request.getUserId());
-                    responseList.add(rsp);
-                    totalResponse.getGetMessageResponse().addAll(responseList);
-                }
-
-            }
+////                        else {
+////                            System.out.println("     req.location="+request.getLocation()
+////                                    +" NOT SAME as ticket condition.");
+////                        }
+//
+//                    }
+//                }//end-while
+//            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         return totalResponse;
-*/
+
+
     }
 
     private boolean checkDeleted(AlertTicket ticket, String userId) throws Exception {

@@ -169,15 +169,17 @@ public class AlertTicketDao {
         String patientId = null;
         String type = null;
         Boolean archive = null;
-        Integer deleteFlag = null;
+        Boolean deleteFlag = null;
 
         if (params != null) {
             ticketUniqueId = params.getTicketUniqueId();
             escalationPeriodGT = params.getEscalationPeriodGT();
             patientId = params.getPatientId();
             type = params.getType();
+            
             archive = params.isArchive();
             deleteFlag = params.getDeleteFlag();
+            actionUserId = params.getActionUserId();
         }
 
         List<AlertTicket> tickets = null;
@@ -219,12 +221,52 @@ public class AlertTicketDao {
                         criteria.add(Restrictions.eq("type", type));
                     }
 
-                    if (archive != null) {
+                    //FILTER for AlertContact
+                    if (actionUserId != null) {
+                        
                         if (log.isDebugEnabled()) {
-                            log.debug("Ticket Archive: " + archive.booleanValue());
+                            log.debug("Ticket query - Recipient id: " + actionUserId);
                         }
 
-                        criteria.createCriteria("status").add(Restrictions.and(Restrictions.eq("archive", archive), Restrictions.eq("userId", actionUserId)));
+                        criteria.createCriteria("providers").add(Restrictions.eq("userId", actionUserId));
+                    }
+                    
+                    //FILTER for AlertStatus
+                    if ((archive != null) && (deleteFlag != null)) {
+                        
+                        if (actionUserId != null) {
+                            criteria.createCriteria("status").add(
+                               Restrictions.and(
+                                    Restrictions.and(Restrictions.eq("archive", archive.booleanValue()), 
+                                                     Restrictions.eq("deleted", deleteFlag.booleanValue()))
+                                    ,Restrictions.eq("userId", actionUserId) ));
+                        } else {
+                            criteria.createCriteria("status").add(
+                                    Restrictions.and(Restrictions.eq("archive", archive.booleanValue()), 
+                                                     Restrictions.eq("deleted", deleteFlag.booleanValue()) ));
+                        }
+                    } else if ((archive != null) && (deleteFlag == null)) {
+                        
+                        if (actionUserId != null) {
+                            criteria.createCriteria("status").add(
+                                    Restrictions.and(Restrictions.eq("archive", archive.booleanValue()), 
+                                                     Restrictions.eq("userId", actionUserId) ));
+                        } else {
+                            
+                            criteria.createCriteria("status").add(
+                                    Restrictions.eq("archive", archive.booleanValue()) );
+                        }
+                    } else if ((archive == null) && (deleteFlag != null)) {
+                        
+                        if (actionUserId != null) {
+                            criteria.createCriteria("status").add(
+                                    Restrictions.and(Restrictions.eq("deleted", deleteFlag.booleanValue()), 
+                                                     Restrictions.eq("userId", actionUserId) ));
+                        } else {
+                            
+                            criteria.createCriteria("status").add(
+                                    Restrictions.eq("deleted", deleteFlag.booleanValue()) );
+                        }
                     }
 
                     criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
