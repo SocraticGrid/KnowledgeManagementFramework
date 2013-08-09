@@ -268,9 +268,14 @@ public class AlertTicketDao {
                                     Restrictions.eq("deleted", deleteFlag.booleanValue()) );
                         }
                     }
-
+//TMNTIME
+long startTime = System.currentTimeMillis();
                     criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
                     tickets = criteria.list();
+
+long duration = System.currentTimeMillis() - startTime;
+System.out.println("TIME(ms): "+ duration);
+
                 } else {
                     log.error("Failed to obtain a session from the sessionFactory");
                 }

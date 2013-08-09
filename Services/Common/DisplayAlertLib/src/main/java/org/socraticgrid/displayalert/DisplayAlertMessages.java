@@ -275,7 +275,7 @@ public class DisplayAlertMessages {
 
             //-------------------------------------------------
             // IF (userId AND patientId are both given)
-            // THEN GET the userId's employeeType atrib fromm ldap.
+            // THEN GET the userId's employeeType atrib fromm LDAP.
             //      IF (userId AND patientId are both given) AND the employeeType="administrator"
             //      THEN pass along flag to ONLY get the msgs about the patientId (CDS).
             //      ENDIF
@@ -290,27 +290,14 @@ public class DisplayAlertMessages {
 
             List<AlertTicket> ticketList = null;
 
-// TMN - CHECK SLOW PERFORMANCE ISSUE HERE:
-            
-////TMN: have to debug why filter select doesn't work before using.
-////            if (CommonUtil.strNullorEmpty(request.getPatientId())) {
-//                ticketList = service.getAllTickets();
-//                
-////            } else {
-////                TicketQueryParams filters = new TicketQueryParams();
-////                filters.setPatientId(request.getPatientId());
-////                ticketList = service.getTicketsByParams(filters);
-////            }
-                
-
             TicketQueryParams filters = new TicketQueryParams();
+            
             //----------------------------------------------------
             // SET LOCATION FILTER
-            // IF request.getLocation() == "Archive" ,  actionStatus.Archive = true
-            // IF request.getLocation() == "Usertrash" ,  actionStatus.Deleted = true
-            // IF request.getLocation() == "INBOX" ,  actionStatus.Archive = false AND actionStatus.Deleted = false
+            // IF request.getLocation() == "Archive" ,   actionStatus.Archive = true  AND actionStatus.Deleted = false
+            // IF request.getLocation() == "Usertrash" , actionStatus.Archive = false AND actionStatus.Deleted = true
+            // IF request.getLocation() == "INBOX" ,     actionStatus.Archive = false AND actionStatus.Deleted = false
             //----------------------------------------------------
-            
             boolean isArchived = false;
             boolean noLocationRequested = CommonUtil.strNullorEmpty(request.getLocation());
 
@@ -328,29 +315,29 @@ public class DisplayAlertMessages {
                 filters.setDeleteFlag(false);
             } 
                 
-            //----------------------------------------------------
-            // PERSONAL ALERT-INBOX
-            //      WHEN patientID IS NOT given
-            //      GET all alerts with given UserId as recipient.
-            //----------------------------------------------------
             if (CommonUtil.strNullorEmpty(request.getPatientId())) {
+                //----------------------------------------------------
+                // PERSONAL ALERT-INBOX
+                //      WHEN patientID IS NOT given
+                //      GET all alerts with given UserId as recipient.
+                //----------------------------------------------------
                 filters.setActionUserId(request.getUserId());
                 
             } else {
                 filters.setPatientId(request.getPatientId());
                 
                 if ((userRole != null) && (userRole.equalsIgnoreCase("administrator"))) {
-                    //----------------------------------------------------
-                    // PATIENT-FOCUS ALERT-INBOX
-                    //      WHEN patientID IS given AND userId has ROLE=administrator...
-                    //      GET all ALerts that is ABOUT that patientId, no matter who the recip is.
-                    //----------------------------------------------------
+                //----------------------------------------------------
+                // admin PATIENT-FOCUS ALERT-INBOX
+                //      WHEN patientID IS given AND userId has ROLE=administrator...
+                //      GET all ALerts that is ABOUT that patientId, no matter who the recip is.
+                //----------------------------------------------------
                 } else {
-                    //----------------------------------------------------
-                    // PERSONAL and PATIENT-FOCUS ALERT-INBOX
-                    //      WHEN patientID IS given
-                    //      GET all ALerts that is ABOUT that patientId AND where userId IS a recipient
-                    //----------------------------------------------------
+                //----------------------------------------------------
+                // PERSONAL with PATIENT-FOCUS ALERT-INBOX
+                //      WHEN patientID IS given
+                //      GET all ALerts that is ABOUT that patientId AND where userId IS a recipient
+                //----------------------------------------------------
                     filters.setActionUserId(request.getUserId());
                 }
             }
@@ -367,7 +354,7 @@ public class DisplayAlertMessages {
                     + "/location=" + request.getLocation());
             System.out.append(dbgHdr +  "and implied filter:  /userRole=" + userRole);
             if (ticketList != null) System.out.println(dbgHdr+"Total pre-filtered ticketList="+ticketList.size() );
-            System.out.println(dbgHdr+"Tickets selected:");
+            //System.out.println(dbgHdr+"Tickets selected:");
             //.........................................................
             
             for (AlertTicket ticket : ticketList) {
@@ -376,6 +363,13 @@ public class DisplayAlertMessages {
                 Set<AlertContact> tContacts = ticket.getProviders();
                 Iterator<AlertContact> contactIter = tContacts.iterator();
 
+                //-------------------------------------------------
+                // THOUGH there may be multiple recip/contacts for this Alert,
+                // once the userId is found as a contact then we will create the
+                // alert response.  Since the list SELECT was based on the 
+                // userId as a required contact, this loop wil always find that
+                // valid contact record.
+                //-------------------------------------------------
                 AlertContact alertContact = null;
                 while (contactIter.hasNext()) {
                     alertContact = contactIter.next();
@@ -391,6 +385,7 @@ public class DisplayAlertMessages {
                 totalResponse.getGetMessageResponse().add(gmr);
 
             }
+            
             
 //            for (AlertTicket ticket : ticketList) {
 //
@@ -513,7 +508,7 @@ public class DisplayAlertMessages {
             // set return value to false
             if (recentDate.compareTo(alertAction.getActionTimestamp()) > 0) {
 
-                if (alertAction.getMessage().equals("Notfication generated")
+                if (alertAction.getMessage().equals("Notification generated")
                         && alertAction.getUserId().equals(userId)) {
                     value = false;
                 }
@@ -565,7 +560,7 @@ public class DisplayAlertMessages {
         else {
             response.setLocation(location);
         }
-
+        
         //--------------------------
         // Set READ/UNREAD attribute
         //--------------------------
@@ -576,9 +571,8 @@ public class DisplayAlertMessages {
             response.setMessageStatus("Unread");
         }
 
-        //System.out.println("TICKET IS: " + ticket.toString());
-        System.out.println("===> TICKET ID: " + ticket.getTicketId()
-                          +"     DESC: " + ticket.getDescription());
+//        System.out.println("===> TICKET ID: " + ticket.getTicketId()
+//                          +"     DESC: " + ticket.getDescription());
 
 
         //--------------------------

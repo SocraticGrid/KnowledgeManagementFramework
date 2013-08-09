@@ -50,6 +50,7 @@
  */
 package org.socraticgrid.displayalert;
 
+import java.util.Date;
 import org.socraticgrid.displayalert.DisplayAlertMessages;
 import org.socraticgrid.displayalert.DisplayAlertDataUtil;
 import org.socraticgrid.alertmanager.model.RiskModelFavorite;
@@ -166,20 +167,26 @@ public class DisplayAlertMessagesTest {
         GetMessagesRequestType request = new GetMessagesRequestType();
         request.setMessageType("Alert");
         request.setPatientId("99990070");
-        request.setUserId("99990061");
+        
+        request.setUserId("1");         // role=adminsitrator
+        //request.setUserId("99990061");  // role = pt
+        
         request.setLocation("INBOX");
         //request.setLocation("archive");
 
         DisplayAlertMessages instance = new DisplayAlertMessages();
         GetMessagesResponseType result = instance.getMessages(request);
-
+        
+        
         List<GetMessageResponse> alist = result.getGetMessageResponse();
-        Iterator<GetMessageResponse> iter = alist.iterator();
-        while (iter.hasNext()) {
-            GetMessageResponse msg = iter.next();
-            System.out.println("ID/DESCR: "+msg.getMessageId()+" , "+msg.getDescription());
-
-        }
+        
+        
+//        Iterator<GetMessageResponse> iter = alist.iterator();
+//        while (iter.hasNext()) {
+//            GetMessageResponse msg = iter.next();
+//            //System.out.println("ID/DESCR: "+msg.getMessageId()+" , "+msg.getDescription());
+//
+//        }
       
         //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
