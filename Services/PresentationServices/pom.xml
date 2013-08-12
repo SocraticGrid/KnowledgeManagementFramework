@@ -263,10 +263,22 @@
             <version>20030211.134440</version>
         </dependency>
         <dependency>
+            <groupId>org.socraticgrid.taps</groupId>
+            <artifactId>TapsDSANotification</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>org.socraticgrid</groupId>
             <artifactId>PatientDSANotification</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <artifactId>AlertDAO</artifactId>
+            <groupId>org.socraticgrid</groupId>
+            <type>jar</type>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>javaee</groupId>
