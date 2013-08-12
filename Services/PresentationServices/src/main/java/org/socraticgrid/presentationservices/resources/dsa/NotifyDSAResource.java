@@ -114,11 +114,6 @@ public class NotifyDSAResource extends BaseResource {
             logger.log(Level.SEVERE, e.getMessage());
         }
         
-//TBD:  NEED TO CLARIFY AUTHENTICATION REUIREMENT
-//        if (token == null || !SessionUtilities.verifyToken(token)) {
-//            String errorMsg = "The token was not found, the session may have timed out. Token is " + token;
-//            SessionUtilities.generateErrorRepresentation(errorMsg, "400", response);
-//        }
 
         // This representation has only one type of representation.
         getVariants().add(new Variant(MediaType.APPLICATION_JSON));
