@@ -203,8 +203,19 @@ public class AlertService {
         return dao.findAll();
     }
 
-    public List<AlertTicket> getTicketsByParams(TicketQueryParams params) {
-        AlertTicketDao dao = new AlertTicketDao();
+    public List<AlertTicket> getTicketsByParams(TicketQueryParams params) throws Exception {
+        System.out.println("HERE");
+        
+        AlertTicketDao dao = null;
+        try {
+            dao = new AlertTicketDao();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("FAIL:\n"+ e.getMessage());
+            throw e;
+        }
+        
+        System.out.println("HERE 1");
         return dao.findTickets(params);
     }
 

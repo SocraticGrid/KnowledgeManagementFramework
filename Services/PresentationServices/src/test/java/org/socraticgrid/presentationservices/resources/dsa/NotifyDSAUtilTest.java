@@ -59,19 +59,6 @@ public class NotifyDSAUtilTest {
     }
     
     @Test
-    public void testNotifyClean() {
-        System.out.println("notify");
-        String patientId = "1545";
-        String userId = "1";
-        
-        NotifyDSAUtil instance = new NotifyDSAUtil();
-        String result = instance.notifyClean(patientId, userId);
-        
-        System.out.println("DONE");
-    }
-    
-    
-    @Test
     public void testNotifyCleanWS() throws Exception {
         System.out.println("TEST CASE: testNotifyCleanWS");
         final WebClient client = new WebClient();

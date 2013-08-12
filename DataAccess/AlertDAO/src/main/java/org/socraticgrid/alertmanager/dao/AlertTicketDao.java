@@ -160,6 +160,7 @@ public class AlertTicketDao {
      */
     @SuppressWarnings("unchecked")
     public List<AlertTicket> findTickets(TicketQueryParams params) {
+System.out.println("HERE 2");
         log.debug("Beginning ticket query");
 
         String ticketUniqueId = null;
@@ -185,7 +186,9 @@ public class AlertTicketDao {
         List<AlertTicket> tickets = null;
         Session sess = null;
         try {
+System.out.println("HERE 3");           
             SessionFactory fact = HibernateUtil.getSessionFactory();
+System.out.println("HERE 4");           
             if (fact != null) {
                 sess = fact.openSession();
                 if (sess != null) {
@@ -206,6 +209,7 @@ public class AlertTicketDao {
                     }
 
                     if (patientId != null) {
+System.out.println("patientUnitNumber="+patientId);                        
                         if (log.isDebugEnabled()) {
                             log.debug("Ticket query - patientId: " + patientId);
                         }

@@ -34,7 +34,7 @@ public class NotifyDSAUtil {
     public NotifyDSAUtil() {
     }
     
-    public String notifyClean(String patientId, String userId) {
+    public String notify(String patientId, String userId) {
 
         //---------------------------------
         // PROCESSING
@@ -51,30 +51,32 @@ public class NotifyDSAUtil {
             //---------------------------------
 //            DSANotify dsa = new BasicDSANotify(getProperty("ActionAgentService"));
             
-            //------------- TAPS ONLY -------------
+            //-------------------------------------
             // TAPS ONLY: specific instantiation
+            //-------------------------------------
             DSANotify dsa = new TapsDSANotify(PropertyHelper.getPropertyHelper().getProperty("ActionAgentService"));
                 
+            //-------------------------------------------------------------
             // TAPS ONLY: CLEAN out all alerts for this patient BEFORE notifying DSA
+            //-------------------------------------------------------------
             AlertService service = new AlertService();
             TicketQueryParams params = new TicketQueryParams();
             params.setPatientId(patientId);
             
-System.out.println("===> CLEANING up old Alert(s) for patientid= "+ patientId);
+            System.out.println("===> CLEANING up old Alert(s) for patientid= "+ patientId);
+            
             List<AlertTicket> alertList = service.getTicketsByParams(params);
-System.out.println("===> CLEANING up total tickets: "+alertList.size());
-
+            
             for (AlertTicket a : alertList) {
                 System.out.println("===> CLEANING up old Alert(s) = "+a.getTicketId());
                 service.deleteTicket(a);
             }
-
-            //------------- TAPS ONLY -------------
             
+            
+            //-------------------------------------
             // NOTIFY DSA
             dsa.sendPatientIdToDSA(patientId, userId);
             
-
             Thread.sleep(10000);
 
             resp = createNotifyDSAResponse(null);
@@ -87,7 +89,7 @@ System.out.println("===> CLEANING up total tickets: "+alertList.size());
         return resp;
     }
     
-    public String notify(String patientId, String userId) {
+    public String notifyNoClean(String patientId, String userId) {
 
         //---------------------------------
         // PROCESSING
