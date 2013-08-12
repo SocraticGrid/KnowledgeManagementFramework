@@ -73,12 +73,15 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.socraticgrid.alertmanager.model.TicketQueryParams;
+import org.socraticgrid.alertmanager.service.AlertServiceException;
 
 /**
  *
@@ -576,7 +579,7 @@ public class DisplayAlertMessages {
 
 
         //--------------------------
-        response.setDescription(ticket.getDescription());
+        response.setDescription(ticket.getPayload());
         response.setFrom(contact.getUserName());
         response.setTitle(ticket.getDescription());
         //--------------------------
