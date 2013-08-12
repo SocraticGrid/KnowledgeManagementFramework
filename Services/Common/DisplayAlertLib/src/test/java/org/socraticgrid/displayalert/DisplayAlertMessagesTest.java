@@ -253,7 +253,7 @@ public class DisplayAlertMessagesTest {
     }
     
     @Test
-    public void testDeleteAllAlertsForPatientID() throws AlertServiceException {
+    public void testDeleteAllAlertsForPatientID() throws AlertServiceException, Exception {
         String patientId = "1544";
         
         AlertService service = new AlertService();
