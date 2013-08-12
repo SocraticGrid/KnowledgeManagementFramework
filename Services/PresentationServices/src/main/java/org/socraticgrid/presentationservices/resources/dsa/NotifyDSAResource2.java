@@ -72,15 +72,15 @@ import org.socraticgrid.util.SessionUtilities;
  *
  * @author tnguyen
  */
-public class NotifyDSAResource extends BaseResource {
+public class NotifyDSAResource2 extends BaseResource {
 
-    static final Logger logger = Logger.getLogger(NotifyDSAResource.class.getName());
+    static final Logger logger = Logger.getLogger(NotifyDSAResource2.class.getName());
     
     private String patientId;
     private String userId;
     private String token;
     
-    public NotifyDSAResource(Context context, Request request, Response response) {
+    public NotifyDSAResource2(Context context, Request request, Response response) {
         super(context, request, response);
 
         try {
@@ -102,7 +102,7 @@ public class NotifyDSAResource extends BaseResource {
 
             //DBG
             for (Parameter parameter : request.getResourceRef().getQueryAsForm()) {
-                System.out.print("===> NotifyDSAResource: parameter= " + parameter.getName());
+                System.out.print("===> NotifyDSAResource2: parameter= " + parameter.getName());
                 System.out.println("/" + parameter.getValue());
             }
             
@@ -140,7 +140,7 @@ public class NotifyDSAResource extends BaseResource {
         // PROCESSING
         //---------------------------------
         NotifyDSAUtil util = new NotifyDSAUtil();
-        String resp = util.notify(patientId, userId);
+        String resp = util.notifyClean(patientId, userId);
 
         Representation representation =
                 new StringRepresentation(resp, MediaType.APPLICATION_JSON);

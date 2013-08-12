@@ -133,11 +133,11 @@ public class GetMessageDetailResource extends BaseResource {
         } catch (Exception e) {
             logger.log(Level.SEVERE, e.getMessage());
         }
-
-        if (token == null || !SessionUtilities.verifyToken(token)) {
-            String errorMsg = "The token was not found, the session may have timed out.";
-            SessionUtilities.generateErrorRepresentation(errorMsg, "400", response);
-        }
+// TAKING OUT FOR TAPS
+//        if (token == null || !SessionUtilities.verifyToken(token)) {
+//            String errorMsg = "The token was not found, the session may have timed out.";
+//            SessionUtilities.generateErrorRepresentation(errorMsg, "400", response);
+//        }
 
         // This representation has only one type of representation.
         getVariants().add(new Variant(MediaType.APPLICATION_JSON));
@@ -193,6 +193,8 @@ public class GetMessageDetailResource extends BaseResource {
                 request.setLocation(location);
             }
 
+System.out.println("===> CALLING DDA.getMessageDetail");
+
             response = port.getMessageDetail(request);
         } catch (Exception e) {
             logger.info("Exception in getMessageDetail()");
@@ -202,7 +204,7 @@ public class GetMessageDetailResource extends BaseResource {
         if (response.getMessageDetail().size() > 0) {
             fact.setBody(response.getMessageDetail().get(0));
 
-System.out.println("DMD.getMessageDetail returned patientId="+ response.getPatientId());
+System.out.println("===> DDA.getMessageDetail returned patientId="+ response.getPatientId());
             //-----------------------------------------------
             // Only send back patientID found from response
             // when NOT coming from EMR Inbox.

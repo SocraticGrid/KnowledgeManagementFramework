@@ -68,6 +68,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.socraticgrid.alertmanager.model.AlertTicket;
+import org.socraticgrid.alertmanager.model.TicketQueryParams;
+import org.socraticgrid.alertmanager.service.AlertService;
+import org.socraticgrid.alertmanager.service.AlertServiceException;
 
 /**
  *
@@ -246,5 +250,24 @@ public class DisplayAlertMessagesTest {
 
         }
 
+    }
+    
+    @Test
+    public void testDeleteAllAlertsForPatientID() throws AlertServiceException {
+        String patientId = "1544";
+        
+        AlertService service = new AlertService();
+        
+        TicketQueryParams params = new TicketQueryParams();
+        params.setPatientId(patientId);
+        
+        
+        List<AlertTicket> alertList = service.getTicketsByParams(params);
+        
+        for (AlertTicket a : alertList) {
+            System.out.println("alert id = "+a.getTicketId());
+            service.deleteTicket(a);
+        }
+        System.out.println("DONE");
     }
 }

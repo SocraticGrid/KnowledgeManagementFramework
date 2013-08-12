@@ -146,7 +146,8 @@ public class GetMessagesResource extends BaseResource {
         } catch (Exception e) {
             logger.log(Level.SEVERE, e.getMessage());
         }
-//TMN??? WHY IS THIS COMMENTED OUT?
+        
+// TAKING OUT FOR TAPS
 //        if (token == null || !SessionUtilities.verifyToken(token)) {
 //            String errorMsg = "The token was not found, the session may have timed out. Token is " + token;
 //            SessionUtilities.generateErrorRepresentation(errorMsg, "400", response);
