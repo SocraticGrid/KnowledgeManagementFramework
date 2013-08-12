@@ -128,8 +128,8 @@ public class DeliverMsgUtil {
         else {
             ticket.setPriority("Low");
         }
-        ticket.setAlertOriginator("Clinical Decision");
-
+        ticket.setAlertOriginator("CDS");
+        
         ticket.setPatientUnitNumber(patientId);
 //        Date date = null;
 //        try {
