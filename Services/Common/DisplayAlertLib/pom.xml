@@ -179,5 +179,17 @@
             <version>10.9.1.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>1.7.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.socraticgrid</groupId>
+            <artifactId>PresentationServicesHelpersLib</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>

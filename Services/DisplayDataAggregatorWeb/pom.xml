@@ -188,6 +188,7 @@
         </dependency>
         <!-- additional dependencies for WEBSPHERE -->
 
+<!-- DUPLICATES: REMOVE
         <dependency>
             <groupId>javaee</groupId>
             <artifactId>javaee-api</artifactId>
@@ -199,6 +200,7 @@
             <artifactId>commons-logging</artifactId>
             <version>1.1.1</version>
         </dependency>
+-->
         <dependency>
             <groupId>org.netbeans.external</groupId>
             <artifactId>ejb3-persistence</artifactId>

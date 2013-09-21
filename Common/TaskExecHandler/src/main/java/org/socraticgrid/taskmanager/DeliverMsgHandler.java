@@ -56,6 +56,10 @@ import org.socraticgrid.dsa.DeliverMessageResponseType;
 import org.socraticgrid.taskmanager.model.TaskServiceRef;
 import org.socraticgrid.taskmanager.service.TaskService;
 import java.util.List;
+import javax.xml.ws.BindingProvider;
+import org.socraticgrid.common.dda.GetMessagesRequestType;
+import org.socraticgrid.displayalert.DisplayAlertDataUtil;
+import org.socraticgrid.presentationservices.helpers.PropertyHelper;
 
 /**
  *
@@ -77,6 +81,85 @@ public class DeliverMsgHandler {
             
             if (type.contains("ALERT")) {
                 response = new DeliverMsgUtil().deliverMsg(request, "/home/nhin/Properties");
+                
+                //---------------------------------------------
+                // FOR PUSH support
+                // WHEN Alert creation has been successful, 
+                // CALL Inbox push messaging service with 
+                //     patient ID ==> patientId=request.getSubject().get(0)
+                
+                // the msging service will push all the Alerts to 
+                // any client sessions regitstered with that patientId.
+                //---------------------------------------------
+                if (response.getStatus().equalsIgnoreCase("success")) {
+                    
+                    //----------------------------------------
+                    // USE TOMCAT SOAP WS TO PUSH ALERTS
+                    //
+                    //----------------------------------------
+                    
+                    String patientId = request.getSubject().get(0);
+                    
+                    System.out.println("===> TaskExecHandler.deliverMsg(): New Alert created for patientId="
+                            + patientId
+                            + " . PUSHING all Alerts to all clients, registered with this patient");
+                    
+                    //----------------------------------------
+                    // PREP and SEND REQUEST to get Alerts as JSON
+                    //----------------------------------------
+                    GetMessagesRequestType inboxRequest = new GetMessagesRequestType();
+                    inboxRequest.setMessageType("Alert");
+                    inboxRequest.setPatientId(patientId);
+                    inboxRequest.setUserId(request.getMainRecipients().get(0));
+                    inboxRequest.setLocation("INBOX");
+
+                    DisplayAlertDataUtil alertUtil = new DisplayAlertDataUtil();
+                    String jsonALert = alertUtil.getAllAlertsAsJSON(inboxRequest);
+
+                    String msg = "ALERTS="+patientId+","+jsonALert;
+                    System.out.println("===> TaskExecHandler.deliverMsg(): PREPARED ALERTS\n"+msg);
+                    
+                    //----------------------------------------
+                    // Push Alerts to Client
+                    //----------------------------------------
+                    // OPTION 1: VIA internal WebSocket Client ..... NO GOOD
+//                    PushSessionMgr client = new PushSessionMgr();
+//                    try {
+//                        client.pushMsg(msg);
+//                        
+//                    } catch (Exception ex) {
+//                        Logger.getLogger(DeliverMsgHandler.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
+                    // OPTION 2: VIA SOAP InboxPushClientWeb .....
+                    // TODO
+                    
+                    try { // Call Web Service Operation
+                        org.socraticgrid.inbox.MsgPush service = new org.socraticgrid.inbox.MsgPush();
+                        org.socraticgrid.inbox.InboxPushPortType port = service.getInboxPushPortSoap11();
+                        
+                        //SET the endpoint uri of the webservice
+                        String uri = PropertyHelper.getPropertyHelper().getProperty("InboxPushClientWeb");
+
+                        ((BindingProvider) port).getRequestContext().put(
+                                BindingProvider.ENDPOINT_ADDRESS_PROPERTY,
+                                uri);
+                        
+                        // initialize WS operation arguments 
+                        java.lang.String sendMessageRequest = msg;
+                        
+                        // process result 
+                        java.lang.String result = port.sendMessage(sendMessageRequest);
+                        
+                        System.out.println("Result = "+result);
+                        
+                    } catch (Exception ex) {
+                         System.out.println("ERROR: "+ ex.getMessage());
+                         ex.printStackTrace();
+                    }
+ 
+                    
+                    
+                }
             }
             
             if (type.contains("SMS")) {

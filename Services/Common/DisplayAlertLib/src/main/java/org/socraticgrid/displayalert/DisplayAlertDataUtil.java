@@ -50,6 +50,8 @@
  */
 package org.socraticgrid.displayalert;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
 import org.socraticgrid.alertmanager.dao.RiskModelFavoriteDao;
 import org.socraticgrid.alertservice.AlertUtil;
@@ -89,6 +91,7 @@ import org.socraticgrid.ldapaccess.ContactDAO;
 import org.socraticgrid.ldapaccess.ContactDTO;
 import org.socraticgrid.ldapaccess.LdapService;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
@@ -98,6 +101,7 @@ import java.util.TreeSet;
 import javax.xml.datatype.DatatypeFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.socraticgrid.presentationservices.helpers.MessageResponse;
 
 /**
  * Utility to retrieve Alerts (both Alert and Message types).
@@ -697,4 +701,101 @@ public class DisplayAlertDataUtil {
         RiskModelFavoriteDao dao = new RiskModelFavoriteDao();
         dao.save(fav);
     }
+    
+    /**
+     * 
+     * @param alerts
+     * @param location  [INBOX, Archive, ..]
+     * @return 
+     */
+    public String getAllAlertsAsJSON(GetMessagesRequestType request) {
+        return prepAllAlertsAsJSON(this.getMessages(request), request.getLocation());
+        
+    }
+        
+    public String prepAllAlertsAsJSON(GetMessagesResponseType alerts, String location) {
+
+        //StringBuilder jsonResponse = new StringBuilder();
+        Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+        
+        StringBuilder sb = new StringBuilder("{\n\"messagesFact\": {\n");
+        int i = 1;
+        
+        List<MessageResponse> msgRespList = new ArrayList<MessageResponse>();
+        for (GetMessagesResponseType.GetMessageResponse msgResp : alerts.getGetMessageResponse()) {
+
+            if (i == 1) {
+                sb.append("\"successStatus\": " + msgResp.isSuccessStatus() + " ,\n");
+                if (!msgResp.isSuccessStatus()) {
+                    sb.append("\"statusMessage\": " + msgResp.getStatusMessage() + " ,\n");
+                }
+                sb.append("\"messageObjects\": [\n");
+                if (msgResp.isSuccessStatus() == false) {
+                    break;
+                }
+            }
+
+            if (msgResp.getMessageType() == null || msgResp.getMessageType().equals("")) {
+                continue;
+            }
+
+            MessageResponse msg = new MessageResponse();
+            if (!CommonUtil.strNullorEmpty(msgResp.getMessageId())) {
+                msg.setMessageId(msgResp.getMessageId());
+            }
+            if (CommonUtil.strNullorEmpty(location)) {
+                msg.setLocation("INBOX");
+            } else {
+                msg.setLocation(location);
+            }
+
+            if (msgResp.getLabels().contains("Starred")
+                    || msgResp.getLabels().contains("starred")) {
+                msg.getLabels().add("Starred");
+            }
+
+            if (msgResp.getMessageDate() != null) {
+                List<String> dateTime =
+                        CommonUtil.getDateTime(msgResp.getMessageDate());
+                msg.setMessageDate(dateTime.get(0));
+                msg.setMessageTime(dateTime.get(1));
+            }
+
+            msg.setMessageType(msgResp.getMessageType());
+            msg.setDescription(msgResp.getDescription());
+            String mailFrom = msgResp.getFrom();
+            if (mailFrom != null) {
+                msg.setFrom(mailFrom.replaceAll("\"", ""));
+            }
+            msg.setTitle(msgResp.getTitle());
+            msg.setStatus(msgResp.getMessageStatus());
+            msg.setPriority(msgResp.getPriority());
+            msg.setTasksCount(msgResp.getTasksCount());
+            msg.setTasksComplete(msgResp.getTasksComplete());
+            msgRespList.add(msg);
+            ++i;
+        }
+
+        Collections.sort(msgRespList);
+        Collections.reverse(msgRespList);
+
+        int j = 1;
+        for (MessageResponse msgResp : msgRespList) {
+//            if (i < msgRespList.size()) {
+//                sb.append(gson.toJson(msgResp) + ",");
+//            } else {
+//                sb.append(gson.toJson(msgResp));
+//            }
+            if (j < msgRespList.size()) {
+                sb.append(gson.toJson(msgResp) + ",");
+            } else {
+                sb.append(gson.toJson(msgResp));
+            }
+            ++j;
+        }
+        sb.append("\n]\n}\n}");
+        String s = sb.toString();
+        return s;
+    }
+
 }

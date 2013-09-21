@@ -54,4 +54,6 @@
     <system systemId="http://localhost:8080/RegistriesService/RegistriesService" uri="wsdl/localhost_8080/RegistriesService/RegistriesService.xml"/>
     <system systemId="file:/home/nhin/KMR/Properties/wsdl/RegistriesService.wsdl" uri="wsdl/RegistriesService.wsdl"/>
     <system systemId="file:/home/nhin/KMR/Properties/schemas/nhinc/kmr/RegistryTypes.xsd" uri="schemas/nhinc/kmr/RegistryTypes.xsd"/>
+    <system systemId="file:/Users/tnguyen/VirtualBox-Shared/TAPS/KnowledgeManagementFramework/Common/TaskExecHandler/src/wsdl/MsgPush.wsdl" uri="wsdl/MsgPush.wsdl"/>
+    <system systemId="file:/Users/tnguyen/VirtualBox-Shared/TAPS/KnowledgeManagementFramework/Common/TaskExecHandler/MsgPush.wsdl" uri="wsdl/MsgPush.wsdl"/>
 </catalog>

@@ -123,8 +123,8 @@ public class DeliverMsgTest {
         request.setBody("TEST PAYLOAD - DATE IS " + new Date());
         request.setHeader("TEST HEADER - DATE IS " + new Date());
         request.setDeliveryDate("10/01/2011 10:10:10");
-        request.setSender("fry.emory");
-        request.getMainRecipients().add("99990070");
+        request.setSender("CDS");
+        request.getMainRecipients().add("1");
         request.setPriority("HIGH");
         request.getType().add("ALERT");
         request.setStatus("77");
