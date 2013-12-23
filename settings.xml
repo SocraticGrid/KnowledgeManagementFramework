@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<profiles>
+        <profile>
+            <id>standard-extra-repos</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+      <repositories>
+        <repository>
+          <id>Cognitive80-snap</id>
+          <name>Cognitive80-snap</name>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </snapshots>
+          <url>http://172.31.1.112:8081/artifactory/libs-snapshot-local</url>
+          <layout>default</layout>
+        </repository>
+        <repository>
+          <id>Cognitive80</id>
+          <name>Cognitive80</name>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </snapshots>
+          <url>http://172.31.1.112:8081/artifactory/libs-release-local</url>
+          <layout>default</layout>
+        </repository>
+        <repository>
+          <id>Cognitive80-ext</id>
+          <name>Cognitive80-ext</name>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </snapshots>
+          <url>http://172.31.1.112:8081/artifactory/ext-release-local</url>
+          <layout>default</layout>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>CognitiveP80</id>
+          <name>CognitiveP80</name>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </snapshots>
+          <url>http://172.31.1.112:8081/artifactory/libs-release-local</url>
+          <layout>default</layout>
+        </pluginRepository>
+      </pluginRepositories>
+</profile>
+    </profiles>
+    
+</settings>

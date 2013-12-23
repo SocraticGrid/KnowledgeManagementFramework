@@ -11,3 +11,7 @@ MANIFEST.MF
 catalog.xml
 /temp/
 /Common/KMRCommonLib/target.ck/
+.settings
+**/edd-store
+**/ttk*
+**/opencds*

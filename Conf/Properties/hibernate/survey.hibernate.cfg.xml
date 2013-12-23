@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.datasource">java:comp/env/jdbc/kmr</property>
+      
+    	<!-- Enable Hibernate's automatic session context management -->
+    	<!-- <property name="current_session_context_class">thread</property> -->
+    	<!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+    
+	<!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+        <property name="hibernate.connection.autoReconnect">true</property> 
+
+    	<!-- configuration pool via c3p0-->
+	<property name="c3p0.acquireRetryAttempts">5</property>
+        <property name="c3p0.acquire_increment">4</property>
+        <property name="c3p0.idle_test_period">100</property>
+        <property name="c3p0.max_size">10</property>
+        <property name="c3p0.max_statements">50</property>
+        <property name="c3p0.min_size">5</property>
+        <property name="c3p0.timeout">100</property>
+    
+	<!-- DEPRECATED very expensive property name="c3p0.validate>-->
+    
+        <mapping resource="SurveyTemplates.hbm.xml"/>
+        <mapping resource="SurveyQuestions.hbm.xml"/>
+        <mapping resource="QuestionPossibles.hbm.xml"/>
+        <mapping resource="Survey.hbm.xml"/>
+        <mapping resource="SurveyAnswer.hbm.xml"/>
+        <mapping resource="SurveySynch.hbm.xml"/>
+<!--
+        <mapping resource="AnswerPossibles.hbm.xml"/>
+-->
+    </session-factory>
+</hibernate-configuration>
+

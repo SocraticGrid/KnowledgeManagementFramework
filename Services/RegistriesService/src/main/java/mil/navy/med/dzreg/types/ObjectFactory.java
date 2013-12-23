@@ -24,75 +24,19 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _PersonTypeAddress_QNAME = new QName("urn:mil:navy:med:dzreg:types", "address");
     private final static QName _RegisterPersonRequest_QNAME = new QName("urn:mil:navy:med:dzreg:types", "RegisterPersonRequest");
     private final static QName _PersonRegistryProfileRequest_QNAME = new QName("urn:mil:navy:med:dzreg:types", "PersonRegistryProfileRequest");
     private final static QName _RegistryTypeResponse_QNAME = new QName("urn:mil:navy:med:dzreg:types", "RegistryTypeResponse");
     private final static QName _PersonRegistryProfileResponse_QNAME = new QName("urn:mil:navy:med:dzreg:types", "PersonRegistryProfileResponse");
     private final static QName _UnregisterPersonRequest_QNAME = new QName("urn:mil:navy:med:dzreg:types", "UnregisterPersonRequest");
     private final static QName _ResponseAck_QNAME = new QName("urn:mil:navy:med:dzreg:types", "ResponseAck");
-    private final static QName _PersonTypeAddress_QNAME = new QName("urn:mil:navy:med:dzreg:types", "address");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: mil.navy.med.dzreg.types
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link RegistryType }
-     * 
-     */
-    public RegistryType createRegistryType() {
-        return new RegistryType();
-    }
-
-    /**
-     * Create an instance of {@link RegistryTypeResponseType }
-     * 
-     */
-    public RegistryTypeResponseType createRegistryTypeResponseType() {
-        return new RegistryTypeResponseType();
-    }
-
-    /**
-     * Create an instance of {@link RegistryProfileType }
-     * 
-     */
-    public RegistryProfileType createRegistryProfileType() {
-        return new RegistryProfileType();
-    }
-
-    /**
-     * Create an instance of {@link PersonRegistryProfileType }
-     * 
-     */
-    public PersonRegistryProfileType createPersonRegistryProfileType() {
-        return new PersonRegistryProfileType();
-    }
-
-    /**
-     * Create an instance of {@link PersonRegistryProfileResponseType }
-     * 
-     */
-    public PersonRegistryProfileResponseType createPersonRegistryProfileResponseType() {
-        return new PersonRegistryProfileResponseType();
-    }
-
-    /**
-     * Create an instance of {@link RegisterPersonRequestType }
-     * 
-     */
-    public RegisterPersonRequestType createRegisterPersonRequestType() {
-        return new RegisterPersonRequestType();
-    }
-
-    /**
-     * Create an instance of {@link AddressType }
-     * 
-     */
-    public AddressType createAddressType() {
-        return new AddressType();
     }
 
     /**
@@ -112,11 +56,76 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RegistryProfileType }
+     * 
+     */
+    public RegistryProfileType createRegistryProfileType() {
+        return new RegistryProfileType();
+    }
+
+    /**
+     * Create an instance of {@link RegistryType }
+     * 
+     */
+    public RegistryType createRegistryType() {
+        return new RegistryType();
+    }
+
+    /**
+     * Create an instance of {@link PersonRegistryProfileResponseType }
+     * 
+     */
+    public PersonRegistryProfileResponseType createPersonRegistryProfileResponseType() {
+        return new PersonRegistryProfileResponseType();
+    }
+
+    /**
+     * Create an instance of {@link RegisterPersonRequestType }
+     * 
+     */
+    public RegisterPersonRequestType createRegisterPersonRequestType() {
+        return new RegisterPersonRequestType();
+    }
+
+    /**
+     * Create an instance of {@link PersonRegistryProfileType }
+     * 
+     */
+    public PersonRegistryProfileType createPersonRegistryProfileType() {
+        return new PersonRegistryProfileType();
+    }
+
+    /**
      * Create an instance of {@link AckType }
      * 
      */
     public AckType createAckType() {
         return new AckType();
+    }
+
+    /**
+     * Create an instance of {@link RegistryTypeResponseType }
+     * 
+     */
+    public RegistryTypeResponseType createRegistryTypeResponseType() {
+        return new RegistryTypeResponseType();
+    }
+
+    /**
+     * Create an instance of {@link AddressType }
+     * 
+     */
+    public AddressType createAddressType() {
+        return new AddressType();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddressType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "urn:mil:navy:med:dzreg:types", name = "address", scope = PersonType.class)
+    public JAXBElement<AddressType> createPersonTypeAddress(AddressType value) {
+        return new JAXBElement<AddressType>(_PersonTypeAddress_QNAME, AddressType.class, PersonType.class, value);
     }
 
     /**
@@ -171,15 +180,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "urn:mil:navy:med:dzreg:types", name = "ResponseAck")
     public JAXBElement<AckType> createResponseAck(AckType value) {
         return new JAXBElement<AckType>(_ResponseAck_QNAME, AckType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddressType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "urn:mil:navy:med:dzreg:types", name = "address", scope = PersonType.class)
-    public JAXBElement<AddressType> createPersonTypeAddress(AddressType value) {
-        return new JAXBElement<AddressType>(_PersonTypeAddress_QNAME, AddressType.class, PersonType.class, value);
     }
 
 }

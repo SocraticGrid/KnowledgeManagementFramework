@@ -46,14 +46,9 @@
   -->
 
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="file:/home/nhin/KMR/Properties/schemas/nhinc/kmr/registries.xsd" uri="schemas/nhinc/kmr/registries.xsd"/>
+    <system systemId="registries.xsd" uri="file:/home/nhin/Properties/schemas/nhinc/kmr/registries.xsd"/>
     <system systemId="http://smsgateway.ca/SendSMS.asmx?WSDL" uri="wsdl/smsgateway.ca/SendSMS.asmx.wsdl"/>
     <system systemId="http://nhinint01:8080/TaskManager/TaskManagerService?wsdl" uri="wsdl/nhinint01_8080/TaskManager/TaskManagerService.wsdl"/>
     <system systemId="http://nhinint01:8080/TaskManager/TaskManagerService?xsd=2" uri="wsdl/nhinint01_8080/TaskManager/TaskManagerService.xsd_2.xsd"/>
     <system systemId="http://nhinint01:8080/TaskManager/TaskManagerService?xsd=1" uri="wsdl/nhinint01_8080/TaskManager/TaskManagerService.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/RegistriesService/RegistriesService" uri="wsdl/localhost_8080/RegistriesService/RegistriesService.xml"/>
-    <system systemId="file:/home/nhin/KMR/Properties/wsdl/RegistriesService.wsdl" uri="wsdl/RegistriesService.wsdl"/>
-    <system systemId="file:/home/nhin/KMR/Properties/schemas/nhinc/kmr/RegistryTypes.xsd" uri="schemas/nhinc/kmr/RegistryTypes.xsd"/>
-    <system systemId="file:/Users/tnguyen/VirtualBox-Shared/TAPS/KnowledgeManagementFramework/Common/TaskExecHandler/src/wsdl/MsgPush.wsdl" uri="wsdl/MsgPush.wsdl"/>
-    <system systemId="file:/Users/tnguyen/VirtualBox-Shared/TAPS/KnowledgeManagementFramework/Common/TaskExecHandler/MsgPush.wsdl" uri="wsdl/MsgPush.wsdl"/>
-</catalog>
+ </catalog>
